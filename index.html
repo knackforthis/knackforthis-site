@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Console</title>
+  <meta name="theme-color" content="#05060a" />
+  <style>
+    :root{
+      --bg0:#05060a;
+      --bg1:#070a12;
+      --glass: rgba(255,255,255,.06);
+      --glass2: rgba(255,255,255,.10);
+      --stroke: rgba(255,255,255,.14);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.65);
+      --muted2: rgba(255,255,255,.45);
+      --accent: #63e6ff;
+      --accent2:#b06bff;
+      --good:#3cffb4;
+      --warn:#ffd36a;
+      --bad:#ff6b8b;
+      --shadow: 0 20px 70px rgba(0,0,0,.6);
+      --radius: 18px;
+      --radius2: 26px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 70% 10%, rgba(99,230,255,.14), transparent 55%),
+                  radial-gradient(900px 700px at 20% 85%, rgba(176,107,255,.16), transparent 55%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    /* animated “aurora” layer */
+    .aurora{
+      position: fixed;
+      inset:-40%;
+      background:
+        radial-gradient(closest-side at 30% 30%, rgba(99,230,255,.18), transparent 55%),
+        radial-gradient(closest-side at 70% 45%, rgba(176,107,255,.18), transparent 55%),
+        radial-gradient(closest-side at 50% 80%, rgba(60,255,180,.10), transparent 60%);
+      filter: blur(30px);
+      opacity:.9;
+      animation: drift 18s ease-in-out infinite alternate;
+      pointer-events:none;
+      z-index:-2;
+    }
+    @keyframes drift{
+      from{ transform: translate3d(-3%, -2%, 0) scale(1.02) rotate(-2deg); }
+      to  { transform: translate3d(3%, 2%, 0) scale(1.05) rotate(2deg); }
+    }
+
+    /* subtle grid */
+    .grid{
+      position: fixed;
+      inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 50% 20%, rgba(0,0,0,.9), transparent 70%);
+      opacity: .22;
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    header{
+      max-width: 1180px;
+      margin: 28px auto 16px;
+      padding: 0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 240px;
+    }
+    .logo{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(99,230,255,.95), rgba(176,107,255,.95));
+      box-shadow: 0 18px 40px rgba(99,230,255,.10), 0 18px 50px rgba(176,107,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo::after{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.65), transparent 50%);
+      transform: rotate(25deg);
+      opacity:.65;
+    }
+    .brand h1{
+      font-size: 16px;
+      margin:0;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    .brand p{
+      margin: 2px 0 0;
+      color: var(--muted2);
+      font-size: 12px;
+      letter-spacing:.08em;
+      font-family: var(--mono);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+      width: 100%;
+    }
+
+    .pill{
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      padding: 10px 12px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      min-height: 42px;
+    }
+    .pill .k{
+      color: var(--muted2);
+      font-size: 12px;
+      font-family: var(--mono);
+      letter-spacing:.08em;
+      text-transform: uppercase;
+    }
+    .pill .v{
+      font-size: 13px;
+      color: var(--text);
+      font-family: var(--mono);
+    }
+    .btn{
+      border: 1px solid rgba(99,230,255,.35);
+      background: linear-gradient(135deg, rgba(99,230,255,.18), rgba(176,107,255,.12));
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor:pointer;
+      font-family: var(--mono);
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(99,230,255,.6); }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+    .btn.secondary{
+      border-color: rgba(255,255,255,.20);
+      background: rgba(255,255,255,.04);
+    }
+
+    main{
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 18px 44px;
+      display:grid;
+      gap: 16px;
+    }
+
+    .hero{
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-60%;
+      background: conic-gradient(from 180deg, rgba(99,230,255,.18), rgba(176,107,255,.18), rgba(60,255,180,.12), rgba(99,230,255,.18));
+      filter: blur(18px);
+      opacity:.5;
+      animation: spin 16s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes spin{ to{ transform: rotate(360deg); } }
+    .hero > *{ position:relative; }
+
+    .hero h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    .hero p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height:1.5;
+      font-size: 14px;
+    }
+
+    .quick{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .score{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      padding: 14px;
+      display:grid;
+      gap: 10px;
+    }
+    .score .row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap: 10px;
+    }
+    .score .label{
+      color: var(--muted2);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+    }
+    .score .value{
+      font-family: var(--mono);
+      font-size: 26px;
+      letter-spacing:.02em;
+    }
+    .bar{
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      overflow:hidden;
+    }
+    .bar > span{
+      display:block;
+      height:100%;
+      width: 68%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(99,230,255,.95), rgba(176,107,255,.95));
+      box-shadow: 0 0 24px rgba(99,230,255,.28);
+      transition: width .4s ease;
+    }
+    .hint{
+      color: var(--muted2);
+      font-size: 12px;
+      line-height:1.4;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+      .layout{ grid-template-columns: 1fr; }
+      header{ flex-direction: column; align-items: stretch; }
+      .brand{ min-width: 0; }
+      .topbar{ justify-content: flex-start; }
+    }
+
+    .card{
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+      min-height: 220px;
+    }
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius: inherit;
+      pointer-events:none;
+      background: radial-gradient(600px 200px at 20% 10%, rgba(99,230,255,.14), transparent 60%),
+                  radial-gradient(600px 200px at 80% 40%, rgba(176,107,255,.12), transparent 60%);
+      opacity:.8;
+    }
+    .card > *{ position:relative; }
+
+    .card h3{
+      margin: 0 0 12px;
+      font-family: var(--mono);
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: rgba(255,255,255,.86);
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .dot{
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(99,230,255,.45);
+    }
+
+    .metrics{
+      display:grid;
+      gap: 10px;
+    }
+    .metric{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+    }
+    .metric .name{
+      color: var(--muted2);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+    }
+    .metric .num{
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing:.04em;
+    }
+    .badge{
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+    .badge.good{ border-color: rgba(60,255,180,.35); color: rgba(200,255,236,.95); }
+    .badge.warn{ border-color: rgba(255,211,106,.38); color: rgba(255,240,205,.95); }
+    .badge.bad{ border-color: rgba(255,107,139,.40); color: rgba(255,215,224,.95); }
+
+    .log{
+      display:grid;
+      gap: 10px;
+    }
+    .entry{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      padding: 10px 12px;
+      display:grid;
+      gap: 6px;
+    }
+    .entry .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .entry .title{
+      font-family: var(--mono);
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(255,255,255,.86);
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+    }
+    .entry .time{
+      color: var(--muted2);
+      font-family: var(--mono);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .entry .desc{
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .form{
+      display:grid;
+      gap: 10px;
+    }
+    .field{
+      display:grid;
+      gap: 6px;
+    }
+    label{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      color: var(--muted2);
+    }
+    input, select, textarea{
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      padding: 12px 12px;
+      font-family: var(--sans);
+      outline:none;
+      transition: border-color .12s ease;
+    }
+    textarea{ min-height: 90px; resize: vertical; }
+    input:focus, select:focus, textarea:focus{ border-color: rgba(99,230,255,.6); }
+
+    .row2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    footer{
+      max-width: 1180px;
+      margin: 14px auto 40px;
+      padding: 0 18px;
+      color: var(--muted2);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .tiny{
+      opacity:.9;
+    }
+    .kbd{
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.04);
+      border-radius: 10px;
+      padding: 4px 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="aurora"></div>
+  <div class="grid"></div>
+
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Health Console</h1>
+        <p>personal systems dashboard</p>
+      </div>
+    </div>
+
+    <div class="topbar">
+      <div class="pill" title="Local time">
+        <span class="k">time</span>
+        <span class="v" id="now">--:--</span>
+      </div>
+
+      <div class="pill" title="Today summary (demo)">
+        <span class="k">status</span>
+        <span class="v" id="statusText">stable</span>
+      </div>
+
+      <button class="btn" id="runCheckin">Run Check-In</button>
+      <button class="btn secondary" id="resetDemo">Reset Demo</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Overview">
+      <div>
+        <h2>Daily overview</h2>
+        <p>
+          This is a slick front-end dashboard for tracking the basics: sleep, hydration, activity,
+          mood, and meds. It’s not medical advice; it’s a user interface with opinions.
+        </p>
+        <div class="quick">
+          <button class="btn secondary" data-action="water">+ Water</button>
+          <button class="btn secondary" data-action="walk">+ Walk</button>
+          <button class="btn secondary" data-action="breath">2-min breathe</button>
+          <button class="btn secondary" data-action="note">Quick note</button>
+        </div>
+      </div>
+
+      <div class="score" aria-label="Health score (demo)">
+        <div class="row">
+          <div class="label">Health score</div>
+          <div class="value" id="score">82</div>
+        </div>
+        <div class="bar" aria-hidden="true"><span id="scoreBar" style="width:82%"></span></div>
+        <div class="hint" id="scoreHint">
+          Solid baseline. Keep hydration steady and don’t bargain with sleep.
+        </div>
+      </div>
+    </section>
+
+    <section class="layout" aria-label="Dashboard panels">
+      <article class="card">
+        <h3><span class="dot"></span>Vitals snapshot</h3>
+        <div class="metrics">
+          <div class="metric">
+            <div class="name">Sleep</div>
+            <div class="num"><span id="sleepH">7.2</span> h <span class="badge good" id="sleepBadge">good</span></div>
+          </div>
+          <div class="metric">
+            <div class="name">Hydration</div>
+            <div class="num"><span id="waterMl">1200</span> ml <span class="badge warn" id="waterBadge">low</span></div>
+          </div>
+          <div class="metric">
+            <div class="name">Steps</div>
+            <div class="num"><span id="steps">5400</span> <span class="badge warn" id="stepsBadge">ok</span></div>
+          </div>
+          <div class="metric">
+            <div class="name">Mood</div>
+            <div class="num"><span id="mood">calm</span> <span class="badge good" id="moodBadge">stable</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3><span class="dot"></span>Today log</h3>
+        <div class="log" id="log">
+          <div class="entry">
+            <div class="top">
+              <div class="title">Hydration</div>
+              <div class="time">08:12</div>
+            </div>
+            <div class="desc">300 ml water logged.</div>
+          </div>
+          <div class="entry">
+            <div class="top">
+              <div class="title">Movement</div>
+              <div class="time">12:40</div>
+            </div>
+            <div class="desc">15 min walk. Future you approves.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3><span class="dot"></span>Check-in</h3>
+        <form class="form" id="checkinForm">
+          <div class="row2">
+            <div class="field">
+              <label for="sleep">Sleep (hours)</label>
+              <input id="sleep" name="sleep" type="number" min="0" max="24" step="0.1" value="7.2" />
+            </div>
+            <div class="field">
+              <label for="water">Water (ml)</label>
+              <input id="water" name="water" type="number" min="0" step="50" value="1200" />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="stepsInput">Steps</label>
+              <input id="stepsInput" name="steps" type="number" min="0" step="100" value="5400" />
+            </div>
+            <div class="field">
+              <label for="moodInput">Mood</label>
+              <select id="moodInput" name="mood">
+                <option>calm</option>
+                <option>good</option>
+                <option>stressed</option>
+                <option>tired</option>
+                <option>spicy chaos</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="note">Note</label>
+            <textarea id="note" name="note" placeholder="Anything notable? pain, meds, symptoms, training, food, etc."></textarea>
+          </div>
+
+          <button class="btn" type="submit">Save Check-In</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="tiny">Built for humans in meat-space. Data stays in your browser (localStorage).</div>
+    <div class="tiny">Shortcuts: <span class="kbd">W</span> water <span class="kbd">S</span> steps <span class="kbd">N</span> note</div>
+  </footer>
+
+  <script>
+    // --- tiny “app state” (stored locally) ---
+    const storeKey = "health_console_demo_v1";
+    const defaultState = {
+      score: 82,
+      sleepH: 7.2,
+      waterMl: 1200,
+      steps: 5400,
+      mood: "calm",
+      log: [
+        { title:"Hydration", time:"08:12", desc:"300 ml water logged." },
+        { title:"Movement",  time:"12:40", desc:"15 min walk. Future you approves." }
+      ]
+    };
+
+    function loadState(){
+      try{
+        const raw = localStorage.getItem(storeKey);
+        return raw ? { ...defaultState, ...JSON.parse(raw) } : structuredClone(defaultState);
+      }catch{
+        return structuredClone(defaultState);
+      }
+    }
+    function saveState(){
+      localStorage.setItem(storeKey, JSON.stringify(state));
+    }
+
+    let state = loadState();
+
+    // --- helpers ---
+    const $ = (id) => document.getElementById(id);
+    const pad2 = (n) => String(n).padStart(2,"0");
+    function nowHHMM(){
+      const d = new Date();
+      return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+    }
+
+    function badgeFrom(metric, value){
+      // crude thresholds: tweak to taste.
+      if(metric === "sleep"){
+        if(value >= 7) return ["good","good"];
+        if(value >= 6) return ["warn","ok"];
+        return ["bad","low"];
+      }
+      if(metric === "water"){
+        if(value >= 2000) return ["good","good"];
+        if(value >= 1400) return ["warn","low"];
+        return ["bad","low"];
+      }
+      if(metric === "steps"){
+        if(value >= 8000) return ["good","good"];
+        if(value >= 5000) return ["warn","ok"];
+        return ["bad","low"];
+      }
+      if(metric === "mood"){
+        if(["good","calm"].includes(value)) return ["good","stable"];
+        if(["tired"].includes(value)) return ["warn","tired"];
+        if(["stressed","spicy chaos"].includes(value)) return ["bad","hot"];
+        return ["warn","ok"];
+      }
+      return ["warn","ok"];
+    }
+
+    function computeScore(sleepH, waterMl, steps, mood){
+      // demo scoring: not medical. just UI juice.
+      let s = 50;
+      s += Math.max(0, Math.min(20, (sleepH - 5) * 6));          // up to +20
+      s += Math.max(0, Math.min(15, (waterMl - 800) / 80));      // up to +15
+      s += Math.max(0, Math.min(15, (steps - 2000) / 400));      // up to +15
+
+      if(mood === "good") s += 6;
+      if(mood === "calm") s += 4;
+      if(mood === "tired") s -= 4;
+      if(mood === "stressed") s -= 8;
+      if(mood === "spicy chaos") s -= 12;
+
+      return Math.max(0, Math.min(100, Math.round(s)));
+    }
+
+    function setBadge(el, kind, text){
+      el.classList.remove("good","warn","bad");
+      el.classList.add(kind);
+      el.textContent = text;
+    }
+
+    function render(){
+      $("now").textContent = nowHHMM();
+
+      $("score").textContent = state.score;
+      $("scoreBar").style.width = `${state.score}%`;
+
+      // status text
+      let status = "stable";
+      if(state.score >= 85) status = "optimal-ish";
+      if(state.score < 70) status = "needs attention";
+      $("statusText").textContent = status;
+
+      // vitals
+      $("sleepH").textContent = state.sleepH.toFixed(1);
+      $("waterMl").textContent = state.waterMl;
+      $("steps").textContent = state.steps;
+      $("mood").textContent = state.mood;
+
+      // badges
+      const [sk, st] = badgeFrom("sleep", state.sleepH);
+      setBadge($("sleepBadge"), sk, st);
+
+      const [wk, wt] = badgeFrom("water", state.waterMl);
+      setBadge($("waterBadge"), wk, wt);
+
+      const [pk, pt] = badgeFrom("steps", state.steps);
+      setBadge($("stepsBadge"), pk, pt);
+
+      const [mk, mt] = badgeFrom("mood", state.mood);
+      setBadge($("moodBadge"), mk, mt);
+
+      // hint
+      const hints = [];
+      if(state.sleepH < 7) hints.push("Sleep debt detected.");
+      if(state.waterMl < 1600) hints.push("Hydration low.");
+      if(state.steps < 6000) hints.push("Movement light.");
+      if(["stressed","spicy chaos"].includes(state.mood)) hints.push("Nervous system spicy.");
+      $("scoreHint").textContent = hints.length ? hints.join(" ") : "Baseline looks solid. Keep the boring basics boring.";
+
+      // form values
+      $("sleep").value = state.sleepH;
+      $("water").value = state.waterMl;
+      $("stepsInput").value = state.steps;
+      $("moodInput").value = state.mood;
+
+      // log
+      const log = $("log");
+      log.innerHTML = "";
+      state.log.slice(0,6).forEach(e=>{
+        const div = document.createElement("div");
+        div.className = "entry";
+        div.innerHTML = `
+          <div class="top">
+            <div class="title">${escapeHtml(e.title)}</div>
+            <div class="time">${escapeHtml(e.time)}</div>
+          </div>
+          <div class="desc">${escapeHtml(e.desc)}</div>
+        `;
+        log.appendChild(div);
+      });
+    }
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, s => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+      }[s]));
+    }
+
+    function addLog(title, desc){
+      state.log.unshift({ title, time: nowHHMM(), desc });
+      state.log = state.log.slice(0, 20);
+      saveState();
+      render();
+    }
+
+    function runCheckinUpdate({sleepH, waterMl, steps, mood, note}){
+      state.sleepH = sleepH;
+      state.waterMl = waterMl;
+      state.steps = steps;
+      state.mood = mood;
+      state.score = computeScore(sleepH, waterMl, steps, mood);
+
+      addLog("Check-in saved", note?.trim() ? note.trim() : "Updated vitals + mood.");
+    }
+
+    // --- events ---
+    $("checkinForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const sleepH = Number($("sleep").value || 0);
+      const waterMl = Number($("water").value || 0);
+      const steps = Number($("stepsInput").value || 0);
+      const mood = $("moodInput").value;
+      const note = $("note").value;
+
+      runCheckinUpdate({sleepH, waterMl, steps, mood, note});
+      $("note").value = "";
+    });
+
+    $("runCheckin").addEventListener("click", ()=>{
+      // pretend we "measured" something
+      const jitter = (n, j) => Math.max(0, Math.round((n + (Math.random()*2-1)*j) * 10) / 10);
+      const sleepH = jitter(state.sleepH, 0.6);
+      const waterMl = Math.max(0, Math.round(state.waterMl + (Math.random() < .6 ? 250 : 0)));
+      const steps = Math.max(0, Math.round(state.steps + (Math.random() < .7 ? 650 : 150)));
+      const moodPool = ["calm","good","tired","stressed"];
+      const mood = moodPool[Math.floor(Math.random()*moodPool.length)];
+
+      runCheckinUpdate({sleepH, waterMl, steps, mood, note:"Automated check-in (demo)."});
+    });
+
+    document.querySelectorAll("[data-action]").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const a = btn.getAttribute("data-action");
+        if(a === "water"){
+          state.waterMl += 250;
+          state.score = computeScore(state.sleepH, state.waterMl, state.steps, state.mood);
+          addLog("Hydration", "250 ml water logged.");
+        }
+        if(a === "walk"){
+          state.steps += 900;
+          state.score = computeScore(state.sleepH, state.waterMl, state.steps, state.mood);
+          addLog("Movement", "Quick walk logged (+900 steps).");
+        }
+        if(a === "breath"){
+          addLog("Breathing", "2 minutes downshift. Nervous system: slightly less feral.");
+        }
+        if(a === "note"){
+          const note = prompt("Quick note:");
+          if(note && note.trim()) addLog("Note", note.trim());
+        }
+      });
+    });
+
+    $("resetDemo").addEventListener("click", ()=>{
+      state = structuredClone(defaultState);
+      saveState();
+      render();
+    });
+
+    // keyboard shortcuts
+    window.addEventListener("keydown", (e)=>{
+      if(e.target && ["INPUT","TEXTAREA","SELECT"].includes(e.target.tagName)) return;
+      if(e.key.toLowerCase() === "w") document.querySelector('[data-action="water"]').click();
+      if(e.key.toLowerCase() === "s") document.querySelector('[data-action="walk"]').click();
+      if(e.key.toLowerCase() === "n") document.querySelector('[data-action="note"]').click();
+    });
+
+    // clock tick
+    render();
+    setInterval(()=>{ $("now").textContent = nowHHMM(); }, 1000 * 10);
+  </script>
+</body>
+</html>
