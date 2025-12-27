@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9PLC0WEHQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L9PLC0WEHQ');
+  </script>
+
+  <title>Editorial Standards — KnackForThis</title>
+
+  <meta name="description" content="KnackForThis editorial standards: how we write skill guides and diagnostics, how we avoid hype, and how we handle corrections." />
+  <meta name="author" content="KnackForThis" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0e1117" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://knackforthis.com/editorial-standards/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="KnackForThis" />
+  <meta property="og:title" content="Editorial Standards — KnackForThis" />
+  <meta property="og:description" content="How we create and maintain skill diagnostics and educational pages." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://knackforthis.com/editorial-standards/" />
+  <meta property="og:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Editorial Standards — KnackForThis" />
+  <meta name="twitter:description" content="How we create and maintain skill diagnostics and educational pages." />
+  <meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://knackforthis.com/#website",
+        "url": "https://knackforthis.com/",
+        "name": "KnackForThis",
+        "publisher": { "@id": "https://knackforthis.com/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://knackforthis.com/#organization",
+        "name": "KnackForThis",
+        "url": "https://knackforthis.com/",
+        "email": "fitdepth@gmail.com",
+        "logo": "https://knackforthis.com/favicon.png"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://knackforthis.com/editorial-standards/#webpage",
+        "url": "https://knackforthis.com/editorial-standards/",
+        "name": "Editorial Standards",
+        "description": "How KnackForThis creates and maintains skill diagnostics and educational pages.",
+        "isPartOf": { "@id": "https://knackforthis.com/#website" },
+        "about": { "@id": "https://knackforthis.com/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://knackforthis.com/editorial-standards/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Editorial Standards", "item": "https://knackforthis.com/editorial-standards/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#000a1d;
+      --panel:rgba(0,22,44,.55);
+      --panel2:rgba(0,15,30,.52);
+      --text:#d8fdff;
+      --muted:rgba(216,253,255,.82);
+      --aqua:#00fff2;
+      --yellow:#ffd400;
+      --radius:18px;
+      --shadow:0 0 20px rgba(0,255,255,.12);
+      --max:920px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      text-align:center;
+      font-size:clamp(15px,3.8vw,17px);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    .bg{
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,212,0,.14), transparent 45%),
+        radial-gradient(circle at 80% 20%, rgba(0,255,242,.12), transparent 45%),
+        radial-gradient(circle at 50% 88%, rgba(255,212,0,.10), transparent 56%),
+        linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.60));
+    }
+
+    .top{
+      position:fixed; top:0; left:0; width:100%;
+      padding:.65rem 1rem;
+      background:rgba(0,18,30,.86);
+      border-bottom:1px solid rgba(0,255,255,.18);
+      box-shadow:0 10px 40px rgba(0,0,0,.35);
+      backdrop-filter:blur(8px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      z-index:10;
+    }
+    .top a{
+      color:white;
+      font-weight:900;
+      text-decoration:none;
+      text-shadow:0 0 10px rgba(0,0,0,.9);
+      white-space:nowrap;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      padding:.40rem .65rem;
+      border-radius:999px;
+      box-shadow:inset 0 0 18px rgba(0,255,255,.06);
+      color:rgba(0,255,242,.92);
+      font-weight:900;
+      font-size:.95rem;
+    }
+
+    header{
+      margin-top:72px;
+      padding:1.1rem;
+      padding-top:3.4rem;
+    }
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      background:var(--panel2);
+      border:1px solid rgba(0,255,255,.14);
+      border-radius:var(--radius);
+      padding:1.25rem 1.15rem;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+    .kicker{
+      display:inline-block;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      font-size:.9rem;
+      color:rgba(0,255,242,.95);
+      background:rgba(0,255,242,.07);
+      border:1px solid rgba(0,255,242,.16);
+      padding:.35rem .6rem;
+      border-radius:999px;
+      box-shadow:inset 0 0 14px rgba(0,255,242,.08);
+    }
+    h1{
+      margin:.75rem 0 .45rem;
+      font-weight:900;
+      font-size:clamp(2rem,6vw,2.7rem);
+      color:var(--yellow);
+      text-shadow:0 0 18px rgba(0,0,0,.9), 0 0 26px rgba(255,212,0,.18);
+      line-height:1.18;
+    }
+    .sub{
+      margin:0 auto;
+      max-width:860px;
+      color:rgba(255,255,255,.92);
+    }
+
+    main{ padding:0 1rem 2.5rem; }
+    .section{
+      max-width:var(--max);
+      margin:1.05rem auto;
+      text-align:left;
+    }
+
+    .panel{
+      background:var(--panel);
+      border:1px solid rgba(0,255,242,.14);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:1.05rem 1.05rem;
+      margin:.95rem 0;
+    }
+    h2{
+      margin:0 0 .55rem;
+      font-size:clamp(1.2rem,5vw,1.6rem);
+      color:rgba(0,255,242,.95);
+      text-shadow:0 0 14px rgba(0,0,0,.85);
+    }
+    p{ margin:.45rem 0; color:rgba(216,253,255,.90); }
+    ul{ margin:.55rem 0 0; padding-left:1.1rem; color:rgba(216,253,255,.90); }
+    li{ margin:.35rem 0; }
+
+    .callout{
+      margin-top:.75rem;
+      padding:.95rem;
+      border:1px solid rgba(255,212,0,.22);
+      border-radius:16px;
+      background:rgba(255,212,0,.08);
+      box-shadow:inset 0 0 18px rgba(255,212,0,.06);
+      color:rgba(255,255,255,.92);
+    }
+    .callout strong{ color:rgba(255,212,0,.96); }
+
+    .linkrow{
+      display:flex;
+      gap:.7rem;
+      flex-wrap:wrap;
+      margin-top:.8rem;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:12px;
+      padding:.85rem 1rem;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.22);
+      color:rgba(255,255,255,.92);
+      box-shadow:0 0 18px rgba(0,0,0,.35);
+      transition:transform .12s ease, filter .18s ease;
+      user-select:none;
+    }
+    .btn:hover{ transform:scale(1.02); filter:saturate(1.06); }
+    .btn-primary{
+      background:linear-gradient(to right, rgba(0,255,242,.95), rgba(0,170,160,.92));
+      color:#041818;
+      border-color:rgba(0,255,242,.40);
+      box-shadow:0 0 20px rgba(0,255,242,.14);
+    }
+
+    footer{
+      margin-top:1.8rem;
+      background:rgba(0,20,36,.90);
+      padding:1rem;
+      border-top:1px solid rgba(0,255,255,.12);
+      text-align:center;
+    }
+    footer a{ color:var(--aqua); text-decoration:none; font-weight:700; }
+    footer a:hover{ text-decoration:underline; }
+    footer .fine{ opacity:.92; margin:.6rem 0 0; }
+
+    @media (max-width: 520px){
+      header{ padding-top:3.1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <div class="top">
+    <div style="display:flex;align-items:center;gap:.8rem;">
+      <a href="/">KnackForThis</a>
+      <span class="pill">Editorial Standards</span>
+    </div>
+    <a href="/">Home</a>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <span class="kicker">How We Build Pages</span>
+      <h1>Editorial Standards</h1>
+      <p class="sub">
+        KnackForThis is educational. Our goal is to make skills legible: what a path actually demands, who typically thrives,
+        and which misfits cause people to bounce. We avoid hype, guarantees, and “one weird trick” content.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="panel">
+        <h2>1) Education-Only Scope</h2>
+        <p>
+          Everything on KnackForThis is informational. We publish quizzes and guides to help you explore skill fit and learn terminology.
+          We do not provide individualized evaluations, professional services, or outcome promises.
+        </p>
+        <div class="callout">
+          <strong>Rule:</strong> If a page starts sounding like a personal recommendation or guarantee, it gets rewritten.
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>2) What We Measure in Diagnostics</h2>
+        <p>
+          Diagnostics focus on practical constraints — not personality mysticism. Typical dimensions include:
+        </p>
+        <ul>
+          <li><strong>Process tolerance:</strong> patience, repetition, and consistency.</li>
+          <li><strong>Precision load:</strong> detail sensitivity and error cost.</li>
+          <li><strong>Pressure response:</strong> how decision quality changes under urgency.</li>
+          <li><strong>Environment fit:</strong> noise, physical demand, customer contact, schedule variability.</li>
+          <li><strong>Learning style:</strong> comfort with ambiguity, feedback, and iteration.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>3) Writing Rules: Clear, Specific, No Fluff</h2>
+        <ul>
+          <li>We use plain language first. Jargon only when it clarifies something real.</li>
+          <li>We prefer concrete examples and tradeoffs over “motivational” writing.</li>
+          <li>We separate “what the skill is” from “who tends to fit it.”</li>
+          <li>We avoid shame language: low fit is not a moral failure.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>4) Sources and Claims</h2>
+        <p>
+          When a page includes specific facts (definitions, safety standards, licensing terms, timelines), we aim to verify and keep them current.
+          When we’re describing a skill’s day-to-day reality, we frame it as general patterns — not universal truths.
+        </p>
+        <ul>
+          <li><strong>Facts:</strong> verified, updated as needed.</li>
+          <li><strong>Patterns:</strong> framed as common outcomes, not guarantees.</li>
+          <li><strong>Opinions:</strong> labeled through phrasing and kept grounded in real constraints.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>5) Updates and Corrections</h2>
+        <p>
+          We revise pages as new skill coverage is added and as readers point out unclear wording or errors.
+          If you see something wrong, email us with the page URL and what needs fixing.
+        </p>
+        <div class="linkrow">
+          <a class="btn btn-primary" href="mailto:fitdepth@gmail.com?subject=KnackForThis%20Correction%20or%20Feedback&body=Page%20URL%3A%20%0A%0AWhat%20to%20fix%20or%20improve%3A%20%0A">Email Corrections</a>
+          <a class="btn" href="/about/">About</a>
+          <a class="btn" href="/mission/">Mission</a>
+          <a class="btn" href="/contact/">Contact</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>6) What We Won’t Do</h2>
+        <ul>
+          <li>No guarantees about outcomes, income, health, or personal results.</li>
+          <li>No individualized “you should do X” recommendations.</li>
+          <li>No fear-based manipulation or “crisis” copy.</li>
+          <li>No pretending a quiz is a professional assessment.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/">Home</a> •
+      <a href="/about/">About</a> •
+      <a href="/mission/">Mission</a> •
+      <a href="/contact/">Contact</a>
+    </div>
+    <p class="fine">© <span id="y"></span> KnackForThis. Educational content only.</p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
