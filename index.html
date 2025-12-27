@@ -20,7 +20,7 @@
   <meta name="keywords" content="skill quiz, diagnostic quiz, aptitude test, would i be good at, trades quiz, carpentry quiz, tech skills quiz, career fit quiz" />
   <meta name="author" content="KnackForThis" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0e1117" />
+  <meta name="theme-color" content="#0b111b" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://knackforthis.com/" />
@@ -98,49 +98,72 @@
 
   <style>
     :root{
-      --bg: #000a1d;
-      --panel: rgba(0, 15, 30, 0.62);
-      --panel2: rgba(0, 22, 44, 0.55);
-      --text: #d8fdff;
-      --muted: rgba(216,253,255,0.82);
+      /* tool / exploration palette */
+      --bg0: #070b12;
+      --bg1: #0b111b;
 
-      --aqua: #00fff2;
-      --aqua2: rgba(0,255,242,0.22);
+      --panel: rgba(14, 19, 30, 0.74);
+      --panel2: rgba(18, 26, 40, 0.68);
 
-      --yellow: #ffd400;
-      --yellow2: rgba(255,212,0,0.20);
+      --line: rgba(190, 206, 230, 0.18);
+      --line2: rgba(150, 190, 255, 0.18);
 
-      --shadow: 0 0 20px rgba(0,255,255,0.12);
-      --shadow2: 0 0 26px rgba(255,212,0,0.10);
+      --text: rgba(236, 244, 255, 0.92);
+      --muted: rgba(236, 244, 255, 0.72);
 
-      --radius: 18px;
-      --max: 1060px;
+      --silver: rgba(230, 238, 252, 0.90);
+      --steel: rgba(190, 206, 230, 0.90);
+
+      --blue: rgba(140, 200, 255, 0.92);
+      --blue2: rgba(140, 200, 255, 0.18);
+
+      --shadow: 0 18px 50px rgba(0,0,0,0.45);
+
+      --radius: 16px;
+      --max: 1080px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
     *{ box-sizing: border-box; }
     html,body{ height:100%; }
+
     body{
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
       margin: 0;
-      background: var(--bg);
+      background: radial-gradient(1200px 700px at 65% -10%, rgba(140,200,255,0.12), transparent 60%),
+                  radial-gradient(900px 520px at 18% 12%, rgba(236,244,255,0.08), transparent 58%),
+                  linear-gradient(to bottom, var(--bg0), var(--bg1));
       color: var(--text);
       text-align: center;
       font-size: clamp(15px, 3.8vw, 17px);
-      line-height: 1.55;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* simple, calm background */
+    /* subtle "tool grid" background */
+    .bg-grid{
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        linear-gradient(to right, rgba(190,206,230,0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(190,206,230,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at 50% 20%, rgba(0,0,0,0.90), rgba(0,0,0,0.20) 55%, transparent 78%);
+      opacity: 0.55;
+    }
+
     .bg-vignette{
       position: fixed;
       inset: 0;
       z-index: -1;
       pointer-events: none;
       background:
-        radial-gradient(circle at 18% 12%, rgba(255,212,0,0.14), transparent 44%),
-        radial-gradient(circle at 82% 18%, rgba(0,255,242,0.12), transparent 46%),
-        radial-gradient(circle at 50% 88%, rgba(255,212,0,0.10), transparent 56%),
-        linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.60));
+        radial-gradient(circle at 70% 18%, rgba(140,200,255,0.10), transparent 48%),
+        radial-gradient(circle at 18% 78%, rgba(236,244,255,0.07), transparent 55%),
+        linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.72));
     }
 
     /* top bar */
@@ -149,266 +172,614 @@
       top: 0; left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(0, 18, 30, 0.86);
-      border-bottom: 1px solid rgba(0,255,255,0.18);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+      background: rgba(10, 14, 22, 0.78);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.42);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0.65rem 1rem;
       gap: 1rem;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
 
     .brand-left{
       display:flex;
       align-items:center;
-      gap: 0.8rem;
-      min-width: 200px;
+      gap: 0.7rem;
+      min-width: 220px;
     }
     .brand-left a{
-      color: white;
+      color: var(--silver);
       text-decoration: none;
       font-weight: 900;
-      font-size: clamp(1.1rem, 4.8vw, 1.55rem);
-      text-shadow: 0 0 10px rgba(0,0,0,0.9);
+      font-size: clamp(1.05rem, 4.8vw, 1.45rem);
+      letter-spacing: 0.01em;
       white-space: nowrap;
     }
-    .pill{
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.18);
-      padding: 0.40rem 0.65rem;
+
+    .status-pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 0.45rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      padding: 0.36rem 0.62rem;
       border-radius: 999px;
-      box-shadow: inset 0 0 18px rgba(0,255,255,0.06);
-      color: rgba(0,255,242,0.92);
+      color: rgba(236,244,255,0.78);
       font-weight: 900;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+    }
+    .dot{
+      width: 8px; height: 8px;
+      border-radius: 999px;
+      background: rgba(140,200,255,0.85);
+      box-shadow: 0 0 0 4px rgba(140,200,255,0.14);
     }
 
     .nav-right{
       display:flex;
       align-items:center;
-      gap: 0.9rem;
+      gap: 0.85rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
     .nav-right a{
-      color: rgba(255,255,255,0.90);
+      color: rgba(236,244,255,0.78);
       text-decoration: none;
       font-weight: 900;
-      font-size: 1rem;
-      opacity: 0.95;
+      font-size: 0.98rem;
+      padding: 0.35rem 0.45rem;
+      border-radius: 10px;
+      border: 1px solid transparent;
     }
-    .nav-right a:hover{ text-decoration: underline; }
+    .nav-right a:hover{
+      border-color: var(--line);
+      background: rgba(255,255,255,0.03);
+      color: rgba(236,244,255,0.92);
+    }
 
     header{
-      padding: 1.1rem;
       margin-top: 70px;
-      padding-top: 3.7rem;
-      padding-bottom: 1.2rem;
+      padding: 3.25rem 1rem 1.15rem;
     }
 
-    .wrap{
+    .hero{
       max-width: var(--max);
       margin: 0 auto;
-      background: rgba(0, 15, 30, 0.52);
-      border: 1px solid rgba(0,255,255,0.14);
+      text-align: left;
       border-radius: var(--radius);
-      box-shadow: var(--shadow), var(--shadow2);
-      padding: 1.35rem 1.15rem;
-      backdrop-filter: blur(8px);
+      background: linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* thin "scanner line" accent */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset: 0;
+      pointer-events:none;
+      background:
+        linear-gradient(to right, transparent, rgba(140,200,255,0.10), transparent);
+      transform: translateX(-60%);
+      opacity: 0.9;
     }
 
     .kicker{
-      display:inline-block;
-      font-weight: 900;
-      letter-spacing: 0.05em;
+      display:inline-flex;
+      align-items:center;
+      gap: 0.6rem;
+      font-family: var(--mono);
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.9rem;
-      color: rgba(0,255,242,0.95);
-      background: rgba(0,255,242,0.07);
-      border: 1px solid rgba(0,255,242,0.16);
+      font-size: 0.82rem;
+      color: rgba(236,244,255,0.72);
+      background: rgba(140,200,255,0.06);
+      border: 1px solid var(--line2);
       padding: 0.35rem 0.6rem;
       border-radius: 999px;
-      box-shadow: inset 0 0 14px rgba(0,255,242,0.08);
+    }
+    .kicker .chip{
+      display:inline-block;
+      padding: 0.12rem 0.40rem;
+      border-radius: 999px;
+      border: 1px solid rgba(236,244,255,0.16);
+      background: rgba(255,255,255,0.04);
+      color: rgba(236,244,255,0.78);
+      letter-spacing: 0.04em;
     }
 
     h1{
-      margin: 0.80rem 0 0.55rem;
+      margin: 0.85rem 0 0.5rem;
       font-weight: 900;
-      font-size: clamp(2.0rem, 7vw, 3.0rem);
-      color: var(--yellow);
-      text-shadow: 0 0 18px rgba(0,0,0,0.9), 0 0 26px rgba(255,212,0,0.18);
-      line-height: 1.18;
+      font-size: clamp(2.05rem, 6.8vw, 3.0rem);
+      color: rgba(236,244,255,0.94);
+      line-height: 1.15;
     }
 
     .sub{
+      margin: 0;
       max-width: 920px;
-      margin: 0 auto;
-      color: rgba(255,255,255,0.92);
-      font-size: clamp(1.05rem, 4.2vw, 1.25rem);
-      text-shadow: 0 0 10px rgba(0,0,0,0.55);
+      color: rgba(236,244,255,0.78);
+      font-size: clamp(1.02rem, 4.2vw, 1.18rem);
+    }
+
+    .hero-row{
+      display:flex;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: 1.1rem;
     }
 
     .cta-row{
-      margin-top: 1.05rem;
       display:flex;
-      gap: 0.75rem;
-      justify-content: center;
+      gap: 0.65rem;
       flex-wrap: wrap;
     }
 
     .btn{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 0.6rem;
       text-decoration:none;
       font-weight: 900;
       border-radius: 12px;
-      padding: 0.95rem 1.1rem;
-      font-size: clamp(1.0rem, 4.2vw, 1.15rem);
+      padding: 0.88rem 1.05rem;
+      font-size: 1.05rem;
       line-height: 1.1;
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: 0 0 18px rgba(0,0,0,0.35);
-      transition: transform 0.12s ease, filter 0.18s ease;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: rgba(236,244,255,0.88);
+      transition: transform 0.10s ease, background 0.14s ease, border-color 0.14s ease;
       user-select: none;
+      white-space: nowrap;
     }
-    .btn:hover{ transform: scale(1.03); filter: saturate(1.06); }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(140,200,255,0.26);
+    }
 
     .btn-primary{
-      background: linear-gradient(to right, var(--yellow), #e5ff00);
-      color: #111;
-      border-color: rgba(255,212,0,0.40);
-      box-shadow: 0 0 20px rgba(255,212,0,0.18);
-    }
-    .btn-ghost{
-      background: rgba(0,0,0,0.22);
-      color: rgba(255,255,255,0.92);
-      border-color: rgba(255,255,255,0.22);
-      box-shadow: inset 0 0 18px rgba(0,255,242,0.07);
+      background: linear-gradient(to bottom, rgba(140,200,255,0.22), rgba(140,200,255,0.10));
+      border-color: rgba(140,200,255,0.30);
+      color: rgba(236,244,255,0.96);
     }
 
-    main{ padding: 0 1rem 2.5rem; }
+    .btn .arrow{
+      font-family: var(--mono);
+      opacity: 0.85;
+    }
+
+    .hero-meta{
+      text-align: right;
+      min-width: 260px;
+      flex: 1;
+    }
+    .micro{
+      margin: 0;
+      color: rgba(236,244,255,0.66);
+      font-family: var(--mono);
+      font-size: 0.90rem;
+      line-height: 1.45;
+    }
+
+    main{ padding: 0 1rem 2.6rem; }
 
     .section{
       max-width: var(--max);
       margin: 1.15rem auto;
+      text-align: left;
     }
 
     .section-title{
-      font-size: clamp(1.25rem, 5vw, 1.9rem);
-      margin: 0.6rem 0 0.35rem;
-      color: rgba(0,255,242,0.95);
-      text-shadow: 0 0 14px rgba(0,0,0,0.85);
-    }
-    .section-desc{
-      max-width: 900px;
-      margin: 0.35rem auto 1.05rem;
-      color: rgba(216,253,255,0.85);
+      font-size: clamp(1.25rem, 5vw, 1.75rem);
+      margin: 1.15rem 0 0.4rem;
+      color: rgba(236,244,255,0.92);
+      letter-spacing: 0.01em;
     }
 
-    .grid{
+    .section-desc{
+      max-width: 980px;
+      margin: 0.35rem 0 0;
+      color: rgba(236,244,255,0.74);
+    }
+
+    /* tool-style info panels */
+    .panel{
+      margin-top: 0.9rem;
+      border-radius: var(--radius);
+      background: linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 44px rgba(0,0,0,0.30);
+      padding: 1.05rem 1.05rem;
+    }
+
+    .panel-grid{
       display:grid;
-      gap: 1.05rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-top: 0.75rem;
+    }
+
+    .mini{
+      border-radius: 14px;
+      border: 1px solid rgba(190,206,230,0.16);
+      background: rgba(10,14,22,0.22);
+      padding: 0.85rem 0.85rem;
+    }
+
+    .mini h3{
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+      color: rgba(236,244,255,0.88);
+    }
+    .mini p{
+      margin: 0;
+      color: rgba(236,244,255,0.72);
+      font-size: 0.98rem;
     }
 
     .card{
       position: relative;
-      padding: 1.25rem;
       border-radius: var(--radius);
-      background: radial-gradient(circle at top left, rgba(0,255,242,0.12), rgba(0,20,40,0.78) 62%);
-      border: 1px solid rgba(0,255,242,0.20);
-      box-shadow: 0 0 16px rgba(0,255,242,0.12), inset 0 0 16px rgba(0,255,242,0.08);
-      text-align: left;
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-      -webkit-tap-highlight-color: transparent;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 46px rgba(0,0,0,0.32);
+      padding: 1.05rem 1.05rem;
+      margin-top: 5%;
+      transition: transform 0.10s ease, border-color 0.14s ease, background 0.14s ease;
     }
     .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(255,212,0,0.32);
-      box-shadow: 0 0 24px rgba(255,212,0,0.10), 0 0 18px rgba(0,255,242,0.16), inset 0 0 16px rgba(0,255,242,0.08);
+      transform: translateY(-1px);
+      border-color: rgba(140,200,255,0.26);
+      background: linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
     }
 
+    /* replaces emoji badge with a clean corner label */
     .badge{
       position:absolute;
       top: 12px;
       right: 12px;
-      font-size: 1.35rem;
-      opacity: 0.95;
-      filter: drop-shadow(0 0 8px rgba(255,212,0,0.30));
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(236,244,255,0.62);
+      border: 1px solid rgba(190,206,230,0.18);
+      background: rgba(0,0,0,0.18);
+      padding: 0.22rem 0.45rem;
+      border-radius: 999px;
     }
 
     .card h3{
       margin: 0 0 0.35rem;
-      font-size: clamp(1.15rem, 4.2vw, 1.45rem);
-      color: #bffffc;
-      text-shadow: 0 0 10px rgba(0,0,0,0.80);
+      font-size: 2rem;
+      color: rgba(236,244,255,0.92);
+      text-align: center;
     }
 
     .meta{
       display:flex;
-      gap: 0.55rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
       margin: 0.25rem 0 0.75rem;
-      color: rgba(255,255,255,0.88);
+      color: rgba(236,244,255,0.78);
       font-weight: 900;
       font-size: 0.95rem;
     }
+
     .tag{
-      padding: 0.25rem 0.55rem;
+      font-family: var(--mono);
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.5rem;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.20);
-      font-size: 0.92rem;
+      border: 1px solid rgba(190,206,230,0.16);
+      background: rgba(255,255,255,0.03);
+      color: rgba(236,244,255,0.70);
     }
-    .tag.aqua{ border-color: rgba(0,255,242,0.28); background: rgba(0,255,242,0.07); color: rgba(0,255,242,0.95); }
-    .tag.yellow{ border-color: rgba(255,212,0,0.25); background: rgba(255,212,0,0.08); color: rgba(255,212,0,0.95); }
+    .tag.blue{
+      border-color: rgba(140,200,255,0.26);
+      background: rgba(140,200,255,0.06);
+      color: rgba(170,220,255,0.92);
+    }
 
     .card p{
       margin: 0 0 0.95rem;
-      color: rgba(216,253,255,0.90);
+      color: rgba(236,244,255,0.74);
     }
 
     .card a{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap: 0.55rem;
       text-decoration:none;
       font-weight: 900;
       border-radius: 12px;
-      padding: 0.80rem 0.95rem;
-      font-size: clamp(1rem, 4.2vw, 1.1rem);
+      padding: 0.78rem 0.95rem;
+      font-size: 1.02rem;
       line-height: 1.1;
-      background: rgba(0,255,242,0.95);
-      color: #041818;
-      box-shadow: 0 0 18px rgba(0,255,242,0.18);
-      transition: transform 0.12s ease, box-shadow 0.18s ease;
+      border: 1px solid rgba(140,200,255,0.26);
+      background: rgba(140,200,255,0.08);
+      color: rgba(236,244,255,0.92);
+      transition: transform 0.10s ease, background 0.14s ease, border-color 0.14s ease;
     }
-    .card a:hover{ transform: scale(1.03); box-shadow: 0 0 26px rgba(0,255,242,0.30); }
+    .card a:hover{
+      transform: translateY(-1px);
+      background: rgba(140,200,255,0.12);
+      border-color: rgba(140,200,255,0.36);
+    }
+
+    .divider{
+      margin: 1.1rem 0 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(190,206,230,0.20), transparent);
+    }
 
     footer{
-      margin-top: 1.8rem;
-      background: rgba(0, 20, 36, 0.90);
+      margin-top: 1.9rem;
+      background: rgba(10, 14, 22, 0.72);
       padding: 1rem;
-      border-top: 1px solid rgba(0,255,255,0.12);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(10px);
     }
-    footer a{ color: var(--aqua); text-decoration:none; font-weight: 700; }
+    footer a{
+      color: rgba(170,220,255,0.92);
+      text-decoration:none;
+      font-weight: 800;
+    }
     footer a:hover{ text-decoration: underline; }
-    footer .fine{ opacity: 0.92; margin: 0.6rem 0 0; }
+    footer .fine{
+      opacity: 0.86;
+      margin: 0.6rem 0 0;
+      color: rgba(236,244,255,0.72);
+      font-family: var(--mono);
+      font-size: 0.9rem;
+    }
+/* =========================
+   HEAVIER AQUA TOOL UI (OVERRIDES)
+   Paste at END of <style>
+========================= */
 
-    /* mobile: keep it dead simple */
+:root{
+  /* heavier accent: still soft, but present */
+  --aqua: rgba(80, 220, 255, 0.96);
+  --aquaLine: rgba(80, 220, 255, 0.42);
+  --aquaFill: rgba(80, 220, 255, 0.14);
+  --aquaFill2: rgba(80, 220, 255, 0.08);
+  --aquaGlow: 0 0 0 3px rgba(80, 220, 255, 0.22);
+  --aquaGlow2: 0 0 28px rgba(80, 220, 255, 0.10);
+
+  /* tighten greys so the UI stops melting */
+  --line: rgba(190, 206, 230, 0.14);
+}
+
+/* 1) Background reads more “instrument panel” */
+.bg-grid{
+  opacity: 0.85;
+  background-size: 44px 44px;
+}
+.bg-vignette{
+  background:
+    radial-gradient(circle at 70% 18%, rgba(80,220,255,0.16), transparent 52%),
+    radial-gradient(circle at 18% 78%, rgba(236,244,255,0.08), transparent 58%),
+    linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0.78));
+}
+
+/* 2) Stronger global rhythm: section headers get an aqua underline + rail */
+.section-title{
+  padding-left: 1rem;
+  position: relative;
+  color: rgba(236,244,255,0.95);
+}
+.section-title::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 0.18em;
+  width: 4px;
+  height: 1.05em;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, transparent, var(--aqua), transparent);
+  box-shadow: 0 0 18px rgba(80,220,255,0.20);
+}
+.section-title::after{
+  content:"";
+  display:block;
+  height: 1px;
+  margin-top: 0.55rem;
+  background: linear-gradient(to right,
+    rgba(80,220,255,0.45),
+    rgba(236,244,255,0.08),
+    transparent
+  );
+  opacity: 0.95;
+}
+
+/* 3) Panels + cards get a top “aqua seam” so blocks feel separated */
+.hero, .panel, .card, .mini{
+  border-color: rgba(190,206,230,0.16);
+}
+
+.hero{
+  border-color: rgba(80,220,255,0.18);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.50);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(80,220,255,0.85), transparent);
+  opacity: 0.75;
+  pointer-events:none;
+}
+
+.panel{
+  position: relative;
+  border-color: rgba(80,220,255,0.16);
+  background:
+    radial-gradient(900px 260px at 12% 0%, rgba(80,220,255,0.08), transparent 60%),
+    linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+}
+.panel::before{
+  content:"";
+  position:absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(to right, rgba(80,220,255,0.60), rgba(236,244,255,0.12), transparent);
+  opacity: 0.9;
+  pointer-events:none;
+}
+
+.card{
+  position: relative;
+  border-color: rgba(190,206,230,0.14);
+  background:
+    radial-gradient(900px 260px at 18% 0%, rgba(80,220,255,0.10), transparent 62%),
+    linear-gradient(to bottom, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+}
+.card::before{
+  content:"";
+  position:absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(to right, rgba(80,220,255,0.75), rgba(236,244,255,0.10), transparent);
+  opacity: 0.9;
+  pointer-events:none;
+}
+.card:hover{
+  border-color: rgba(80,220,255,0.26);
+  box-shadow: 0 18px 56px rgba(0,0,0,0.44), var(--aquaGlow2);
+}
+
+/* 4) Mini blocks: brighter edge + subtle fill */
+.mini{
+  border-color: rgba(80,220,255,0.18);
+  background:
+    radial-gradient(700px 220px at 20% 0%, rgba(80,220,255,0.10), transparent 60%),
+    rgba(10,14,22,0.20);
+}
+
+/* 5) Tags: more aqua, more readable */
+.tag{
+  border-color: rgba(190,206,230,0.14);
+  background: rgba(255,255,255,0.03);
+  color: rgba(236,244,255,0.68);
+}
+.tag.blue{
+  border-color: rgba(80,220,255,0.40);
+  background: rgba(80,220,255,0.12);
+  color: rgba(200,245,255,0.98);
+}
+
+/* 6) Links: unmistakable */
+a{
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+}
+
+.section-desc a,
+.panel a,
+footer a{
+  color: rgba(195,245,255,0.98);
+  text-decoration: underline;
+  text-decoration-color: rgba(80,220,255,0.55);
+}
+.section-desc a:hover,
+.panel a:hover,
+footer a:hover{
+  text-decoration-color: rgba(80,220,255,0.95);
+  filter: drop-shadow(0 0 10px rgba(80,220,255,0.14));
+}
+
+/* 7) Nav: clearer that it’s interactive */
+.nav-right a{
+  border: 1px solid transparent;
+}
+.nav-right a:hover{
+  border-color: rgba(80,220,255,0.20);
+  background: rgba(80,220,255,0.07);
+  color: rgba(236,244,255,0.94);
+  box-shadow: inset 0 0 0 1px rgba(80,220,255,0.06);
+}
+
+/* 8) Buttons: make primary feel primary (not “grey pill”) */
+.btn{
+  border-color: rgba(190,206,230,0.16);
+  background: rgba(255,255,255,0.03);
+}
+.btn:hover{
+  border-color: rgba(80,220,255,0.34);
+  box-shadow: var(--aquaGlow);
+}
+
+.btn-primary{
+  border-color: rgba(80,220,255,0.55);
+  background:
+    linear-gradient(to bottom, rgba(80,220,255,0.30), rgba(80,220,255,0.12));
+  box-shadow: 0 14px 34px rgba(0,0,0,0.40), var(--aquaGlow2);
+}
+
+/* 9) Card CTA link: turn it into a “tool action” */
+.card a{
+  border-color: rgba(80,220,255,0.58);
+  background: rgba(80,220,255,0.16);
+  color: rgba(236,244,255,0.98);
+}
+.card a:hover{
+  background: rgba(80,220,255,0.22);
+  box-shadow: var(--aquaGlow);
+}
+
+/* 10) Focus styles (keyboard users) */
+a:focus-visible, .btn:focus-visible{
+  outline: none;
+  box-shadow: var(--aquaGlow);
+  border-color: rgba(80,220,255,0.70);
+}
+    .bg-img{
+      width: 100%;
+      z-index: -1;
+      position: fixed;
+      left: 0;
+      top: 0; 
+      opacity: 0.15;
+    }
+    /* mobile */
     @media (max-width: 520px){
       .nav-right{ display:none; }
-      header{ padding-top: 3.3rem; }
+      header{ padding-top: 3.0rem; }
+      .hero{ text-align: left; }
+      .hero-meta{ text-align: left; min-width: unset; }
     }
+    
   </style>
 </head>
 
 <body>
+  <img class="bg-img" src="main-bg.jpg" alt="carpentry career background">
+
+  <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-vignette" aria-hidden="true"></div>
 
   <!-- Top bar -->
   <div class="top-head">
     <div class="brand-left">
       <a href="https://knackforthis.com/">KnackForThis.com</a>
-      <span class="pill">Skill Hubs</span>
+      <span class="status-pill"><span class="dot" aria-hidden="true"></span> Skill Hubs</span>
     </div>
 
     <div class="nav-right" aria-label="Primary navigation">
@@ -422,99 +793,172 @@
   </div>
 
   <header>
-    <div class="wrap">
-      <span class="kicker">Aptitude + Reality Checks</span>
-      <h1>Find What You’re Built For</h1>
+    <div class="hero">
+      <span class="kicker"><span class="chip">diagnostic</span> skill fit, not guesswork</span>
+
+      <h1>Find The Skills You Have A Knack For</h1>
+
       <p class="sub">
-        Quick diagnostic quizzes + clean explanations.
-        No hype. No fluff. Just “would I be good at this?” answered like it matters.
+        Short diagnostics that evaluate real-world fit: tolerance for repetition, attention demands,
+        stress profile, precision, problem structure, and day-to-day constraints. This is built for the question:
+        “Would I be good at this?”
       </p>
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="/trades/">Start with Trades</a>
-        <a class="btn btn-ghost" href="/tech/">Or jump to Tech</a>
+      <div class="hero-row">
+        <div class="cta-row" aria-label="Primary calls to action">
+          <a class="btn btn-primary" href="/trades/">
+            Explore Trades <span class="arrow">→</span>
+          </a>
+          <a class="btn" href="/tech/">
+            Explore Tech <span class="arrow">→</span>
+          </a>
+        </div>
+
       </div>
-
-      <p style="margin: 0.95rem auto 0; max-width: 920px; color: rgba(216,253,255,0.78);">
-        Mobile-friendly. Built for search intent: “would I be good at ___”.
-      </p>
     </div>
   </header>
 
   <main>
+    <section style="margin-top: 10%;" class="section" aria-label="About KnackForThis">
+      <h2 class="section-title">What KnackForThis Is</h2>
+      <p class="section-desc">
+        KnackForThis is a skill-fit map. It helps people test whether the <em>daily reality</em> of a skill matches
+        how they actually operate — before investing months (or money) forcing a mismatch.
+      </p>
+
+      <div class="panel">
+        <p class="section-desc" style="margin:0;">
+          These diagnostics are designed around common friction points: sustained focus, pressure, precision,
+          physical repetition, ambiguity, and feedback tolerance. Results explain <strong>why</strong> a score landed where it did
+          and what to test next in real life.
+        </p>
+
+        <div class="panel-grid" aria-label="What you get">
+          <div class="mini">
+            <h3>Signal, not hype</h3>
+            <p>Clear fit indicators + common failure modes, in plain language.</p>
+          </div>
+          <div class="mini">
+            <h3>Reality constraints</h3>
+            <p>Time, stress, repetition, and precision are treated as first-class variables.</p>
+          </div>
+          <div class="mini">
+            <h3>Exploration path</h3>
+            <p>Next-step suggestions so you can test quickly and move with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="How it works">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-desc">
+        Choose a hub, take a short diagnostic, and get a breakdown of fit + friction points + practical next steps.
+        This isn’t a personality test and it doesn’t “assign” you a career — it helps you decide what’s worth testing further.
+      </p>
+      <hr class="divider" />
+    </section>
+
     <section class="section" aria-label="Hubs">
       <h2 class="section-title">Choose a Hub</h2>
       <p class="section-desc">
-        Pick a category. Each hub leads to specialized quizzes (and the honest “who should not do this” parts).
+        Each hub leads to specialized diagnostics and guides — including the honest “who should probably avoid this”
+        parts most sites won’t say out loud.
       </p>
 
-      <div class="grid">
         <div class="card">
-          <div class="badge">🛠️</div>
+          <div class="badge">hub</div>
           <h3>Trades</h3>
           <div class="meta">
-            <span class="tag aqua">Hands-on</span>
-            <span class="tag">Real constraints</span>
+            <span class="tag blue">hands-on</span>
+            <span class="tag">constraints</span>
           </div>
-          <p>Carpentry, plumbing, electrical, welding, and skilled paths where execution beats theory.</p>
-          <a href="/trades/">Enter Trades</a>
+          <p>
+            Carpentry, electrical, plumbing, welding, and skilled paths where consistency,
+            physical repetition, and execution under real conditions matter more than theory.
+          </p>
+          <a href="/trades/">View trade surveys <span class="arrow">→</span></a>
         </div>
 <!--
         <div class="card">
-          <div class="badge">💻</div>
+          <div class="badge">hub</div>
           <h3>Tech</h3>
           <div class="meta">
-            <span class="tag aqua">Systems</span>
-            <span class="tag">Problem-solving</span>
+            <span class="tag blue">systems</span>
+            <span class="tag">ambiguity</span>
           </div>
-          <p>Coding, data, cybersecurity, UX — clarity under ambiguity, not “I watched a tutorial.”</p>
-          <a href="/tech/">Enter Tech</a>
+          <p>
+            Coding, data, cybersecurity, UX — where your ability to reason under uncertainty
+            and debug calmly matters more than “watching tutorials.”
+          </p>
+          <a href="/tech/">View tech surveys <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
-          <div class="badge">🎨</div>
+          <div class="badge">hub</div>
           <h3>Creative</h3>
           <div class="meta">
-            <span class="tag yellow">Taste</span>
-            <span class="tag">Iteration</span>
+            <span class="tag blue">iteration</span>
+            <span class="tag">taste</span>
           </div>
-          <p>Design, writing, video, music — where repetition and feedback tolerance are the real gatekeepers.</p>
-          <a href="/creative/">Enter Creative</a>
+          <p>
+            Design, writing, video, music — where repetition, feedback tolerance, and finishing
+            are the actual gates.
+          </p>
+          <a href="/creative/">View creative surveys <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
-          <div class="badge">📈</div>
+          <div class="badge">hub</div>
           <h3>Business</h3>
           <div class="meta">
-            <span class="tag yellow">Decisions</span>
-            <span class="tag">People</span>
+            <span class="tag blue">decisions</span>
+            <span class="tag">people</span>
           </div>
-          <p>Sales, marketing, ops, leadership — choose, communicate, execute, and live with outcomes.</p>
-          <a href="/business/">Enter Business</a>
+          <p>
+            Sales, marketing, ops, leadership — choosing, communicating, executing,
+            and living with outcomes.
+          </p>
+          <a href="/business/">View business surveys <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
-          <div class="badge">🧬</div>
+          <div class="badge">hub</div>
           <h3>Health</h3>
           <div class="meta">
-            <span class="tag aqua">Consistency</span>
-            <span class="tag">Precision</span>
+            <span class="tag blue">consistency</span>
+            <span class="tag">precision</span>
           </div>
-          <p>Fitness, nutrition, care paths — the work is daily, and details quietly matter.</p>
-          <a href="/health/">Enter Health</a>
+          <p>
+            Fitness, nutrition, care paths — daily effort, details, and long timelines.
+            Good intentions aren’t enough.
+          </p>
+          <a href="/health/">View health surveys <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
-          <div class="badge">🚚</div>
+          <div class="badge">hub</div>
           <h3>Logistics</h3>
           <div class="meta">
-            <span class="tag aqua">Ops</span>
-            <span class="tag">Timing</span>
+            <span class="tag blue">operations</span>
+            <span class="tag">timing</span>
           </div>
-          <p>Supply chain, scheduling, dispatch, warehousing — calm execution and system thinking.</p>
-          <a href="/logistics/">Enter Logistics</a>
+          <p>
+            Supply chain, scheduling, dispatch, warehousing — calm execution,
+            system thinking, and reliability under pressure.
+          </p>
+          <a href="/logistics/">View logistics surveys <span class="arrow">→</span></a>
         </div>
       -->
+    </section>
+
+    <section class="section" aria-label="Intent and scope">
+      <h2 class="section-title">Intent & Scope</h2>
+      <div class="panel">
+        <p class="section-desc" style="margin:0;">
+          KnackForThis provides educational diagnostics only. Results are meant to inform exploration — not guarantee
+          outcomes, certifications, or employment. Skill fit depends on practice, environment, mentorship, and opportunity.
+        </p>
       </div>
     </section>
   </main>
@@ -522,7 +966,10 @@
   <footer>
     <div>
       <a href="/about/">About</a> •
+      <a href="/mission/">Mission</a> •
+      <a href="/editorial-standards/">Editorial Standards</a> •
       <a href="/privacy/">Privacy</a> •
+      <a href="/terms/">Terms</a> •
       <a href="/contact/">Contact</a>
     </div>
     <p class="fine">© <span id="y"></span> KnackForThis. Educational content only.</p>

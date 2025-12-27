@@ -49,18 +49,27 @@
   <style>
     :root{
       --bg:#0f0a06;
-      --panel:rgba(40,26,18,.60);
-      --panel2:rgba(28,18,12,.55);
+      --panel:rgba(40,26,18,.62);
+      --panel2:rgba(28,18,12,.62);
       --text:#f3e8dc;
       --muted:rgba(243,232,220,.82);
 
       --wood:#c79a6b;
-      --wood2:rgba(199,154,107,.25);
+      --wood2:rgba(199,154,107,.22);
+
+      /* NEW: tool-ish accent for separation (soft aqua) */
+      --aqua: rgba(92, 232, 255, 0.92);
+      --aqua2: rgba(92, 232, 255, 0.14);
+      --aquaLine: rgba(92, 232, 255, 0.30);
+
       --iron:#8a7f73;
 
       --radius:18px;
-      --shadow:0 0 22px rgba(199,154,107,.12);
+      --shadow:0 18px 56px rgba(0,0,0,.48);
+      --shadowSoft:0 0 22px rgba(199,154,107,.10);
       --max:1100px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
     *{ box-sizing:border-box; }
@@ -71,136 +80,415 @@
       color:var(--text);
       text-align:center;
       font-size:clamp(15px,3.8vw,17px);
-      line-height:1.55;
+      line-height:1.6;
       overflow-x:hidden;
     }
 
+    /* background: wood warmth + subtle tool grid */
     .bg{
-      position:fixed; inset:0; z-index:-1;
+      position:fixed; inset:0; z-index:-2;
       background:
-        radial-gradient(circle at 20% 15%, rgba(199,154,107,.18), transparent 45%),
-        radial-gradient(circle at 80% 20%, rgba(120,85,50,.14), transparent 46%),
-        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.65));
+        radial-gradient(circle at 20% 15%, rgba(199,154,107,.20), transparent 48%),
+        radial-gradient(circle at 78% 18%, rgba(120,85,50,.16), transparent 52%),
+        radial-gradient(circle at 50% 85%, rgba(92,232,255,.06), transparent 58%),
+        linear-gradient(to bottom, rgba(0,0,0,.30), rgba(0,0,0,.72));
+    }
+    .grid{
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background:
+        linear-gradient(to right, rgba(92,232,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(92,232,255,.05) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at 50% 22%, rgba(0,0,0,.85), rgba(0,0,0,.25) 55%, transparent 78%);
+      opacity:.75;
     }
 
     .top{
       position:fixed; top:0; left:0; width:100%;
       padding:.65rem 1rem;
-      background:rgba(25,16,10,.88);
+      background:rgba(18,12,8,.86);
       border-bottom:1px solid rgba(199,154,107,.22);
-      backdrop-filter:blur(8px);
+      backdrop-filter:blur(10px);
       display:flex;
       justify-content:space-between;
+      align-items:center;
       z-index:10;
+      gap: 1rem;
     }
+
     .top a{
       color:#fff;
       font-weight:900;
       text-decoration:none;
+      opacity:.96;
+    }
+
+    .crumb{
+      display:flex;
+      gap:.65rem;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+
+    .crumb a{
+      color: rgba(243,232,220,.88);
+      font-weight:900;
+      text-decoration:none;
+      padding:.35rem .5rem;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .crumb a:hover{
+      border-color: rgba(92,232,255,.18);
+      background: rgba(92,232,255,.05);
     }
 
     header{
       margin-top:72px;
       padding:1.2rem;
-      padding-top:3.4rem;
+      padding-top:3.25rem;
+      margin-bottom: 6%;
     }
 
+    /* Hero becomes a tool panel (grouped text, clearer hierarchy) */
     .wrap{
       max-width:var(--max);
       margin:auto;
-      background:var(--panel2);
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(199,154,107,.16), transparent 62%),
+        linear-gradient(to bottom, rgba(28,18,12,.74), rgba(18,12,8,.62));
       border:1px solid rgba(199,154,107,.22);
       border-radius:var(--radius);
       padding:1.35rem 1.2rem;
-      box-shadow:var(--shadow);
+      box-shadow: var(--shadow), var(--shadowSoft);
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* top seam */
+    .wrap::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, transparent, rgba(92,232,255,.65), rgba(199,154,107,.35), transparent);
+      opacity:.95;
+      pointer-events:none;
     }
 
     .kicker{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
       font-weight:900;
-      letter-spacing:.05em;
+      letter-spacing:.08em;
       text-transform:uppercase;
-      font-size:.9rem;
-      color:var(--wood);
-      background:rgba(199,154,107,.10);
-      border:1px solid rgba(199,154,107,.25);
+      font-size:.82rem;
+      color: rgba(243,232,220,.86);
+      font-family: var(--mono);
+      background: rgba(92,232,255,.05);
+      border:1px solid rgba(92,232,255,.16);
       padding:.35rem .6rem;
       border-radius:999px;
     }
+    .kicker .chip{
+      display:inline-block;
+      padding:.12rem .40rem;
+      border-radius:999px;
+      border:1px solid rgba(243,232,220,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(243,232,220,.88);
+      letter-spacing:.05em;
+    }
 
     h1{
-      margin:.75rem 0 .45rem;
+      margin:.85rem 0 .4rem;
       font-weight:900;
-      font-size:clamp(2rem,6.5vw,2.8rem);
-      color:#f0c38e;
+      font-size:clamp(2.0rem,6.5vw,2.9rem);
+      color:#f3d2aa;
       text-shadow:0 0 16px rgba(0,0,0,.9);
+      line-height:1.14;
     }
 
     .sub{
-      max-width:900px;
-      margin:auto;
-      color:rgba(243,232,220,.92);
+      max-width:920px;
+      margin:0;
+      color:rgba(243,232,220,.90);
+      font-size: 1.05rem;
     }
 
-    main{ padding:0 1rem 2.5rem; }
+    /* grouped hero blocks */
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1rem;
+      margin-top: 1.05rem;
+      align-items: start;
+    }
+
+    .hero-panel{
+      border-radius: 16px;
+      border: 1px solid rgba(92,232,255,.14);
+      background: rgba(0,0,0,.18);
+      padding: .95rem .95rem;
+      box-shadow: inset 0 0 0 1px rgba(199,154,107,.10);
+    }
+
+    .hero-panel h2{
+      margin: 0 0 .45rem;
+      font-size: 1.05rem;
+      color: rgba(92,232,255,.88);
+      font-family: var(--mono);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .bullets{
+      margin: 0;
+      padding-left: 1.1rem;
+      color: rgba(243,232,220,.86);
+      text-align:left;
+    }
+    .bullets li{ margin: .35rem 0; }
+
+    .hero-actions{
+      display:flex;
+      flex-direction: column;
+      gap: .65rem;
+      align-items: stretch;
+    }
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:12px;
+      padding:.85rem .95rem;
+      border:1px solid rgba(199,154,107,.48);
+      background: linear-gradient(to bottom, rgba(212,163,115,.95), rgba(181,133,85,.92));
+      color:#1a120b;
+      box-shadow: 0 10px 28px rgba(0,0,0,.38);
+      white-space: nowrap;
+      transition: transform .10s ease, filter .14s ease, box-shadow .14s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: saturate(1.03); }
+
+    .btn-secondary{
+      background: rgba(0,0,0,.22);
+      color: rgba(243,232,220,.92);
+      border-color: rgba(92,232,255,.22);
+      box-shadow: inset 0 0 0 1px rgba(92,232,255,.08);
+    }
+    .btn-secondary:hover{ box-shadow: 0 0 0 3px rgba(92,232,255,.14); }
+
+    .btn .arrow{
+      font-family: var(--mono);
+      opacity:.85;
+    }
+
+    .micro{
+      margin: .25rem 0 0;
+      color: rgba(243,232,220,.74);
+      font-family: var(--mono);
+      font-size: .92rem;
+      line-height: 1.45;
+      text-align:left;
+    }
+
+    main{ padding:0 1rem 2.6rem; }
 
     .section{
       max-width:var(--max);
       margin:1.15rem auto;
+      text-align:left;
     }
 
     .section h2{
-      margin:.5rem 0 .35rem;
-      color:#f0c38e;
-      font-size:clamp(1.3rem,5vw,1.9rem);
+      margin: .9rem 0 .35rem;
+      color: #f3d2aa;
+      font-size: clamp(1.3rem, 5vw, 1.9rem);
+      position: relative;
+      padding-left: .85rem;
+    }
+    .section h2::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.2em;
+      width:4px;
+      height:1.0em;
+      border-radius:999px;
+      background: linear-gradient(to bottom, transparent, rgba(92,232,255,.75), transparent);
     }
 
     .section p{
-      max-width:920px;
-      margin:.35rem auto 1rem;
-      color:var(--muted);
+      max-width: 980px;
+      margin: .35rem 0 1rem;
+      color: var(--muted);
     }
 
-    .grid{
-      display:grid;
-      gap:1.05rem;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    .panel{
+      border-radius: var(--radius);
+      border: 1px solid rgba(92,232,255,.14);
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.06), transparent 60%),
+        rgba(0,0,0,.16);
+      padding: 1rem 1rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.40);
     }
+
+    .panel-grid{
+      display:grid;
+      gap: .85rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: .85rem;
+    }
+
+    .mini{
+      border-radius: 16px;
+      border: 1px solid rgba(199,154,107,.18);
+      background: rgba(0,0,0,.18);
+      padding: .9rem .9rem;
+    }
+    .mini h3{
+      margin: 0 0 .35rem;
+      color: rgba(92,232,255,.88);
+      font-size: 1.05rem;
+    }
+    .mini p{ margin: 0; color: rgba(243,232,220,.80); }
 
     .card{
-      background:radial-gradient(circle at top left, rgba(199,154,107,.18), rgba(20,12,8,.85) 62%);
-      border:1px solid rgba(199,154,107,.28);
-      border-radius:var(--radius);
-      padding:1.15rem;
+      margin-top:2%;
+      position: relative;
+      border-radius: var(--radius);
+      border: 1px solid rgba(199,154,107,.22);
+      background:
+        radial-gradient(900px 260px at 16% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(199,154,107,.16), transparent 62%),
+        rgba(0,0,0,.16);
+        background-color: black;
+      padding: 1.05rem 1.05rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.44);
       text-align:left;
-      box-shadow:0 0 18px rgba(0,0,0,.45);
+      display:flex;
+      flex-direction:column;
+      gap: .6rem;
+      overflow:hidden;
+      flex-direction: column;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, rgba(92,232,255,.70), rgba(199,154,107,.28), transparent);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .badge{
+      position:absolute;
+      top: 12px;
+      right: 12px;
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      color: rgba(243,232,220,.72);
+      border: 1px solid rgba(92,232,255,.18);
+      background: rgba(0,0,0,.18);
+      padding: .22rem .48rem;
+      border-radius: 999px;
     }
 
     .card h3{
-      margin:0 0 .35rem;
+      margin: 0;
       color:#f3d2aa;
-      font-size:1.3rem;
+      font-size: 1.7rem;
+      padding-right: 5rem;
+      text-align: center;
     }
 
     .card p{
-      margin:0 0 .85rem;
-      color:var(--muted);
+      margin: 0;
+      color: rgba(243,232,220,.86);
     }
 
-    .btn{
-      display:inline-block;
+    .signals{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.45rem;
+      margin-top: .2rem;
+    }
+    .tag{
+      font-family: var(--mono);
+      font-weight: 800;
+      font-size: .78rem;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      padding: .22rem .5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(92,232,255,.18);
+      background: rgba(92,232,255,.06);
+      color: rgba(92,232,255,.88);
+    }
+    .tag.wood{
+      border-color: rgba(199,154,107,.22);
+      background: rgba(199,154,107,.08);
+      color: rgba(243,232,220,.86);
+    }
+
+    .card .more{
+      margin-top: .2rem;
+      color: rgba(243,232,220,.78);
+      font-size: .98rem;
+    }
+
+    .card .cta{
+      margin-top:auto;
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .link{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
       text-decoration:none;
-      font-weight:900;
-      border-radius:12px;
-      padding:.75rem .95rem;
-      background:linear-gradient(to right, #d4a373, #b58555);
-      color:#1a120b;
-      border:1px solid rgba(199,154,107,.55);
+      font-weight: 900;
+      border-radius: 12px;
+      padding: .78rem .92rem;
+      border: 1px solid rgba(92,232,255,.26);
+      background: rgba(92,232,255,.10);
+      color: rgba(243,232,220,.96);
+      transition: transform .10s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+      white-space: nowrap;
+    }
+    .link:hover{
+      transform: translateY(-1px);
+      background: rgba(92,232,255,.14);
+      border-color: rgba(92,232,255,.40);
+      box-shadow: 0 0 0 3px rgba(92,232,255,.12);
+    }
+
+    .hint{
+      font-family: var(--mono);
+      font-size: .88rem;
+      color: rgba(243,232,220,.70);
     }
 
     footer{
       margin-top:2rem;
-      background:rgba(20,12,8,.95);
+      background:rgba(20,12,8,.92);
       padding:1rem;
       border-top:1px solid rgba(199,154,107,.22);
     }
@@ -209,106 +497,197 @@
       text-decoration:none;
       font-weight:700;
     }
+    .bg-img{
+      width: 100%;
+      z-index: -1;
+      position: fixed;
+      left: 0;
+      top: 0; 
+      opacity: 0.15;
+    }
+    /* mobile */
+    @media (max-width: 740px){
+      .wrap{ text-align:left; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-actions{ flex-direction: column; }
+      .card{ min-height: unset; }
+    }
   </style>
 </head>
-
 <body>
-<div class="bg"></div>
+  <img class="bg-img" src="carpentry-background.jpg" alt="carpentry career background">
+  <div class="bg"></div>
+  <div class="grid" aria-hidden="true"></div>
 
-<div class="top">
-  <a href="/">KnackForThis</a>
-  <a href="/trades/">Trades</a>
-</div>
-
-<header>
-  <div class="wrap">
-    <span class="kicker">Trades • Wood • Craft</span>
-    <h1>Carpentry</h1>
-    <p class="sub">
-      Carpentry is not one thing. It ranges from fast, rough structural work to slow,
-      highly visible precision. This page explains the reality of the craft, then lets you
-      test fit — first broadly, then by specialization.
-    </p>
-
-    <div style="margin-top:1rem;">
-      <a class="btn" href="/trades/carpentry/diagnostic/">Take the Carpentry Diagnostic</a>
+  <div class="top">
+    <a href="/">KnackForThis</a>
+    <div class="crumb">
+      <a href="/trades/">Trades</a>
+      <a href="/trades/carpentry/">Carpentry</a>
     </div>
   </div>
-</header>
 
-<main>
-  <section class="section">
-    <h2>What Carpentry Actually Demands</h2>
-    <p>
-      Across all types, carpentry rewards people who tolerate repetition, measurement,
-      material constraints, and mistakes that cost time. The difference between subtypes
-      is where the pressure comes from: speed, visibility, clients, or precision.
-    </p>
-  </section>
+  <header>
+    <div class="wrap">
+      <span class="kicker"><span class="chip">trade hub</span> carpentry</span>
 
-  <section class="section">
-    <h2>Explore Types of Carpentry</h2>
-    <p>
-      Each path emphasizes different strengths. These pages dig into the realities of
-      each specialization and link to focused diagnostics.
-    </p>
+      <h1>Carpentry</h1>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Finish Carpentry</h3>
-        <p>High visibility, tight tolerances, detail work that clients notice immediately.</p>
-        <a class="btn" href="/trades/carpentry/finish-carpentry/">Explore</a>
-      </div>
+      <p class="sub">
+        Carpentry covers a wide range of work, from fast structural builds to slow,
+        highly visible finish work. This hub gives a plain-language overview of the craft
+        and routes you to diagnostic quizzes that help you determine whether it’s a good fit
+        for you — overall and by specialization.
+      </p>
 
-      <div class="card">
-        <h3>Framing</h3>
-        <p>Fast pace, physical output, working from plans under time pressure.</p>
-        <a class="btn" href="/trades/carpentry/framing/">Explore</a>
-      </div>
+      <div class="hero-grid">
+        <div class="hero-panel">
+          <h2>What this page is for</h2>
+          <p>
+            Use this page to understand what carpentry generally involves,
+            then take a diagnostic survey to evaluate whether the work style,
+            environment, and demands align with how you operate.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3>Cabinet Making</h3>
-        <p>Shop-based precision, repeatable processes, and long feedback loops.</p>
-        <a class="btn" href="/trades/carpentry/cabinet-making/">Explore</a>
-      </div>
-
-      <div class="card">
-        <h3>Rough Carpentry</h3>
-        <p>Structural work where function matters more than appearance.</p>
-        <a class="btn" href="/trades/carpentry/rough-carpentry/">Explore</a>
-      </div>
-
-      <div class="card">
-        <h3>Restoration Carpentry</h3>
-        <p>Problem-solving, legacy structures, and adapting to unknown conditions.</p>
-        <a class="btn" href="/trades/carpentry/restoration-carpentry/">Explore</a>
-      </div>
-
-      <div class="card">
-        <h3>Custom Furniture</h3>
-        <p>Design-meets-craft, long timelines, and high personal ownership of results.</p>
-        <a class="btn" href="/trades/carpentry/custom-furniture/">Explore</a>
+        <div class="hero-actions">
+          <a class="btn" href="/trades/carpentry/diagnostic/">
+            Take the Carpentry Diagnostic <span class="arrow">→</span>
+          </a>
+          <a class="btn btn-secondary" href="/trades/">
+            Back to Trades <span class="arrow">→</span>
+          </a>
+          <p class="micro">
+            Diagnostics are short, neutral, and designed to assess fit —
+            not interest, hype, or career promises.
+          </p>
+        </div>
       </div>
     </div>
-  </section>
-</main>
+  </header>
 
-<footer>
-  <div>
-    <a href="/about/">About</a> •
-    <a href="/mission/">Mission</a> •
-    <a href="/editorial-standards/">Editorial Standards</a> •
-    <a href="/privacy/">Privacy</a> •
-    <a href="/terms/">Terms</a> •
-    <a href="/contact/">Contact</a>
-  </div>
-  <p style="opacity:.9;margin:.6rem 0 0;">
-    © <span id="y"></span> KnackForThis
-  </p>
-</footer>
+  <main>
+    <section class="section">
+      <h2>What Carpentry Involves</h2>
+      <p>
+        At its core, carpentry involves working with wood and related materials to build,
+        modify, or repair structures and finished elements. The day-to-day experience varies
+        significantly depending on the type of carpentry and the environment in which the work is done.
+      </p>
+    </section>
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+    <section class="section">
+      <h2>Explore Types of Carpentry</h2>
+      <p>
+        Each specialization below represents a different kind of work environment and workflow.
+        Selecting one will take you to a diagnostic survey designed to evaluate fit for that path.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Finish Carpentry</h3>
+          <p>
+            Interior trim and detail work focused on visible elements such as doors, casing,
+            baseboards, and built-ins.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/carpentry/finish-carpentry/">
+              Take the finish carpentry diagnostic <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Framing</h3>
+          <p>
+            Structural construction work involving walls, floors, roofs, and load-bearing components
+            on active jobsites.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/carpentry/framing/">
+              Take the framing diagnostic <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Cabinet Making</h3>
+          <p>
+            Shop-based carpentry focused on building cabinets and casework using repeatable,
+            measured processes.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/carpentry/cabinet-making/">
+              Take the cabinet making diagnostic <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Rough Carpentry</h3>
+          <p>
+            Functional construction tasks such as decking, forms, blocking, and structural support
+            where appearance is secondary.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/carpentry/rough-carpentry/">
+              Take the rough carpentry diagnostic <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Restoration Carpentry</h3>
+          <p>
+            Repair and rebuild work on existing structures, often involving older buildings
+            and non-standard conditions.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/carpentry/restoration-carpentry/">
+              Take the restoration carpentry diagnostic <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Custom Furniture</h3>
+          <p>
+            Design-driven carpentry focused on building individual furniture pieces
+            from concept through completion.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/carpentry/custom-furniture/">
+              Take the custom furniture diagnostic <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/about/">About</a> •
+      <a href="/mission/">Mission</a> •
+      <a href="/editorial-standards/">Editorial Standards</a> •
+      <a href="/privacy/">Privacy</a> •
+      <a href="/terms/">Terms</a> •
+      <a href="/contact/">Contact</a>
+    </div>
+    <p style="opacity:.9;margin:.6rem 0 0;">
+      © <span id="y"></span> KnackForThis
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
+
 </html>
