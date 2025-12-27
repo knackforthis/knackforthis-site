@@ -249,25 +249,11 @@
       margin: 0 auto;
       text-align: left;
       border-radius: var(--radius);
-      background: linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
       padding: 1.35rem 1.25rem;
       position: relative;
       overflow: hidden;
     }
 
-    /* thin "scanner line" accent */
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset: 0;
-      pointer-events:none;
-      background:
-        linear-gradient(to right, transparent, rgba(140,200,255,0.10), transparent);
-      transform: translateX(-60%);
-      opacity: 0.9;
-    }
 
     .kicker{
       display:inline-flex;
@@ -613,19 +599,6 @@
   border-color: rgba(190,206,230,0.16);
 }
 
-.hero{
-  border-color: rgba(80,220,255,0.18);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.50);
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  left: 0; right: 0; top: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, rgba(80,220,255,0.85), transparent);
-  opacity: 0.75;
-  pointer-events:none;
-}
 
 .panel{
   position: relative;
@@ -793,15 +766,13 @@ a:focus-visible, .btn:focus-visible{
   </div>
 
   <header>
-    <div class="hero">
+    <div class="hero" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
       <span class="kicker"><span class="chip">diagnostic</span> skill fit, not guesswork</span>
 
       <h1>Find The Skills You Have A Knack For</h1>
 
-      <p class="sub">
-        Short diagnostics that evaluate real-world fit: tolerance for repetition, attention demands,
-        stress profile, precision, problem structure, and day-to-day constraints. This is built for the question:
-        “Would I be good at this?”
+      <p class="sub" style="font-size: 1.3rem; text-align: center;">
+        Take any quiz to answer: <i>Would I be good at this?</i>
       </p>
 
       <div class="hero-row">
@@ -809,7 +780,7 @@ a:focus-visible, .btn:focus-visible{
           <a class="btn btn-primary" href="/trades/">
             Explore Trades <span class="arrow">→</span>
           </a>
-          <a class="btn" href="/tech/">
+          <a class="btn btn-primary" href="/tech/">
             Explore Tech <span class="arrow">→</span>
           </a>
         </div>
@@ -819,53 +790,8 @@ a:focus-visible, .btn:focus-visible{
   </header>
 
   <main>
-    <section style="margin-top: 10%;" class="section" aria-label="About KnackForThis">
-      <h2 class="section-title">What KnackForThis Is</h2>
-      <p class="section-desc">
-        KnackForThis is a skill-fit map. It helps people test whether the <em>daily reality</em> of a skill matches
-        how they actually operate — before investing months (or money) forcing a mismatch.
-      </p>
-
-      <div class="panel">
-        <p class="section-desc" style="margin:0;">
-          These diagnostics are designed around common friction points: sustained focus, pressure, precision,
-          physical repetition, ambiguity, and feedback tolerance. Results explain <strong>why</strong> a score landed where it did
-          and what to test next in real life.
-        </p>
-
-        <div class="panel-grid" aria-label="What you get">
-          <div class="mini">
-            <h3>Signal, not hype</h3>
-            <p>Clear fit indicators + common failure modes, in plain language.</p>
-          </div>
-          <div class="mini">
-            <h3>Reality constraints</h3>
-            <p>Time, stress, repetition, and precision are treated as first-class variables.</p>
-          </div>
-          <div class="mini">
-            <h3>Exploration path</h3>
-            <p>Next-step suggestions so you can test quickly and move with confidence.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="How it works">
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-desc">
-        Choose a hub, take a short diagnostic, and get a breakdown of fit + friction points + practical next steps.
-        This isn’t a personality test and it doesn’t “assign” you a career — it helps you decide what’s worth testing further.
-      </p>
-      <hr class="divider" />
-    </section>
 
     <section class="section" aria-label="Hubs">
-      <h2 class="section-title">Choose a Hub</h2>
-      <p class="section-desc">
-        Each hub leads to specialized diagnostics and guides — including the honest “who should probably avoid this”
-        parts most sites won’t say out loud.
-      </p>
-
         <div class="card">
           <div class="badge">hub</div>
           <h3>Trades</h3>
@@ -877,7 +803,7 @@ a:focus-visible, .btn:focus-visible{
             Carpentry, electrical, plumbing, welding, and skilled paths where consistency,
             physical repetition, and execution under real conditions matter more than theory.
           </p>
-          <a href="/trades/">View trade surveys <span class="arrow">→</span></a>
+          <a href="/trades/">View trade quizzes <span class="arrow">→</span></a>
         </div>
 <!--
         <div class="card">
@@ -891,7 +817,7 @@ a:focus-visible, .btn:focus-visible{
             Coding, data, cybersecurity, UX — where your ability to reason under uncertainty
             and debug calmly matters more than “watching tutorials.”
           </p>
-          <a href="/tech/">View tech surveys <span class="arrow">→</span></a>
+          <a href="/tech/">View tech quizzes <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
@@ -905,7 +831,7 @@ a:focus-visible, .btn:focus-visible{
             Design, writing, video, music — where repetition, feedback tolerance, and finishing
             are the actual gates.
           </p>
-          <a href="/creative/">View creative surveys <span class="arrow">→</span></a>
+          <a href="/creative/">View creative quizzes <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
@@ -919,7 +845,7 @@ a:focus-visible, .btn:focus-visible{
             Sales, marketing, ops, leadership — choosing, communicating, executing,
             and living with outcomes.
           </p>
-          <a href="/business/">View business surveys <span class="arrow">→</span></a>
+          <a href="/business/">View business quizzes <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
@@ -933,7 +859,7 @@ a:focus-visible, .btn:focus-visible{
             Fitness, nutrition, care paths — daily effort, details, and long timelines.
             Good intentions aren’t enough.
           </p>
-          <a href="/health/">View health surveys <span class="arrow">→</span></a>
+          <a href="/health/">View health quizzes <span class="arrow">→</span></a>
         </div>
 
         <div class="card">
@@ -947,7 +873,7 @@ a:focus-visible, .btn:focus-visible{
             Supply chain, scheduling, dispatch, warehousing — calm execution,
             system thinking, and reliability under pressure.
           </p>
-          <a href="/logistics/">View logistics surveys <span class="arrow">→</span></a>
+          <a href="/logistics/">View logistics quizzes <span class="arrow">→</span></a>
         </div>
       -->
     </section>

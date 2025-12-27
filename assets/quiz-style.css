@@ -10,7 +10,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  cursor: url(imgs/cursor.png) 10 10, auto;
   line-height: 1.5;
   padding: clamp(1%, 2vw, 2%);
   overflow-x: hidden;
@@ -37,10 +36,10 @@ body {
 }
 
 .quiz-title {
-  font-size: clamp(1.1em, 2.5vw, 1.3em);
+  background-color: rgba(0, 0, 0, 0.534);
+  font-size: clamp(1.1em, 2.5vw, 1.6em);
   font-family: 'Roboto', cursive;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.541);
+  color: rgb(255, 255, 255);
   border-radius: 15px;
   padding: clamp(0.7em, 2vw, 1em);
   font-weight: 800;
@@ -51,31 +50,21 @@ body {
   width: 100%;
   height: clamp(50px, 6vw, 60px);
   font-size: clamp(1.3em, 3vw, 2em);
-  color: black;
-  background-image: linear-gradient(to top left, rgb(255, 230, 0), white);
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(to top left, rgba(255, 153, 0, 0.493), rgba(255, 255, 255, 0.527));
   border-radius: 15px;
   margin-top: clamp(0.5em, 1.5vw, 1%);
   font-family: 'Passero One', cursive;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .start:hover {
   animation: optionPop 0.1s linear forwards;
-  cursor: url(imgs/cursorButton.png) 20 20, auto;
 }
-.lessons-progress{
-    position: relative;
-    height: 15px;
-    width: 100%;
-    border-top: 1px yellow solid;
-}
-.lessons-text{
-    font-size: 1em;
-    color: yellow;
-    text-align: left;
-}
+
 .disclaimer {
   margin-top: clamp(2%, 3vw, 3%);
   font-size: clamp(0.75em, 1.5vw, 1em);
@@ -89,42 +78,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-font-size: clamp(1.05em, 2.8vw, 1.35em);
-  color: #000;
+  font-size: clamp(1em, 2.2vw, 1.3em);
+  color: #ffffff;
   font-weight: 600;
   font-family: 'Roboto', cursive;
   position: relative;
   border-radius: 20px;
-  background: #c9fff7;
-  box-shadow: 0 0 35px rgba(238, 255, 0, 0.637);
+  background: #0000005b;
+
   overflow: hidden;
   transition: transform 0.2s ease;
   display: none;
 }
 
-/* Stronger neon animated border */
-.question-container::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: inherit;
-  background: linear-gradient(120deg, #00ffff, #007bff, #00ffaa, #00ffff);
-  background-size: 300% 300%;
-  animation: borderFlow 5s linear infinite;
-  filter: blur(6px);
-  z-index: -2;
-  opacity: 0.9;
-}
-
-/* Clear solid center */
-.question-container::after {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  border-radius: inherit;
-  background: linear-gradient(180deg, #b9fff5 0%, #e6fffa 100%);
-  z-index: -1;
-}
 
 /* Animation for gradient motion */
 @keyframes borderFlow {
@@ -144,16 +110,16 @@ font-size: clamp(1.05em, 2.8vw, 1.35em);
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.849);
+  background-color: white;
   border-radius: 12px;
   color: black;
-font-size: clamp(1.05em, 3.5vw, 1.35em);
+  font-size: clamp(0.9em, 2vw, 1.2em);
   box-shadow: 0px 0px 15px grey;
   margin-top: clamp(0.8em, 2vw, 1em);
   padding: clamp(0.8em, 2vw, 1em);
   transform: scale(0);
   animation: scaleUp 0.2s linear forwards;
-  cursor: url(imgs/cursorButton.png) 20 20, auto;
+  cursor: pointer;
 }
 .option:hover { background-color: aqua; }
 
@@ -170,7 +136,7 @@ font-size: clamp(1.05em, 3.5vw, 1.35em);
   height: clamp(6px, 1vw, 8px);
   width: 0%;
   border-radius: 10px;
-  background-color: green;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 20px aqua;
   display: none;
   position: absolute;
@@ -191,6 +157,7 @@ font-size: clamp(1.05em, 3.5vw, 1.35em);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: white;
   background-color: rgb(31, 31, 31);
   box-sizing: border-box;
@@ -221,11 +188,31 @@ font-size: clamp(1.05em, 3.5vw, 1.35em);
   width: clamp(60%, 20vw, 20%);
   transition: background 0.2s ease, transform 0.1s ease;
   text-align: center;
-  cursor: url(imgs/cursorButton.png) 20 20, auto;
+  cursor: pointer;
 }
 .buttons a:hover { background: #0070ff; transform: scale(1.05); }
 
+.info-section {
+  width: 90%;
+  max-width: 720px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  padding: clamp(15px, 3vw, 25px);
+  color: #d6e4f0;
+  line-height: 1.7;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2);
+  margin-bottom: 20px;
+  align-self: center;
+  margin-top: clamp(3%, 5vw, 5%);
+}
 
+.info-section h2 {
+  color: #00eaff;
+  margin-bottom: clamp(6px, 1.5vw, 10px);
+  text-shadow: 0 0 10px #00eaff;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+}
 
 .continue {
   text-align: center;
@@ -238,29 +225,27 @@ font-size: clamp(1.05em, 3.5vw, 1.35em);
   font-weight: 600;
   display: none;
   margin-top: clamp(0.5em, 2vw, 1%);
-  cursor: url(imgs/cursorButton.png) 20 20, auto;
+  cursor: pointer;
 }
 .continue:hover { animation: optionPop 0.1s linear forwards; }
-
-.bg-lottie {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  transform: scale(1.2);
-  opacity: 0.2;
-  z-index: -1;
-}
+    .bg-img{
+      width: 100%;
+      z-index: -1;
+      position: fixed;
+      left: 0;
+      top: 0; 
+      opacity: 0.15;
+      pointer-events: none;
+    }
 
 .a-home {
   text-decoration: none;
   text-align: center;
-  font-size: 2em;
-  font-family: 'Roboto', cursive;
-  color: aqua;
+  font-size: clamp(1.8rem, 5vw, 3em);
+  font-family: 'Passero One', cursive;
+  color: rgb(255, 255, 255);
   text-shadow: 0px 0px 10px black;
   width: 100%;
-  text-shadow: 0px 0px 10px rgb(100, 237, 255);;
 }
 
 h1 {
@@ -268,6 +253,7 @@ h1 {
   width: 100%;
   margin-bottom: 0;
   font-size: clamp(1.3rem, 4vw, 2rem);
+  color: rgb(255, 163, 109);
 }
 
 footer {
@@ -299,12 +285,13 @@ footer {
   letter-spacing: 0.3px;
   color: #fff;
   text-align: center;
-  background: #111827;
+  background: #1f2f52;
   box-shadow: 0 0 12px rgba(0,0,0,0.6);
   transition: all 0.25s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 /* subtle ambient hover effect */
@@ -330,18 +317,12 @@ footer {
 }
 /* TRY AGAIN (magenta glow) */
 .restart {
-  color: white;
+  background: linear-gradient(90deg, #ff005e, #ff66c4);
+  color: #fff;
+  box-shadow: 0 0 25px rgba(255,0,120,0.5);
 }
 .restart:hover {
   box-shadow: 0 0 35px rgba(255,0,120,0.8);
-}
-
-.mental-rep{
-  color: rgb(255, 255, 255);
-  background-color: rgba(73, 73, 0, 0.397);
-  cursor: url(imgs/cursor.png) 10 10, auto;
-  position: relative;
-  overflow: visible;
 }
 
 /* SHARE (deep blue gradient, bright edge) */
@@ -355,7 +336,6 @@ footer {
   box-shadow: 0 0 35px rgba(0,255,255,0.6);
   transform: scale(1.03);
 }
-
 
 .summary-share{
   display: none;
@@ -415,21 +395,16 @@ footer {
 .hidden { display: none; }
 .info-section a{
   text-decoration: none;
-  color: aqua;
+  color: rgb(255, 255, 255);
 }
 
-
-
-
-
-/*------------------------------------------------------------------------------------------------------------*/
 
 
 .info-section {
   width: 90%;
   max-width: 720px;
   position: relative;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgb(0, 0, 0);
   border-radius: 18px;
   padding: clamp(16px, 3vw, 26px);
   color: #d6e4f0;
@@ -438,24 +413,12 @@ footer {
   margin-bottom: 20px;
   align-self: center;
   margin-top: clamp(3%, 5vw, 5%);
-  box-shadow: 0px 0px 26px rgba(0, 255, 255, 0.16);
+  box-shadow: 0px 0px 26px rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(0, 234, 255, 0.14);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-.info-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 234, 255, 0.30), rgba(140, 0, 255, 0.18));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
 
 .info-header {
   margin-bottom: 14px;
@@ -468,14 +431,14 @@ footer {
   text-transform: uppercase;
   padding: 6px 10px;
   border-radius: 999px;
-  color: rgba(214, 228, 240, 0.9);
+  color: rgb(255, 255, 255);
   background: rgba(0, 234, 255, 0.10);
   border: 1px solid rgba(0, 234, 255, 0.16);
   margin: 0 auto 10px auto;
 }
 
 .info-section h2 {
-  color: #00eaff;
+  color: #ffffff;
   margin: 0 0 10px 0;
   text-shadow: 0 0 12px rgba(0, 234, 255, 0.75);
   font-size: clamp(1.15rem, 2.8vw, 1.5rem);
@@ -485,7 +448,7 @@ footer {
 .lead {
   margin: 0 auto;
   max-width: 62ch;
-  color: rgba(214, 228, 240, 0.95);
+  color: rgb(255, 255, 255);
   font-size: clamp(0.98rem, 2.1vw, 1.06rem);
 }
 
@@ -516,7 +479,7 @@ footer {
 .info-card h3 {
   margin: 0 0 8px 0;
   font-size: 1.02rem;
-  color: rgba(0, 234, 255, 0.95);
+  color: rgba(255, 255, 255, 0.95);
   letter-spacing: 0.02em;
 }
 
@@ -545,7 +508,7 @@ footer {
   border-radius: 999px;
   margin-top: 8px;
   flex: 0 0 10px;
-  background: rgba(0, 234, 255, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0 10px rgba(0, 234, 255, 0.35);
 }
 
@@ -555,7 +518,7 @@ footer {
   border-radius: 12px;
   background: rgba(78, 0, 122, 0.22);
   border: 1px solid rgba(78, 0, 122, 0.35);
-  color: rgba(214, 228, 240, 0.95);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .mini-note .muted {
@@ -641,7 +604,7 @@ footer {
   padding: 12px 14px;
   list-style: none;
   font-weight: 600;
-  color: rgba(214, 228, 240, 0.96);
+  color: rgba(255, 255, 255, 0.96);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -671,205 +634,50 @@ footer {
 .faq-answer {
   padding: 0 14px 14px 14px;
   color: rgba(214, 228, 240, 0.9);
-}
-
-.faq-answer {
   border-top: 1px solid rgba(0, 234, 255, 0.10);
-  padding-top: 12px;
+}
+.faq-item[open] .faq-answer{
+  display: block !important;
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* =========================
-   SUMMIT PIZAZZ PATCH
-   Paste near the end of CSS
-   ========================= */
 
-/* 1) Global polish */
-body {
-  background: radial-gradient(1200px 700px at 20% 10%, rgba(0,255,255,0.18), transparent 55%),
-              radial-gradient(900px 600px at 80% 0%, rgba(140,0,255,0.16), transparent 55%),
-              linear-gradient(135deg, #0e1117, #1a1f29);
-}
-
-/* Soft animated “aurora” overlay */
-body::before {
-  content: "";
+#consent-banner {
   position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  background:
-    radial-gradient(800px 450px at 25% 30%, rgba(0,255,255,0.10), transparent 60%),
-    radial-gradient(750px 420px at 70% 35%, rgba(255, 230, 0, 0.08), transparent 60%),
-    radial-gradient(900px 600px at 50% 90%, rgba(0, 120, 255, 0.10), transparent 60%);
-  filter: blur(10px);
-  opacity: 0.9;
-  animation: auroraDrift 12s ease-in-out infinite alternate;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 40, 60, 0.95);
+  color: #c8fce1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0,255,255,0.3);
+  box-shadow: 0 -4px 25px rgba(0,255,255,0.15);
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  align-items: center;
 }
-
-@keyframes auroraDrift {
-  0%   { transform: translate3d(0,0,0) scale(1); }
-  100% { transform: translate3d(0,-18px,0) scale(1.03); }
+#consent-banner a {
+  color: aqua;
+  text-decoration: none;
+  font-weight: 500;
 }
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  body::before { animation: none; }
-  .quiz-container::before { animation: none; }
-  .start::before { animation: none; }
+#consent-banner a:hover { text-shadow: 0 0 8px aqua; }
+#agree-btn {
+  margin-top: 0.6rem;
+  background: linear-gradient(to right, #00ac81, #00fff2);
+  border: none;
+  color: #001a1a;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-
-/* 2) Hero + “summit” header pop */
-.a-home {
-  font-size: clamp(1.4rem, 3.6vw, 2rem);
-  letter-spacing: 0.02em;
-  text-shadow:
-    0 0 14px rgba(0,255,255,0.55),
-    0 0 30px rgba(0,255,255,0.22);
-  opacity: 0.95;
-}
-
-h1 {
-  margin-top: clamp(8px, 2vw, 18px);
-  font-size: clamp(1.45rem, 4.8vw, 2.4rem);
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  text-shadow:
-    0 0 18px rgba(0,255,255,0.18),
-    0 0 35px rgba(140,0,255,0.14);
-}
-
-/* Optional: make the second line feel “tagline-y” if you wrap it later */
-h1 em { opacity: 0.95; font-style: normal; }
-
-/* 3) Quiz container becomes a “boss arena” */
-.quiz-container {
-  border-radius: 22px;
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(0, 234, 255, 0.10);
-  box-shadow:
-    0 0 26px rgba(0,255,255,0.12),
-    0 16px 60px rgba(0,0,0,0.45);
-  overflow: hidden;
-}
-
-/* Animated edge glow */
-.quiz-container::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(120deg,
-    rgba(0,255,255,0.55),
-    rgba(0,120,255,0.45),
-    rgba(255,230,0,0.35),
-    rgba(140,0,255,0.45),
-    rgba(0,255,255,0.55));
-  background-size: 260% 260%;
-  animation: summitBorder 7s linear infinite;
-  filter: blur(10px);
-  opacity: 0.65;
-  z-index: -1;
-}
-
-@keyframes summitBorder {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* 4) Title card gets “artifact” feel */
-.quiz-title {
-  font-size: clamp(1.08rem, 2.9vw, 1.35rem); /* mobile-friendly */
-  font-weight: 800;
-  line-height: 1.45;
-  padding: clamp(0.9em, 2.5vw, 1.1em);
-  border: 1px solid rgba(0, 234, 255, 0.14);
-  box-shadow:
-    0 0 18px rgba(0,255,255,0.12),
-    inset 0 0 0 1px rgba(255,255,255,0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* 5) Start button becomes the “summit gate” */
-.start {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 230, 0, 0.40);
-  box-shadow:
-    0 0 22px rgba(255,230,0,0.25),
-    0 0 40px rgba(0,255,255,0.12);
-  transform: translateZ(0);
-}
-
-/* Shimmer sweep */
-.start::before {
-  content: "";
-  position: absolute;
-  top: -30%;
-  left: -40%;
-  width: 60%;
-  height: 180%;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(255,255,255,0.65),
-    transparent);
-  transform: rotate(20deg);
-  animation: shimmer 2.6s ease-in-out infinite;
-  opacity: 0.55;
-}
-
-@keyframes shimmer {
-  0%   { left: -60%; opacity: 0.0; }
-  20%  { opacity: 0.6; }
-  50%  { left: 120%; opacity: 0.4; }
-  100% { left: 120%; opacity: 0.0; }
-}
-
-.start:hover {
-  transform: scale(1.02);
-  box-shadow:
-    0 0 28px rgba(255,230,0,0.35),
-    0 0 55px rgba(0,255,255,0.18);
-}
-
-/* 6) Options look less “grey box”, more “neon card” */
-.option {
-  border: 1px solid rgba(0, 234, 255, 0.18);
-  box-shadow:
-    0 0 16px rgba(0,255,255,0.10),
-    0 10px 25px rgba(0,0,0,0.25);
-  transition: transform 0.12s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.option:hover {
-  transform: scale(1.02);
-  box-shadow:
-    0 0 22px rgba(0,255,255,0.22),
-    0 14px 35px rgba(0,0,0,0.30);
-}
-
-/* 7) Continue button: cleaner, punchier */
-.continue {
-  border: 1px solid rgba(0, 234, 255, 0.25);
-  box-shadow:
-    0 0 20px rgba(0,255,255,0.22),
-    0 12px 25px rgba(0,0,0,0.20);
-}
-.continue:hover { transform: scale(1.03); }
-
-/* 8) Result card: “final report” feel */
-.result {
-  border: 1px solid rgba(0, 234, 255, 0.12);
-  box-shadow:
-    0 0 20px rgba(0,255,255,0.10),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-}
-
-/* 9) Mobile: make everything breathe more */
-@media (max-width: 480px) {
-  .quiz-container { width: 94%; }
-  .quiz-title { font-size: clamp(1.08rem, 4.2vw, 1.28rem); }
-  .option { font-size: clamp(1.05rem, 4.1vw, 1.32rem); }
-  .disclaimer { font-size: clamp(0.88rem, 3.4vw, 1rem); }
-}
+#agree-btn:hover { transform: scale(1.05); }
