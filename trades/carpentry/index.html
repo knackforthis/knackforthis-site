@@ -3,16 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9PLC0WEHQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-L9PLC0WEHQ');
-  </script>
-
   <title>Carpentry — Is This a Fit? | KnackForThis</title>
 
   <meta name="description" content="A clear carpentry reality check. Learn what carpentry actually demands, then take diagnostics for base fit and specific types like framing, finish carpentry, cabinet making, and more." />
@@ -58,46 +48,46 @@
       "hasPart":[
         {
           "@type":"Quiz",
-          "@id":"https://knackforthis.com/trades/carpentry/diagnostic/#quiz",
+          "@id":"https://knackforthis.com/trades/carpentry/diagnostic-quiz/#quiz",
           "name":"Carpentry Diagnostic",
-          "url":"https://knackforthis.com/trades/carpentry/diagnostic/",
+          "url":"https://knackforthis.com/trades/carpentry/diagnostic-quiz/",
           "isAccessibleForFree": true
         },
         {
           "@type":"Quiz",
-          "@id":"https://knackforthis.com/trades/carpentry/finish-carpentry/#quiz",
+          "@id":"https://knackforthis.com/trades/carpentry/finish-carpentry-quiz/#quiz",
           "name":"Finish Carpentry Diagnostic",
-          "url":"https://knackforthis.com/trades/carpentry/finish-carpentry/"
+          "url":"https://knackforthis.com/trades/carpentry/finish-carpentry-quiz/"
         },
         {
           "@type":"Quiz",
-          "@id":"https://knackforthis.com/trades/carpentry/framing/#quiz",
+          "@id":"https://knackforthis.com/trades/carpentry/framing-quiz/#quiz",
           "name":"Framing Carpentry Diagnostic",
-          "url":"https://knackforthis.com/trades/carpentry/framing/"
+          "url":"https://knackforthis.com/trades/carpentry/framing-quiz/"
         },
         {
           "@type":"Quiz",
-          "@id":"https://knackforthis.com/trades/carpentry/cabinet-making/#quiz",
+          "@id":"https://knackforthis.com/trades/carpentry/cabinet-making-quiz/#quiz",
           "name":"Cabinet Making Diagnostic",
-          "url":"https://knackforthis.com/trades/carpentry/cabinet-making/"
+          "url":"https://knackforthis.com/trades/carpentry/cabinet-making-quiz/"
         },
         {
           "@type":"Quiz",
-          "@id":"https://knackforthis.com/trades/carpentry/rough-carpentry/#quiz",
+          "@id":"https://knackforthis.com/trades/carpentry/rough-carpentry-quiz/#quiz",
           "name":"Rough Carpentry Diagnostic",
-          "url":"https://knackforthis.com/trades/carpentry/rough-carpentry/"
+          "url":"https://knackforthis.com/trades/carpentry/rough-carpentry-quiz/"
         },
         {
           "@type":"Quiz",
-          "@id":"https://knackforthis.com/trades/carpentry/restoration-carpentry/#quiz",
+          "@id":"https://knackforthis.com/trades/carpentry/restoration-carpentry-quiz/#quiz",
           "name":"Restoration Carpentry Diagnostic",
-          "url":"https://knackforthis.com/trades/carpentry/restoration-carpentry/"
+          "url":"https://knackforthis.com/trades/carpentry/restoration-carpentry-quiz/"
         },
         {
           "@type":"Quiz",
-          "@id":"https://knackforthis.com/trades/carpentry/custom-furniture/#quiz",
+          "@id":"https://knackforthis.com/trades/carpentry/custom-furniture-quiz/#quiz",
           "name":"Custom Furniture Diagnostic",
-          "url":"https://knackforthis.com/trades/carpentry/custom-furniture/"
+          "url":"https://knackforthis.com/trades/carpentry/custom-furniture-quiz/"
         }
       ]
     },
@@ -574,6 +564,42 @@
       top: 0; 
       opacity: 0.15;
     }
+    
+      #consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 40, 60, 0.95);
+        color: #c8fce1;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.95rem;
+        border-top: 1px solid rgba(0,255,255,0.3);
+        box-shadow: 0 -4px 25px rgba(0,255,255,0.15);
+        z-index: 9999;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+      #consent-banner a {
+        color: aqua;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      #consent-banner a:hover { text-shadow: 0 0 8px aqua; }
+      #agree-btn {
+        margin-top: 0.6rem;
+        background: linear-gradient(to right, #00ac81, #00fff2);
+        border: none;
+        color: #001a1a;
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      #agree-btn:hover { transform: scale(1.05); }
     /* mobile */
     @media (max-width: 740px){
       .wrap{ text-align:left; }
@@ -630,7 +656,7 @@
       <div class="hero-grid"  style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
 
         <div class="hero-actions">
-          <a class="btn" href="/trades/carpentry/diagnostic/">
+          <a class="btn" href="/trades/carpentry/diagnostic-quiz/">
             Take the Carpentry Diagnostic <span class="arrow">→</span>
           </a>
           <a class="btn btn-secondary" href="/trades/">
@@ -663,7 +689,7 @@
             baseboards, and built-ins.
           </p>
           <div class="cta">
-            <a class="link" href="/trades/carpentry/finish-carpentry/">
+            <a class="link" href="/trades/carpentry/finish-carpentry-quiz/">
               Take the finish carpentry diagnostic <span class="arrow">→</span>
             </a>
           </div>
@@ -677,7 +703,7 @@
             on active jobsites.
           </p>
           <div class="cta">
-            <a class="link" href="/trades/carpentry/framing/">
+            <a class="link" href="/trades/carpentry/framing-quiz/">
               Take the framing diagnostic <span class="arrow">→</span>
             </a>
           </div>
@@ -691,7 +717,7 @@
             measured processes.
           </p>
           <div class="cta">
-            <a class="link" href="/trades/carpentry/cabinet-making/">
+            <a class="link" href="/trades/carpentry/cabinet-making-quiz/">
               Take the cabinet making diagnostic <span class="arrow">→</span>
             </a>
           </div>
@@ -705,7 +731,7 @@
             where appearance is secondary.
           </p>
           <div class="cta">
-            <a class="link" href="/trades/carpentry/rough-carpentry/">
+            <a class="link" href="/trades/carpentry/rough-carpentry-quiz/">
               Take the rough carpentry diagnostic <span class="arrow">→</span>
             </a>
           </div>
@@ -719,7 +745,7 @@
             and non-standard conditions.
           </p>
           <div class="cta">
-            <a class="link" href="/trades/carpentry/restoration-carpentry/">
+            <a class="link" href="/trades/carpentry/restoration-carpentry-quiz/">
               Take the restoration carpentry diagnostic <span class="arrow">→</span>
             </a>
           </div>
@@ -733,7 +759,7 @@
             from concept through completion.
           </p>
           <div class="cta">
-            <a class="link" href="/trades/carpentry/custom-furniture/">
+            <a class="link" href="/trades/carpentry/custom-furniture-quiz/">
               Take the custom furniture diagnostic <span class="arrow">→</span>
             </a>
           </div>
@@ -742,6 +768,64 @@
     </section>
   </main>
 
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our 
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a> 
+      and 
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+
+<script>
+  const GA_ID = 'G-L9PLC0WEHQ';
+
+  function loadGA() {
+    // Prevent double-loading
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+
+    // Create script tag for gtag.js
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(s);
+
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
+  // Show banner if no consent yet
+  const consent = localStorage.getItem('knackConsent');
+  if (!consent) {
+    document.getElementById('consent-banner').style.display = 'flex';
+  } else if (consent === 'true') {
+    // Consent already given on a previous visit
+    loadGA();
+  }
+
+  // Agree click -> store + hide + load GA
+  document.getElementById('agree-btn').addEventListener('click', function() {
+    localStorage.setItem('knackConsent', 'true');
+    document.getElementById('consent-banner').style.display = 'none';
+    loadGA();
+  });
+
+  // Your FAQ toggle (keep it)
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.nextElementSibling.classList.toggle('open');
+    });
+  });
+  </script>
   <footer>
     <div>
       <a href="/about/">About</a> •

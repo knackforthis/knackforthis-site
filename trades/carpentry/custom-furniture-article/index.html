@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Custom Furniture Carpentry: What It Really Requires | KnackForThis</title>
+<meta name="description" content="Custom furniture is precision carpentry with design judgment — proportion, joinery, surfaces, and repeatable detail work that has to look right up close. Here’s what the day-to-day actually demands, what drains people, and where to test your fit." />
+<meta name="keywords" content="custom furniture, furniture maker, custom furniture carpentry, woodworking, fine woodworking, joinery, furniture building, bespoke furniture, custom furniture reality, is custom furniture right for me, KnackForThis" />
+<link rel="canonical" href="https://knackforthis.com/trades/carpentry/custom-furniture-article/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="KnackForThis" />
+<meta property="og:title" content="Custom Furniture Carpentry: What It Really Requires" />
+<meta property="og:description" content="Custom furniture is design judgment + precision execution: clean joinery, surfaces, and proportion. Read the reality, then take the diagnostic to test fit." />
+<meta property="og:url" content="https://knackforthis.com/trades/carpentry/custom-furniture-article/" />
+<meta property="og:image" content="https://knackforthis.com/preview.png" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Custom Furniture Reality Guide | KnackForThis" />
+<meta name="twitter:description" content="What custom furniture really demands — then a diagnostic to test whether you fit it." />
+<meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg1:#1a0f0a;
+  --bg2:#080503;
+
+  --panel:#241612;
+  --panel2:#1b110e;
+
+  --text:#efe7de;
+  --muted:rgba(239,231,222,.82);
+
+  --wood:#c49a6c;
+  --wood2:rgba(196,154,108,.18);
+
+  --silver:#c8d0d8;
+  --silver2:rgba(200,208,216,.16);
+
+  --aqua:#7fe7ff;
+  --aqua2:rgba(127,231,255,.12);
+
+  --border:rgba(200,208,216,.16);
+  --shadow:0 0 26px rgba(127,231,255,.08);
+
+  --radius:16px;
+  --max:980px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(196,154,108,.16) 0%, transparent 48%),
+    radial-gradient(circle at 78% 26%, rgba(200,208,216,.12) 0%, transparent 55%),
+    radial-gradient(circle at 50% 8%, rgba(127,231,255,.10) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 70%);
+  overflow-x:hidden;
+  line-height:1.85;
+}
+
+/* top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  background:rgba(16,10,8,.86);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.brand .mark{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 18px rgba(127,231,255,.22);
+}
+.brand .name{
+  font-weight:900;
+  color:var(--silver);
+  letter-spacing:.02em;
+}
+.mini-nav{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.mini-nav a{
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  color:rgba(239,231,222,.88);
+  padding:.42rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.14);
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.mini-nav a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(127,231,255,.35);
+  box-shadow:0 0 14px rgba(127,231,255,.12);
+}
+
+/* header */
+header{
+  padding:2.6rem 1rem 1.2rem;
+}
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.55rem 1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.18);
+  background:linear-gradient(to bottom, rgba(36,22,18,.78), rgba(20,12,10,.68));
+  box-shadow:var(--shadow), inset 0 0 22px rgba(200,208,216,.06);
+  position:relative;
+  overflow:hidden;
+}
+.header-inner::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(127,231,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 24%, rgba(200,208,216,.10), transparent 64%),
+    radial-gradient(circle at 50% 70%, rgba(196,154,108,.12), transparent 62%);
+  animation:pulse 12s infinite alternate;
+  pointer-events:none;
+}
+@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.18);} }
+
+.kicker{
+  position:relative;
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  color:rgba(200,208,216,.92);
+  background:rgba(200,208,216,.08);
+  border:1px solid rgba(200,208,216,.14);
+  padding:.35rem .62rem;
+  border-radius:999px;
+}
+
+h1{
+  position:relative;
+  margin:.7rem 0 .55rem;
+  font-family:'Passero One', cursive;
+  color:var(--silver);
+  font-size:clamp(2.1rem, 4.6vw, 2.95rem);
+  text-shadow:0 0 20px rgba(0,0,0,.70);
+}
+.lede{
+  position:relative;
+  margin:0;
+  max-width:900px;
+  color:rgba(239,231,222,.92);
+  font-size:1.12rem;
+}
+
+/* content */
+main{
+  max-width:var(--max);
+  margin:1.2rem auto 0;
+  padding:0 1.2rem 2.5rem;
+}
+
+.section{
+  margin-top:1.6rem;
+  padding:1.25rem 1.1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.14);
+  background:linear-gradient(180deg, rgba(27,17,14,.55), rgba(10,7,6,.25));
+  box-shadow:inset 0 0 18px rgba(200,208,216,.05);
+}
+
+h2{
+  margin:.1rem 0 .6rem;
+  color:var(--aqua);
+  border-left:4px solid rgba(127,231,255,.65);
+  padding-left:.65rem;
+  letter-spacing:.01em;
+}
+
+p{margin:.6rem 0;}
+a{color:var(--aqua); font-weight:700; text-decoration:none; transition:.25s ease;}
+a:hover{color:#fff; text-shadow:0 0 12px rgba(127,231,255,.26);}
+
+.highlight{
+  margin-top:1rem;
+  padding:1rem 1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(127,231,255,.18);
+  background:linear-gradient(to right, var(--aqua2), rgba(200,208,216,.06), rgba(0,0,0,0));
+  box-shadow:inset 0 0 18px rgba(127,231,255,.08);
+}
+
+/* smaller image placeholders */
+.figure-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:.85rem;
+  margin-top:1rem;
+}
+.img-ph{
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(127,231,255,.18);
+  box-shadow:0 0 18px rgba(127,231,255,.06);
+  padding:0;
+  background:none;
+}
+
+/* bullets */
+.list{
+  margin:.7rem 0 0;
+  padding:0;
+  list-style:none;
+  text-align:left;
+}
+.list li{
+  margin:.55rem 0;
+  padding-left:1.15rem;
+  position:relative;
+  color:rgba(239,231,222,.90);
+}
+.list li::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:99px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 10px rgba(127,231,255,.18);
+  position:absolute;
+  left:0; top:.55rem;
+  opacity:.95;
+}
+
+/* FAQ */
+.faq{
+  margin-top:1rem;
+  text-align:left;
+}
+.faq details{
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.16);
+  border-radius:14px;
+  padding:.85rem .9rem;
+  margin:.75rem 0;
+}
+.faq summary{
+  cursor:pointer;
+  font-weight:900;
+  color:rgba(239,231,222,.95);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"＋";
+  float:right;
+  color:rgba(127,231,255,.85);
+  font-weight:900;
+}
+.faq details[open] summary::after{content:"—";}
+.faq .answer{
+  margin-top:.6rem;
+  color:rgba(239,231,222,.86);
+}
+
+/* footer */
+footer{
+  background:rgba(10,7,6,.92);
+  color:rgba(239,231,222,.86);
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:0.92rem;
+  margin-top:2.2rem;
+  border-top:1px solid rgba(127,231,255,.12);
+}
+
+@media (max-width: 920px){
+  .figure-row{grid-template-columns:1fr; }
+  .mini-nav{display:none;}
+  .section{padding:1.05rem 1rem;}
+}
+</style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="https://knackforthis.com/">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">KnackForThis.com</span>
+    </a>
+
+    <nav class="mini-nav" aria-label="Quick navigation">
+      <a href="https://knackforthis.com/">Home</a>
+      <a href="https://knackforthis.com/trades/">Trades</a>
+      <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a>
+    </nav>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <span class="kicker">Trades • Carpentry • Custom Furniture</span>
+      <h1>Custom Furniture Carpentry: What It Really Requires</h1>
+      <p class="lede">
+        Custom furniture is where “carpentry” starts behaving like design, engineering, and finish work all at once.
+        You’re building pieces people live with up close: tables, desks, shelving, seating, built-ins-as-furniture, and one-off commissions.
+        If framing is “make it strong and straight — fast,” custom furniture is “make it strong, straight, and beautiful — on purpose.”
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What Custom Furniture Actually Is</h2>
+      <p>
+        Custom furniture is the craft of designing and building standalone (or semi-standalone) pieces that have to work structurally,
+        feel good to use, and look clean from every angle. Unlike cabinets (where a wall can hide sins) or framing (where drywall covers reality),
+        furniture is exposed. Surfaces, edges, proportions, and joinery are the product.
+      </p>
+      <p>
+        People imagine furniture making as “creative woodworking.” Reality: it’s <strong>design judgment + tolerance discipline</strong>.
+        You’re making a hundred decisions that determine whether the final piece looks expensive or looks like a well-intentioned science fair project.
+        The job is less about one heroic cut and more about staying consistent across the entire build.
+      </p>
+
+      <div class="figure-row" aria-label="Image placeholders">
+        <img class="img-ph" src="imgs/furniture-joinery-detail.jpg" alt="Furniture joinery detail: tight-fit joints and clean shoulder lines"/>
+        <img class="img-ph" src="imgs/tabletop-surface-prep.jpg" alt="Tabletop surface preparation: planing, sanding, and flattening"/>
+        <img class="img-ph" src="imgs/custom-furniture-finish.jpg" alt="Applying a furniture finish: wiping, brushing, and even sheen control"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Spend Time Doing</h2>
+      <p>
+        Custom furniture is a workflow, but it’s less standardized than cabinets because every project changes. Your day usually lives in:
+        planning and measuring, milling stock flat and square, joinery, dry-fitting, refining, sanding, finishing, and fixing tiny issues you didn’t know existed
+        until the piece was assembled in real light.
+      </p>
+
+      <ul class="list">
+        <li><strong>Design + planning:</strong> interpreting what a client wants, choosing proportions, and making workable dimensions.</li>
+        <li><strong>Milling stock:</strong> flattening, squaring, thicknessing, managing wood movement, and selecting grain.</li>
+        <li><strong>Joinery:</strong> mortise/tenon, dovetails, dados, loose tenons, dowels, or modern methods depending on build style.</li>
+        <li><strong>Dry-fit + refinement:</strong> clamping, checking square, correcting twist, tuning edge alignments and reveals.</li>
+        <li><strong>Surface prep + finishing:</strong> sanding discipline, grain raising, pore fill (sometimes), and finish consistency.</li>
+        <li><strong>Problem solving:</strong> fixing tear-out, correcting a slight warp, hiding a glue line, repairing a ding without redoing everything.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Furniture punishes sloppy prep. If your process is messy, your surfaces will betray you at the exact moment you think you’re “almost done.”
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where the Pressure Comes From</h2>
+      <p>
+        Pressure comes from <strong>visible standards</strong> and <strong>irreversible steps</strong>.
+        Furniture has lots of points-of-no-return: cutting joinery, glue-ups, shaping, and finishing.
+        You don’t get infinite “hide it with trim” options. Many mistakes are either permanent or expensive to fix.
+      </p>
+      <p>
+        There’s also time pressure in a sneakier form: custom work can balloon. If you under-estimate hours, you don’t just lose time —
+        you lose money and momentum. The best furniture makers aren’t only precise; they’re realistic about workflow.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What Traits Actually Matter</h2>
+      <p>
+        Custom furniture rewards people who can hold a high standard without self-destructing.
+        You need taste, but you also need the ability to execute that taste repeatedly.
+      </p>
+
+      <ul class="list">
+        <li><strong>Design judgment:</strong> you can sense proportions, spacing, and line harmony (or you’re willing to learn it deliberately).</li>
+        <li><strong>Precision patience:</strong> you can do careful work without rushing when you’re “close.”</li>
+        <li><strong>Surface discipline:</strong> you respect sanding and prep because you know finish reveals everything.</li>
+        <li><strong>Redo resilience:</strong> you can fix small mistakes without spiraling into “I’m trash.”</li>
+        <li><strong>Wood movement respect:</strong> you think about seasonal movement so the piece survives real life.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Furniture makers win by managing “invisible variables” — grain direction, movement, finish behavior, and cumulative tolerance.
+          That’s brain work as much as hand work.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Who Should Probably Avoid It</h2>
+      <p>
+        No judgment — it’s better to pick a lane that rewards your strengths than to force yourself into a craft you’ll resent.
+      </p>
+
+      <ul class="list">
+        <li><strong>You hate long projects:</strong> furniture can be slow. If you need fast daily “completion,” you may struggle.</li>
+        <li><strong>You get impatient with prep:</strong> sanding, flattening, and refinement are huge parts of the job.</li>
+        <li><strong>You need consistent repeatability:</strong> if you want a system you can run on autopilot, cabinets may fit better.</li>
+        <li><strong>You want jobsite pace:</strong> furniture is often shop-centered with fewer “move fast” moments.</li>
+        <li><strong>You don’t like aesthetic decisions:</strong> furniture asks for taste and proportion, not only measurement.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          If you like precision but want more structure, compare with
+          <a href="https://knackforthis.com/trades/carpentry/cabinet-making-quiz/">cabinet making</a>.
+          If you like visible standards but prefer on-site installs, compare with
+          <a href="https://knackforthis.com/trades/carpentry/finish-carpentry-quiz/">finish carpentry</a>.
+          If you want speed and production, compare with
+          <a href="https://knackforthis.com/trades/carpentry/framing-quiz/">framing</a> or
+          <a href="https://knackforthis.com/trades/carpentry/rough-carpentry-quiz/">rough carpentry</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The “Furniture Maker Brain” vs Other Carpentry Paths</h2>
+      <p>
+        Custom furniture overlaps with cabinet making and finish carpentry, but it’s a different mental center.
+        Furniture is judged by <strong>form</strong> and <strong>touch</strong> as much as fit. It’s not just “does it install cleanly?” but “does it feel right?”
+      </p>
+
+      <ul class="list">
+        <li><strong>Compared to cabinets:</strong> less production repetition, more one-off decision making and design.</li>
+        <li><strong>Compared to finish carpentry:</strong> more shop workflow and joinery, fewer “make crooked walls look straight” battles.</li>
+        <li><strong>Compared to framing:</strong> less physical grind, more tolerance discipline and surface/finish standards.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Next Step: Get a Signal, Then Compare</h2>
+      <p>
+        If custom furniture sounds appealing, don’t decide based on aesthetic alone. Decide based on whether you can live inside the work:
+        careful planning, high standards, surface prep, and long projects where “almost done” can still mean “hours left.”
+      </p>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Run the <a href="https://knackforthis.com/trades/carpentry/custom-furniture-quiz/">Custom Furniture Fit Diagnostic</a> first.
+          Then compare paths from the <a href="https://knackforthis.com/trades/carpentry/">Carpentry Hub</a> or step back to the
+          <a href="https://knackforthis.com/trades/">Trades Hub</a>.
+          If you want the full map, start at the <a href="https://knackforthis.com/">homepage</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+
+      <div class="faq" aria-label="Frequently Asked Questions">
+        <details class="faq-item">
+          <summary>Do I need to be an “artist” to make custom furniture?</summary>
+          <div class="answer">
+            Not an artist — but you do need some design judgment, or the willingness to build it. Furniture is exposed and proportion-driven, so taste matters. The good news: a lot of “taste” is learnable through references and repetition.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is custom furniture mostly hand tools or power tools?</summary>
+          <div class="answer">
+            Both. Many shops use machines for milling and efficiency, then hand tools for fitting and refinement. The “right” mix depends on your style, budget, and the kind of work you do.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What’s the hardest part for most people?</summary>
+          <div class="answer">
+            Surface prep and finish consistency — plus holding a high standard across a long project without rushing at the end. Furniture punishes “close enough” at the final step.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the custom furniture diagnostic actually measure?</summary>
+          <div class="answer">
+            It’s not a skill test. It estimates alignment between your tolerances (design judgment, precision patience, long-project stamina, surface discipline, redo resilience) and the day-to-day reality of custom furniture work.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>If I’m “mixed fit,” does that mean I should avoid furniture?</summary>
+          <div class="answer">
+            Not automatically. Mixed fit often means you can do it, but you’ll need the right workflow and expectations — and you may want to start with simpler builds to develop surface discipline and confidence.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://knackforthis.com/">Home</a> •
+      <a href="https://knackforthis.com/trades/">Trades</a> •
+      <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a> •
+      <a href="https://knackforthis.com/contact/">Contact</a> •
+      <a href="https://knackforthis.com/privacy/">Privacy</a> •
+      <a href="https://knackforthis.com/terms/">Terms</a>
+    </p>
+    <p style="margin:.6rem 0 0;">
+      KnackForThis is educational. Diagnostics are for self-assessment only and are not career advice.<br />
+      © 2025 KnackForThis. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <style>
+  #consent-banner{
+    position:fixed;
+    bottom:0; left:0;
+    width:100%;
+    background:rgba(16,10,8,.95);
+    color:rgba(239,231,222,.90);
+    text-align:center;
+    padding:1rem;
+    font-size:.95rem;
+    border-top:1px solid rgba(127,231,255,.22);
+    box-shadow:0 -4px 25px rgba(127,231,255,.08);
+    z-index:9999;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:.45rem;
+  }
+  #consent-banner a{ color:var(--aqua); text-decoration:none; font-weight:800; }
+  #consent-banner a:hover{ text-shadow:0 0 8px rgba(127,231,255,.28); }
+  #agree-btn{
+    margin-top:.2rem;
+    background:linear-gradient(135deg, rgba(127,231,255,.95), rgba(200,208,216,.92));
+    border:none;
+    color:#150e0c;
+    padding:.5rem 1.2rem;
+    border-radius:10px;
+    font-weight:900;
+    cursor:pointer;
+    transition:transform .12s ease;
+  }
+  #agree-btn:hover{ transform:scale(1.04); }
+  </style>
+
+  <script>
+    const GA_ID = 'G-L9PLC0WEHQ';
+
+    function loadGA(){
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+
+    const consent = localStorage.getItem('knackConsent');
+    if (!consent){
+      document.getElementById('consent-banner').style.display = 'flex';
+    } else if (consent === 'true'){
+      loadGA();
+    }
+
+    document.getElementById('agree-btn').addEventListener('click', function(){
+      localStorage.setItem('knackConsent', 'true');
+      document.getElementById('consent-banner').style.display = 'none';
+      loadGA();
+    });
+
+    // Optional: FAQ accordion behavior (close others on open)
+    document.addEventListener('click', (e) => {
+      const summary = e.target.closest('.faq details > summary');
+      if (!summary) return;
+      e.preventDefault();
+
+      const clicked = summary.parentElement;
+      const faq = clicked.closest('.faq');
+      const willOpen = !clicked.open;
+
+      faq.querySelectorAll('details').forEach(d => { if (d !== clicked) d.open = false; });
+      clicked.open = willOpen;
+    });
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://knackforthis.com/trades/carpentry/custom-furniture-article/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://knackforthis.com/trades/" },
+        { "@type": "ListItem", "position": 3, "name": "Carpentry", "item": "https://knackforthis.com/trades/carpentry/" },
+        { "@type": "ListItem", "position": 4, "name": "Custom Furniture", "item": "https://knackforthis.com/trades/carpentry/custom-furniture-article/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://knackforthis.com/trades/carpentry/custom-furniture-article/#webpage",
+      "url": "https://knackforthis.com/trades/carpentry/custom-furniture-article/",
+      "name": "Custom Furniture Carpentry: What It Really Requires",
+      "description": "Custom furniture is precision carpentry with design judgment — proportion, joinery, surfaces, and repeatable detail work that has to look right up close. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "isPartOf": { "@id": "https://knackforthis.com/#website" },
+      "about": { "@id": "https://knackforthis.com/trades/carpentry/#topic" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://knackforthis.com/trades/carpentry/custom-furniture-article/#article",
+      "headline": "Custom Furniture Carpentry: What It Really Requires",
+      "description": "Custom furniture is precision carpentry with design judgment — proportion, joinery, surfaces, and repeatable detail work that has to look right up close. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "image": "https://knackforthis.com/preview.png",
+      "mainEntityOfPage": { "@id": "https://knackforthis.com/trades/carpentry/custom-furniture-article/#webpage" },
+      "author": { "@id": "https://knackforthis.com/#org" },
+      "publisher": { "@id": "https://knackforthis.com/#org" },
+      "inLanguage": "en",
+      "about": [
+        "custom furniture",
+        "furniture making",
+        "fine woodworking",
+        "joinery",
+        "surface preparation",
+        "wood finishing",
+        "skilled trades"
+      ],
+      "keywords": [
+        "custom furniture",
+        "furniture maker",
+        "custom furniture carpentry",
+        "woodworking",
+        "fine woodworking",
+        "joinery",
+        "furniture building",
+        "bespoke furniture",
+        "custom furniture reality",
+        "is custom furniture right for me",
+        "KnackForThis"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://knackforthis.com/#org",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knackforthis.com/favicon.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knackforthis.com/#website",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knackforthis.com/trades/carpentry/#topic",
+      "name": "Carpentry"
+    }
+  ]
+}
+  </script>
+</body>
+</html>

@@ -95,21 +95,13 @@
 <link rel="apple-touch-icon" href="/favicon.png">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9PLC0WEHQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-L9PLC0WEHQ');
-  </script>
 
 <link rel="stylesheet" href="https://knackforthis.com/assets/quiz-style.css">
 <script src="change-per-quiz.js"></script>
 </head>
 <body>
   
-  <a class="a-home" href="https://knackforthis.com/trades/carpentry/diagnostic/">KnackForThis.com</a>
+  <a class="a-home" href="https://knackforthis.com/trades/carpentry/">KnackForThis.com</a>
   <video
   class="bg-img"
   id="bgvid"
@@ -164,7 +156,7 @@
       <a class="summary-button good-fit" href="https://knackforthis.com/trades/carpentry/rough-carpentry/">Rough Carpentry</a>
       <a class="summary-button good-fit" href="https://knackforthis.com/trades/carpentry/restoration-carpentry">Restoration Carpentry</a>
       <a class="summary-button good-fit" href="https://knackforthis.com/trades/carpentry/custom-furniture/">Custom Furniture</a>
-      <a class="summary-button">Back To Carpentry Hub</a>
+      <a class="summary-button" href="https://kanckforthis.com/trades/carpentry/">Back To Carpentry Hub</a>
     </div>
 
     <div class="option-container"></div>
@@ -182,14 +174,52 @@
     <button id="agree-btn">✓ I Agree</button>
   </div>
 
-  <script>
-    if (!localStorage.getItem('siteConsent')) {
-      document.getElementById('consent-banner').style.display = 'flex';
-    }
-    document.getElementById('agree-btn').addEventListener('click', function() {
-      localStorage.setItem('siteConsent', 'true');
-      document.getElementById('consent-banner').style.display = 'none';
+
+<script>
+  const GA_ID = 'G-60XD8825Z3';
+
+  function loadGA() {
+    // Prevent double-loading
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+
+    // Create script tag for gtag.js
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(s);
+
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
+  // Show banner if no consent yet
+  const consent = localStorage.getItem('knackConsent');
+  if (!consent) {
+    document.getElementById('consent-banner').style.display = 'flex';
+  } else if (consent === 'true') {
+    // Consent already given on a previous visit
+    loadGA();
+  }
+
+  // Agree click -> store + hide + load GA
+  document.getElementById('agree-btn').addEventListener('click', function() {
+    localStorage.setItem('knackConsent', 'true');
+    document.getElementById('consent-banner').style.display = 'none';
+    loadGA();
+  });
+
+  // Your FAQ toggle (keep it)
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.nextElementSibling.classList.toggle('open');
     });
+  });
   </script>
   
   <section class="info-section" aria-labelledby="info-title">
@@ -342,7 +372,6 @@
   </script>
 
   <footer>
-      <p>
     <div>
       <a href="/about/">About</a> •
       <a href="/mission/">Mission</a> •
@@ -351,9 +380,8 @@
       <a href="/terms/">Terms</a> •
       <a href="/contact/">Contact</a>
     </div>
-</p>
-    This quiz is for educational purposes only and does not constitute financial advice.<br>
-    <p>© 2025 Trendline Gala. All rights reserved. | Interactive financial education through quizzes and games.</p>
+    This quiz is for educational purposes only and does not constitute career advice.<br>
+    <p>© 2025 KnackForThis. All rights reserved.</p>
   </footer>
 </body>
 </html>

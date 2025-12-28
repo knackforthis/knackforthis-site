@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Restoration Carpentry: What It Really Requires | KnackForThis</title>
+<meta name="description" content="Restoration carpentry is repair + reconstruction with detective work — diagnosing old structures, matching details, and solving weird problems without destroying the character of a building. Here’s what the day-to-day actually demands, what drains people, and where to test your fit." />
+<meta name="keywords" content="restoration carpentry, restoration carpenter, historic restoration, old house repair, carpentry repair, wood rot repair, trim replication, preservation carpentry, restoration carpentry reality, is restoration carpentry right for me, KnackForThis" />
+<link rel="canonical" href="https://knackforthis.com/trades/carpentry/restoration-carpentry-article/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="KnackForThis" />
+<meta property="og:title" content="Restoration Carpentry: What It Really Requires" />
+<meta property="og:description" content="Restoration carpentry is carpentry + diagnosis: repair, replicate, and rebuild without erasing the building’s character. Read the reality, then take the diagnostic to test fit." />
+<meta property="og:url" content="https://knackforthis.com/trades/carpentry/restoration-carpentry-article/" />
+<meta property="og:image" content="https://knackforthis.com/preview.png" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Restoration Carpentry Reality Guide | KnackForThis" />
+<meta name="twitter:description" content="What restoration carpentry really demands — then a diagnostic to test whether you fit it." />
+<meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg1:#1a0f0a;
+  --bg2:#080503;
+
+  --panel:#241612;
+  --panel2:#1b110e;
+
+  --text:#efe7de;
+  --muted:rgba(239,231,222,.82);
+
+  --wood:#c49a6c;
+  --wood2:rgba(196,154,108,.18);
+
+  --silver:#c8d0d8;
+  --silver2:rgba(200,208,216,.16);
+
+  --aqua:#7fe7ff;
+  --aqua2:rgba(127,231,255,.12);
+
+  --border:rgba(200,208,216,.16);
+  --shadow:0 0 26px rgba(127,231,255,.08);
+
+  --radius:16px;
+  --max:980px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(196,154,108,.16) 0%, transparent 48%),
+    radial-gradient(circle at 78% 26%, rgba(200,208,216,.12) 0%, transparent 55%),
+    radial-gradient(circle at 50% 8%, rgba(127,231,255,.10) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 70%);
+  overflow-x:hidden;
+  line-height:1.85;
+}
+
+/* top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  background:rgba(16,10,8,.86);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.brand .mark{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 18px rgba(127,231,255,.22);
+}
+.brand .name{
+  font-weight:900;
+  color:var(--silver);
+  letter-spacing:.02em;
+}
+.mini-nav{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.mini-nav a{
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  color:rgba(239,231,222,.88);
+  padding:.42rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.14);
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.mini-nav a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(127,231,255,.35);
+  box-shadow:0 0 14px rgba(127,231,255,.12);
+}
+
+/* header */
+header{
+  padding:2.6rem 1rem 1.2rem;
+}
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.55rem 1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.18);
+  background:linear-gradient(to bottom, rgba(36,22,18,.78), rgba(20,12,10,.68));
+  box-shadow:var(--shadow), inset 0 0 22px rgba(200,208,216,.06);
+  position:relative;
+  overflow:hidden;
+}
+.header-inner::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(127,231,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 24%, rgba(200,208,216,.10), transparent 64%),
+    radial-gradient(circle at 50% 70%, rgba(196,154,108,.12), transparent 62%);
+  animation:pulse 12s infinite alternate;
+  pointer-events:none;
+}
+@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.18);} }
+
+.kicker{
+  position:relative;
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  color:rgba(200,208,216,.92);
+  background:rgba(200,208,216,.08);
+  border:1px solid rgba(200,208,216,.14);
+  padding:.35rem .62rem;
+  border-radius:999px;
+}
+
+h1{
+  position:relative;
+  margin:.7rem 0 .55rem;
+  font-family:'Passero One', cursive;
+  color:var(--silver);
+  font-size:clamp(2.1rem, 4.6vw, 2.95rem);
+  text-shadow:0 0 20px rgba(0,0,0,.70);
+}
+.lede{
+  position:relative;
+  margin:0;
+  max-width:900px;
+  color:rgba(239,231,222,.92);
+  font-size:1.12rem;
+}
+
+/* content */
+main{
+  max-width:var(--max);
+  margin:1.2rem auto 0;
+  padding:0 1.2rem 2.5rem;
+}
+
+.section{
+  margin-top:1.6rem;
+  padding:1.25rem 1.1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.14);
+  background:linear-gradient(180deg, rgba(27,17,14,.55), rgba(10,7,6,.25));
+  box-shadow:inset 0 0 18px rgba(200,208,216,.05);
+}
+
+h2{
+  margin:.1rem 0 .6rem;
+  color:var(--aqua);
+  border-left:4px solid rgba(127,231,255,.65);
+  padding-left:.65rem;
+  letter-spacing:.01em;
+}
+
+p{margin:.6rem 0;}
+a{color:var(--aqua); font-weight:700; text-decoration:none; transition:.25s ease;}
+a:hover{color:#fff; text-shadow:0 0 12px rgba(127,231,255,.26);}
+
+.highlight{
+  margin-top:1rem;
+  padding:1rem 1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(127,231,255,.18);
+  background:linear-gradient(to right, var(--aqua2), rgba(200,208,216,.06), rgba(0,0,0,0));
+  box-shadow:inset 0 0 18px rgba(127,231,255,.08);
+}
+
+/* smaller image placeholders */
+.figure-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:.85rem;
+  margin-top:1rem;
+}
+.img-ph{
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(127,231,255,.18);
+  box-shadow:0 0 18px rgba(127,231,255,.06);
+  padding:0;
+  background:none;
+}
+
+/* bullets */
+.list{
+  margin:.7rem 0 0;
+  padding:0;
+  list-style:none;
+  text-align:left;
+}
+.list li{
+  margin:.55rem 0;
+  padding-left:1.15rem;
+  position:relative;
+  color:rgba(239,231,222,.90);
+}
+.list li::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:99px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 10px rgba(127,231,255,.18);
+  position:absolute;
+  left:0; top:.55rem;
+  opacity:.95;
+}
+
+/* FAQ */
+.faq{
+  margin-top:1rem;
+  text-align:left;
+}
+.faq details{
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.16);
+  border-radius:14px;
+  padding:.85rem .9rem;
+  margin:.75rem 0;
+}
+.faq summary{
+  cursor:pointer;
+  font-weight:900;
+  color:rgba(239,231,222,.95);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"＋";
+  float:right;
+  color:rgba(127,231,255,.85);
+  font-weight:900;
+}
+.faq details[open] summary::after{content:"—";}
+.faq .answer{
+  margin-top:.6rem;
+  color:rgba(239,231,222,.86);
+}
+
+/* footer */
+footer{
+  background:rgba(10,7,6,.92);
+  color:rgba(239,231,222,.86);
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:0.92rem;
+  margin-top:2.2rem;
+  border-top:1px solid rgba(127,231,255,.12);
+}
+
+@media (max-width: 920px){
+  .figure-row{grid-template-columns:1fr; }
+  .mini-nav{display:none;}
+  .section{padding:1.05rem 1rem;}
+}
+</style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="https://knackforthis.com/">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">KnackForThis.com</span>
+    </a>
+
+    <nav class="mini-nav" aria-label="Quick navigation">
+      <a href="https://knackforthis.com/">Home</a>
+      <a href="https://knackforthis.com/trades/">Trades</a>
+      <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a>
+    </nav>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <span class="kicker">Trades • Carpentry • Restoration</span>
+      <h1>Restoration Carpentry: What It Really Requires</h1>
+      <p class="lede">
+        Restoration carpentry is carpentry plus detective work. You’re not building on a blank slate —
+        you’re diagnosing old structures, repairing damage, matching details, and making “new” work disappear into “old” reality.
+        If you like puzzles, patience, and imperfect conditions, this path can feel strangely addictive.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What Restoration Carpentry Actually Is</h2>
+      <p>
+        Restoration carpentry focuses on repairing, preserving, and rebuilding existing structures and woodwork: old framing repairs, rot replacement,
+        window and sash work, trim replication, stair repairs, porch rebuilds, and historical detail preservation.
+        Sometimes you’re restoring a historic home. Sometimes you’re doing practical “save the building” repairs on a not-so-historic place.
+        The common thread is this: you’re working with <strong>what already exists</strong>, including the weird decisions made by past humans.
+      </p>
+      <p>
+        People imagine restoration as “beautiful old-house craftsmanship.” That happens — but the day-to-day is often messy:
+        hidden water damage, out-of-square everything, layers of paint, odd materials, and surprises behind every wall.
+        Your job is to make repairs that are structurally real and visually respectful.
+      </p>
+
+      <div class="figure-row" aria-label="Image placeholders">
+        <img class="img-ph" src="imgs/wood-rot-repair.jpg" alt="Wood rot repair and section replacement on an exterior component"/>
+        <img class="img-ph" src="imgs/trim-profile-matching.jpg" alt="Matching and replicating historic trim profiles in a shop"/>
+        <img class="img-ph" src="imgs/window-sash-restoration.jpg" alt="Restoring an old window sash: glazing, repairs, and fitment"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Spend Time Doing</h2>
+      <p>
+        Restoration work is a loop of diagnosis → careful demolition → repair plan → fabrication → install → blend-in.
+        The pace is rarely pure production because every building is its own problem set.
+        You’ll measure, probe, open things up, discover something worse than expected, then figure out a repair that doesn’t create new problems.
+      </p>
+
+      <ul class="list">
+        <li><strong>Diagnosis:</strong> finding the real source of damage (water, movement, rot, insects) before replacing anything.</li>
+        <li><strong>Selective demo:</strong> removing only what you must, without wrecking adjacent details you need to preserve.</li>
+        <li><strong>Repair + reinforcement:</strong> sistering framing, replacing sections, scarf joints, epoxy consolidation, stabilizing movement.</li>
+        <li><strong>Replication:</strong> matching profiles, milling parts, recreating old details so new work blends in.</li>
+        <li><strong>Fit in crooked reality:</strong> shimming, scribing, and tuning so “straight” looks right in an old structure.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Restoration is where you learn that most buildings are “alive.” They move, they settle, they leak, they warp — and your repair has to respect that.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where the Pressure Comes From</h2>
+      <p>
+        Pressure comes from <strong>uncertainty</strong> and <strong>consequences</strong>. You don’t always know what you’ll find until you open things up.
+        Estimates can get wrecked by hidden damage. Materials and matching details can be slow. And mistakes can destroy irreplaceable features.
+      </p>
+      <p>
+        There’s also “aesthetic pressure.” In restoration, the goal is often that your work is invisible — which means you’re judged by what people can’t notice.
+        If you like that kind of quiet standard, you’ll thrive. If you need obvious wins every hour, this can feel slow.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What Traits Actually Matter</h2>
+      <p>
+        Restoration carpentry rewards patience, humility, and problem-solving more than raw speed.
+        You’re not proving you’re fast — you’re proving you can think.
+      </p>
+
+      <ul class="list">
+        <li><strong>Investigation mindset:</strong> you like figuring out “why” before you start fixing.</li>
+        <li><strong>Respect for old work:</strong> you can work around fragile details without smashing everything to make your life easier.</li>
+        <li><strong>Calm under surprises:</strong> you don’t panic when the wall opens and reality gets worse.</li>
+        <li><strong>Detail matching:</strong> you can replicate profiles, textures, and proportions so repairs don’t look like patches.</li>
+        <li><strong>Ethical discipline:</strong> you avoid shortcuts that hide problems instead of solving them.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Restoration is carpentry where “good enough” can literally cause future damage. Doing it right is often slower, but it lasts.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Who Should Probably Avoid It</h2>
+      <p>
+        Restoration can be amazing — but it’s not everyone’s mental environment.
+      </p>
+
+      <ul class="list">
+        <li><strong>You hate uncertainty:</strong> if surprises feel like betrayal, restoration will annoy you daily.</li>
+        <li><strong>You need clean, predictable work:</strong> dust, rot, old paint layers, and weird fixes are part of the territory.</li>
+        <li><strong>You only like speed:</strong> restoration often requires careful work and waiting on materials or approvals.</li>
+        <li><strong>You get bored by “invisible wins”:</strong> success often looks like “nothing changed,” which is the point.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          If you love carpentry but want a cleaner workflow, compare with
+          <a href="https://knackforthis.com/trades/carpentry/cabinet-making-quiz/">cabinet making</a> or
+          <a href="https://knackforthis.com/trades/carpentry/finish-carpentry-quiz/">finish carpentry</a>.
+          If you want speed and production, compare with
+          <a href="https://knackforthis.com/trades/carpentry/framing-quiz/">framing</a> or
+          <a href="https://knackforthis.com/trades/carpentry/rough-carpentry-quiz/">rough carpentry</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Next Step: Get a Signal, Then Compare</h2>
+      <p>
+        If restoration carpentry sounds interesting, don’t decide on aesthetics. Decide based on whether you can live inside the uncertainty:
+        diagnosis, careful work, and problems that don’t come with instructions.
+      </p>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Run the <a href="https://knackforthis.com/trades/carpentry/restoration-carpentry-quiz/">Restoration Carpentry Fit Diagnostic</a> first.
+          Then compare paths from the <a href="https://knackforthis.com/trades/carpentry/">Carpentry Hub</a> or step back to the
+          <a href="https://knackforthis.com/trades/">Trades Hub</a>.
+          If you want the full map, start at the <a href="https://knackforthis.com/">homepage</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+
+      <div class="faq" aria-label="Frequently Asked Questions">
+        <details class="faq-item">
+          <summary>Is restoration carpentry mostly “historic preservation”?</summary>
+          <div class="answer">
+            Sometimes, but not always. Restoration ranges from historic detail preservation to practical repairs on older buildings. The shared skill is diagnosing and repairing existing structures without making new problems.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is restoration carpentry slower than other carpentry work?</summary>
+          <div class="answer">
+            Often, yes. The pace is shaped by uncertainty, careful demolition, matching materials, and making repairs blend in. The payoff is work that lasts and respects the building.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to be a “craftsperson” to do restoration?</summary>
+          <div class="answer">
+            You need patience, attention to detail, and problem-solving. High-end restoration demands more craft (profile matching, joinery, window work), but the foundation is diagnosis + disciplined repair.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the restoration diagnostic actually measure?</summary>
+          <div class="answer">
+            It’s not a skill test. It estimates alignment between your tolerances (uncertainty, patience, investigation mindset, detail matching, calm under surprises) and the day-to-day reality of restoration carpentry.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>If I’m “mixed fit,” does that mean don’t do it?</summary>
+          <div class="answer">
+            Not automatically. Mixed fit often means you can do restoration, but the environment matters: crew culture, project type, and how much uncertainty you’ll face. The diagnostic is meant to prevent blind commitment.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://knackforthis.com/">Home</a> •
+      <a href="https://knackforthis.com/trades/">Trades</a> •
+      <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a> •
+      <a href="https://knackforthis.com/contact/">Contact</a> •
+      <a href="https://knackforthis.com/privacy/">Privacy</a> •
+      <a href="https://knackforthis.com/terms/">Terms</a>
+    </p>
+    <p style="margin:.6rem 0 0;">
+      KnackForThis is educational. Diagnostics are for self-assessment only and are not career advice.<br />
+      © 2025 KnackForThis. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <style>
+  #consent-banner{
+    position:fixed;
+    bottom:0; left:0;
+    width:100%;
+    background:rgba(16,10,8,.95);
+    color:rgba(239,231,222,.90);
+    text-align:center;
+    padding:1rem;
+    font-size:.95rem;
+    border-top:1px solid rgba(127,231,255,.22);
+    box-shadow:0 -4px 25px rgba(127,231,255,.08);
+    z-index:9999;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:.45rem;
+  }
+  #consent-banner a{ color:var(--aqua); text-decoration:none; font-weight:800; }
+  #consent-banner a:hover{ text-shadow:0 0 8px rgba(127,231,255,.28); }
+  #agree-btn{
+    margin-top:.2rem;
+    background:linear-gradient(135deg, rgba(127,231,255,.95), rgba(200,208,216,.92));
+    border:none;
+    color:#150e0c;
+    padding:.5rem 1.2rem;
+    border-radius:10px;
+    font-weight:900;
+    cursor:pointer;
+    transition:transform .12s ease;
+  }
+  #agree-btn:hover{ transform:scale(1.04); }
+  </style>
+
+  <script>
+    const GA_ID = 'G-L9PLC0WEHQ';
+
+    function loadGA(){
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+
+    const consent = localStorage.getItem('knackConsent');
+    if (!consent){
+      document.getElementById('consent-banner').style.display = 'flex';
+    } else if (consent === 'true'){
+      loadGA();
+    }
+
+    document.getElementById('agree-btn').addEventListener('click', function(){
+      localStorage.setItem('knackConsent', 'true');
+      document.getElementById('consent-banner').style.display = 'none';
+      loadGA();
+    });
+
+    // Optional: FAQ accordion behavior (close others on open)
+    document.addEventListener('click', (e) => {
+      const summary = e.target.closest('.faq details > summary');
+      if (!summary) return;
+      e.preventDefault();
+
+      const clicked = summary.parentElement;
+      const faq = clicked.closest('.faq');
+      const willOpen = !clicked.open;
+
+      faq.querySelectorAll('details').forEach(d => { if (d !== clicked) d.open = false; });
+      clicked.open = willOpen;
+    });
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://knackforthis.com/trades/carpentry/restoration-carpentry-article/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://knackforthis.com/trades/" },
+        { "@type": "ListItem", "position": 3, "name": "Carpentry", "item": "https://knackforthis.com/trades/carpentry/" },
+        { "@type": "ListItem", "position": 4, "name": "Restoration Carpentry", "item": "https://knackforthis.com/trades/carpentry/restoration-carpentry-article/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://knackforthis.com/trades/carpentry/restoration-carpentry-article/#webpage",
+      "url": "https://knackforthis.com/trades/carpentry/restoration-carpentry-article/",
+      "name": "Restoration Carpentry: What It Really Requires",
+      "description": "Restoration carpentry is repair + reconstruction with detective work — diagnosing old structures, matching details, and solving weird problems without destroying the character of a building. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "isPartOf": { "@id": "https://knackforthis.com/#website" },
+      "about": { "@id": "https://knackforthis.com/trades/carpentry/#topic" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://knackforthis.com/trades/carpentry/restoration-carpentry-article/#article",
+      "headline": "Restoration Carpentry: What It Really Requires",
+      "description": "Restoration carpentry is repair + reconstruction with detective work — diagnosing old structures, matching details, and solving weird problems without destroying the character of a building. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "image": "https://knackforthis.com/preview.png",
+      "mainEntityOfPage": { "@id": "https://knackforthis.com/trades/carpentry/restoration-carpentry-article/#webpage" },
+      "author": { "@id": "https://knackforthis.com/#org" },
+      "publisher": { "@id": "https://knackforthis.com/#org" },
+      "inLanguage": "en",
+      "about": [
+        "restoration carpentry",
+        "historic restoration",
+        "old house repair",
+        "trim replication",
+        "wood rot repair",
+        "preservation carpentry",
+        "skilled trades"
+      ],
+      "keywords": [
+        "restoration carpentry",
+        "restoration carpenter",
+        "historic restoration",
+        "old house repair",
+        "carpentry repair",
+        "wood rot repair",
+        "trim replication",
+        "preservation carpentry",
+        "restoration carpentry reality",
+        "is restoration carpentry right for me",
+        "KnackForThis"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://knackforthis.com/#org",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knackforthis.com/favicon.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knackforthis.com/#website",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knackforthis.com/trades/carpentry/#topic",
+      "name": "Carpentry"
+    }
+  ]
+}
+  </script>
+</body>
+</html>

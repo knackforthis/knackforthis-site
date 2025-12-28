@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<title>Framing Carpentry: What It Really Requires | KnackForThis</title>
+<meta name="description" content="Framing carpentry is structural speed + accuracy under real jobsite conditions. Here’s what the day-to-day actually demands, what drains people, and where to test your fit." />
+<meta name="keywords" content="framing carpentry, framer, house framing, wall framing, roof framing, jobsite carpentry, rough framing, framing carpenter reality, is framing right for me, KnackForThis" />
+<link rel="canonical" href="https://knackforthis.com/trades/carpentry/framing-article/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="KnackForThis" />
+<meta property="og:title" content="Framing Carpentry: What It Really Requires" />
+<meta property="og:description" content="Framing is structural carpentry under time pressure. Read the reality, then take the diagnostic to test fit." />
+<meta property="og:url" content="https://knackforthis.com/trades/carpentry/framing-article/" />
+<meta property="og:image" content="https://knackforthis.com/preview.png" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Framing Carpentry Reality Guide | KnackForThis" />
+<meta name="twitter:description" content="What framing carpentry really demands — then a diagnostic to test whether you fit it." />
+<meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg1:#1a0f0a;
+  --bg2:#080503;
+
+  --panel:#241612;
+  --panel2:#1b110e;
+
+  --text:#efe7de;
+  --muted:rgba(239,231,222,.82);
+
+  --wood:#c49a6c;
+  --wood2:rgba(196,154,108,.18);
+
+  --silver:#c8d0d8;
+  --silver2:rgba(200,208,216,.16);
+
+  --aqua:#7fe7ff;
+  --aqua2:rgba(127,231,255,.12);
+
+  --border:rgba(200,208,216,.16);
+  --shadow:0 0 26px rgba(127,231,255,.08);
+
+  --radius:16px;
+  --max:980px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(196,154,108,.16) 0%, transparent 48%),
+    radial-gradient(circle at 78% 26%, rgba(200,208,216,.12) 0%, transparent 55%),
+    radial-gradient(circle at 50% 8%, rgba(127,231,255,.10) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 70%);
+  overflow-x:hidden;
+  line-height:1.85;
+}
+
+/* top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  background:rgba(16,10,8,.86);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.brand .mark{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 18px rgba(127,231,255,.22);
+}
+.brand .name{
+  font-weight:900;
+  color:var(--silver);
+  letter-spacing:.02em;
+}
+.mini-nav{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.mini-nav a{
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  color:rgba(239,231,222,.88);
+  padding:.42rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.14);
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.mini-nav a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(127,231,255,.35);
+  box-shadow:0 0 14px rgba(127,231,255,.12);
+}
+
+/* header */
+header{
+  padding:2.6rem 1rem 1.2rem;
+}
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.55rem 1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.18);
+  background:linear-gradient(to bottom, rgba(36,22,18,.78), rgba(20,12,10,.68));
+  box-shadow:var(--shadow), inset 0 0 22px rgba(200,208,216,.06);
+  position:relative;
+  overflow:hidden;
+}
+.header-inner::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(127,231,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 24%, rgba(200,208,216,.10), transparent 64%),
+    radial-gradient(circle at 50% 70%, rgba(196,154,108,.12), transparent 62%);
+  animation:pulse 12s infinite alternate;
+  pointer-events:none;
+}
+@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.18);} }
+
+.kicker{
+  position:relative;
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  color:rgba(200,208,216,.92);
+  background:rgba(200,208,216,.08);
+  border:1px solid rgba(200,208,216,.14);
+  padding:.35rem .62rem;
+  border-radius:999px;
+}
+
+h1{
+  position:relative;
+  margin:.7rem 0 .55rem;
+  font-family:'Passero One', cursive;
+  color:var(--silver);
+  font-size:clamp(2.1rem, 4.6vw, 2.95rem);
+  text-shadow:0 0 20px rgba(0,0,0,.70);
+}
+.lede{
+  position:relative;
+  margin:0;
+  max-width:900px;
+  color:rgba(239,231,222,.92);
+  font-size:1.12rem;
+}
+
+/* content */
+main{
+  max-width:var(--max);
+  margin:1.2rem auto 0;
+  padding:0 1.2rem 2.5rem;
+}
+
+.section{
+  margin-top:1.6rem;
+  padding:1.25rem 1.1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.14);
+  background:linear-gradient(180deg, rgba(27,17,14,.55), rgba(10,7,6,.25));
+  box-shadow:inset 0 0 18px rgba(200,208,216,.05);
+}
+
+h2{
+  margin:.1rem 0 .6rem;
+  color:var(--aqua);
+  border-left:4px solid rgba(127,231,255,.65);
+  padding-left:.65rem;
+  letter-spacing:.01em;
+}
+
+p{margin:.6rem 0;}
+a{color:var(--aqua); font-weight:700; text-decoration:none; transition:.25s ease;}
+a:hover{color:#fff; text-shadow:0 0 12px rgba(127,231,255,.26);}
+
+.highlight{
+  margin-top:1rem;
+  padding:1rem 1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(127,231,255,.18);
+  background:linear-gradient(to right, var(--aqua2), rgba(200,208,216,.06), rgba(0,0,0,0));
+  box-shadow:inset 0 0 18px rgba(127,231,255,.08);
+}
+
+/* smaller image placeholders */
+.figure-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:.85rem;
+  margin-top:1rem;
+}
+/* Make real <img> behave like neat thumbnails */
+.img-ph{
+  width:100%;
+  height:auto;              /* base safety */
+  aspect-ratio: 4 / 3;      /* keeps uniform tiles */
+  object-fit: cover;        /* crops instead of stretching */
+  display:block;            /* kills inline-image gaps/odd baseline behavior */
+  border-radius:14px;
+  border:1px solid rgba(127,231,255,.18);  /* optional: less “placeholder” */
+  box-shadow:0 0 18px rgba(127,231,255,.06);
+  padding:0;                /* IMPORTANT: don’t pad images */
+  background:none;          /* IMPORTANT: don’t treat it like a container */
+}
+
+/* bullets */
+.list{
+  margin:.7rem 0 0;
+  padding:0;
+  list-style:none;
+  text-align:left;
+}
+.list li{
+  margin:.55rem 0;
+  padding-left:1.15rem;
+  position:relative;
+  color:rgba(239,231,222,.90);
+}
+.list li::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:99px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 10px rgba(127,231,255,.18);
+  position:absolute;
+  left:0; top:.55rem;
+  opacity:.95;
+}
+
+/* FAQ */
+.faq{
+  margin-top:1rem;
+  text-align:left;
+}
+.faq details{
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.16);
+  border-radius:14px;
+  padding:.85rem .9rem;
+  margin:.75rem 0;
+}
+.faq summary{
+  cursor:pointer;
+  font-weight:900;
+  color:rgba(239,231,222,.95);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"＋";
+  float:right;
+  color:rgba(127,231,255,.85);
+  font-weight:900;
+}
+.faq details[open] summary::after{content:"—";}
+.faq .answer{
+  margin-top:.6rem;
+  color:rgba(239,231,222,.86);
+}
+
+/* footer */
+footer{
+  background:rgba(10,7,6,.92);
+  color:rgba(239,231,222,.86);
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:0.92rem;
+  margin-top:2.2rem;
+  border-top:1px solid rgba(127,231,255,.12);
+}
+
+@media (max-width: 920px){
+  .figure-row{grid-template-columns:1fr; }
+  .mini-nav{display:none;}
+  .section{padding:1.05rem 1rem;}
+}
+</style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="https://knackforthis.com/">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">KnackForThis.com</span>
+    </a>
+
+    <nav class="mini-nav" aria-label="Quick navigation">
+      <a href="https://knackforthis.com/">Home</a>
+      <a href="https://knackforthis.com/trades/">Trades</a>
+      <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a>
+    </nav>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <span class="kicker">Trades • Framing</span>
+      <h1>Framing Carpentry: What It Really Requires</h1>
+      <p class="lede">
+        Framing carpentry is structural work under real conditions: speed, physical output, safety, and accuracy that stays stable when you’re tired.
+        If finish carpentry is “make it look perfect,” framing is “make it straight, strong, and correct — fast.”
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What Framing Carpentry Actually Is</h2>
+      <p>
+        Framing is building the skeleton of a structure: walls, floors, roof systems, openings, and the layout that determines whether everything later
+        (drywall, trim, cabinets, doors, windows) will install cleanly or become a fight. It’s not decorative work. It’s structural reality.
+      </p>
+      <p>
+        People imagine framing as “just lifting wood and nailing it.” The truth is that the physical part is real, but the failure mode is usually layout discipline:
+        bad measurements, sloppy lines, not checking plumb/square, or trying to go fast while ignoring what the building is telling you.
+      </p>
+
+      <div class="figure-row" aria-label="Image placeholders">
+        <img class="img-ph" src="imgs/roof-framing-rafters.jpg" alt="Roof framing / rafters"/>
+        <img class="img-ph" src="imgs/floor-system.jpg" alt="Floor system / joists"/>
+        <img class="img-ph" src="imgs/wall-layout-studs.jpg" alt="Wall layout / studs"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Spend Time Doing</h2>
+      <p>
+        Framing is repetitive execution at scale. Your day is a loop: layout → cut → assemble → set → check → brace → move to the next section.
+        You do it in changing conditions, often on an active site, and your work has to stay consistent even when the pace accelerates.
+      </p>
+
+      <ul class="list">
+        <li><strong>Layout:</strong> measuring, marking, snapping lines, locating openings, checking square and plumb.</li>
+        <li><strong>Assembly:</strong> building wall sections, setting headers, installing joists/rafters/trusses, sheathing surfaces.</li>
+        <li><strong>Material handling:</strong> staging lumber, carrying, lifting, working from ladders/scaffolds, cleanup and tool management.</li>
+        <li><strong>Correction:</strong> fixing mistakes before they compound (because once other trades start, fixes get expensive).</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Framing rewards people who can do “simple” things correctly for hours without letting quality drift. That consistency is a trait — not a vibe.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where the Pressure Comes From</h2>
+      <p>
+        In framing, pressure is usually a mix of <strong>time</strong> and <strong>consequences</strong>. Jobsites care about production.
+        But “fast and wrong” doesn’t just look bad — it creates downstream chaos: doors that won’t hang, drywall that waves, trim that reveals every mistake.
+      </p>
+      <p>
+        You also carry real safety pressure. Power tools, heights, heavy pieces, and fatigue are constant variables. If you’re careless, framing punishes you.
+        If you’re disciplined, it becomes a controlled system.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What Traits Actually Matter</h2>
+      <p>
+        Framing success isn’t about loving wood. It’s about tolerances — physical, mental, and environmental — and how you behave when the job is not comfortable.
+      </p>
+
+      <ul class="list">
+        <li><strong>Endurance:</strong> staying functional during long stretches of physical work.</li>
+        <li><strong>Speed with control:</strong> moving fast without getting sloppy or reckless.</li>
+        <li><strong>Layout discipline:</strong> measuring and checking even when you “already know.”</li>
+        <li><strong>Problem tolerance:</strong> handling imperfect lumber and imperfect conditions without spiraling.</li>
+        <li><strong>Redo resilience:</strong> correcting issues early instead of hoping they disappear later.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Who Should Probably Avoid It</h2>
+      <p>
+        No judgment — just honesty. Framing is a poor fit if the core conditions drain you more than they sharpen you.
+      </p>
+
+      <ul class="list">
+        <li><strong>You hate physical strain:</strong> ladders, lifting, kneeling, awkward positions, repetitive handling.</li>
+        <li><strong>You need clean/quiet environments:</strong> jobsite noise, dust, weather, mud, and chaos are normal.</li>
+        <li><strong>You rush and don’t re-check:</strong> framing errors compound; “close enough” becomes expensive fast.</li>
+        <li><strong>Redo kills motivation:</strong> fixes happen. If correction feels like failure, the job becomes misery.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Low fit doesn’t mean you’re weak. It usually means your strengths show up better in a different work style. That’s a routing problem, not a character problem.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Next Step: Get a Signal, Then Compare</h2>
+      <p>
+        If framing sounds interesting, don’t decide on mood. Use the diagnostic first, then compare against other carpentry paths.
+        Some people are built for framing pace. Others are built for finish precision, cabinet consistency, restoration problem-solving, or furniture detail.
+      </p>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Run the <a href="https://knackforthis.com/trades/carpentry/framing-quiz/">Framing Carpentry Fit Diagnostic</a> first.
+          Then compare specializations from the <a href="https://knackforthis.com/trades/carpentry/">Carpentry Hub</a>.
+          If carpentry isn’t the lane, go broader at the <a href="https://knackforthis.com/trades/">Trades Hub</a>.
+          Start from the <a href="https://knackforthis.com/">homepage</a> if you want the full map.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+
+      <div class="faq" aria-label="Frequently Asked Questions">
+        <details class="faq-item">
+          <summary>Is framing mostly indoors or outdoors?</summary>
+          <div class="answer">
+            Often outdoors or in partially enclosed structures depending on build stage. Weather, uneven ground, and changing conditions are normal parts of the workflow.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to be “strong” to frame?</summary>
+          <div class="answer">
+            You need functional strength and endurance. Technique matters, but yes: framing is physical. If your body can’t tolerate repetitive strain, it becomes a grind.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is framing easier than finish carpentry?</summary>
+          <div class="answer">
+            Different hard. Framing is pace + physical load + safety + layout accuracy. Finish is slower precision + visible standards + detail patience. The harder one is the one that fights your nature.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the framing diagnostic actually measure?</summary>
+          <div class="answer">
+            It’s not a skill test. It estimates alignment between your tolerances (pace, physical conditions, repetition, redo resilience, safety discipline) and the day-to-day reality of framing carpentry.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>If I’m “mixed fit,” does that mean don’t do it?</summary>
+          <div class="answer">
+            Not automatically. Mixed fit usually means you can do it, but environment and expectations matter more. You’ll either need a deliberate plan to build endurance/discipline or you may do better in a different carpentry specialization.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://knackforthis.com/">Home</a> •
+      <a href="https://knackforthis.com/trades/">Trades</a> •
+      <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a> •
+      <a href="https://knackforthis.com/contact/">Contact</a> •
+      <a href="https://knackforthis.com/privacy/">Privacy</a> •
+      <a href="https://knackforthis.com/terms/">Terms</a>
+    </p>
+    <p style="margin:.6rem 0 0;">
+      KnackForThis is educational. Diagnostics are for self-assessment only and are not career advice.<br />
+      © 2025 KnackForThis. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <style>
+  #consent-banner{
+    position:fixed;
+    bottom:0; left:0;
+    width:100%;
+    background:rgba(16,10,8,.95);
+    color:rgba(239,231,222,.90);
+    text-align:center;
+    padding:1rem;
+    font-size:.95rem;
+    border-top:1px solid rgba(127,231,255,.22);
+    box-shadow:0 -4px 25px rgba(127,231,255,.08);
+    z-index:9999;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:.45rem;
+  }
+  #consent-banner a{ color:var(--aqua); text-decoration:none; font-weight:800; }
+  #consent-banner a:hover{ text-shadow:0 0 8px rgba(127,231,255,.28); }
+  #agree-btn{
+    margin-top:.2rem;
+    background:linear-gradient(135deg, rgba(127,231,255,.95), rgba(200,208,216,.92));
+    border:none;
+    color:#150e0c;
+    padding:.5rem 1.2rem;
+    border-radius:10px;
+    font-weight:900;
+    cursor:pointer;
+    transition:transform .12s ease;
+  }
+  #agree-btn:hover{ transform:scale(1.04); }
+  </style>
+
+  <script>
+    const GA_ID = 'G-L9PLC0WEHQ';
+
+    function loadGA(){
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+
+    const consent = localStorage.getItem('knackConsent');
+    if (!consent){
+      document.getElementById('consent-banner').style.display = 'flex';
+    } else if (consent === 'true'){
+      loadGA();
+    }
+
+    document.getElementById('agree-btn').addEventListener('click', function(){
+      localStorage.setItem('knackConsent', 'true');
+      document.getElementById('consent-banner').style.display = 'none';
+      loadGA();
+    });
+
+    // Optional: FAQ accordion behavior (close others on open)
+    document.addEventListener('click', (e) => {
+      const summary = e.target.closest('.faq details > summary');
+      if (!summary) return;
+      e.preventDefault();
+
+      const clicked = summary.parentElement;
+      const faq = clicked.closest('.faq');
+      const willOpen = !clicked.open;
+
+      faq.querySelectorAll('details').forEach(d => { if (d !== clicked) d.open = false; });
+      clicked.open = willOpen;
+    });
+  </script>
+
+<!-- Structured Data (Article + Breadcrumb) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://knackforthis.com/trades/carpentry/framing-article/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://knackforthis.com/trades/" },
+        { "@type": "ListItem", "position": 3, "name": "Carpentry", "item": "https://knackforthis.com/trades/carpentry/" },
+        { "@type": "ListItem", "position": 4, "name": "Framing", "item": "https://knackforthis.com/trades/carpentry/framing-article/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://knackforthis.com/trades/carpentry/framing-article/#webpage",
+      "url": "https://knackforthis.com/trades/carpentry/framing-article/",
+      "name": "Framing Carpentry: What It Really Requires",
+      "description": "Framing carpentry is structural speed + accuracy under real jobsite conditions. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "isPartOf": { "@id": "https://knackforthis.com/#website" },
+      "about": { "@id": "https://knackforthis.com/trades/carpentry/#topic" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://knackforthis.com/trades/carpentry/framing-article/#article",
+      "headline": "Framing Carpentry: What It Really Requires",
+      "description": "Framing carpentry is structural speed + accuracy under real jobsite conditions. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "image": "https://knackforthis.com/preview.png",
+      "mainEntityOfPage": { "@id": "https://knackforthis.com/trades/carpentry/framing-article/#webpage" },
+      "author": { "@id": "https://knackforthis.com/#org" },
+      "publisher": { "@id": "https://knackforthis.com/#org" },
+      "inLanguage": "en",
+      "about": [
+        "framing carpentry",
+        "house framing",
+        "wall framing",
+        "roof framing",
+        "rough framing",
+        "jobsite carpentry",
+        "skilled trades"
+      ],
+      "keywords": [
+        "framing carpentry",
+        "framer",
+        "house framing",
+        "wall framing",
+        "roof framing",
+        "jobsite carpentry",
+        "rough framing",
+        "framing carpenter reality",
+        "is framing right for me",
+        "KnackForThis"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://knackforthis.com/#org",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knackforthis.com/favicon.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knackforthis.com/#website",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knackforthis.com/trades/carpentry/#topic",
+      "name": "Carpentry"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
