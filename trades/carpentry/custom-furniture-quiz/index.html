@@ -158,65 +158,19 @@
     <div class="option-container"></div>
     <div class="continue">Continue >></div>
   </div>
-
   <!-- Consent Banner -->
   <div id="consent-banner">
     <p>
-      By using this site, you agree to our 
-      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a> 
-      and 
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
       <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
     </p>
     <button id="agree-btn">✓ I Agree</button>
   </div>
 
-
-<script>
-  const GA_ID = 'G-L9PLC0WEHQ';
-
-  function loadGA() {
-    // Prevent double-loading
-    if (window.__gaLoaded) return;
-    window.__gaLoaded = true;
-
-    // Create script tag for gtag.js
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(s);
-
-    // Initialize gtag
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-
-    gtag('js', new Date());
-    gtag('config', GA_ID);
-  }
-
-  // Show banner if no consent yet
-  const consent = localStorage.getItem('knackConsent');
-  if (!consent) {
-    document.getElementById('consent-banner').style.display = 'flex';
-  } else if (consent === 'true') {
-    // Consent already given on a previous visit
-    loadGA();
-  }
-
-  // Agree click -> store + hide + load GA
-  document.getElementById('agree-btn').addEventListener('click', function() {
-    localStorage.setItem('knackConsent', 'true');
-    document.getElementById('consent-banner').style.display = 'none';
-    loadGA();
-  });
-
-  // Your FAQ toggle (keep it)
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.nextElementSibling.classList.toggle('open');
-    });
-  });
-  </script><section class="info-section" aria-labelledby="info-title">
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script><section class="info-section" aria-labelledby="info-title">
   <header class="info-header">
     <p class="kicker">Trades • Custom Furniture</p>
     <h2 id="info-title">Custom Furniture: Judgment, Ownership, and One-Off Work</h2>
