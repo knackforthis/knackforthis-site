@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://knackforthis.com/sitemap-index.xml
