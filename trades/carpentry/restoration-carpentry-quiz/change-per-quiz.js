@@ -1,5 +1,3 @@
-// restoration-carpentry-quiz.js
-
 const obj = {
   0: {
     question: "When you encounter hidden damage mid-project (rot, water damage, termite galleries), you usually:",
@@ -97,7 +95,7 @@ const obj = {
       ["I take safety seriously and work controlled.", ["RestorationAligned", "Disciplined"]],
       ["I can handle it with the right gear and plan.", ["RestorationAligned", "Flexible"]],
       ["I dislike messy environments and get irritable.", ["RestorationMisaligned", "Flexible"]],
-      ["No. I want clean shop/new-build conditions.", ["RestorationMisaligned", "Flexible"]]
+      ["No. I want clean shop or new-build conditions.", ["RestorationMisaligned", "Flexible"]]
     ]
   },
 
@@ -111,12 +109,44 @@ const obj = {
     ]
   },
 
+  // ---- HUMAN FRICTION / ATTRITION LAYER ----
+
   11: {
+    question: "Restoration work often happens in occupied homes with anxious owners. You:",
+    options: [
+      ["Can stay professional and focused despite interruptions.", ["RestorationAligned", "Disciplined"]],
+      ["Can handle it, but it adds stress.", ["RestorationAligned", "Flexible"]],
+      ["Get irritated by constant questions or presence.", ["RestorationMisaligned", "Flexible"]],
+      ["Strongly dislike working around occupants.", ["RestorationMisaligned", "Flexible"]]
+    ]
+  },
+
+  12: {
+    question: "If a client blames you for an old problem that existed before you touched the house, you:",
+    options: [
+      ["Document, explain, and stay grounded.", ["RestorationAligned", "Disciplined"]],
+      ["Handle it, but it weighs on me.", ["RestorationAligned", "Flexible"]],
+      ["Get defensive because it feels unfair.", ["RestorationMisaligned", "Flexible"]],
+      ["That kind of blame makes me want out.", ["RestorationMisaligned", "Flexible"]]
+    ]
+  },
+
+  13: {
+    question: "When inspectors, preservation boards, or insurers scrutinize your work, you:",
+    options: [
+      ["Accept it — scrutiny is part of doing restoration right.", ["RestorationAligned", "Disciplined"]],
+      ["Deal with it, but it’s mentally draining.", ["RestorationAligned", "Flexible"]],
+      ["Find it frustrating and intrusive.", ["RestorationMisaligned", "Flexible"]],
+      ["Strongly dislike oversight-heavy work.", ["RestorationMisaligned", "Flexible"]]
+    ]
+  },
+
+  14: {
     question: "Be honest: how strong is your pull toward restoration carpentry specifically?",
     options: [
       ["Strong — I like preserving, diagnosing, and solving weird problems.", ["RestorationAligned", "Disciplined"]],
       ["Moderate — I’m curious, but not fully sure.", ["RestorationAligned", "Flexible"]],
-      ["Low — I’m more interested in cleaner, more predictable work.", ["RestorationMisaligned", "Flexible"]],
+      ["Low — I’m more interested in cleaner, predictable work.", ["RestorationMisaligned", "Flexible"]],
       ["Very low — this probably isn’t my lane.", ["RestorationMisaligned", "Flexible"]]
     ]
   }
@@ -136,19 +166,22 @@ function interpretResults() {
   const flexible = tags.Flexible || 0;
 
   // Alignment axis (restoration fit)
-  const fitScore = aligned - misaligned; // ~ -12 .. +12
-  let fitPct = Math.round(((fitScore + 12) / 24) * 100);
+  const fitScore = aligned - misaligned; // ~ -15 .. +15
+  let fitPct = Math.round(((fitScore + 15) / 30) * 100);
   fitPct = Math.max(0, Math.min(100, fitPct));
 
-  // Discipline axis (steady process + patience)
-  const disciplineScore = disciplined - flexible; // ~ -12 .. +12
-  let disciplinePct = Math.round(((disciplineScore + 12) / 24) * 100);
-  disciplinePct = Math.max(0, Math.min(100, fitPct));
+  // Discipline axis (patience + method + emotional control)
+  const disciplineScore = disciplined - flexible; // ~ -15 .. +15
+  let disciplinePct = Math.round(((disciplineScore + 15) / 30) * 100);
+  disciplinePct = Math.max(0, Math.min(100, disciplinePct));
 
   let disciplineLabel;
-  if (disciplinePct >= 70) disciplineLabel = "You’re built for steady, methodical work — careful demo, controlled fixes, and patience when progress is incremental.";
-  else if (disciplinePct >= 40) disciplineLabel = "You can do restoration work, but consistency may depend on environment, deadlines, and how chaotic the project gets.";
-  else disciplineLabel = "Restoration may feel mentally irritating because it demands patience, problem-solving, and slow accuracy under messy conditions.";
+  if (disciplinePct >= 70)
+    disciplineLabel = "You’re built for slow, methodical restoration work — steady thinking, careful execution, and emotional control under uncertainty.";
+  else if (disciplinePct >= 40)
+    disciplineLabel = "You can handle restoration work, but environment, client dynamics, and chaos level will matter a lot.";
+  else
+    disciplineLabel = "Restoration may feel mentally exhausting due to uncertainty, investigation, and prolonged problem-solving.";
 
   let band, title, description, color;
 
@@ -156,8 +189,8 @@ function interpretResults() {
     band = "strong";
     title = `Strong Fit: Restoration Carpentry (${fitPct}% alignment)`;
     description = `
-You’re showing strong alignment with restoration carpentry — comfort with unknowns, root-cause thinking, and tolerance for messy, constraint-heavy problem solving.<br><br>
-<strong>Blunt truth:</strong> restoration isn’t “cute old-house vibes.” It’s surprises, diagnosis, careful work, and fixes that need to last. Your answers suggest that won’t break you.<br><br>
+You’re showing strong alignment with restoration carpentry — comfort with unknowns, diagnosis, constraints, and messy realities.<br><br>
+<strong>Blunt truth:</strong> restoration is slow, unpredictable, and often thankless until the end. Your answers suggest you can live in that tension.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(60, 160, 120)";
@@ -165,8 +198,8 @@ ${disciplineLabel}
     band = "middle";
     title = `Mixed Fit: Restoration Carpentry (${fitPct}% alignment)`;
     description = `
-You’ve got some traits that can work in restoration, but you may hit friction with the constant unknowns, constraints, and slower progress.<br><br>
-<strong>Translation:</strong> you might do well with the right kind of restoration work (light repairs, trim matching, planned scopes) — or you might prefer new-build carpentry lanes with clearer variables.<br><br>
+You have some traits that fit restoration, but friction is likely without the right scope, clients, or expectations.<br><br>
+<strong>Translation:</strong> surprises and people dynamics may drain you faster than the carpentry itself.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(120, 140, 220)";
@@ -174,13 +207,12 @@ ${disciplineLabel}
     band = "low";
     title = `Low Fit: Restoration Carpentry (${fitPct}% alignment)`;
     description = `
-Based on your answers, restoration carpentry will probably feel like constant friction: surprises, detective work, messy constraints, and slow incremental fixes.<br><br>
-<strong>This isn’t a personal knock.</strong> It usually means your strengths fit better in carpentry paths with cleaner conditions, clearer plans, and fewer unknowns.
+Restoration carpentry will likely feel like constant friction — unknowns, constraints, scrutiny, and slow progress layered with blame.<br><br>
+<strong>This isn’t a personal knock.</strong> It usually means your strengths fit better in cleaner, faster, or more predictable carpentry lanes.
     `.trim();
     color = "rgb(170, 80, 80)";
   }
 
-  // Show/hide buttons based on fit (same class names your framework uses)
   if (band === "strong") {
     $('.good-fit').show();
     $('.no-fit').hide();
@@ -192,7 +224,6 @@ Based on your answers, restoration carpentry will probably feel like constant fr
     $('.no-fit').show();
   }
 
-  // Reset
   Object.keys(tags).forEach(k => tags[k] = 0);
 
   return { title, description, color };

@@ -172,13 +172,6 @@ main{ padding: 0 1rem 2.5rem; }
     color: rgba(216,253,255,0.85);
 }
 
-/* Cards */
-.grid{
-    display:grid;
-    gap: 1.05rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
 .card{
     position: relative;
     padding: 1.2rem;
@@ -189,6 +182,12 @@ main{ padding: 0 1rem 2.5rem; }
     text-align: left;
     transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 15px;
 }
 .card:hover{
     transform: translateY(-2px);

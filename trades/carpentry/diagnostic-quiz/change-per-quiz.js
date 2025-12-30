@@ -193,13 +193,13 @@ Based on your answers, the core realities of carpentry are likely to feel like o
     $('.no-fit').hide();
 
     // Make the header line match the situation
-    $('.result-container .good-fit').first().text('Next: take a specialization diagnostic for carpentry:');
+    $('.result-container .good-fit').first().next().text('Next: take a specialization diagnostic for carpentry:');
   } else if (band === "middle") {
     // Show both: they might explore carpentry subtypes OR bounce to other hubs
     $('.good-fit').show();
     $('.no-fit').show();
 
-    $('.result-container .good-fit').first().text('If you want to keep testing, try a carpentry specialization diagnostic:');
+    $('.result-container .good-fit').first().next().text('If you want to keep testing, try a carpentry specialization diagnostic:');
   } else {
     $('.good-fit').hide();
     $('.no-fit').show();

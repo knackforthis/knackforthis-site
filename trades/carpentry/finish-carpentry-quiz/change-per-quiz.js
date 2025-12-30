@@ -80,10 +80,10 @@ const obj = {
   },
 
   8: {
-    question: "How comfortable are you with 'precision tools' and careful handling (saws, nailers, miter setups)?",
+    question: "How comfortable are you with precision tools and careful setups (miters, nailers, jigs)?",
     options: [
-      ["Comfortable, or I’m willing to practice until I am.", ["FinishAligned", "Disciplined"]],
-      ["Willing, but cautious and slow to trust myself.", ["FinishAligned", "Flexible"]],
+      ["Comfortable, or willing to practice until I am.", ["FinishAligned", "Disciplined"]],
+      ["Willing, but cautious and slower to trust myself.", ["FinishAligned", "Flexible"]],
       ["I prefer rougher work where exactness matters less.", ["FinishMisaligned", "Flexible"]],
       ["I’d rather avoid that kind of precision setup.", ["FinishMisaligned", "Flexible"]]
     ]
@@ -109,13 +109,45 @@ const obj = {
     ]
   },
 
+  // ---- HUMAN FRICTION / ATTRITION LAYER ----
+
   11: {
+    question: "Finish carpentry often happens while homeowners, designers, or inspectors watch. You:",
+    options: [
+      ["Stay focused — observation doesn’t bother me.", ["FinishAligned", "Disciplined"]],
+      ["Can handle it, but it adds pressure.", ["FinishAligned", "Flexible"]],
+      ["It makes me tense and error-prone.", ["FinishMisaligned", "Flexible"]],
+      ["I strongly dislike being watched while working.", ["FinishMisaligned", "Flexible"]]
+    ]
+  },
+
+  12: {
+    question: "If you’re told to redo finish work because it doesn’t meet someone’s taste (not code), you:",
+    options: [
+      ["Redo it — visible standards are the job.", ["FinishAligned", "Disciplined"]],
+      ["Redo it, but it irritates me.", ["FinishAligned", "Flexible"]],
+      ["Push back unless it’s clearly wrong.", ["FinishMisaligned", "Flexible"]],
+      ["That kind of feedback kills my motivation.", ["FinishMisaligned", "Flexible"]]
+    ]
+  },
+
+  13: {
+    question: "Finish carpentry often mixes precision with schedule pressure. When those conflict, you:",
+    options: [
+      ["Protect quality even if it takes longer.", ["FinishAligned", "Disciplined"]],
+      ["Try to balance both, depending on context.", ["FinishAligned", "Flexible"]],
+      ["Lean toward speed to avoid falling behind.", ["FinishMisaligned", "Flexible"]],
+      ["Get stressed and lose focus entirely.", ["FinishMisaligned", "Flexible"]]
+    ]
+  },
+
+  14: {
     question: "Be honest: how strong is your pull toward finish carpentry specifically?",
     options: [
-      ["Strong. I’m drawn to detail work and visible standards.", ["FinishAligned", "Disciplined"]],
-      ["Moderate. I’m curious, but not fully sure yet.", ["FinishAligned", "Flexible"]],
-      ["Low. I’m more interested in other types of carpentry.", ["FinishMisaligned", "Flexible"]],
-      ["Very low. This probably isn’t my lane.", ["FinishMisaligned", "Flexible"]]
+      ["Strong — I’m drawn to visible detail and high standards.", ["FinishAligned", "Disciplined"]],
+      ["Moderate — I’m curious, but not fully sure yet.", ["FinishAligned", "Flexible"]],
+      ["Low — I’m more interested in other carpentry paths.", ["FinishMisaligned", "Flexible"]],
+      ["Very low — this probably isn’t my lane.", ["FinishMisaligned", "Flexible"]]
     ]
   }
 };
@@ -134,19 +166,22 @@ function interpretResults() {
   const flexible = tags.Flexible || 0;
 
   // Alignment axis (finish fit)
-  const fitScore = aligned - misaligned; // ~ -12 .. +12
-  let fitPct = Math.round(((fitScore + 12) / 24) * 100);
+  const fitScore = aligned - misaligned; // ~ -15 .. +15
+  let fitPct = Math.round(((fitScore + 15) / 30) * 100);
   fitPct = Math.max(0, Math.min(100, fitPct));
 
   // Discipline axis (patience + consistency)
-  const disciplineScore = disciplined - flexible; // ~ -12 .. +12
-  let disciplinePct = Math.round(((disciplineScore + 12) / 24) * 100);
+  const disciplineScore = disciplined - flexible; // ~ -15 .. +15
+  let disciplinePct = Math.round(((disciplineScore + 15) / 30) * 100);
   disciplinePct = Math.max(0, Math.min(100, disciplinePct));
 
   let disciplineLabel;
-  if (disciplinePct >= 70) disciplineLabel = "You’re built for slow, controlled detail work without needing external pressure.";
-  else if (disciplinePct >= 40) disciplineLabel = "You can do detail work, but consistency may depend on environment and expectations.";
-  else disciplineLabel = "Finish work may feel mentally irritating because it demands patience you may not naturally enjoy.";
+  if (disciplinePct >= 70)
+    disciplineLabel = "You’re built for slow, visible, high-standards work without needing constant momentum.";
+  else if (disciplinePct >= 40)
+    disciplineLabel = "You can handle finish work, but environment and expectations will matter a lot.";
+  else
+    disciplineLabel = "Finish carpentry may feel mentally exhausting due to visible standards, critique, and redo pressure.";
 
   let band, title, description, color;
 
@@ -154,8 +189,8 @@ function interpretResults() {
     band = "strong";
     title = `Strong Fit: Finish Carpentry (${fitPct}% alignment)`;
     description = `
-You’re showing strong alignment with finish carpentry specifically — patience, precision tolerance, and respect for visible standards.<br><br>
-<strong>Blunt truth:</strong> finish carpentry still isn’t “easy.” But your answers suggest the parts that break most people (slow pace + picky detail) won’t break you.<br><br>
+You’re showing strong alignment with finish carpentry — technically and psychologically.<br><br>
+<strong>Blunt truth:</strong> finish work is slow, visible, and unforgiving. Your answers suggest that pressure won’t break your focus.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(60, 160, 120)";
@@ -163,8 +198,8 @@ ${disciplineLabel}
     band = "middle";
     title = `Mixed Fit: Finish Carpentry (${fitPct}% alignment)`;
     description = `
-You’ve got some traits that can work in finish carpentry, but you’re not a natural “detail-standards person” across the board.<br><br>
-<strong>Translation:</strong> you might do well with the right environment, expectations, and a specialty that fits your temperament — or you might prefer a different carpentry lane.<br><br>
+You have some traits that work in finish carpentry, but friction is likely under the wrong conditions.<br><br>
+<strong>Translation:</strong> the wrong supervisor, client, or schedule will exhaust you faster than the cutting itself.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(120, 140, 220)";
@@ -172,13 +207,12 @@ ${disciplineLabel}
     band = "low";
     title = `Low Fit: Finish Carpentry (${fitPct}% alignment)`;
     description = `
-Based on your answers, finish carpentry will probably feel like constant friction: slow pace, visible standards, and rework that won’t stop.<br><br>
-<strong>This isn’t a personal knock.</strong> It usually means your strengths are better matched to a different type of carpentry (or a different trade entirely) where speed, structure, or function matters more than perfect detail.
+Finish carpentry will likely feel like constant friction — visible mistakes, constant critique, and redo under pressure.<br><br>
+<strong>This isn’t a personal knock.</strong> It usually means your strengths fit better in faster-paced or less visibility-heavy trades.
     `.trim();
     color = "rgb(170, 80, 80)";
   }
 
-  // Show/hide buttons based on fit
   if (band === "strong") {
     $('.good-fit').show();
     $('.no-fit').hide();
@@ -190,7 +224,6 @@ Based on your answers, finish carpentry will probably feel like constant frictio
     $('.no-fit').show();
   }
 
-  // Reset
   Object.keys(tags).forEach(k => tags[k] = 0);
 
   return { title, description, color };

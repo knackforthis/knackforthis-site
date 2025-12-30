@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Concrete Finishing: What the Work Really Requires | KnackForThis</title>
+<meta name="description" content="Concrete finishing is time-critical surface work — shaping, smoothing, and controlling material that sets whether you’re ready or not. This article explains timing pressure, physical demand, and the mental focus required to finish concrete well." />
+<meta name="keywords" content="concrete finishing, concrete finisher, cement finishing, flatwork, trowel finish, broom finish, slabs, concrete finishing reality, is concrete finishing right for me, KnackForThis" />
+<link rel="canonical" href="https://knackforthis.com/trades/masonry/concrete-finishing-article/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="KnackForThis" />
+<meta property="og:title" content="Concrete Finishing: What It Really Requires" />
+<meta property="og:description" content="Concrete finishing is timing + feel: flatness, edges, texture, and set control. Read the reality, then test fit." />
+<meta property="og:url" content="https://knackforthis.com/trades/masonry/concrete-finishing-article/" />
+<meta property="og:image" content="https://knackforthis.com/preview.png" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Concrete Finishing Reality Guide | KnackForThis" />
+<meta name="twitter:description" content="What concrete finishing really demands — then a diagnostic to test whether you fit it." />
+<meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg1:#1a0f0a;
+  --bg2:#080503;
+
+  --panel:#241612;
+  --panel2:#1b110e;
+
+  --text:#efe7de;
+  --muted:rgba(239,231,222,.82);
+
+  --wood:#c49a6c;
+  --wood2:rgba(196,154,108,.18);
+
+  --silver:#c8d0d8;
+  --silver2:rgba(200,208,216,.16);
+
+  --aqua:#7fe7ff;
+  --aqua2:rgba(127,231,255,.12);
+
+  --border:rgba(200,208,216,.16);
+  --shadow:0 0 26px rgba(127,231,255,.08);
+
+  --radius:16px;
+  --max:980px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(196,154,108,.16) 0%, transparent 48%),
+    radial-gradient(circle at 78% 26%, rgba(200,208,216,.12) 0%, transparent 55%),
+    radial-gradient(circle at 50% 8%, rgba(127,231,255,.10) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 70%);
+  overflow-x:hidden;
+  line-height:1.85;
+}
+
+/* top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  background:rgba(16,10,8,.86);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.brand .mark{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 18px rgba(127,231,255,.22);
+}
+.brand .name{
+  font-weight:900;
+  color:var(--silver);
+  letter-spacing:.02em;
+}
+.mini-nav{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.mini-nav a{
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  color:rgba(239,231,222,.88);
+  padding:.42rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.14);
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.mini-nav a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(127,231,255,.35);
+  box-shadow:0 0 14px rgba(127,231,255,.12);
+}
+
+/* header */
+header{
+  padding:2.6rem 1rem 1.2rem;
+}
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.55rem 1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.18);
+  background:linear-gradient(to bottom, rgba(36,22,18,.78), rgba(20,12,10,.68));
+  box-shadow:var(--shadow), inset 0 0 22px rgba(200,208,216,.06);
+  position:relative;
+  overflow:hidden;
+}
+.header-inner::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(127,231,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 24%, rgba(200,208,216,.10), transparent 64%),
+    radial-gradient(circle at 50% 70%, rgba(196,154,108,.12), transparent 62%);
+  animation:pulse 12s infinite alternate;
+  pointer-events:none;
+}
+@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.18);} }
+
+.kicker{
+  position:relative;
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  color:rgba(200,208,216,.92);
+  background:rgba(200,208,216,.08);
+  border:1px solid rgba(200,208,216,.14);
+  padding:.35rem .62rem;
+  border-radius:999px;
+}
+
+h1{
+  position:relative;
+  margin:.7rem 0 .55rem;
+  font-family:'Passero One', cursive;
+  color:var(--silver);
+  font-size:clamp(2.1rem, 4.6vw, 2.95rem);
+  text-shadow:0 0 20px rgba(0,0,0,.70);
+}
+.lede{
+  position:relative;
+  margin:0;
+  max-width:900px;
+  color:rgba(239,231,222,.92);
+  font-size:1.12rem;
+}
+
+/* content */
+main{
+  max-width:var(--max);
+  margin:1.2rem auto 0;
+  padding:0 1.2rem 2.5rem;
+}
+
+.section{
+  margin-top:1.6rem;
+  padding:1.25rem 1.1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.14);
+  background:linear-gradient(180deg, rgba(27,17,14,.55), rgba(10,7,6,.25));
+  box-shadow:inset 0 0 18px rgba(200,208,216,.05);
+}
+
+h2{
+  margin:.1rem 0 .6rem;
+  color:var(--aqua);
+  border-left:4px solid rgba(127,231,255,.65);
+  padding-left:.65rem;
+  letter-spacing:.01em;
+}
+
+p{margin:.6rem 0;}
+a{color:var(--aqua); font-weight:700; text-decoration:none; transition:.25s ease;}
+a:hover{color:#fff; text-shadow:0 0 12px rgba(127,231,255,.26);}
+
+.highlight{
+  margin-top:1rem;
+  padding:1rem 1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(127,231,255,.18);
+  background:linear-gradient(to right, var(--aqua2), rgba(200,208,216,.06), rgba(0,0,0,0));
+  box-shadow:inset 0 0 18px rgba(127,231,255,.08);
+}
+
+/* smaller image placeholders */
+.figure-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:.85rem;
+  margin-top:1rem;
+}
+.img-ph{
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(127,231,255,.18);
+  box-shadow:0 0 18px rgba(127,231,255,.06);
+  padding:0;
+  background:none;
+}
+
+/* bullets */
+.list{
+  margin:.7rem 0 0;
+  padding:0;
+  list-style:none;
+  text-align:left;
+}
+.list li{
+  margin:.55rem 0;
+  padding-left:1.15rem;
+  position:relative;
+  color:rgba(239,231,222,.90);
+}
+.list li::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:99px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 10px rgba(127,231,255,.18);
+  position:absolute;
+  left:0; top:.55rem;
+  opacity:.95;
+}
+
+/* FAQ */
+.faq{
+  margin-top:1rem;
+  text-align:left;
+}
+.faq details{
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.16);
+  border-radius:14px;
+  padding:.85rem .9rem;
+  margin:.75rem 0;
+}
+.faq summary{
+  cursor:pointer;
+  font-weight:900;
+  color:rgba(239,231,222,.95);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"＋";
+  float:right;
+  color:rgba(127,231,255,.85);
+  font-weight:900;
+}
+.faq details[open] summary::after{content:"—";}
+.faq .answer{
+  margin-top:.6rem;
+  color:rgba(239,231,222,.86);
+}
+
+/* footer */
+footer{
+  background:rgba(10,7,6,.92);
+  color:rgba(239,231,222,.86);
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:0.92rem;
+  margin-top:2.2rem;
+  border-top:1px solid rgba(127,231,255,.12);
+}
+.meta{
+  position:relative;
+  margin:0 0 .55rem;
+  display:inline-block;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(200,208,216,.88);
+  width: 100%;
+  text-align: center;
+  padding:.32rem .6rem;
+  border-radius:999px;
+  backdrop-filter:blur(6px);
+}
+.meta time{
+  font-weight:900;
+  color:var(--silver);
+}
+
+@media (max-width: 920px){
+  .figure-row{grid-template-columns:1fr; }
+  .mini-nav{display:none;}
+  .section{padding:1.05rem 1rem;}
+}
+a{text-decoration:none; color: aqua;}</style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="https://knackforthis.com/">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">KnackForThis.com</span>
+    </a>
+
+    <nav class="mini-nav" aria-label="Quick navigation">
+      <a href="https://knackforthis.com/">Home</a>
+      <a href="https://knackforthis.com/trades/">Trades</a>
+      <a href="https://knackforthis.com/trades/masonry/">Masonry</a>
+    </nav>
+  </div>
+
+  <header><p class="meta" style="text-align: center;">
+  Published:
+  <time datetime="2025-12-29">December 29, 2025</time>
+  · Updated:
+  <time datetime="2025-12-29">December 29, 2025</time>
+</p>
+
+    <div class="header-inner">
+      <span class="kicker">Trades • Masonry • Concrete Finishing</span>
+      <h1>Concrete Finishing: What It Really Requires</h1>
+      <p class="lede">
+        Concrete finishing is not “smoothing cement.” It’s timing, physical grind, and surface standards under a clock you don’t control.
+        You’re shaping a material that is literally changing state while you work.
+        If bricklaying is rhythm with units, concrete finishing is “read the set, hit the window, and leave a surface that won’t haunt you forever.”
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What Concrete Finishing Actually Is</h2>
+      <p>
+        Concrete finishing is the craft of placing, leveling, edging, jointing, floating, troweling, and texturing concrete slabs and surfaces:
+        sidewalks, driveways, garage floors, patios, warehouse slabs, ramps, steps, and sometimes decorative work.
+        The defining reality is <strong>timing</strong>. Concrete gives you workable phases — and it does not care about your mood, your staffing, or your lunch plans.
+      </p>
+      <p>
+        People imagine it as brute labor. There is labor, yes. But the deeper skill is <strong>reading moisture and set</strong>:
+        knowing when to bull float, when to start edging, when to trowel, when to stop messing with it,
+        and how to prevent common failures like dusting, blisters, scaling, or ugly waves.
+      </p>
+
+      <div class="figure-row" aria-label="Image placeholders">
+        <img class="img-ph" src="../imgs/bricklaying-stringline.jpg" alt="Screeding and leveling fresh concrete: establishing flatness early"/>
+        <img class="img-ph" src="../imgs/edging-jointing-tools.jpg" alt="Edging and jointing: clean borders and control joints for crack management"/>
+        <img class="img-ph" src="../imgs/mortar-matching-samples.jpg" alt="Broom finish texture: consistent traction lines and uniform surface"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Spend Time Doing</h2>
+      <p>
+        Concrete finishing is a sequence job with narrow windows.
+        The day tends to be: prep + form → place → screed/level → float → edge/joint → wait/monitor → finish texture → cure/protect.
+        Your “skill” is knowing what to do <em>now</em>, what to do <em>later</em>, and what to stop doing before you ruin it.
+      </p>
+
+      <ul class="list">
+        <li><strong>Prep + forms:</strong> grade, base, form layout, stakes, elevations, slope for drainage, rebar/mesh placement.</li>
+        <li><strong>Placing + moving mud:</strong> raking, shoveling, vibrating/rodding, working around edges and embedded items.</li>
+        <li><strong>Screeding + leveling:</strong> establishing flatness and slope early so you’re not “fighting waves” later.</li>
+        <li><strong>Floating:</strong> bull float/mag float to close surface and flatten; controlling paste without overworking.</li>
+        <li><strong>Edges + joints:</strong> crisp borders, control joints, tool timing, and consistency across the whole pour.</li>
+        <li><strong>Finishing textures:</strong> broom finish, trowel finish, stamped, exposed aggregate — each has its own failure modes.</li>
+        <li><strong>Curing + protection:</strong> curing compound, plastic, wet cure, traffic control — because “finish” includes durability.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Concrete finishing punishes the two extremes: rushing too early (you tear it up) and waiting too long (it locks up).
+          The winners are the people who can stay calm and read the phase.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where the Pressure Comes From</h2>
+      <p>
+        The pressure is a mix of <strong>time windows</strong>, <strong>team coordination</strong>, and <strong>permanent surfaces</strong>.
+        When concrete is ready, everyone needs to move — and when it’s not ready, everyone needs to wait without panicking and wrecking it.
+        Weather (sun, wind, temperature) changes set time, so you’re always adapting.
+      </p>
+      <p>
+        The other pressure is visibility and liability. A bad slab isn’t “a little off.” It can puddle, crack badly,
+        delaminate, or look wavy and amateur forever. Once it cures, your options get expensive fast.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What Traits Actually Matter</h2>
+      <p>
+        Concrete finishing rewards a very specific combo: physical endurance plus timing judgment.
+        You can’t think your way out of the labor, and you can’t muscle your way past bad timing.
+      </p>
+
+      <ul class="list">
+        <li><strong>Timing discipline:</strong> you can wait when waiting is correct, then move fast when the window opens.</li>
+        <li><strong>Surface sensitivity:</strong> you develop feel for paste, moisture, and tool pressure (not just “push harder”).</li>
+        <li><strong>Endurance under pace:</strong> pours can be long, hot, and relentless; you stay functional when tired.</li>
+        <li><strong>Calm coordination:</strong> you can work around others without chaos — concrete is rarely solo work.</li>
+        <li><strong>Standards mindset:</strong> you care about flatness, slope, edges, and consistency because the slab will expose you.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Concrete finishers are basically “timing athletes.”
+          The tool skill is real — but the deeper skill is reading the set and not lying to yourself about the phase.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Who Should Probably Avoid It</h2>
+      <p>
+        No shame — concrete finishing is brutal if your temperament fights its reality.
+      </p>
+
+      <ul class="list">
+        <li><strong>You hate time pressure:</strong> finishing windows are real, and they create stress.</li>
+        <li><strong>You want clean, predictable days:</strong> pours run long; weather shifts plans.</li>
+        <li><strong>You dislike physical grind:</strong> bending, kneeling, pulling, pushing, lifting — for hours.</li>
+        <li><strong>You get impatient with “waiting”:</strong> some phases are watch-and-wait, then sprint.</li>
+        <li><strong>You hate mess:</strong> water, mud, slurry, cleanup — it’s part of the job.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          If you want masonry with more steady rhythm and less “set-time drama,” compare with
+          <a href="https://knackforthis.com/trades/masonry/bricklaying-article/">bricklaying</a>.
+          If you want visible finish standards but prefer fitment decisions, compare with
+          <a href="https://knackforthis.com/trades/masonry/stone-masonry-article/">stone masonry</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The “Concrete Finisher Brain” vs Other Masonry Paths</h2>
+      <p>
+        Concrete finishing sits in masonry, but it behaves differently. Your main opponent isn’t “layout” — it’s the material clock.
+        Concrete rewards people who can operate in phases: prep hard, execute fast, then protect the cure.
+      </p>
+
+      <ul class="list">
+        <li><strong>Compared to bricklaying:</strong> less unit repetition, more timing windows and surface feel.</li>
+        <li><strong>Compared to stone work:</strong> less aesthetic selection, more flatness/texture standards under time.</li>
+        <li><strong>Compared to hardscape/pavers:</strong> less modular correction, more “get it right now or it’s forever.”</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Next Step: Get a Signal, Then Compare</h2>
+      <p>
+        If concrete finishing sounds appealing, don’t decide based on “smooth floors look satisfying.”
+        Decide based on whether you can live inside the reality: early starts, heavy days, timing windows, and surface standards that don’t forgive shortcuts.
+      </p>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Run the <a href="https://knackforthis.com/trades/masonry/concrete-finishing-quiz/">Concrete Finishing Fit Diagnostic</a> first.
+          Then compare paths from the <a href="https://knackforthis.com/trades/masonry/">Masonry Hub</a> or step back to the
+          <a href="https://knackforthis.com/trades/">Trades Hub</a>.
+          If you want the full map, start at the <a href="https://knackforthis.com/">homepage</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+
+      <div class="faq" aria-label="Frequently Asked Questions">
+        <details class="faq-item">
+          <summary>Is concrete finishing mostly residential driveways, or big commercial slabs?</summary>
+          <div class="answer">
+            Both exist. Residential flatwork is common. Commercial/industrial slabs add bigger pours, tighter flatness specs in some cases,
+            and more coordination. The shared reality is timing and surface standards.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What’s the hardest part for most beginners?</summary>
+          <div class="answer">
+            Timing. Beginners often overwork early (tearing up surface) or wait too long (can’t close/trowel properly).
+            Learning set phases and tool pressure is the big leap.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to be extremely strong to do it?</summary>
+          <div class="answer">
+            Strength helps, but endurance and technique matter more. Smart tool use, pacing, and body mechanics keep people effective over long careers.
+            It’s still a physically demanding trade.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the concrete finishing diagnostic actually measure?</summary>
+          <div class="answer">
+            It’s not a skill test. It estimates alignment between your tolerances (timing pressure, endurance, surface standards mindset, teamwork/coordination,
+            comfort with messy environments) and the day-to-day reality of concrete finishing.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>If I’m “mixed fit,” does that mean I should avoid it?</summary>
+          <div class="answer">
+            Not automatically. Mixed fit often means you can do it, but you’ll need the right crew, pacing, and expectations —
+            and you may do better in smaller pours or specific finish types while your timing feel develops.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://knackforthis.com/">Home</a> •
+      <a href="https://knackforthis.com/trades/">Trades</a> •
+      <a href="https://knackforthis.com/trades/masonry/">Masonry</a> •
+      <a href="https://knackforthis.com/contact/">Contact</a> •
+      <a href="https://knackforthis.com/privacy/">Privacy</a> •
+      <a href="https://knackforthis.com/terms/">Terms</a>
+    </p>
+    <p style="margin:.6rem 0 0;">
+      KnackForThis is educational. Diagnostics are for self-assessment only and are not career advice.<br />
+      © 2025 KnackForThis. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://knackforthis.com/trades/masonry/concrete-finishing-article/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://knackforthis.com/trades/" },
+        { "@type": "ListItem", "position": 3, "name": "Masonry", "item": "https://knackforthis.com/trades/masonry/" },
+        { "@type": "ListItem", "position": 4, "name": "Concrete Finishing", "item": "https://knackforthis.com/trades/masonry/concrete-finishing-article/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://knackforthis.com/trades/masonry/concrete-finishing-article/#webpage",
+      "url": "https://knackforthis.com/trades/masonry/concrete-finishing-article/",
+      "name": "Concrete Finishing: What It Really Requires",
+      "isPartOf": { "@id": "https://knackforthis.com/#website" },
+      "about": { "@id": "https://knackforthis.com/trades/masonry/#topic" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://knackforthis.com/trades/masonry/concrete-finishing-article/#article",
+      "headline": "Concrete Finishing: What It Really Requires",
+      "description": "Concrete finishing is timing + feel — reading the set, controlling flatness, edges, and surface texture under a clock you don’t control. What the day-to-day demands, what drains people, and where to test your fit.",
+      "image": "https://knackforthis.com/preview.png",
+  "datePublished": "2025-12-29",
+  "dateModified": "2025-12-29",      "mainEntityOfPage": { "@id": "https://knackforthis.com/trades/masonry/concrete-finishing-article/#webpage" },
+      "author": { "@id": "https://knackforthis.com/#org" },
+      "publisher": { "@id": "https://knackforthis.com/#org" },
+      "inLanguage": "en",
+      "about": [
+        "concrete finishing",
+        "masonry",
+        "flatwork",
+        "slabs",
+        "skilled trades"
+      ],
+      "keywords": [
+        "concrete finishing",
+        "concrete finisher",
+        "cement finishing",
+        "flatwork",
+        "trowel finish",
+        "broom finish",
+        "slabs",
+        "is concrete finishing right for me",
+        "KnackForThis"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://knackforthis.com/#org",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knackforthis.com/favicon.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knackforthis.com/#website",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knackforthis.com/trades/masonry/#topic",
+      "name": "Masonry"
+    }
+  ]
+}
+  </script>
+</body>
+</html>

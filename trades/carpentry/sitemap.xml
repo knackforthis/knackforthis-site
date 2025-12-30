@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Carpentry hub -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/</loc>
+  </url>
+
+  <!-- Finish Carpentry -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/finish-carpentry-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/finish-carpentry-quiz/</loc>
+  </url>
+
+  <!-- Framing -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/framing-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/framing-quiz/</loc>
+  </url>
+
+  <!-- Cabinet Making -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/cabinet-making-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/cabinet-making-quiz/</loc>
+  </url>
+
+  <!-- Rough Carpentry -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/rough-carpentry-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/rough-carpentry-quiz/</loc>
+  </url>
+
+  <!-- Restoration Carpentry -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/restoration-carpentry-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/restoration-carpentry-quiz/</loc>
+  </url>
+
+  <!-- Custom Furniture -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/custom-furniture-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/custom-furniture-quiz/</loc>
+  </url>
+
+</urlset>

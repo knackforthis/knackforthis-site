@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carpentry — Is This a Fit? | KnackForThis</title>
-
-  <meta name="description" content="A clear carpentry reality check. Learn what carpentry actually demands, then take diagnostics for base fit and specific types like framing, finish carpentry, cabinet making, and more." />
-  <meta name="author" content="KnackForThis" />
+<title>Carpentry — Is This a Fit? | KnackForThis</title>
+<meta name="description" content="A clear carpentry reality check. Learn what carpentry actually demands, then take diagnostics for base fit and specific types like framing, finish carpentry, cabinet making, rough carpentry, restoration carpentry, and custom furniture." />
+<meta name="author" content="KnackForThis" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#1a120b" />
 
@@ -558,19 +557,64 @@
       .card{ min-height: unset; }
       .card .cta{ justify-content:flex-start; }
     }
-  </style>
+   .nav-toggle{
+  display:none;
+  background: rgba(0,0,0,.22);
+  border:1px solid rgba(92,232,255,.22);
+  color: rgba(243,232,220,.92);
+  border-radius:12px;
+  padding:.45rem .65rem;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+@media (max-width: 740px){
+  .nav-toggle{ display:inline-flex; align-items:center; gap:.45rem; }
+
+  .crumb{
+    display:none;               /* hidden until toggled */
+    position:absolute;
+    top:100%;
+    right:.75rem;
+    left:.75rem;
+    margin-top:.6rem;
+    padding:.55rem;
+    border-radius:14px;
+    background:#0b0705;
+    border:1px solid rgba(199,154,107,.22);
+    box-shadow: 0 18px 56px rgba(0,0,0,.55);
+    flex-direction:column;
+    align-items:stretch;
+    gap:.35rem;
+  }
+
+  .top.nav-open .crumb{ display:flex; }
+
+  .crumb a{
+    text-align:left;
+    padding:.55rem .65rem;
+  }
+
+  header{ margin-top:66px; }
+}
+
+
+  a{text-decoration:none; color: aqua;}</style>
 </head>
 <body>
 
-  <video
-    class="bg-img"
-    id="bgvid"
-    src="main-background.mp4"
-    muted
-    autoplay
-    loop
-    playsinline
-  ></video>
+<video
+  class="bg-img"
+  id="bgvid"
+  src="main-background.mp4"
+  muted
+  autoplay
+  loop
+  playsinline
+  aria-hidden="true"
+></video>
+
 
   <script>
     window.onload = () => {
@@ -585,17 +629,26 @@
   <div class="grid" aria-hidden="true"></div>
 
   <!-- ✅ NEW: solid topbar with brand left, nav right -->
-  <div class="top">
-    <a class="brand" href="https://knackforthis.com/">KnackForThis.com</a>
+<div class="top">
+  <a class="brand" href="https://knackforthis.com/">KnackForThis.com</a>
 
-    <nav class="crumb" aria-label="Primary navigation">
-      <a href="https://knackforthis.com/">Home</a>
-      <a href="https://knackforthis.com/trades/">Trades</a>
-      <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a>
-    </nav>
-  </div>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="topnav">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+
+  <nav id="topnav" class="crumb" aria-label="Primary navigation">
+    <a href="https://knackforthis.com/">Home</a>
+    <a href="https://knackforthis.com/trades/">Trades</a>
+    <a href="https://knackforthis.com/trades/electrical/">Electrical</a>
+    <a href="https://knackforthis.com/trades/welding/">Welding</a>
+    <a href="https://knackforthis.com/trades/plumbing/">Plumbing</a>
+    <a href="https://knackforthis.com/trades/masonry/">Masonry</a>
+  </nav>
+</div>
+
 
   <header>
+
     <div class="wrap" style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
       <span class="kicker"><span class="chip">trade hub</span> carpentry</span>
 
@@ -822,6 +875,21 @@
   </footer>
 
   <script>
+  const topBar = document.querySelector('.top');
+  const btn = document.querySelector('.nav-toggle');
+
+  btn?.addEventListener('click', () => {
+    const open = topBar.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Close menu when tapping a link (mobile sanity)
+  document.querySelectorAll('#topnav a').forEach(a => {
+    a.addEventListener('click', () => {
+      topBar.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>

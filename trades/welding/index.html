@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Welding — Is This a Fit? | KnackForThis</title>
+<meta name="description" content="A clear welding reality check. Learn what welding actually demands, then take diagnostics for base fit and specialties like structural welding, fabrication, pipe welding, automotive, aerospace precision welding, and artistic metalwork." />
+<meta name="author" content="KnackForThis" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a1014" />
+
+  <link rel="canonical" href="https://knackforthis.com/trades/welding/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="KnackForThis" />
+  <meta property="og:title" content="Welding — Is This a Fit?" />
+  <meta property="og:description" content="A welding reality check + diagnostics for different types of welding." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://knackforthis.com/trades/welding/" />
+  <meta property="og:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Welding — Is This a Fit?" />
+  <meta name="twitter:description" content="A welding reality check + diagnostics for different types of welding." />
+  <meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"CollectionPage",
+        "@id":"https://knackforthis.com/trades/welding/#collection",
+        "name":"Welding — Is This a Fit?",
+        "url":"https://knackforthis.com/trades/welding/",
+        "description":"A welding hub that explains the trade and routes users to diagnostic quizzes for overall fit and specialization fit.",
+        "inLanguage":"en",
+        "hasPart":[
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/welding/diagnostic-quiz/#quiz",
+            "name":"Welding Diagnostic",
+            "url":"https://knackforthis.com/trades/welding/diagnostic-quiz/",
+            "isAccessibleForFree": true
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/welding/structural-welding-quiz/#quiz",
+            "name":"Structural Welding Diagnostic",
+            "url":"https://knackforthis.com/trades/welding/structural-welding-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/welding/fabrication-quiz/#quiz",
+            "name":"Fabrication Welding Diagnostic",
+            "url":"https://knackforthis.com/trades/welding/fabrication-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/welding/pipe-welding-quiz/#quiz",
+            "name":"Pipe Welding Diagnostic",
+            "url":"https://knackforthis.com/trades/welding/pipe-welding-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/welding/automotive-welding-quiz/#quiz",
+            "name":"Automotive Welding Diagnostic",
+            "url":"https://knackforthis.com/trades/welding/automotive-welding-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/welding/aerospace-precision-welding-quiz/#quiz",
+            "name":"Aerospace / Precision Welding Diagnostic",
+            "url":"https://knackforthis.com/trades/welding/aerospace-precision-welding-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/welding/artistic-metalwork-quiz/#quiz",
+            "name":"Artistic Metalwork Diagnostic",
+            "url":"https://knackforthis.com/trades/welding/artistic-metalwork-quiz/"
+          }
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://knackforthis.com/trades/welding/#breadcrumbs",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://knackforthis.com/"},
+          {"@type":"ListItem","position":2,"name":"Trades","item":"https://knackforthis.com/trades/"},
+          {"@type":"ListItem","position":3,"name":"Welding","item":"https://knackforthis.com/trades/welding/"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#06090c;
+      --panel:rgba(14,18,22,.62);
+      --panel2:rgba(10,14,18,.62);
+      --text:#e9f0f6;
+      --muted:rgba(233,240,246,.82);
+
+      --steel:#cfd8e3;
+      --steel2:rgba(207,216,227,.18);
+
+      --aqua: rgba(92, 232, 255, 0.92);
+      --aqua2: rgba(92, 232, 255, 0.14);
+      --aquaLine: rgba(92, 232, 255, 0.30);
+
+      --iron:#8fa0ad;
+
+      --radius:18px;
+      --shadow:0 18px 56px rgba(0,0,0,.55);
+      --shadowSoft:0 0 22px rgba(207,216,227,.10);
+      --max:1100px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      text-align:center;
+      font-size:clamp(15px,3.8vw,17px);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* background: steel coolness + subtle grid */
+    .bg{
+      position:fixed; inset:0; z-index:-2;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(207,216,227,.14), transparent 52%),
+        radial-gradient(circle at 78% 18%, rgba(143,160,173,.10), transparent 54%),
+        radial-gradient(circle at 50% 85%, rgba(92,232,255,.06), transparent 58%),
+        linear-gradient(to bottom, rgba(0,0,0,.26), rgba(0,0,0,.78));
+    }
+    .grid{
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background:
+        linear-gradient(to right, rgba(92,232,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(92,232,255,.05) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at 50% 22%, rgba(0,0,0,.85), rgba(0,0,0,.25) 55%, transparent 78%);
+      opacity:.75;
+    }
+
+    /* solid topbar */
+    .top{
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      padding:.75rem 1rem;
+      background:#070b10;
+      border-bottom:1px solid rgba(207,216,227,.18);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+      gap:1rem;
+    }
+    .brand{
+      color:#fff;
+      font-weight:900;
+      text-decoration:none;
+      letter-spacing:.02em;
+      opacity:.96;
+    }
+    .crumb{
+      display:flex;
+      gap:.65rem;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .crumb a{
+      color: rgba(233,240,246,.88);
+      font-weight:900;
+      text-decoration:none;
+      padding:.35rem .55rem;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .crumb a:hover{
+      border-color: rgba(92,232,255,.18);
+      background: rgba(92,232,255,.05);
+    }
+
+    header{
+      margin-top:78px;
+      padding:1.2rem;
+      padding-top:3.25rem;
+      margin-bottom: 6%;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(207,216,227,.14), transparent 62%),
+        linear-gradient(to bottom, rgba(12,16,20,.78), rgba(8,10,14,.62));
+      border:1px solid rgba(207,216,227,.16);
+      border-radius:var(--radius);
+      padding:1.35rem 1.2rem;
+      box-shadow: var(--shadow), var(--shadowSoft);
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .wrap::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, transparent, rgba(92,232,255,.65), rgba(207,216,227,.28), transparent);
+      opacity:.95;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.82rem;
+      color: rgba(233,240,246,.86);
+      font-family: var(--mono);
+      background: rgba(92,232,255,.05);
+      border:1px solid rgba(92,232,255,.16);
+      padding:.35rem .6rem;
+      border-radius:999px;
+    }
+    .kicker .chip{
+      display:inline-block;
+      padding:.12rem .40rem;
+      border-radius:999px;
+      border:1px solid rgba(233,240,246,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(233,240,246,.88);
+      letter-spacing:.05em;
+    }
+
+    h1{
+      margin:.85rem 0 .4rem;
+      font-weight:900;
+      font-size:clamp(2.0rem,6.5vw,2.9rem);
+      color: var(--steel);
+      text-shadow:0 0 16px rgba(0,0,0,.9);
+      line-height:1.14;
+    }
+
+    .sub{
+      max-width:920px;
+      margin:0;
+      color:rgba(233,240,246,.90);
+      font-size: 1.05rem;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1rem;
+      margin-top: 1.05rem;
+      align-items: start;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-direction: column;
+      gap: .65rem;
+      align-items: stretch;
+    }
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:12px;
+      padding:.85rem .95rem;
+      border:1px solid rgba(207,216,227,.32);
+      background: linear-gradient(to bottom, rgba(233,240,246,.92), rgba(168,184,198,.92));
+      color:#071018;
+      box-shadow: 0 10px 28px rgba(0,0,0,.40);
+      white-space: nowrap;
+      transition: transform .10s ease, filter .14s ease, box-shadow .14s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: saturate(1.02); }
+
+    .btn-secondary{
+      background: rgba(0,0,0,.22);
+      color: rgba(233,240,246,.92);
+      border-color: rgba(92,232,255,.22);
+      box-shadow: inset 0 0 0 1px rgba(92,232,255,.08);
+    }
+    .btn-secondary:hover{ box-shadow: 0 0 0 3px rgba(92,232,255,.14); }
+
+    .btn .arrow{
+      font-family: var(--mono);
+      opacity:.85;
+    }
+
+    main{ padding:0 1rem 2.6rem; }
+
+    .section{
+      max-width:var(--max);
+      margin:1.15rem auto;
+      text-align:left;
+    }
+
+    .section h2{
+      margin: .9rem 0 .35rem;
+      color: var(--steel);
+      font-size: clamp(1.3rem, 5vw, 1.9rem);
+      position: relative;
+      padding-left: .85rem;
+    }
+    .section h2::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.2em;
+      width:4px;
+      height:1.0em;
+      border-radius:999px;
+      background: linear-gradient(to bottom, transparent, rgba(92,232,255,.75), transparent);
+    }
+
+    .section p{
+      max-width: 980px;
+      margin: .35rem 0 1rem;
+      color: var(--muted);
+    }
+
+    .panel{
+      border-radius: var(--radius);
+      border: 1px solid rgba(92,232,255,.14);
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.06), transparent 60%),
+        rgba(0,0,0,.16);
+      padding: 1rem 1rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.40);
+    }
+
+    .panel-grid{
+      display:grid;
+      gap: .85rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: .85rem;
+    }
+
+    .mini{
+      border-radius: 16px;
+      border: 1px solid rgba(207,216,227,.16);
+      background: rgba(0,0,0,.18);
+      padding: .9rem .9rem;
+    }
+    .mini h3{
+      margin: 0 0 .35rem;
+      color: rgba(92,232,255,.88);
+      font-size: 1.05rem;
+    }
+    .mini p{ margin: 0; color: rgba(233,240,246,.80); }
+
+    .card{
+      margin-top:2%;
+      position: relative;
+      border-radius: var(--radius);
+      border: 1px solid rgba(207,216,227,.16);
+      background:
+        radial-gradient(900px 260px at 16% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(207,216,227,.14), transparent 62%),
+        rgba(0,0,0,.16);
+      background-color: black;
+      padding: 1.05rem 1.05rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.44);
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap: .6rem;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, rgba(92,232,255,.70), rgba(207,216,227,.22), transparent);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .badge{
+      position:absolute;
+      top: 12px;
+      right: 12px;
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      color: rgba(233,240,246,.72);
+      border: 1px solid rgba(92,232,255,.18);
+      background: rgba(0,0,0,.18);
+      padding: .22rem .48rem;
+      border-radius: 999px;
+    }
+
+    .card h3{
+      margin: 0;
+      color: var(--steel);
+      font-size: 1.7rem;
+      padding-right: 5rem;
+      text-align: center;
+    }
+
+    .card p{
+      margin: 0;
+      color: rgba(233,240,246,.86);
+    }
+
+    .card .cta{
+      margin-top:auto;
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .link{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      border-radius: 12px;
+      padding: .78rem .92rem;
+      border: 1px solid rgba(92,232,255,.26);
+      background: rgba(92,232,255,.10);
+      color: rgba(233,240,246,.96);
+      transition: transform .10s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+      white-space: nowrap;
+    }
+    .link:hover{
+      transform: translateY(-1px);
+      background: rgba(92,232,255,.14);
+      border-color: rgba(92,232,255,.40);
+      box-shadow: 0 0 0 3px rgba(92,232,255,.12);
+    }
+
+    .link-article{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:10px;
+      padding:.45rem .75rem;
+      border:1px solid rgba(207,216,227,.20);
+      background: rgba(207,216,227,.08);
+      color: rgba(233,240,246,.92);
+      font-size:.92rem;
+      white-space: nowrap;
+      transition: transform .10s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+    }
+    .link-article:hover{
+      transform: translateY(-1px);
+      background: rgba(207,216,227,.12);
+      border-color: rgba(207,216,227,.32);
+      box-shadow: 0 0 0 3px rgba(207,216,227,.08);
+    }
+
+    footer{
+      margin-top:2rem;
+      background:rgba(8,10,14,.92);
+      padding:1rem;
+      border-top:1px solid rgba(207,216,227,.16);
+    }
+    footer a{
+      color: rgba(207,216,227,.95);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .bg-img{
+      width: 100%;
+      z-index: -3;
+      position: fixed;
+      left: 0;
+      top: 0;
+      opacity: 0.14;
+    }
+
+    #consent-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 40, 60, 0.95);
+      color: #c8fce1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(0,255,255,0.3);
+      box-shadow: 0 -4px 25px rgba(0,255,255,0.15);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    #consent-banner a {
+      color: aqua;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    #consent-banner a:hover { text-shadow: 0 0 8px aqua; }
+    #agree-btn {
+      margin-top: 0.6rem;
+      background: linear-gradient(to right, #00ac81, #00fff2);
+      border: none;
+      color: #001a1a;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #agree-btn:hover { transform: scale(1.05); }
+
+    @media (max-width: 740px){
+      .wrap{ text-align:left; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-actions{ flex-direction: column; }
+      .card{ min-height: unset; }
+      .card .cta{ justify-content:flex-start; }
+    }
+    
+   .nav-toggle{
+  display:none;
+  background: rgba(0,0,0,.22);
+  border:1px solid rgba(92,232,255,.22);
+  color: rgba(243,232,220,.92);
+  border-radius:12px;
+  padding:.45rem .65rem;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+@media (max-width: 740px){
+  .nav-toggle{ display:inline-flex; align-items:center; gap:.45rem; }
+
+  .crumb{
+    display:none;               /* hidden until toggled */
+    position:absolute;
+    top:100%;
+    right:.75rem;
+    left:.75rem;
+    margin-top:.6rem;
+    padding:.55rem;
+    border-radius:14px;
+    background:#0b0705;
+    border:1px solid rgba(199,154,107,.22);
+    box-shadow: 0 18px 56px rgba(0,0,0,.55);
+    flex-direction:column;
+    align-items:stretch;
+    gap:.35rem;
+  }
+
+  .top.nav-open .crumb{ display:flex; }
+
+  .crumb a{
+    text-align:left;
+    padding:.55rem .65rem;
+  }
+
+  header{ margin-top:66px; }
+}
+
+
+  a{text-decoration:none; color: aqua;}</style>
+</head>
+<body>
+
+<video
+  class="bg-img"
+  id="bgvid"
+  src="main-background.mp4"
+  muted
+  autoplay
+  loop
+  playsinline
+  aria-hidden="true"
+></video>
+
+
+  <script>
+    window.onload = () => {
+      const v = document.getElementById('bgvid');
+      const setRate = () => (v.playbackRate = 0.7);
+      setRate();
+      v.addEventListener('loadedmetadata', setRate);
+    };
+  </script>
+
+  <div class="bg"></div>
+  <div class="grid" aria-hidden="true"></div>
+
+<div class="top">
+  <a class="brand" href="https://knackforthis.com/">KnackForThis.com</a>
+
+  <button class="nav-toggle" aria-expanded="false" aria-controls="topnav">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+
+  <nav id="topnav" class="crumb" aria-label="Primary navigation">
+    <a href="https://knackforthis.com/">Home</a>
+    <a href="https://knackforthis.com/trades/">Trades</a>
+    <a href="https://knackforthis.com/trades/electrical/">Electrical</a>
+    <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a>
+    <a href="https://knackforthis.com/trades/plumbing/">Plumbing</a>
+    <a href="https://knackforthis.com/trades/masonry/">Masonry</a>
+  </nav>
+</div>
+
+  <header>
+
+    <div class="wrap" style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
+      <span class="kicker"><span class="chip">trade hub</span> welding</span>
+
+      <h1 style="text-align:center;">Welding</h1>
+
+      <p class="sub" style="text-align:center;">
+        Welding is controlled heat, repeatable technique, and judgment under real constraints.
+        It can be heavy and fast (structural), slow and exact (aerospace/precision), or messy and practical (automotive).
+        This hub gives a plain-language overview and routes you to diagnostics that help you determine whether it’s a good fit
+        for you — overall and by specialization.
+      </p>
+
+      <div class="hero-grid" style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
+        <div class="hero-actions">
+          <a class="btn" href="/trades/welding/diagnostic-quiz/">
+            Take the Welding Quiz <span class="arrow">→</span>
+          </a>
+          <a class="btn btn-secondary" href="/trades/">
+            Back to Trades <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <p>
+        Each specialization below represents a different kind of environment and workflow.
+        Selecting one will take you to a diagnostic designed to evaluate fit for that lane.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Structural Welding</h3>
+          <p>
+            Heavy, strength-critical welding on beams, columns, and load-bearing assemblies where reliability and repetition matter.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/welding/structural-welding-quiz/">
+              Take the Structural Welding Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/welding/structural-welding-article/">
+              What Structural Welding Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Fabrication</h3>
+          <p>
+            Build-from-parts welding with measuring, layout, fit-up, and iteration — often in a shop with repeatable systems.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/welding/fabrication-quiz/">
+              Take the Fabrication Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/welding/fabrication-article/">
+              What Fabrication Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Pipe Welding</h3>
+          <p>
+            High-stakes weld quality on pipe systems where joints must hold pressure and pass inspection under strict procedures.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/welding/pipe-welding-quiz/">
+              Take the Pipe Welding Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/welding/pipe-welding-article/">
+              What Pipe Welding Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Automotive Welding</h3>
+          <p>
+            Practical repair and modification work in dirty, tight-access environments where prep and heat control make or break results.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/welding/automotive-welding-quiz/">
+              Take the Automotive Welding Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/welding/automotive-welding-article/">
+              What Automotive Welding Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Aerospace / Precision Welding</h3>
+          <p>
+            Tight tolerance, inspection-heavy welding where small mistakes are expensive and consistency beats speed every time.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/welding/aerospace-precision-welding-quiz/">
+              Take the Aerospace / Precision Welding Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/welding/aerospace-precision-welding-article/">
+              What Aerospace / Precision Welding Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Artistic Metalwork</h3>
+          <p>
+            Creative welding and fabrication where design judgment, finishing, and visual standards are part of the work — not optional.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/welding/artistic-metalwork-quiz/">
+              Take the Artistic Metalwork Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/welding/artistic-metalwork-article/">
+              What Artistic Metalwork Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: black; border-radius: 15px;">
+      <div class="panel">
+        <h2>About Welding and Why These Diagnostics Help</h2>
+
+        <p>
+          Welding isn’t one “thing.” Two welders can share the same title and live in completely different worlds:
+          outdoor structural work vs clean shop fabrication, inspection-driven pipe welding vs cosmetic automotive repairs,
+          or ultra-precise aerospace work where everything is measured, documented, and verified.
+        </p>
+
+        <p>
+          That’s why these diagnostics exist: not to test talent, but to test <strong>fit</strong>.
+          People wash out of welding lanes for predictable reasons: they hate prep, they hate repetition,
+          they can’t tolerate heat/PPE/fumes, they don’t want inspection pressure, or they need creativity but end up in production.
+          None of that means “you can’t weld.” It means a specific lane is fighting your temperament every day.
+        </p>
+
+        <p>
+          These quizzes help you notice where you’re likely to thrive:
+          <strong>dirty field work vs controlled shop work</strong>, <strong>speed vs precision</strong>,
+          <strong>inspection pressure vs practical repairs</strong>, <strong>repetition vs variety</strong>,
+          and <strong>cosmetic finishing vs purely functional strength</strong>.
+          They’re not career advice and they’re not guarantees — they’re a fast filter before you invest time, money, or identity in the wrong lane.
+        </p>
+
+        <div class="panel-grid">
+          <div class="mini">
+            <h3>What you’ll get</h3>
+            <p>
+              A practical “alignment signal” about which welding environments match how you operate — and which ones are likely to feel like friction.
+            </p>
+          </div>
+
+          <div class="mini">
+            <h3>What you won’t get</h3>
+            <p>
+              A promise, a prediction, or a label that defines you. Use results as a starting point, not a verdict.
+            </p>
+          </div>
+
+          <div class="mini">
+            <h3>Best next step</h3>
+            <p>
+              Take the base diagnostic, then one specialization quiz. After that, validate in real life: watch a shop, shadow a welder,
+              or do a small controlled practice project.
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight" style="margin-top:1rem;">
+          <p style="margin:0;">
+            If you’re interested in welding, don’t romanticize it. Start with a diagnostic, pick a lane that matches your preferences,
+            then test it in the real world.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
+  <footer>
+    <div>
+      <a href="/about/">About</a> •
+      <a href="/mission/">Mission</a> •
+      <a href="/editorial-standards/">Editorial Standards</a> •
+      <a href="/privacy/">Privacy</a> •
+      <a href="/terms/">Terms</a> •
+      <a href="/contact/">Contact</a>
+    </div>
+    <p style="opacity:.9;margin:.6rem 0 0;">
+      © <span id="y"></span> KnackForThis
+    </p>
+  </footer>
+
+
+  <script>
+    const topBar = document.querySelector('.top');
+    const btn = document.querySelector('.nav-toggle');
+
+    btn?.addEventListener('click', () => {
+      const open = topBar.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Close menu when tapping a link (mobile sanity)
+    document.querySelectorAll('#topnav a').forEach(a => {
+      a.addEventListener('click', () => {
+        topBar.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

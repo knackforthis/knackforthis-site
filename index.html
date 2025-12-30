@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>KnackForThis — Free Skill Diagnostics, Quizzes, and Guides</title>
+  <title>KnackForThis — Skill Fit Diagnostics for Skilled Trades</title>
 
-  <meta name="description" content="KnackForThis helps you figure out what you're naturally suited for. Explore skill hubs and take short diagnostic quizzes across trades, tech, creative, business, health, and logistics." />
-  <meta name="keywords" content="skill quiz, diagnostic quiz, aptitude test, would i be good at, trades quiz, carpentry quiz, tech skills quiz, career fit quiz" />
+  <meta name="description" content="KnackForThis is a skill-fit diagnostic site. Take neutral quizzes that test whether you align with the real day-to-day workflow of skilled trades — before you waste time forcing a bad fit." />
+  <meta name="keywords" content="skill diagnostics, trade fit quiz, skilled trades diagnostic, aptitude quiz, career fit quiz, would i be good at, carpentry quiz, plumbing quiz, electrical quiz, welding quiz, masonry quiz" />
   <meta name="author" content="KnackForThis" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b111b" />
@@ -17,8 +17,8 @@
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="KnackForThis" />
-  <meta property="og:title" content="KnackForThis — Skill Diagnostics, Quizzes, and Guides" />
-  <meta property="og:description" content="Pick a hub. Take a quick diagnostic. Find skills you actually fit — before you waste time forcing it." />
+  <meta property="og:title" content="KnackForThis — Skill Fit Diagnostics for Skilled Trades" />
+  <meta property="og:description" content="Neutral skill-fit diagnostics that test alignment with real trade workflows. No hype. No pressure. Just clarity." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://knackforthis.com/" />
   <meta property="og:image" content="https://knackforthis.com/preview.png" />
@@ -26,8 +26,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="KnackForThis — Skill Diagnostics" />
-  <meta name="twitter:description" content="Pick a hub. Take a quick diagnostic. Find skills you actually fit." />
+  <meta name="twitter:title" content="KnackForThis — Skill Fit Diagnostics" />
+  <meta name="twitter:description" content="Neutral skill-fit diagnostics that test alignment with real trade workflows." />
   <meta name="twitter:image" content="https://knackforthis.com/preview.png" />
 
   <!-- Fonts -->
@@ -63,23 +63,18 @@
         "@type": "WebPage",
         "@id": "https://knackforthis.com/#webpage",
         "url": "https://knackforthis.com/",
-        "name": "KnackForThis — Skill Diagnostics, Quizzes, and Guides",
-        "description": "Explore skill hubs and take short diagnostic quizzes across trades, tech, creative, business, health, and logistics.",
+        "name": "KnackForThis — Skill Fit Diagnostics for Skilled Trades",
+        "description": "KnackForThis provides neutral skill-fit diagnostics focused on skilled trades and real-world work preferences.",
         "isPartOf": { "@id": "https://knackforthis.com/#website" },
         "about": { "@id": "https://knackforthis.com/#organization" },
         "inLanguage": "en"
       },
       {
         "@type": "ItemList",
-        "@id": "https://knackforthis.com/#hub-list",
-        "name": "Skill Hubs",
+        "@id": "https://knackforthis.com/#primary-hubs",
+        "name": "Primary Hub",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Trades", "url": "https://knackforthis.com/trades/" },
-          { "@type": "ListItem", "position": 2, "name": "Tech", "url": "https://knackforthis.com/tech/" },
-          { "@type": "ListItem", "position": 3, "name": "Creative", "url": "https://knackforthis.com/creative/" },
-          { "@type": "ListItem", "position": 4, "name": "Business", "url": "https://knackforthis.com/business/" },
-          { "@type": "ListItem", "position": 5, "name": "Health", "url": "https://knackforthis.com/health/" },
-          { "@type": "ListItem", "position": 6, "name": "Logistics", "url": "https://knackforthis.com/logistics/" }
+          { "@type": "ListItem", "position": 1, "name": "Trades", "url": "https://knackforthis.com/trades/" }
         ]
       }
     ]
@@ -244,7 +239,6 @@
       overflow: hidden;
     }
 
-
     .kicker{
       display:inline-flex;
       align-items:center;
@@ -290,7 +284,7 @@
       gap: 1.1rem;
       flex-wrap: wrap;
       align-items: flex-end;
-      justify-content: space-between;
+      justify-content: center;
       margin-top: 1.1rem;
     }
 
@@ -298,6 +292,7 @@
       display:flex;
       gap: 0.65rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn{
@@ -333,19 +328,6 @@
     .btn .arrow{
       font-family: var(--mono);
       opacity: 0.85;
-    }
-
-    .hero-meta{
-      text-align: right;
-      min-width: 260px;
-      flex: 1;
-    }
-    .micro{
-      margin: 0;
-      color: rgba(236,244,255,0.66);
-      font-family: var(--mono);
-      font-size: 0.90rem;
-      line-height: 1.45;
     }
 
     main{ padding: 0 1rem 2.6rem; }
@@ -420,7 +402,6 @@
       background: linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
     }
 
-    /* replaces emoji badge with a clean corner label */
     .badge{
       position:absolute;
       top: 12px;
@@ -451,6 +432,7 @@
       color: rgba(236,244,255,0.78);
       font-weight: 900;
       font-size: 0.95rem;
+      justify-content: center;
     }
 
     .tag{
@@ -474,6 +456,7 @@
     .card p{
       margin: 0 0 0.95rem;
       color: rgba(236,244,255,0.74);
+      text-align: center;
     }
 
     .card a{
@@ -490,6 +473,8 @@
       background: rgba(140,200,255,0.08);
       color: rgba(236,244,255,0.92);
       transition: transform 0.10s ease, background 0.14s ease, border-color 0.14s ease;
+      justify-content: center;
+      width: 100%;
     }
     .card a:hover{
       transform: translateY(-1px);
@@ -524,216 +509,203 @@
       font-family: var(--mono);
       font-size: 0.9rem;
     }
-/* =========================
-   HEAVIER AQUA TOOL UI (OVERRIDES)
-   Paste at END of <style>
-========================= */
 
-:root{
-  /* heavier accent: still soft, but present */
-  --aqua: rgba(80, 220, 255, 0.96);
-  --aquaLine: rgba(80, 220, 255, 0.42);
-  --aquaFill: rgba(80, 220, 255, 0.14);
-  --aquaFill2: rgba(80, 220, 255, 0.08);
-  --aquaGlow: 0 0 0 3px rgba(80, 220, 255, 0.22);
-  --aquaGlow2: 0 0 28px rgba(80, 220, 255, 0.10);
+    /* =========================
+       HEAVIER AQUA TOOL UI (OVERRIDES)
+       Paste at END of <style>
+    ========================= */
 
-  /* tighten greys so the UI stops melting */
-  --line: rgba(190, 206, 230, 0.14);
-}
+    :root{
+      --aqua: rgba(80, 220, 255, 0.96);
+      --aquaLine: rgba(80, 220, 255, 0.42);
+      --aquaFill: rgba(80, 220, 255, 0.14);
+      --aquaFill2: rgba(80, 220, 255, 0.08);
+      --aquaGlow: 0 0 0 3px rgba(80, 220, 255, 0.22);
+      --aquaGlow2: 0 0 28px rgba(80, 220, 255, 0.10);
+      --line: rgba(190, 206, 230, 0.14);
+    }
 
-/* 1) Background reads more “instrument panel” */
-.bg-grid{
-  opacity: 0.85;
-  background-size: 44px 44px;
-}
-.bg-vignette{
-  background:
-    radial-gradient(circle at 70% 18%, rgba(80,220,255,0.16), transparent 52%),
-    radial-gradient(circle at 18% 78%, rgba(236,244,255,0.08), transparent 58%),
-    linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0.78));
-}
+    .bg-grid{
+      opacity: 0.85;
+      background-size: 44px 44px;
+    }
+    .bg-vignette{
+      background:
+        radial-gradient(circle at 70% 18%, rgba(80,220,255,0.16), transparent 52%),
+        radial-gradient(circle at 18% 78%, rgba(236,244,255,0.08), transparent 58%),
+        linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0.78));
+    }
 
-/* 2) Stronger global rhythm: section headers get an aqua underline + rail */
-.section-title{
-  padding-left: 1rem;
-  position: relative;
-  color: rgba(236,244,255,0.95);
-}
-.section-title::before{
-  content:"";
-  position:absolute;
-  left: 0;
-  top: 0.18em;
-  width: 4px;
-  height: 1.05em;
-  border-radius: 999px;
-  background: linear-gradient(to bottom, transparent, var(--aqua), transparent);
-  box-shadow: 0 0 18px rgba(80,220,255,0.20);
-}
-.section-title::after{
-  content:"";
-  display:block;
-  height: 1px;
-  margin-top: 0.55rem;
-  background: linear-gradient(to right,
-    rgba(80,220,255,0.45),
-    rgba(236,244,255,0.08),
-    transparent
-  );
-  opacity: 0.95;
-}
+    .section-title{
+      padding-left: 1rem;
+      position: relative;
+      color: rgba(236,244,255,0.95);
+    }
+    .section-title::before{
+      content:"";
+      position:absolute;
+      left: 0;
+      top: 0.18em;
+      width: 4px;
+      height: 1.05em;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, transparent, var(--aqua), transparent);
+      box-shadow: 0 0 18px rgba(80,220,255,0.20);
+    }
+    .section-title::after{
+      content:"";
+      display:block;
+      height: 1px;
+      margin-top: 0.55rem;
+      background: linear-gradient(to right,
+        rgba(80,220,255,0.45),
+        rgba(236,244,255,0.08),
+        transparent
+      );
+      opacity: 0.95;
+    }
 
-/* 3) Panels + cards get a top “aqua seam” so blocks feel separated */
-.hero, .panel, .card, .mini{
-  border-color: rgba(190,206,230,0.16);
-}
+    .hero, .panel, .card, .mini{
+      border-color: rgba(190,206,230,0.16);
+    }
 
+    .panel{
+      position: relative;
+      border-color: rgba(80,220,255,0.16);
+      background:
+        radial-gradient(900px 260px at 12% 0%, rgba(80,220,255,0.08), transparent 60%),
+        linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    }
+    .panel::before{
+      content:"";
+      position:absolute;
+      left: 0; right: 0; top: 0;
+      height: 2px;
+      background: linear-gradient(to right, rgba(80,220,255,0.60), rgba(236,244,255,0.12), transparent);
+      opacity: 0.9;
+      pointer-events:none;
+    }
 
-.panel{
-  position: relative;
-  border-color: rgba(80,220,255,0.16);
-  background:
-    radial-gradient(900px 260px at 12% 0%, rgba(80,220,255,0.08), transparent 60%),
-    linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-}
-.panel::before{
-  content:"";
-  position:absolute;
-  left: 0; right: 0; top: 0;
-  height: 2px;
-  background: linear-gradient(to right, rgba(80,220,255,0.60), rgba(236,244,255,0.12), transparent);
-  opacity: 0.9;
-  pointer-events:none;
-}
+    .card{
+      position: relative;
+      border-color: rgba(190,206,230,0.14);
+      background:
+        radial-gradient(900px 260px at 18% 0%, rgba(80,220,255,0.10), transparent 62%),
+        linear-gradient(to bottom, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      left: 0; right: 0; top: 0;
+      height: 2px;
+      background: linear-gradient(to right, rgba(80,220,255,0.75), rgba(236,244,255,0.10), transparent);
+      opacity: 0.9;
+      pointer-events:none;
+    }
+    .card:hover{
+      border-color: rgba(80,220,255,0.26);
+      box-shadow: 0 18px 56px rgba(0,0,0,0.44), var(--aquaGlow2);
+    }
 
-.card{
-  position: relative;
-  border-color: rgba(190,206,230,0.14);
-  background:
-    radial-gradient(900px 260px at 18% 0%, rgba(80,220,255,0.10), transparent 62%),
-    linear-gradient(to bottom, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-}
-.card::before{
-  content:"";
-  position:absolute;
-  left: 0; right: 0; top: 0;
-  height: 2px;
-  background: linear-gradient(to right, rgba(80,220,255,0.75), rgba(236,244,255,0.10), transparent);
-  opacity: 0.9;
-  pointer-events:none;
-}
-.card:hover{
-  border-color: rgba(80,220,255,0.26);
-  box-shadow: 0 18px 56px rgba(0,0,0,0.44), var(--aquaGlow2);
-}
+    .mini{
+      border-color: rgba(80,220,255,0.18);
+      background:
+        radial-gradient(700px 220px at 20% 0%, rgba(80,220,255,0.10), transparent 60%),
+        rgba(10,14,22,0.20);
+    }
 
-/* 4) Mini blocks: brighter edge + subtle fill */
-.mini{
-  border-color: rgba(80,220,255,0.18);
-  background:
-    radial-gradient(700px 220px at 20% 0%, rgba(80,220,255,0.10), transparent 60%),
-    rgba(10,14,22,0.20);
-}
+    .tag{
+      border-color: rgba(190,206,230,0.14);
+      background: rgba(255,255,255,0.03);
+      color: rgba(236,244,255,0.68);
+    }
+    .tag.blue{
+      border-color: rgba(80,220,255,0.40);
+      background: rgba(80,220,255,0.12);
+      color: rgba(200,245,255,0.98);
+    }
 
-/* 5) Tags: more aqua, more readable */
-.tag{
-  border-color: rgba(190,206,230,0.14);
-  background: rgba(255,255,255,0.03);
-  color: rgba(236,244,255,0.68);
-}
-.tag.blue{
-  border-color: rgba(80,220,255,0.40);
-  background: rgba(80,220,255,0.12);
-  color: rgba(200,245,255,0.98);
-}
+    a{
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 2px;
+    }
 
-/* 6) Links: unmistakable */
-a{
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: 2px;
-}
+    .section-desc a,
+    .panel a,
+    footer a{
+      color: rgba(195,245,255,0.98);
+      text-decoration: underline;
+      text-decoration-color: rgba(80,220,255,0.55);
+    }
+    .section-desc a:hover,
+    .panel a:hover,
+    footer a:hover{
+      text-decoration-color: rgba(80,220,255,0.95);
+      filter: drop-shadow(0 0 10px rgba(80,220,255,0.14));
+    }
 
-.section-desc a,
-.panel a,
-footer a{
-  color: rgba(195,245,255,0.98);
-  text-decoration: underline;
-  text-decoration-color: rgba(80,220,255,0.55);
-}
-.section-desc a:hover,
-.panel a:hover,
-footer a:hover{
-  text-decoration-color: rgba(80,220,255,0.95);
-  filter: drop-shadow(0 0 10px rgba(80,220,255,0.14));
-}
+    .nav-right a{
+      border: 1px solid transparent;
+    }
+    .nav-right a:hover{
+      border-color: rgba(80,220,255,0.20);
+      background: rgba(80,220,255,0.07);
+      color: rgba(236,244,255,0.94);
+      box-shadow: inset 0 0 0 1px rgba(80,220,255,0.06);
+    }
 
-/* 7) Nav: clearer that it’s interactive */
-.nav-right a{
-  border: 1px solid transparent;
-}
-.nav-right a:hover{
-  border-color: rgba(80,220,255,0.20);
-  background: rgba(80,220,255,0.07);
-  color: rgba(236,244,255,0.94);
-  box-shadow: inset 0 0 0 1px rgba(80,220,255,0.06);
-}
+    .btn{
+      border-color: rgba(190,206,230,0.16);
+      background: rgba(255,255,255,0.03);
+    }
+    .btn:hover{
+      border-color: rgba(80,220,255,0.34);
+      box-shadow: var(--aquaGlow);
+    }
 
-/* 8) Buttons: make primary feel primary (not “grey pill”) */
-.btn{
-  border-color: rgba(190,206,230,0.16);
-  background: rgba(255,255,255,0.03);
-}
-.btn:hover{
-  border-color: rgba(80,220,255,0.34);
-  box-shadow: var(--aquaGlow);
-}
+    .btn-primary{
+      border-color: rgba(80,220,255,0.55);
+      background:
+        linear-gradient(to bottom, rgba(80,220,255,0.30), rgba(80,220,255,0.12));
+      box-shadow: 0 14px 34px rgba(0,0,0,0.40), var(--aquaGlow2);
+    }
 
-.btn-primary{
-  border-color: rgba(80,220,255,0.55);
-  background:
-    linear-gradient(to bottom, rgba(80,220,255,0.30), rgba(80,220,255,0.12));
-  box-shadow: 0 14px 34px rgba(0,0,0,0.40), var(--aquaGlow2);
-}
+    .card a{
+      border-color: rgba(80,220,255,0.58);
+      background: rgba(80,220,255,0.16);
+      color: rgba(236,244,255,0.98);
+    }
+    .card a:hover{
+      background: rgba(80,220,255,0.22);
+      box-shadow: var(--aquaGlow);
+    }
 
-/* 9) Card CTA link: turn it into a “tool action” */
-.card a{
-  border-color: rgba(80,220,255,0.58);
-  background: rgba(80,220,255,0.16);
-  color: rgba(236,244,255,0.98);
-}
-.card a:hover{
-  background: rgba(80,220,255,0.22);
-  box-shadow: var(--aquaGlow);
-}
+    a:focus-visible, .btn:focus-visible{
+      outline: none;
+      box-shadow: var(--aquaGlow);
+      border-color: rgba(80,220,255,0.70);
+    }
 
-/* 10) Focus styles (keyboard users) */
-a:focus-visible, .btn:focus-visible{
-  outline: none;
-  box-shadow: var(--aquaGlow);
-  border-color: rgba(80,220,255,0.70);
-}
     .bg-img{
       width: 100%;
       z-index: -1;
       position: fixed;
       left: 0;
-      top: 0; 
+      top: 0;
       opacity: 0.15;
     }
+
     /* mobile */
     @media (max-width: 520px){
       .nav-right{ display:none; }
       header{ padding-top: 3.0rem; }
       .hero{ text-align: left; }
-      .hero-meta{ text-align: left; min-width: unset; }
     }
-    
-  </style>
+  a{text-decoration:none; color: aqua;}</style>
 </head>
 
 <body>
-  <img class="bg-img" src="main-bg.jpg" alt="carpentry career background">
+  <img class="bg-img" src="main-bg.jpg" alt="skilled trades background">
 
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-vignette" aria-hidden="true"></div>
@@ -742,27 +714,30 @@ a:focus-visible, .btn:focus-visible{
   <div class="top-head">
     <div class="brand-left">
       <a href="https://knackforthis.com/">KnackForThis.com</a>
-      <span class="status-pill"><span class="dot" aria-hidden="true"></span> Skill Hubs</span>
+      <span class="status-pill"><span class="dot" aria-hidden="true"></span> Skill Diagnostics</span>
     </div>
 
     <div class="nav-right" aria-label="Primary navigation">
       <a href="/trades/">Trades</a>
-      <a href="/tech/">Tech</a>
-      <a href="/creative/">Creative</a>
-      <a href="/business/">Business</a>
-      <a href="/health/">Health</a>
-      <a href="/logistics/">Logistics</a>
     </div>
   </div>
 
   <header>
-    <div class="hero" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-      <span class="kicker"><span class="chip">diagnostic</span> skill fit, not guesswork</span>
+    <p class="meta">
+      Published:
+      <time datetime="2025-12-28">December 28, 2025</time>
+      · Updated:
+      <time datetime="2025-12-28">December 28, 2025</time>
+    </p>
 
-      <h1>Find The Skills You Have A Knack For</h1>
+    <div class="hero" style="display: flex; align-items: center; justify-content: center; flex-direction: column; text-align:center;">
+      <span class="kicker"><span class="chip">diagnostic</span> skill fit, not vibes</span>
 
-      <p class="sub" style="font-size: 1.3rem; text-align: center;">
-        Take any quiz to answer: <i>Would I be good at this?</i>
+      <h1>Diagnose Your Fit for Real-World Work</h1>
+
+      <p class="sub" style="font-size: 1.25rem; text-align: center;">
+        KnackForThis runs neutral skill diagnostics — short quizzes designed to test whether your preferences align with
+        the day-to-day workflow of a trade. No hype. No pressure. Just clarity.
       </p>
 
       <div class="hero-row">
@@ -770,104 +745,82 @@ a:focus-visible, .btn:focus-visible{
           <a class="btn btn-primary" href="/trades/">
             Explore Trades <span class="arrow">→</span>
           </a>
-          <!--
-          <a class="btn btn-primary" href="/tech/">
-            Explore Tech <span class="arrow">→</span>
+          <a class="btn" href="#how-it-works">
+            How it works <span class="arrow">→</span>
           </a>
-        -->
         </div>
-
       </div>
     </div>
   </header>
 
   <main>
 
-    <section class="section" aria-label="Hubs">
-        <div class="card">
-          <div class="badge">hub</div>
-          <h3>Trades</h3>
-          <div class="meta">
-            <span class="tag blue">hands-on</span>
-            <span class="tag">constraints</span>
-          </div>
-          <p>
-            Carpentry, electrical, plumbing, welding, and skilled paths where consistency,
-            physical repetition, and execution under real conditions matter more than theory.
-          </p>
-          <a href="/trades/">View trade quizzes <span class="arrow">→</span></a>
+    <!-- SINGLE PRIMARY HUB CARD (not a directory) -->
+    <section class="section" aria-label="Primary hub">
+      <div class="card">
+        <div class="badge">hub</div>
+        <h3>Skilled Trades</h3>
+        <div class="meta">
+          <span class="tag blue">hands-on</span>
+          <span class="tag">constraints</span>
+          <span class="tag">workflows</span>
         </div>
-<!--
-        <div class="card">
-          <div class="badge">hub</div>
-          <h3>Tech</h3>
-          <div class="meta">
-            <span class="tag blue">systems</span>
-            <span class="tag">ambiguity</span>
-          </div>
-          <p>
-            Coding, data, cybersecurity, UX — where your ability to reason under uncertainty
-            and debug calmly matters more than “watching tutorials.”
-          </p>
-          <a href="/tech/">View tech quizzes <span class="arrow">→</span></a>
-        </div>
+        <p>
+          Trade diagnostics that test fit for real conditions: physical repetition, pace tolerance, safety discipline,
+          weather exposure, and standards that don’t care how you feel.
+        </p>
+        <a href="/trades/">Open Trades Hub <span class="arrow">→</span></a>
+      </div>
+    </section>
 
-        <div class="card">
-          <div class="badge">hub</div>
-          <h3>Creative</h3>
-          <div class="meta">
-            <span class="tag blue">iteration</span>
-            <span class="tag">taste</span>
-          </div>
-          <p>
-            Design, writing, video, music — where repetition, feedback tolerance, and finishing
-            are the actual gates.
-          </p>
-          <a href="/creative/">View creative quizzes <span class="arrow">→</span></a>
-        </div>
+    <section class="section" aria-label="How it works" id="how-it-works">
+      <h2 class="section-title">How These Diagnostics Work</h2>
+      <div class="panel">
+        <p class="section-desc" style="margin:0;">
+          These quizzes don’t measure “IQ” or raw potential. They measure workflow alignment:
+          <strong>pace vs precision</strong>, <strong>repetition vs variety</strong>, <strong>jobsite vs controlled environments</strong>,
+          <strong>systems vs improvisation</strong>, and <strong>tolerance for friction</strong> (noise, dirt, fatigue, weather, rework).
+          <br><br>
+          A high fit result means you’re likely compatible with the daily reality. A low fit result doesn’t mean you’re incapable —
+          it usually means your strengths belong in a different lane.
+        </p>
 
-        <div class="card">
-          <div class="badge">hub</div>
-          <h3>Business</h3>
-          <div class="meta">
-            <span class="tag blue">decisions</span>
-            <span class="tag">people</span>
-          </div>
-          <p>
-            Sales, marketing, ops, leadership — choosing, communicating, executing,
-            and living with outcomes.
-          </p>
-          <a href="/business/">View business quizzes <span class="arrow">→</span></a>
-        </div>
+        <hr class="divider" />
 
-        <div class="card">
-          <div class="badge">hub</div>
-          <h3>Health</h3>
-          <div class="meta">
-            <span class="tag blue">consistency</span>
-            <span class="tag">precision</span>
+        <div class="panel-grid">
+          <div class="mini">
+            <h3>What you’ll get</h3>
+            <p>
+              A practical alignment signal — which environments are likely to energize you, and which ones are likely to feel like constant friction.
+            </p>
           </div>
-          <p>
-            Fitness, nutrition, care paths — daily effort, details, and long timelines.
-            Good intentions aren’t enough.
-          </p>
-          <a href="/health/">View health quizzes <span class="arrow">→</span></a>
-        </div>
 
-        <div class="card">
-          <div class="badge">hub</div>
-          <h3>Logistics</h3>
-          <div class="meta">
-            <span class="tag blue">operations</span>
-            <span class="tag">timing</span>
+          <div class="mini">
+            <h3>What you won’t get</h3>
+            <p>
+              A promise, a label, or career advice. This is a filter for exploration, not a verdict about your identity.
+            </p>
           </div>
-          <p>
-            Supply chain, scheduling, dispatch, warehousing — calm execution,
-            system thinking, and reliability under pressure.
-          </p>
-          <a href="/logistics/">View logistics quizzes <span class="arrow">→</span></a>
+
+          <div class="mini">
+            <h3>Best next step</h3>
+            <p>
+              Take a base diagnostic, then compare two specializations. After that: validate in real life (shadow, help, or do a starter project).
+            </p>
+          </div>
         </div>
-      -->
+      </div>
+    </section>
+
+    <!-- COMING SOON (NO LINKS / NOT A DIRECTORY) -->
+    <section class="section" aria-label="Coming soon">
+      <h2 class="section-title">More Skill Hubs Later</h2>
+      <div class="panel">
+        <p class="section-desc" style="margin:0;">
+          For now, the site is focused on skilled trades. Additional hubs may be added later — but only when they have
+          enough real diagnostics and supporting pages to be useful (not placeholder junk).
+        </p>
+      </div>
     </section>
 
     <section class="section" aria-label="Intent and scope">
@@ -880,54 +833,8 @@ a:focus-visible, .btn:focus-visible{
       </div>
     </section>
 
-    <!-- ✅ About / “Diagnostic Mirror” section (drop this near the bottom of <main>, above Intent & Scope or above the footer) -->
-<section class="section" aria-label="About the diagnostics" >
-  <h2 class="section-title">A Diagnostic Mirror for Your Curiosity</h2>
-
-  <div class="panel" style="background-color: black;">
-    <p class="section-desc" style="margin:0;">
-      Interest is cheap. Real fit is not. These diagnostics exist to turn “that sounds cool” into a clearer signal about what a role
-      actually demands day-to-day — before you burn months forcing yourself through a workflow you secretly hate.
-    </p>
-
-    <hr class="divider" />
-
-    <div class="panel-grid">
-      <div class="mini">
-        <h3>What you’re really testing</h3>
-        <p>
-          Not talent. Not potential. Your alignment with the workflow: pace vs precision, repetition vs variety, systems vs improvisation,
-          shop vs jobsite, solo focus vs constant coordination.
-        </p>
-      </div>
-
-      <div class="mini">
-        <h3>Why this matters</h3>
-        <p>
-          Most people don’t quit because they “can’t learn.” They quit because the daily friction is wrong for them:
-          the environment drains them, the standard irritates them, or the pace breaks them.
-        </p>
-      </div>
-
-      <div class="mini">
-        <h3>How to use this site</h3>
-        <p>
-          Pick a hub, take one diagnostic, then compare two nearby paths. If one feels “clean” and the other feels “ugh,”
-          that’s useful information — follow the lane that matches how you operate.
-        </p>
-      </div>
-    </div>
-
-    <div class="panel" style="margin-top: .95rem; padding: .95rem 1rem;">
-      <p class="section-desc" style="margin:0;">
-        A high fit result means you’re likely compatible with the realities of the role. A low fit result doesn’t mean you’re incapable —
-        it usually means your strengths belong in a different lane. The goal is simple: explore smarter, faster, and with less self-deception.
-      </p>
-    </div>
-  </div>
-</section>
-
   </main>
+
   <!-- Consent Banner -->
   <div id="consent-banner">
     <p>
@@ -941,6 +848,7 @@ a:focus-visible, .btn:focus-visible{
 
   <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
   <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
   <footer>
     <div>
       <a href="/about/">About</a> •

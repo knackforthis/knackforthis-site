@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Plumbing hub -->
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/</loc>
+  </url>
+
+  <!-- Residential Plumbing -->
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/residential-plumbing-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/residential-plumbing-quiz/</loc>
+  </url>
+
+  <!-- Commercial Plumbing -->
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/commercial-plumbing-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/commercial-plumbing-quiz/</loc>
+  </url>
+
+  <!-- Service & Repair -->
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/service-and-repair-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/service-and-repair-quiz/</loc>
+  </url>
+
+  <!-- Pipefitting -->
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/pipefitting-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/pipefitting-quiz/</loc>
+  </url>
+
+  <!-- Drain & Sewer -->
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/drain-and-sewer-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/drain-and-sewer-quiz/</loc>
+  </url>
+
+  <!-- Gas Fitting -->
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/gas-fitting-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/gas-fitting-quiz/</loc>
+  </url>
+
+</urlset>

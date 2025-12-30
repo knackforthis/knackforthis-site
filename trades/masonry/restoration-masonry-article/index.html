@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Restoration Masonry: What the Work Really Requires | KnackForThis</title>
+<meta name="description" content="Restoration masonry focuses on preserving and repairing existing structures without damaging their character. This article explains the patience, material knowledge, restraint, and respect for historical detail the work demands." />
+<meta name="keywords" content="restoration masonry, masonry restoration, brick restoration, stone restoration, repointing, lime mortar, tuckpointing, historic masonry, restoration masonry reality, is restoration masonry right for me, KnackForThis" />
+<link rel="canonical" href="https://knackforthis.com/trades/masonry/restoration-masonry-article/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="KnackForThis" />
+<meta property="og:title" content="Restoration Masonry: What It Really Requires" />
+<meta property="og:description" content="Restoration masonry is careful diagnosis + compatible repair: matching mortar, protecting old brick/stone, and making fixes that disappear. Read the reality, then test fit." />
+<meta property="og:url" content="https://knackforthis.com/trades/masonry/restoration-masonry-article/" />
+<meta property="og:image" content="https://knackforthis.com/preview.png" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Restoration Masonry Reality Guide | KnackForThis" />
+<meta name="twitter:description" content="What restoration masonry really demands — then a diagnostic to test whether you fit it." />
+<meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg1:#1a0f0a;
+  --bg2:#080503;
+
+  --panel:#241612;
+  --panel2:#1b110e;
+
+  --text:#efe7de;
+  --muted:rgba(239,231,222,.82);
+
+  --wood:#c49a6c;
+  --wood2:rgba(196,154,108,.18);
+
+  --silver:#c8d0d8;
+  --silver2:rgba(200,208,216,.16);
+
+  --aqua:#7fe7ff;
+  --aqua2:rgba(127,231,255,.12);
+
+  --border:rgba(200,208,216,.16);
+  --shadow:0 0 26px rgba(127,231,255,.08);
+
+  --radius:16px;
+  --max:980px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(196,154,108,.16) 0%, transparent 48%),
+    radial-gradient(circle at 78% 26%, rgba(200,208,216,.12) 0%, transparent 55%),
+    radial-gradient(circle at 50% 8%, rgba(127,231,255,.10) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 70%);
+  overflow-x:hidden;
+  line-height:1.85;
+}
+
+/* top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  background:rgba(16,10,8,.86);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.brand .mark{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 18px rgba(127,231,255,.22);
+}
+.brand .name{
+  font-weight:900;
+  color:var(--silver);
+  letter-spacing:.02em;
+}
+.mini-nav{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.mini-nav a{
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  color:rgba(239,231,222,.88);
+  padding:.42rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.14);
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.mini-nav a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(127,231,255,.35);
+  box-shadow:0 0 14px rgba(127,231,255,.12);
+}
+
+/* header */
+header{
+  padding:2.6rem 1rem 1.2rem;
+}
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.55rem 1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.18);
+  background:linear-gradient(to bottom, rgba(36,22,18,.78), rgba(20,12,10,.68));
+  box-shadow:var(--shadow), inset 0 0 22px rgba(200,208,216,.06);
+  position:relative;
+  overflow:hidden;
+}
+.header-inner::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(127,231,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 24%, rgba(200,208,216,.10), transparent 64%),
+    radial-gradient(circle at 50% 70%, rgba(196,154,108,.12), transparent 62%);
+  animation:pulse 12s infinite alternate;
+  pointer-events:none;
+}
+@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.18);} }
+
+.kicker{
+  position:relative;
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  color:rgba(200,208,216,.92);
+  background:rgba(200,208,216,.08);
+  border:1px solid rgba(200,208,216,.14);
+  padding:.35rem .62rem;
+  border-radius:999px;
+}
+
+h1{
+  position:relative;
+  margin:.7rem 0 .55rem;
+  font-family:'Passero One', cursive;
+  color:var(--silver);
+  font-size:clamp(2.1rem, 4.6vw, 2.95rem);
+  text-shadow:0 0 20px rgba(0,0,0,.70);
+}
+.lede{
+  position:relative;
+  margin:0;
+  max-width:900px;
+  color:rgba(239,231,222,.92);
+  font-size:1.12rem;
+}
+
+/* content */
+main{
+  max-width:var(--max);
+  margin:1.2rem auto 0;
+  padding:0 1.2rem 2.5rem;
+}
+
+.section{
+  margin-top:1.6rem;
+  padding:1.25rem 1.1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.14);
+  background:linear-gradient(180deg, rgba(27,17,14,.55), rgba(10,7,6,.25));
+  box-shadow:inset 0 0 18px rgba(200,208,216,.05);
+}
+
+h2{
+  margin:.1rem 0 .6rem;
+  color:var(--aqua);
+  border-left:4px solid rgba(127,231,255,.65);
+  padding-left:.65rem;
+  letter-spacing:.01em;
+}
+
+p{margin:.6rem 0;}
+a{color:var(--aqua); font-weight:700; text-decoration:none; transition:.25s ease;}
+a:hover{color:#fff; text-shadow:0 0 12px rgba(127,231,255,.26);}
+
+.highlight{
+  margin-top:1rem;
+  padding:1rem 1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(127,231,255,.18);
+  background:linear-gradient(to right, var(--aqua2), rgba(200,208,216,.06), rgba(0,0,0,0));
+  box-shadow:inset 0 0 18px rgba(127,231,255,.08);
+}
+
+/* images */
+.figure-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:.85rem;
+  margin-top:1rem;
+}
+.img-ph{
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(127,231,255,.18);
+  box-shadow:0 0 18px rgba(127,231,255,.06);
+  padding:0;
+  background:none;
+}
+
+/* bullets */
+.list{
+  margin:.7rem 0 0;
+  padding:0;
+  list-style:none;
+  text-align:left;
+}
+.list li{
+  margin:.55rem 0;
+  padding-left:1.15rem;
+  position:relative;
+  color:rgba(239,231,222,.90);
+}
+.list li::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:99px;
+  background:linear-gradient(135deg, var(--aqua), var(--silver));
+  box-shadow:0 0 10px rgba(127,231,255,.18);
+  position:absolute;
+  left:0; top:.55rem;
+  opacity:.95;
+}
+
+/* FAQ */
+.faq{
+  margin-top:1rem;
+  text-align:left;
+}
+.faq details{
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.16);
+  border-radius:14px;
+  padding:.85rem .9rem;
+  margin:.75rem 0;
+}
+.faq summary{
+  cursor:pointer;
+  font-weight:900;
+  color:rgba(239,231,222,.95);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"＋";
+  float:right;
+  color:rgba(127,231,255,.85);
+  font-weight:900;
+}
+.faq details[open] summary::after{content:"—";}
+.faq .answer{
+  margin-top:.6rem;
+  color:rgba(239,231,222,.86);
+}
+
+/* footer */
+footer{
+  background:rgba(10,7,6,.92);
+  color:rgba(239,231,222,.86);
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:0.92rem;
+  margin-top:2.2rem;
+  border-top:1px solid rgba(127,231,255,.12);
+}
+.meta{
+  position:relative;
+  margin:0 0 .55rem;
+  display:inline-block;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(200,208,216,.88);
+  width: 100%;
+  text-align: center;
+  padding:.32rem .6rem;
+  border-radius:999px;
+  backdrop-filter:blur(6px);
+}
+.meta time{
+  font-weight:900;
+  color:var(--silver);
+}
+
+@media (max-width: 920px){
+  .figure-row{grid-template-columns:1fr; }
+  .mini-nav{display:none;}
+  .section{padding:1.05rem 1rem;}
+}
+a{text-decoration:none; color: aqua;}</style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="https://knackforthis.com/">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">KnackForThis.com</span>
+    </a>
+
+    <nav class="mini-nav" aria-label="Quick navigation">
+      <a href="https://knackforthis.com/">Home</a>
+      <a href="https://knackforthis.com/trades/">Trades</a>
+      <a href="https://knackforthis.com/trades/masonry/">Masonry</a>
+    </nav>
+  </div>
+
+  <header><p class="meta" style="text-align: center;">
+  Published:
+  <time datetime="2025-12-29">December 29, 2025</time>
+  · Updated:
+  <time datetime="2025-12-29">December 29, 2025</time>
+</p>
+
+    <div class="header-inner">
+      <span class="kicker">Trades • Masonry • Restoration Masonry</span>
+      <h1>Restoration Masonry: What It Really Requires</h1>
+      <p class="lede">
+        Restoration masonry is not “new masonry, but slower.” It’s diagnosis, material compatibility, and restraint.
+        Your job is to repair old brick/stone without damaging it — and to make the repair disappear into history.
+        If new-build masonry is “build it clean,” restoration is “touch it as little as possible, but perfectly.”
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What Restoration Masonry Actually Is</h2>
+      <p>
+        Restoration masonry is the repair and preservation of existing masonry: historic brick buildings, stone walls, chimneys,
+        foundations, arches, facades, and old mortar joints that have weathered decades (or centuries).
+        The headline work is often <strong>repointing / tuckpointing</strong>, but it can also include selective demolition,
+        replacing damaged units, crack stitching, cleaning, water management fixes, and rebuilding sections without changing the look.
+      </p>
+      <p>
+        The core reality: most failures aren’t “because brick is weak.” They’re usually from <strong>water</strong>,
+        movement/settlement, or incompatible past repairs (like hard modern mortar on soft historic brick).
+        Restoration starts with identifying why the masonry is failing — and then choosing a fix that doesn’t create a new failure.
+      </p>
+
+      <div class="figure-row" aria-label="Image placeholders">
+        <img class="img-ph" src="../imgs/bricklaying-stringline.jpg" alt="Repointing brick joints by hand: careful joint depth and clean edges"/>
+        <img class="img-ph" src="../imgs/edging-jointing-tools.jpg" alt="Mortar matching samples: color, aggregate, and texture compatibility"/>
+        <img class="img-ph" src="../imgs/mortar-matching-samples.jpg" alt="Selective brick replacement: blending units to match existing facade"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Spend Time Doing</h2>
+      <p>
+        Restoration is slow because the material is already there and already fragile. You’re not racing a wall upward.
+        You’re removing failed material without chewing up good material, then rebuilding the performance without changing the look.
+      </p>
+
+      <ul class="list">
+        <li><strong>Assessment:</strong> mapping cracks, bulges, spalling, loose units, moisture paths, and prior repair problems.</li>
+        <li><strong>Careful removal:</strong> raking out joints, removing failed mortar, cutting out damaged units without collateral damage.</li>
+        <li><strong>Mortar mixing + matching:</strong> lime vs cement ratios, aggregate size, color matching, texture matching, tooling profiles.</li>
+        <li><strong>Repointing:</strong> packing joints correctly, controlling depth, finishing joints consistently, keeping edges crisp.</li>
+        <li><strong>Selective rebuild:</strong> replacing bricks/stones, stitching cracks, rebuilding chimneys or parapet sections as needed.</li>
+        <li><strong>Cleaning + protection:</strong> appropriate cleaning methods, water management, flashing/drip edges, and letting masonry breathe.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          In restoration, “do less” is often the correct move. Over-aggressive grinding, cleaning, or hard mortar can permanently damage old masonry.
+          The job rewards restraint and compatibility, not brute force.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where the Pressure Comes From</h2>
+      <p>
+        The pressure comes from two things: <strong>irreversibility</strong> and <strong>standards</strong>.
+        If you chip historic brick edges or smear the face, you can’t un-do it. If you choose the wrong mortar, you may accelerate failure.
+        And because restoration is visible, you’re judged by whether your work blends and whether the building performs better afterward.
+      </p>
+      <p>
+        There’s also hidden pressure: clients often don’t understand why careful work costs time.
+        You may have to stay patient while explaining that “fast” can mean “expensive damage.”
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What Traits Actually Matter</h2>
+      <p>
+        Restoration masonry rewards people who like careful diagnosis and controlled execution.
+        You need hands that can be precise — and a brain that respects cause-and-effect.
+      </p>
+
+      <ul class="list">
+        <li><strong>Diagnostic thinking:</strong> you want to understand why it failed before you “fix” it.</li>
+        <li><strong>Patience under slow progress:</strong> restoration often feels like inches, not feet.</li>
+        <li><strong>Detail stability:</strong> consistent joints, clean tooling, and tidy edges matter.</li>
+        <li><strong>Material sensitivity:</strong> you respect old brick/stone and choose methods that don’t destroy it.</li>
+        <li><strong>Restraint:</strong> you can stop before “one more pass” becomes damage.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Restoration masons are part craftsperson, part investigator.
+          The job is less about speed and more about making the building behave for the next 50 years.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Who Should Probably Avoid It</h2>
+      <p>
+        If this is your lane, you’ll feel it. If it isn’t, restoration can feel like slow-motion frustration.
+      </p>
+
+      <ul class="list">
+        <li><strong>You need fast visible progress:</strong> restoration is methodical, not rapid stacking.</li>
+        <li><strong>You hate “fussy” details:</strong> joints, profiles, and cleanup are a big part of the work.</li>
+        <li><strong>You want production repetition:</strong> restoration changes building-to-building and requires judgment calls.</li>
+        <li><strong>You dislike diagnosing before acting:</strong> “just fix it” thinking causes bad repairs here.</li>
+        <li><strong>You get bored by careful removal:</strong> raking out joints and selective demo is a lot of the job.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          If you want masonry with a more straightforward rhythm, compare with
+          <a href="https://knackforthis.com/trades/masonry/bricklaying-article/">bricklaying</a> or
+          <a href="https://knackforthis.com/trades/masonry/concrete-finishing-article/">concrete finishing</a>.
+          If you love aesthetics and material selection, compare with
+          <a href="https://knackforthis.com/trades/masonry/stone-masonry-article/">stone masonry</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The “Restoration Mason Brain” vs Other Masonry Paths</h2>
+      <p>
+        Restoration is its own mental environment. It’s not about building the fastest wall.
+        It’s about making a repair that is compatible, durable, and visually quiet.
+        Your best work is the work nobody notices — because it looks original.
+      </p>
+
+      <ul class="list">
+        <li><strong>Compared to new bricklaying:</strong> more diagnosis and removal, less stacking rhythm.</li>
+        <li><strong>Compared to concrete finishing:</strong> less time-window sprinting, more slow precision and compatibility.</li>
+        <li><strong>Compared to stone masonry:</strong> less shaping/setting aesthetic pieces, more joint/mortar and water-management thinking.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Next Step: Get a Signal, Then Compare</h2>
+      <p>
+        If restoration masonry sounds appealing, don’t decide based on “historic buildings are cool.”
+        Decide based on whether you can live inside the work: careful removal, mortar matching, tidy joints, and patient diagnosis.
+      </p>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Run the <a href="https://knackforthis.com/trades/masonry/restoration-masonry-quiz/">Restoration Masonry Fit Diagnostic</a> first.
+          Then compare paths from the <a href="https://knackforthis.com/trades/masonry/">Masonry Hub</a> or step back to the
+          <a href="https://knackforthis.com/trades/">Trades Hub</a>.
+          If you want the full map, start at the <a href="https://knackforthis.com/">homepage</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+
+      <div class="faq" aria-label="Frequently Asked Questions">
+        <details class="faq-item">
+          <summary>Is restoration masonry mostly repointing?</summary>
+          <div class="answer">
+            Repointing/tuckpointing is a big chunk, but restoration can include selective rebuilds, brick/stone replacement,
+            crack repair, chimney work, cleaning, and water-management fixes. The common thread is compatibility and restraint.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why does mortar choice matter so much?</summary>
+          <div class="answer">
+            Older masonry often needs softer, breathable mortar. Using a mortar that’s too hard can push stress into the brick/stone,
+            causing spalling or accelerated damage. Compatibility is durability.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is restoration cleaner than new masonry?</summary>
+          <div class="answer">
+            Not always. It’s often dustier (joint removal), and you spend time protecting existing surfaces and cleaning carefully.
+            It’s “controlled messy,” not “clean.”
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the restoration masonry diagnostic actually measure?</summary>
+          <div class="answer">
+            It’s not a skill test. It estimates alignment between your tolerances (patience, detail stability, diagnostic thinking,
+            comfort with careful removal and cleanup, and respect for compatibility) and the day-to-day reality of restoration work.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>If I’m “mixed fit,” is there a way in?</summary>
+          <div class="answer">
+            Often yes. Mixed fit can mean you like the mission but need reps on detail discipline and slower pacing.
+            Starting with smaller repointing sections under a skilled lead is a common ramp.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://knackforthis.com/">Home</a> •
+      <a href="https://knackforthis.com/trades/">Trades</a> •
+      <a href="https://knackforthis.com/trades/masonry/">Masonry</a> •
+      <a href="https://knackforthis.com/contact/">Contact</a> •
+      <a href="https://knackforthis.com/privacy/">Privacy</a> •
+      <a href="https://knackforthis.com/terms/">Terms</a>
+    </p>
+    <p style="margin:.6rem 0 0;">
+      KnackForThis is educational. Diagnostics are for self-assessment only and are not career advice.<br />
+      © 2025 KnackForThis. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://knackforthis.com/trades/masonry/restoration-masonry-article/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://knackforthis.com/trades/" },
+        { "@type": "ListItem", "position": 3, "name": "Masonry", "item": "https://knackforthis.com/trades/masonry/" },
+        { "@type": "ListItem", "position": 4, "name": "Restoration Masonry", "item": "https://knackforthis.com/trades/masonry/restoration-masonry-article/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://knackforthis.com/trades/masonry/restoration-masonry-article/#webpage",
+      "url": "https://knackforthis.com/trades/masonry/restoration-masonry-article/",
+      "name": "Restoration Masonry: What It Really Requires",
+      "isPartOf": { "@id": "https://knackforthis.com/#website" },
+      "about": { "@id": "https://knackforthis.com/trades/masonry/#topic" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://knackforthis.com/trades/masonry/restoration-masonry-article/#article",
+      "headline": "Restoration Masonry: What It Really Requires",
+      "description": "Restoration masonry is diagnosis + restraint — matching old materials, preventing damage, and making repairs that look like they were always there. What the day-to-day demands, what drains people, and where to test your fit.",
+      "image": "https://knackforthis.com/preview.png",
+  "datePublished": "2025-12-29",
+  "dateModified": "2025-12-29",      "mainEntityOfPage": { "@id": "https://knackforthis.com/trades/masonry/restoration-masonry-article/#webpage" },
+      "author": { "@id": "https://knackforthis.com/#org" },
+      "publisher": { "@id": "https://knackforthis.com/#org" },
+      "inLanguage": "en",
+      "about": [
+        "restoration masonry",
+        "historic masonry",
+        "repointing",
+        "tuckpointing",
+        "lime mortar",
+        "skilled trades"
+      ],
+      "keywords": [
+        "restoration masonry",
+        "masonry restoration",
+        "repointing",
+        "tuckpointing",
+        "lime mortar",
+        "historic masonry",
+        "is restoration masonry right for me",
+        "KnackForThis"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://knackforthis.com/#org",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knackforthis.com/favicon.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knackforthis.com/#website",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knackforthis.com/trades/masonry/#topic",
+      "name": "Masonry"
+    }
+  ]
+}
+  </script>
+</body>
+</html>

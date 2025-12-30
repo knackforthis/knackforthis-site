@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Masonry — Is This a Fit? | KnackForThis</title>
+<meta name="description" content="A clear masonry reality check. Understand what masonry really demands, then take diagnostics for base fit and specialties like bricklaying, stone masonry, concrete finishing, restoration masonry, hardscape & pavers, and refractory masonry." />
+<meta name="author" content="KnackForThis" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f0f0f" />
+
+  <link rel="canonical" href="https://knackforthis.com/trades/masonry/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="KnackForThis" />
+  <meta property="og:title" content="Masonry — Is This a Fit?" />
+  <meta property="og:description" content="A masonry reality check + diagnostics for different types of masonry." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://knackforthis.com/trades/masonry/" />
+  <meta property="og:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Masonry — Is This a Fit?" />
+  <meta name="twitter:description" content="A masonry reality check + diagnostics for different types of masonry." />
+  <meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"CollectionPage",
+        "@id":"https://knackforthis.com/trades/masonry/#collection",
+        "name":"Masonry — Is This a Fit?",
+        "url":"https://knackforthis.com/trades/masonry/",
+        "description":"A masonry hub that explains the trade and routes users to diagnostic quizzes for overall fit and specialization fit.",
+        "inLanguage":"en",
+        "hasPart":[
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/masonry/diagnostic/#quiz",
+            "name":"Masonry Diagnostic",
+            "url":"https://knackforthis.com/trades/masonry/diagnostic/",
+            "isAccessibleForFree": true
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/masonry/bricklaying-quiz/#quiz",
+            "name":"Bricklaying Diagnostic",
+            "url":"https://knackforthis.com/trades/masonry/bricklaying-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/masonry/stone-masonry-quiz/#quiz",
+            "name":"Stone Masonry Diagnostic",
+            "url":"https://knackforthis.com/trades/masonry/stone-masonry-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/masonry/concrete-finishing-quiz/#quiz",
+            "name":"Concrete Finishing Diagnostic",
+            "url":"https://knackforthis.com/trades/masonry/concrete-finishing-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/masonry/restoration-masonry-quiz/#quiz",
+            "name":"Restoration Masonry Diagnostic",
+            "url":"https://knackforthis.com/trades/masonry/restoration-masonry-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/masonry/hardscape-and-pavers-quiz/#quiz",
+            "name":"Hardscape & Pavers Diagnostic",
+            "url":"https://knackforthis.com/trades/masonry/hardscape-and-pavers-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/masonry/refractory-masonry-quiz/#quiz",
+            "name":"Refractory Masonry Diagnostic",
+            "url":"https://knackforthis.com/trades/masonry/refractory-masonry-quiz/"
+          }
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://knackforthis.com/trades/masonry/#breadcrumbs",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://knackforthis.com/"},
+          {"@type":"ListItem","position":2,"name":"Trades","item":"https://knackforthis.com/trades/"},
+          {"@type":"ListItem","position":3,"name":"Masonry","item":"https://knackforthis.com/trades/masonry/"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --panel:rgba(22,22,24,.64);
+      --panel2:rgba(16,16,18,.62);
+      --text:#f2f2f2;
+      --muted:rgba(242,242,242,.80);
+
+      /* ✅ swap wood hints for WHITE hints */
+      --wood:#f2f2f2;
+      --wood2:rgba(242,242,242,.16);
+
+      --aqua: rgba(92, 232, 255, 0.92);
+      --aqua2: rgba(92, 232, 255, 0.14);
+      --aquaLine: rgba(92, 232, 255, 0.30);
+
+      --iron:#8a7f73;
+
+      --radius:18px;
+      --shadow:0 18px 56px rgba(0,0,0,.48);
+      --shadowSoft:0 0 22px rgba(242,242,242,.08);
+      --max:1100px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      text-align:center;
+      font-size:clamp(15px,3.8vw,17px);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* background: WHITE hints + subtle tool grid (structure preserved) */
+    .bg{
+      position:fixed; inset:0; z-index:-2;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(242,242,242,.12), transparent 48%),
+        radial-gradient(circle at 78% 18%, rgba(210,210,210,.10), transparent 52%),
+        radial-gradient(circle at 50% 85%, rgba(92,232,255,.06), transparent 58%),
+        linear-gradient(to bottom, rgba(0,0,0,.30), rgba(0,0,0,.72));
+    }
+    .grid{
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background:
+        linear-gradient(to right, rgba(92,232,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(92,232,255,.05) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at 50% 22%, rgba(0,0,0,.85), rgba(0,0,0,.25) 55%, transparent 78%);
+      opacity:.75;
+    }
+
+    /* ✅ NEW: topbar (solid, not transparent) */
+    .top{
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      padding:.75rem 1rem;
+      background:#070708;
+      border-bottom:1px solid rgba(242,242,242,.16);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+      gap:1rem;
+    }
+    .brand{
+      color:#fff;
+      font-weight:900;
+      text-decoration:none;
+      letter-spacing:.02em;
+      opacity:.96;
+    }
+    .crumb{
+      display:flex;
+      gap:.65rem;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .crumb a{
+      color: rgba(242,242,242,.88);
+      font-weight:900;
+      text-decoration:none;
+      padding:.35rem .55rem;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .crumb a:hover{
+      border-color: rgba(92,232,255,.18);
+      background: rgba(92,232,255,.05);
+    }
+
+    header{
+      margin-top:78px;
+      padding:1.2rem;
+      padding-top:3.25rem;
+      margin-bottom: 6%;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(242,242,242,.12), transparent 62%),
+        linear-gradient(to bottom, rgba(18,18,20,.74), rgba(10,10,12,.62));
+      border:1px solid rgba(242,242,242,.16);
+      border-radius:var(--radius);
+      padding:1.35rem 1.2rem;
+      box-shadow: var(--shadow), var(--shadowSoft);
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .wrap::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, transparent, rgba(92,232,255,.65), rgba(242,242,242,.22), transparent);
+      opacity:.95;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.82rem;
+      color: rgba(242,242,242,.86);
+      font-family: var(--mono);
+      background: rgba(92,232,255,.05);
+      border:1px solid rgba(92,232,255,.16);
+      padding:.35rem .6rem;
+      border-radius:999px;
+    }
+    .kicker .chip{
+      display:inline-block;
+      padding:.12rem .40rem;
+      border-radius:999px;
+      border:1px solid rgba(242,242,242,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(242,242,242,.88);
+      letter-spacing:.05em;
+    }
+
+    h1{
+      margin:.85rem 0 .4rem;
+      font-weight:900;
+      font-size:clamp(2.0rem,6.5vw,2.9rem);
+      color:#ffffff;
+      text-shadow:0 0 16px rgba(0,0,0,.9);
+      line-height:1.14;
+    }
+
+    .sub{
+      max-width:920px;
+      margin:0;
+      color:rgba(242,242,242,.90);
+      font-size: 1.05rem;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1rem;
+      margin-top: 1.05rem;
+      align-items: start;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-direction: column;
+      gap: .65rem;
+      align-items: stretch;
+    }
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:12px;
+      padding:.85rem .95rem;
+      border:1px solid rgba(242,242,242,.34);
+      background: linear-gradient(to bottom, rgba(245,245,245,.92), rgba(205,205,205,.88));
+      color:#0b0b0c;
+      box-shadow: 0 10px 28px rgba(0,0,0,.38);
+      white-space: nowrap;
+      transition: transform .10s ease, filter .14s ease, box-shadow .14s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: saturate(1.03); }
+
+    .btn-secondary{
+      background: rgba(0,0,0,.22);
+      color: rgba(242,242,242,.92);
+      border-color: rgba(92,232,255,.22);
+      box-shadow: inset 0 0 0 1px rgba(92,232,255,.08);
+    }
+    .btn-secondary:hover{ box-shadow: 0 0 0 3px rgba(92,232,255,.14); }
+
+    .btn .arrow{
+      font-family: var(--mono);
+      opacity:.85;
+    }
+
+    main{ padding:0 1rem 2.6rem; }
+
+    .section{
+      max-width:var(--max);
+      margin:1.15rem auto;
+      text-align:left;
+    }
+
+    .section h2{
+      margin: .9rem 0 .35rem;
+      color: #ffffff;
+      font-size: clamp(1.3rem, 5vw, 1.9rem);
+      position: relative;
+      padding-left: .85rem;
+    }
+    .section h2::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.2em;
+      width:4px;
+      height:1.0em;
+      border-radius:999px;
+      background: linear-gradient(to bottom, transparent, rgba(92,232,255,.75), transparent);
+    }
+
+    .section p{
+      max-width: 980px;
+      margin: .35rem 0 1rem;
+      color: var(--muted);
+    }
+
+    .panel{
+      border-radius: var(--radius);
+      border: 1px solid rgba(92,232,255,.14);
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.06), transparent 60%),
+        rgba(0,0,0,.16);
+      padding: 1rem 1rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.40);
+    }
+
+    .panel-grid{
+      display:grid;
+      gap: .85rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: .85rem;
+    }
+
+    .mini{
+      border-radius: 16px;
+      border: 1px solid rgba(242,242,242,.14);
+      background: rgba(0,0,0,.18);
+      padding: .9rem .9rem;
+    }
+    .mini h3{
+      margin: 0 0 .35rem;
+      color: rgba(92,232,255,.88);
+      font-size: 1.05rem;
+    }
+    .mini p{ margin: 0; color: rgba(242,242,242,.80); }
+
+    .card{
+      margin-top:2%;
+      position: relative;
+      border-radius: var(--radius);
+      border: 1px solid rgba(242,242,242,.16);
+      background:
+        radial-gradient(900px 260px at 16% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(242,242,242,.12), transparent 62%),
+        rgba(0,0,0,.16);
+      background-color: black;
+      padding: 1.05rem 1.05rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.44);
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap: .6rem;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, rgba(92,232,255,.70), rgba(242,242,242,.18), transparent);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .badge{
+      position:absolute;
+      top: 12px;
+      right: 12px;
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      color: rgba(242,242,242,.72);
+      border: 1px solid rgba(92,232,255,.18);
+      background: rgba(0,0,0,.18);
+      padding: .22rem .48rem;
+      border-radius: 999px;
+    }
+
+    .card h3{
+      margin: 0;
+      color:#ffffff;
+      font-size: 1.7rem;
+      padding-right: 5rem;
+      text-align: center;
+    }
+
+    .card p{
+      margin: 0;
+      color: rgba(242,242,242,.86);
+    }
+
+    .card .cta{
+      margin-top:auto;
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .link{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      border-radius: 12px;
+      padding: .78rem .92rem;
+      border: 1px solid rgba(92,232,255,.26);
+      background: rgba(92,232,255,.10);
+      color: rgba(242,242,242,.96);
+      transition: transform .10s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+      white-space: nowrap;
+    }
+    .link:hover{
+      transform: translateY(-1px);
+      background: rgba(92,232,255,.14);
+      border-color: rgba(92,232,255,.40);
+      box-shadow: 0 0 0 3px rgba(92,232,255,.12);
+    }
+
+    /* ✅ low-height article button under each quiz (now WHITE hint) */
+    .link-article{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:10px;
+      padding:.45rem .75rem;
+      border:1px solid rgba(242,242,242,.18);
+      background: rgba(242,242,242,.08);
+      color: rgba(242,242,242,.92);
+      font-size:.92rem;
+      white-space: nowrap;
+      transition: transform .10s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+    }
+    .link-article:hover{
+      transform: translateY(-1px);
+      background: rgba(242,242,242,.10);
+      border-color: rgba(242,242,242,.26);
+      box-shadow: 0 0 0 3px rgba(242,242,242,.06);
+    }
+
+    footer{
+      margin-top:2rem;
+      background:rgba(12,12,14,.92);
+      padding:1rem;
+      border-top:1px solid rgba(242,242,242,.14);
+    }
+    footer a{
+      color:#ffffff;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .bg-img{
+      width: 100%;
+      z-index: -1;
+      position: fixed;
+      left: 0;
+      top: 0;
+      opacity: 0.15;
+    }
+
+    #consent-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 40, 60, 0.95);
+      color: #c8fce1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(0,255,255,0.3);
+      box-shadow: 0 -4px 25px rgba(0,255,255,0.15);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    #consent-banner a {
+      color: aqua;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    #consent-banner a:hover { text-shadow: 0 0 8px aqua; }
+    #agree-btn {
+      margin-top: 0.6rem;
+      background: linear-gradient(to right, #00ac81, #00fff2);
+      border: none;
+      color: #001a1a;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #agree-btn:hover { transform: scale(1.05); }
+
+    /* mobile */
+    @media (max-width: 740px){
+      .wrap{ text-align:left; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-actions{ flex-direction: column; }
+      .card{ min-height: unset; }
+      .card .cta{ justify-content:flex-start; }
+    }
+    
+   .nav-toggle{
+  display:none;
+  background: rgba(0,0,0,.22);
+  border:1px solid rgba(92,232,255,.22);
+  color: rgba(243,232,220,.92);
+  border-radius:12px;
+  padding:.45rem .65rem;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+@media (max-width: 740px){
+  .nav-toggle{ display:inline-flex; align-items:center; gap:.45rem; }
+
+  .crumb{
+    display:none;               /* hidden until toggled */
+    position:absolute;
+    top:100%;
+    right:.75rem;
+    left:.75rem;
+    margin-top:.6rem;
+    padding:.55rem;
+    border-radius:14px;
+    background:#0b0705;
+    border:1px solid rgba(199,154,107,.22);
+    box-shadow: 0 18px 56px rgba(0,0,0,.55);
+    flex-direction:column;
+    align-items:stretch;
+    gap:.35rem;
+  }
+
+  .top.nav-open .crumb{ display:flex; }
+
+  .crumb a{
+    text-align:left;
+    padding:.55rem .65rem;
+  }
+
+  header{ margin-top:66px; }
+}
+
+
+  a{text-decoration:none; color: aqua;}</style>
+</head>
+<body>
+
+<video
+  class="bg-img"
+  id="bgvid"
+  src="main-background.mp4"
+  muted
+  autoplay
+  loop
+  playsinline
+  aria-hidden="true"
+></video>
+
+
+
+  <script>
+    window.onload = () => {
+      const v = document.getElementById('bgvid');
+      const setRate = () => (v.playbackRate = 0.7);
+      setRate();
+      v.addEventListener('loadedmetadata', setRate);
+    };
+  </script>
+
+  <div class="bg"></div>
+  <div class="grid" aria-hidden="true"></div>
+
+<div class="top">
+  <a class="brand" href="https://knackforthis.com/">KnackForThis.com</a>
+
+  <button class="nav-toggle" aria-expanded="false" aria-controls="topnav">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+
+  <nav id="topnav" class="crumb" aria-label="Primary navigation">
+    <a href="https://knackforthis.com/">Home</a>
+    <a href="https://knackforthis.com/trades/">Trades</a>
+    <a href="https://knackforthis.com/trades/electrical/">Electrical</a>
+    <a href="https://knackforthis.com/trades/welding/">Welding</a>
+    <a href="https://knackforthis.com/trades/plumbing/">Plumbing</a>
+    <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a>
+  </nav>
+</div>
+
+  <header>
+    <div class="wrap" style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
+      <span class="kicker"><span class="chip">trade hub</span> masonry</span>
+
+      <h1 style="text-align:center;">Masonry</h1>
+
+      <p class="sub" style="text-align:center;">
+        Masonry covers permanent work with brick, block, stone, and concrete — from production wall-building to
+        careful restoration and high-heat industrial systems. This hub gives a plain-language overview of the trade
+        and routes you to diagnostic quizzes that help you determine whether it’s a good fit for you — overall and by specialization.
+      </p>
+
+      <div class="hero-grid" style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
+        <div class="hero-actions">
+          <a class="btn" href="/trades/masonry/diagnostic/">
+            Take the Masonry Quiz <span class="arrow">→</span>
+          </a>
+          <a class="btn btn-secondary" href="/trades/">
+            Back to Trades <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <p>
+        Each specialization below represents a different kind of work environment and workflow.
+        Selecting one will take you to a diagnostic survey designed to evaluate fit for that path.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Bricklaying</h3>
+          <p>
+            Brick and block wall-building with tight lines, consistent joints, and production rhythm on jobsites.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/masonry/bricklaying-quiz/">
+              Take the Bricklaying Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/masonry/bricklaying-article/">
+              What Bricklaying Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Stone Masonry</h3>
+          <p>
+            Natural and manufactured stone work that rewards fitting, patience, and visual standards on finished surfaces.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/masonry/stone-masonry-quiz/">
+              Take the Stone Masonry Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/masonry/stone-masonry-article/">
+              What Stone Masonry Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Concrete Finishing</h3>
+          <p>
+            Placing, leveling, edging, and finishing slabs where timing windows and surface quality decide the outcome.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/masonry/concrete-finishing-quiz/">
+              Take the Concrete Finishing Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/masonry/concrete-finishing-article/">
+              What Concrete Finishing Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Restoration Masonry</h3>
+          <p>
+            Repair and rebuild work on existing brick and stone where matching, diagnosis, and restraint matter more than speed.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/masonry/restoration-masonry-quiz/">
+              Take the Restoration Masonry Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/masonry/restoration-masonry-article/">
+              What Restoration Masonry Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Hardscape &amp; Pavers</h3>
+          <p>
+            Outdoor installs like patios and walkways where durability depends on base prep, grade discipline, and repetition.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/masonry/hardscape-and-pavers-quiz/">
+              Take the Hardscape &amp; Pavers Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/masonry/hardscape-and-pavers-article/">
+              What Hardscape &amp; Pavers Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Refractory Masonry</h3>
+          <p>
+            High-heat industrial masonry inside furnaces and kilns where specs, safety rules, and precision control everything.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/masonry/refractory-masonry-quiz/">
+              Take the Refractory Masonry Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/masonry/refractory-masonry-article/">
+              What Refractory Masonry Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section" style="background: black; border-radius: 15px;">
+  <div class="panel">
+    <h2>About Masonry and Why These Diagnostics Help</h2>
+
+    <p>
+      Masonry isn’t one “thing.” It’s a broad trade that includes production wall work, detailed stone finishing,
+      concrete timing windows, outdoor hardscape systems, high-heat industrial refractory work, and slow restoration on existing structures.
+      Two people can both be “masons” and live totally different days: jobsite production vs meticulous matching, heavy repetitive rhythm vs controlled spec work.
+    </p>
+
+    <p>
+      That’s why these diagnostics exist: not to test talent, but to test <strong>fit</strong>.
+      A lot of people don’t fail because they’re incapable — they fail because they pick a lane that fights their temperament every day.
+      If you naturally like physical rhythm, repetition, and visible progress, one path will feel grounding.
+      If you naturally like precision, matching, and controlled standards, a different path will feel “right.”
+      Same trade name. Different workflow.
+    </p>
+
+    <p>
+      These quizzes are quick self-assessments that help you notice where you’re likely to thrive:
+      <strong>production vs precision</strong>, <strong>outdoor grind vs controlled environments</strong>,
+      <strong>repetition vs variety</strong>, <strong>timing windows vs slow methodical work</strong>,
+      and <strong>visible finish vs hidden performance</strong>.
+      They’re not career advice and they’re not guarantees — they’re a fast way to get a clearer signal before you commit time, money, or identity to the wrong lane.
+    </p>
+
+    <div class="panel-grid">
+      <div class="mini">
+        <h3>What you’ll get</h3>
+        <p>
+          A practical “alignment signal” about which masonry environments match how you operate — and which ones are likely to feel like friction.
+        </p>
+      </div>
+
+      <div class="mini">
+        <h3>What you won’t get</h3>
+        <p>
+          A promise, a prediction, or a label that defines you. Use results as a starting point, not a verdict.
+        </p>
+      </div>
+
+      <div class="mini">
+        <h3>Best next step</h3>
+        <p>
+          Take one quiz, read “What it looks like,” then compare two specializations that seem close.
+          After that, validate in real life: shadow, help, or do a small starter project.
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight" style="margin-top:1rem;">
+      <p style="margin:0;">
+        If you’re interested in masonry, don’t overthink it. Start with a diagnostic and follow the lane that matches your preferences —
+        then test it in the real world.
+      </p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
+  <footer>
+    <div>
+      <a href="/about/">About</a> •
+      <a href="/mission/">Mission</a> •
+      <a href="/editorial-standards/">Editorial Standards</a> •
+      <a href="/privacy/">Privacy</a> •
+      <a href="/terms/">Terms</a> •
+      <a href="/contact/">Contact</a>
+    </div>
+    <p style="opacity:.9;margin:.6rem 0 0;">
+      © <span id="y"></span> KnackForThis
+    </p>
+  </footer>
+
+  <script>
+  const topBar = document.querySelector('.top');
+  const btn = document.querySelector('.nav-toggle');
+
+  btn?.addEventListener('click', () => {
+    const open = topBar.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Close menu when tapping a link (mobile sanity)
+  document.querySelectorAll('#topnav a').forEach(a => {
+    a.addEventListener('click', () => {
+      topBar.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

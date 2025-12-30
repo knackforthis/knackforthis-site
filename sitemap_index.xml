@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <sitemap>
+    <loc>https://knackforthis.com/sitemap.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://knackforthis.com/trades/sitemap.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://knackforthis.com/trades/carpentry/sitemap.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://knackforthis.com/trades/masonry/sitemap.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://knackforthis.com/trades/plumbing/sitemap.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://knackforthis.com/trades/electrical/sitemap.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://knackforthis.com/trades/welding/sitemap.xml</loc>
+  </sitemap>
+
+</sitemapindex>

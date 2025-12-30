@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Welding Fabrication: What the Work Really Requires | KnackForThis</title>
+<meta name="description" content="Fabrication welding is shop-based, process-driven work — cutting, fitting, welding, and assembling parts to spec. This article explains workflow discipline, repetition tolerance, precision expectations, and how fabrication differs from field welding." />
+<meta name="keywords" content="welding fabrication, fabrication welder, metal fabrication, shop welding, MIG welding, TIG welding, flux core welding, fit up, blueprint reading, welding distortion control, welding reality, is fabrication welding right for me, KnackForThis" />
+<link rel="canonical" href="https://knackforthis.com/trades/welding/fabrication-article/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="KnackForThis" />
+<meta property="og:title" content="Welding Fabrication: What It Really Requires" />
+<meta property="og:description" content="Fabrication is repeatable build systems: layout, fit-up, welding sequence, and finish standards that must match prints. Read the reality, then take the diagnostic to test fit." />
+<meta property="og:url" content="https://knackforthis.com/trades/welding/fabrication-article/" />
+<meta property="og:image" content="https://knackforthis.com/preview.png" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Fabrication Welding Reality Guide | KnackForThis" />
+<meta name="twitter:description" content="What fabrication welding really demands — then a diagnostic to test whether you fit it." />
+<meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg1:#0b0f14;
+  --bg2:#040608;
+
+  --panel:#121820;
+  --panel2:#0b1016;
+
+  --text:#eef2f7;
+  --muted:rgba(238,242,247,.82);
+
+  --steel:#c8d0d8;
+  --steel2:rgba(200,208,216,.16);
+
+  --arc:#7fe7ff;
+  --arc2:rgba(127,231,255,.12);
+
+  --amber:#ffb86b;
+  --amber2:rgba(255,184,107,.14);
+
+  --border:rgba(200,208,216,.16);
+  --shadow:0 0 26px rgba(127,231,255,.08);
+
+  --radius:16px;
+  --max:980px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(127,231,255,.14) 0%, transparent 48%),
+    radial-gradient(circle at 78% 26%, rgba(200,208,216,.12) 0%, transparent 55%),
+    radial-gradient(circle at 50% 8%, rgba(255,184,107,.10) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 70%);
+  overflow-x:hidden;
+  line-height:1.85;
+}
+
+/* top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  background:rgba(4,6,8,.86);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.brand .mark{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg, var(--arc), var(--steel));
+  box-shadow:0 0 18px rgba(127,231,255,.22);
+}
+.brand .name{
+  font-weight:900;
+  color:var(--steel);
+  letter-spacing:.02em;
+}
+.mini-nav{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.mini-nav a{
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  color:rgba(238,242,247,.88);
+  padding:.42rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.14);
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.mini-nav a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(127,231,255,.35);
+  box-shadow:0 0 14px rgba(127,231,255,.12);
+}
+
+/* header */
+header{
+  padding:2.6rem 1rem 1.2rem;
+}
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.55rem 1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.18);
+  background:linear-gradient(to bottom, rgba(18,24,32,.78), rgba(10,14,18,.68));
+  box-shadow:var(--shadow), inset 0 0 22px rgba(200,208,216,.06);
+  position:relative;
+  overflow:hidden;
+}
+.header-inner::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(127,231,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 24%, rgba(200,208,216,.10), transparent 64%),
+    radial-gradient(circle at 50% 70%, rgba(255,184,107,.10), transparent 62%);
+  animation:pulse 12s infinite alternate;
+  pointer-events:none;
+}
+@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.18);} }
+
+.kicker{
+  position:relative;
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  color:rgba(200,208,216,.92);
+  background:rgba(200,208,216,.08);
+  border:1px solid rgba(200,208,216,.14);
+  padding:.35rem .62rem;
+  border-radius:999px;
+}
+
+h1{
+  position:relative;
+  margin:.7rem 0 .55rem;
+  font-family:'Passero One', cursive;
+  color:var(--steel);
+  font-size:clamp(2.1rem, 4.6vw, 2.95rem);
+  text-shadow:0 0 20px rgba(0,0,0,.70);
+}
+.lede{
+  position:relative;
+  margin:0;
+  max-width:900px;
+  color:rgba(238,242,247,.92);
+  font-size:1.12rem;
+}
+
+/* content */
+main{
+  max-width:var(--max);
+  margin:1.2rem auto 0;
+  padding:0 1.2rem 2.5rem;
+}
+
+.section{
+  margin-top:1.6rem;
+  padding:1.25rem 1.1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.14);
+  background:linear-gradient(180deg, rgba(11,16,22,.55), rgba(0,0,0,.22));
+  box-shadow:inset 0 0 18px rgba(200,208,216,.05);
+}
+
+h2{
+  margin:.1rem 0 .6rem;
+  color:var(--arc);
+  border-left:4px solid rgba(127,231,255,.65);
+  padding-left:.65rem;
+  letter-spacing:.01em;
+}
+
+p{margin:.6rem 0;}
+a{color:var(--arc); font-weight:700; text-decoration:none; transition:.25s ease;}
+a:hover{color:#fff; text-shadow:0 0 12px rgba(127,231,255,.26);}
+
+.highlight{
+  margin-top:1rem;
+  padding:1rem 1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(127,231,255,.18);
+  background:linear-gradient(to right, var(--arc2), rgba(200,208,216,.06), rgba(0,0,0,0));
+  box-shadow:inset 0 0 18px rgba(127,231,255,.08);
+}
+
+/* smaller image placeholders */
+.figure-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:.85rem;
+  margin-top:1rem;
+}
+.img-ph{
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(127,231,255,.18);
+  box-shadow:0 0 18px rgba(127,231,255,.06);
+  padding:0;
+  background:none;
+}
+
+/* bullets */
+.list{
+  margin:.7rem 0 0;
+  padding:0;
+  list-style:none;
+  text-align:left;
+}
+.list li{
+  margin:.55rem 0;
+  padding-left:1.15rem;
+  position:relative;
+  color:rgba(238,242,247,.90);
+}
+.list li::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:99px;
+  background:linear-gradient(135deg, var(--arc), var(--steel));
+  box-shadow:0 0 10px rgba(127,231,255,.18);
+  position:absolute;
+  left:0; top:.55rem;
+  opacity:.95;
+}
+
+/* FAQ */
+.faq{
+  margin-top:1rem;
+  text-align:left;
+}
+.faq details{
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.16);
+  border-radius:14px;
+  padding:.85rem .9rem;
+  margin:.75rem 0;
+}
+.faq summary{
+  cursor:pointer;
+  font-weight:900;
+  color:rgba(238,242,247,.95);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"＋";
+  float:right;
+  color:rgba(127,231,255,.85);
+  font-weight:900;
+}
+.faq details[open] summary::after{content:"—";}
+.faq .answer{
+  margin-top:.6rem;
+  color:rgba(238,242,247,.86);
+}
+
+/* footer */
+footer{
+  background:rgba(0,0,0,.88);
+  color:rgba(238,242,247,.86);
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:0.92rem;
+  margin-top:2.2rem;
+  border-top:1px solid rgba(127,231,255,.12);
+}
+.meta{
+  position:relative;
+  margin:0 0 .55rem;
+  display:inline-block;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(200,208,216,.88);
+  width: 100%;
+  text-align: center;
+  padding:.32rem .6rem;
+  border-radius:999px;
+  backdrop-filter:blur(6px);
+}
+.meta time{
+  font-weight:900;
+  color:var(--silver);
+}
+
+@media (max-width: 920px){
+  .figure-row{grid-template-columns:1fr; }
+  .mini-nav{display:none;}
+  .section{padding:1.05rem 1rem;}
+}
+a{text-decoration:none; color: aqua;}</style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="https://knackforthis.com/">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">KnackForThis.com</span>
+    </a>
+
+    <nav class="mini-nav" aria-label="Quick navigation">
+      <a href="https://knackforthis.com/">Home</a>
+      <a href="https://knackforthis.com/trades/">Trades</a>
+      <a href="https://knackforthis.com/trades/welding/">Welding</a>
+    </nav>
+  </div>
+
+  <header><p class="meta" style="text-align: center;">
+  Published:
+  <time datetime="2025-12-29">December 29, 2025</time>
+  · Updated:
+  <time datetime="2025-12-29">December 29, 2025</time>
+</p>
+
+    <div class="header-inner">
+      <span class="kicker">Trades • Welding • Fabrication</span>
+      <h1>Welding Fabrication: What It Really Requires</h1>
+      <p class="lede">
+        Fabrication welding is the “build shop” side of welding: turning raw stock into real parts that match drawings.
+        It rewards measurement discipline, sequencing, and repeatable quality.
+        If some welding paths are “run good beads,” fabrication is “build it square, make it fit, and ship it.”
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What Fabrication Welding Actually Is</h2>
+      <p>
+        Fabrication is the full build workflow: <strong>layout → cut → prep → fit-up → tack → weld → correct → finish</strong>.
+        You might build frames, racks, platforms, handrails, brackets, skid bases, trailers, equipment mounts, or one-off “we need this by Friday” parts.
+      </p>
+      <p>
+        People imagine fabrication as “just welding in a shop.” Reality: it’s <strong>systems thinking + tolerance control</strong>.
+        Heat pulls metal. Parts vary. Drawings aren’t always perfect. Your job is to produce a finished assembly that still measures correctly after it’s welded.
+      </p>
+
+      <div class="figure-row" aria-label="Image placeholders">
+        <img class="img-ph" src="../imgs/structural-connection-detail.jpg" alt="Fabrication layout on a welding table with squares and clamps"/>
+        <img class="img-ph" src="../imgs/vertical-weld-position.jpg" alt="Fit-up and tacking with clamps and strongbacks to hold alignment"/>
+        <img class="img-ph" src="../imgs/weld-visual-inspection.jpg" alt="Grinding and finishing pass to prep welds for paint or customer standard"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Spend Time Doing</h2>
+      <p>
+        In fabrication, arc time is only a slice of the day. A lot of the work happens before the weld:
+        setup, measurement, fit-up, and controlling distortion. The “quality” of your weld is often decided before you strike an arc.
+      </p>
+
+      <ul class="list">
+        <li><strong>Blueprint + symbol reading:</strong> dimensions, hole patterns, weld callouts, and build intent.</li>
+        <li><strong>Measuring + layout:</strong> marking cut lines, locating features, building reference points.</li>
+        <li><strong>Cutting + prep:</strong> saw, plasma, torch, beveling, cleaning mill scale, deburring.</li>
+        <li><strong>Fit-up + fixturing:</strong> clamps, squares, jigs, tack strategy to lock geometry.</li>
+        <li><strong>Welding processes:</strong> MIG, flux-core, TIG depending on material and shop standard.</li>
+        <li><strong>Distortion management:</strong> sequencing, skip welds, alternating sides, heat control.</li>
+        <li><strong>Finishing:</strong> grinding, blending, spatter cleanup, paint/powder prep, final checks.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Fabrication is where “I can weld” turns into “I can build.” The difference is measurement + sequence.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where the Pressure Comes From</h2>
+      <p>
+        Pressure comes from <strong>downstream fit</strong> and <strong>time</strong>.
+        If a frame is out of square, everything that mounts to it becomes a fight.
+        If your hole locations drift, bolts don’t start. If your assembly warps, doors don’t swing and panels don’t line up.
+      </p>
+      <p>
+        Shops also tend to have real deadlines. Fabrication isn’t always “slow and careful.” It’s often “careful enough, fast enough,”
+        which is a harder skill than people expect.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>How Fabrication Actually Fails</h2>
+      <p>
+        Most fabrication failures aren’t dramatic. They’re quiet geometry problems that show up at the worst moment:
+        when you try to assemble, install, or ship. A lot of rework is preventable — if you think ahead.
+      </p>
+
+      <ul class="list">
+        <li><strong>Bad fit-up:</strong> gaps and misalignment that lock errors in place once welded.</li>
+        <li><strong>Poor sequencing:</strong> welding out too early and pulling the assembly out of square.</li>
+        <li><strong>Heat blindness:</strong> ignoring distortion until the part no longer matches the print.</li>
+        <li><strong>Measurement drift:</strong> stacking small errors that compound into a big miss.</li>
+        <li><strong>Finish neglect:</strong> sharp edges, spatter, or ugly grind marks that fail customer standards.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          In fabrication, early discipline saves late suffering.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What Traits Actually Matter</h2>
+      <p>
+        Fabrication rewards people who can hold a standard without getting emotionally wrecked by correction and rework.
+        The best fabricators are calm, methodical, and good at seeing the whole build before they start.
+      </p>
+
+      <ul class="list">
+        <li><strong>Measurement discipline:</strong> you’re comfortable measuring, marking, checking, and re-checking.</li>
+        <li><strong>Fit-up patience:</strong> you don’t weld until the geometry is correct.</li>
+        <li><strong>Sequence awareness:</strong> you think about “what will this look like after I weld it?”</li>
+        <li><strong>Distortion prediction:</strong> you anticipate heat pull and plan around it.</li>
+        <li><strong>Problem-solving:</strong> when prints or parts are imperfect, you adapt cleanly.</li>
+        <li><strong>Finish tolerance:</strong> cleanup and presentation doesn’t feel beneath you.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          A strong fabricator is basically a builder who speaks metal: they manage heat, tolerance, and sequence like a system.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The “Fabricator Brain”</h2>
+      <p>
+        Good fabricators think ahead of the weld. They mentally build the part before touching steel.
+        The core question isn’t “Can I weld this?” but <strong>“How do I weld this so it stays true?”</strong>
+      </p>
+
+      <ul class="list">
+        <li><strong>Sequence thinking:</strong> tack strategy, weld order, skip patterns, and when to fully weld.</li>
+        <li><strong>Geometry protection:</strong> clamping, fixturing, reference edges, and squareness checks.</li>
+        <li><strong>Tolerance stacking:</strong> knowing how small drift multiplies across assemblies.</li>
+        <li><strong>Correction as normal:</strong> straightening and adjustment without frustration.</li>
+        <li><strong>Quality repeatability:</strong> producing “acceptable every time,” not “great sometimes.”</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Fabrication favors people who enjoy steps and systems — not people chasing arc time.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Who Should Probably Avoid It</h2>
+      <p>
+        No shame — better to pick the environment that rewards you than grind yourself down in one that doesn’t.
+      </p>
+
+      <ul class="list">
+        <li><strong>You hate measuring:</strong> fabrication is measurement culture.</li>
+        <li><strong>You rush to weld:</strong> poor fit-up creates rework and ugly results.</li>
+        <li><strong>You can’t stand rework:</strong> correction is normal, not a rare failure.</li>
+        <li><strong>You want clean perfect inputs:</strong> real stock and real prints aren’t always perfect.</li>
+        <li><strong>You only want “welding”:</strong> cutting, grinding, and setup are a big chunk of the job.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          If you want more field conditions and inspection consequence, compare with <a href="https://knackforthis.com/trades/welding/structural-welding-quiz/">structural welding</a>.
+          If you want higher procedure precision, compare with <a href="https://knackforthis.com/trades/welding/pipe-welding-quiz/">pipe/pipewelding</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Fabrication vs Other Welding Paths</h2>
+      <p>
+        Fabrication overlaps with other welding specialties, but it has a different mental center: <strong>build accuracy</strong>.
+        You’re judged by whether the final assembly measures correctly and functions — not only by weld appearance.
+      </p>
+
+      <ul class="list">
+        <li><strong>Compared to structural:</strong> more shop-based, more layout/fit-up, often less field exposure.</li>
+        <li><strong>Compared to pipe:</strong> less “perfect circumference” focus, more distortion control and assembly build logic.</li>
+        <li><strong>Compared to repair:</strong> fewer unknowns, more repeatability and production rhythm.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Next Step: Get a Signal, Then Compare</h2>
+      <p>
+        Fabrication is a strong path if you like building systems with your hands: measuring, fitting, sequencing, and finishing.
+        Don’t choose it because you like sparks. Choose it because you can live inside the process.
+      </p>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Run the <a href="https://knackforthis.com/trades/welding/fabrication-quiz/">Fabrication Welding Fit Diagnostic</a> first.
+          Then compare paths from the <a href="https://knackforthis.com/trades/welding/">Welding Hub</a> or step back to the
+          <a href="https://knackforthis.com/trades/">Trades Hub</a>.
+          If you want the full map, start at the <a href="https://knackforthis.com/">homepage</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+
+      <div class="faq" aria-label="Frequently Asked Questions">
+        <details class="faq-item">
+          <summary>Is fabrication welding mostly MIG?</summary>
+          <div class="answer">
+            Often, yes — especially for production and mild steel work. But many shops use flux-core for thicker material,
+            TIG for stainless/aluminum or higher cosmetic standards, and sometimes stick depending on needs.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What’s the hardest part for most beginners?</summary>
+          <div class="answer">
+            Fit-up and distortion control. Many beginners can run a decent bead, but they don’t yet understand how welding sequence
+            and heat pull change geometry and cause “why doesn’t this fit?” problems.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need blueprint reading to do fabrication?</summary>
+          <div class="answer">
+            It helps a lot. Some entry roles start with simpler parts, but growth usually requires reading dimensions, tolerances,
+            and weld symbols — because fabrication is ultimately “build what the print demands.”
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is fabrication easier than structural welding?</summary>
+          <div class="answer">
+            Different hard. Fabrication is build accuracy under time pressure. Structural adds more positional work, access challenges,
+            and inspection consequence. The harder one is the one that drains you.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the fabrication diagnostic actually measure?</summary>
+          <div class="answer">
+            It’s not a skills test. It estimates alignment between your tolerances (measurement discipline, fit-up patience,
+            sequence thinking, rework resilience, finish tolerance) and the day-to-day reality of fabrication welding.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://knackforthis.com/">Home</a> •
+      <a href="https://knackforthis.com/trades/">Trades</a> •
+      <a href="https://knackforthis.com/trades/welding/">Welding</a> •
+      <a href="https://knackforthis.com/contact/">Contact</a> •
+      <a href="https://knackforthis.com/privacy/">Privacy</a> •
+      <a href="https://knackforthis.com/terms/">Terms</a>
+    </p>
+    <p style="margin:.6rem 0 0;">
+      KnackForThis is educational. Diagnostics are for self-assessment only and are not career advice.<br />
+      © 2025 KnackForThis. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://knackforthis.com/trades/welding/fabrication-article/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://knackforthis.com/trades/" },
+        { "@type": "ListItem", "position": 3, "name": "Welding", "item": "https://knackforthis.com/trades/welding/" },
+        { "@type": "ListItem", "position": 4, "name": "Fabrication", "item": "https://knackforthis.com/trades/welding/fabrication-article/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://knackforthis.com/trades/welding/fabrication-article/#webpage",
+      "url": "https://knackforthis.com/trades/welding/fabrication-article/",
+      "name": "Welding Fabrication: What It Really Requires",
+      "description": "Welding fabrication is systems-based building — layout, fit-up, tacking, sequencing, distortion control, and repeatable weld quality that has to match drawings. What the day-to-day demands, what drains people, and where to test your fit.",
+      "isPartOf": { "@id": "https://knackforthis.com/#website" },
+      "about": { "@id": "https://knackforthis.com/trades/welding/#topic" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://knackforthis.com/trades/welding/fabrication-article/#article",
+      "headline": "Welding Fabrication: What It Really Requires",
+      "description": "Welding fabrication is systems-based building — layout, fit-up, tacking, sequencing, distortion control, and repeatable weld quality that has to match drawings. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "image": "https://knackforthis.com/preview.png",
+  "datePublished": "2025-12-29",
+  "dateModified": "2025-12-29",      "mainEntityOfPage": { "@id": "https://knackforthis.com/trades/welding/fabrication-article/#webpage" },
+      "author": { "@id": "https://knackforthis.com/#org" },
+      "publisher": { "@id": "https://knackforthis.com/#org" },
+      "inLanguage": "en",
+      "about": [
+        "welding fabrication",
+        "metal fabrication",
+        "MIG welding",
+        "TIG welding",
+        "FCAW",
+        "fit-up",
+        "blueprint reading",
+        "skilled trades"
+      ],
+      "keywords": [
+        "welding fabrication",
+        "fabrication welder",
+        "metal fabrication",
+        "shop welding",
+        "MIG welding",
+        "TIG welding",
+        "flux core welding",
+        "fit up",
+        "blueprint reading",
+        "distortion control",
+        "is fabrication welding right for me",
+        "KnackForThis"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://knackforthis.com/#org",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knackforthis.com/favicon.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knackforthis.com/#website",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knackforthis.com/trades/welding/#topic",
+      "name": "Welding"
+    }
+  ]
+}
+  </script>
+</body>
+</html>

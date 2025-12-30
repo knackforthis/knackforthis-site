@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Welding hub -->
+  <url>
+    <loc>https://knackforthis.com/trades/welding/</loc>
+  </url>
+
+  <!-- Structural Welding -->
+  <url>
+    <loc>https://knackforthis.com/trades/welding/structural-welding-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/welding/structural-welding-quiz/</loc>
+  </url>
+
+  <!-- Fabrication -->
+  <url>
+    <loc>https://knackforthis.com/trades/welding/fabrication-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/welding/fabrication-quiz/</loc>
+  </url>
+
+  <!-- Pipe Welding -->
+  <url>
+    <loc>https://knackforthis.com/trades/welding/pipe-welding-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/welding/pipe-welding-quiz/</loc>
+  </url>
+
+  <!-- Automotive Welding -->
+  <url>
+    <loc>https://knackforthis.com/trades/welding/automotive-welding-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/welding/automotive-welding-quiz/</loc>
+  </url>
+
+  <!-- Aerospace Precision Welding -->
+  <url>
+    <loc>https://knackforthis.com/trades/welding/aerospace-precision-welding-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/welding/aerospace-precision-welding-quiz/</loc>
+  </url>
+
+  <!-- Artistic Metalwork -->
+  <url>
+    <loc>https://knackforthis.com/trades/welding/artistic-metalwork-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/welding/artistic-metalwork-quiz/</loc>
+  </url>
+
+</urlset>

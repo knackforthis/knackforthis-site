@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Trades hub -->
+  <url>
+    <loc>https://knackforthis.com/trades/</loc>
+  </url>
+
+  <!-- Trade sub-hubs -->
+  <url>
+    <loc>https://knackforthis.com/trades/carpentry/</loc>
+  </url>
+
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/</loc>
+  </url>
+
+  <url>
+    <loc>https://knackforthis.com/trades/welding/</loc>
+  </url>
+
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/</loc>
+  </url>
+
+  <url>
+    <loc>https://knackforthis.com/trades/plumbing/</loc>
+  </url>
+
+    <url>
+    <loc>https://knackforthis.com/trades/trades-article/</loc>
+  </url>
+
+</urlset>

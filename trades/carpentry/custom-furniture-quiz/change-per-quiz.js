@@ -1,5 +1,3 @@
-// custom-furniture-quiz.js
-
 const obj = {
   0: {
     question: "Custom furniture often involves long builds with lots of planning before anything looks finished. You usually:",
@@ -56,7 +54,7 @@ const obj = {
     options: [
       ["I like it — I enjoy creative problem-solving with constraints.", ["FurnitureAligned", "Disciplined"]],
       ["I can do it, but I prefer some templates or standards.", ["FurnitureAligned", "Flexible"]],
-      ["Too many choices drains me quickly.", ["FurnitureMisaligned", "Flexible"]],
+      ["Too many choices drain me quickly.", ["FurnitureMisaligned", "Flexible"]],
       ["I prefer work with clear instructions, not design decisions.", ["FurnitureMisaligned", "Flexible"]]
     ]
   },
@@ -111,10 +109,42 @@ const obj = {
     ]
   },
 
+  // ---- HUMAN FRICTION / ATTRITION LAYER ----
+
   11: {
+    question: "Custom furniture often involves vague or subjective feedback like “it doesn’t feel right.” You:",
+    options: [
+      ["Can work through it and refine until it clicks.", ["FurnitureAligned", "Disciplined"]],
+      ["Can handle it, but it’s mentally tiring.", ["FurnitureAligned", "Flexible"]],
+      ["Get frustrated without clear criteria.", ["FurnitureMisaligned", "Flexible"]],
+      ["Strongly dislike subjective critique.", ["FurnitureMisaligned", "Flexible"]]
+    ]
+  },
+
+  12: {
+    question: "If a client or designer changes their mind mid-build, your reaction is:",
+    options: [
+      ["Annoying, but manageable — it’s part of custom work.", ["FurnitureAligned", "Disciplined"]],
+      ["I’ll adapt, but it stresses me out.", ["FurnitureAligned", "Flexible"]],
+      ["I push back hard against changes.", ["FurnitureMisaligned", "Flexible"]],
+      ["That kind of uncertainty kills my motivation.", ["FurnitureMisaligned", "Flexible"]]
+    ]
+  },
+
+  13: {
+    question: "Custom furniture work often means long stretches working alone or quietly focused. You:",
+    options: [
+      ["Like it — deep focus suits me.", ["FurnitureAligned", "Disciplined"]],
+      ["I’m okay with it most of the time.", ["FurnitureAligned", "Flexible"]],
+      ["I need more interaction to stay energized.", ["FurnitureMisaligned", "Flexible"]],
+      ["Isolation makes the work feel heavier fast.", ["FurnitureMisaligned", "Flexible"]]
+    ]
+  },
+
+  14: {
     question: "Be honest: how strong is your pull toward custom furniture specifically?",
     options: [
-      ["Strong — I’m drawn to building pieces that look intentional and last.", ["FurnitureAligned", "Disciplined"]],
+      ["Strong — I’m drawn to building intentional, lasting pieces.", ["FurnitureAligned", "Disciplined"]],
       ["Moderate — I’m curious, but not fully sure yet.", ["FurnitureAligned", "Flexible"]],
       ["Low — I’m more interested in other carpentry lanes.", ["FurnitureMisaligned", "Flexible"]],
       ["Very low — this probably isn’t my environment.", ["FurnitureMisaligned", "Flexible"]]
@@ -136,19 +166,22 @@ function interpretResults() {
   const flexible = tags.Flexible || 0;
 
   // Alignment axis (furniture fit)
-  const fitScore = aligned - misaligned; // ~ -12 .. +12
-  let fitPct = Math.round(((fitScore + 12) / 24) * 100);
+  const fitScore = aligned - misaligned; // ~ -15 .. +15
+  let fitPct = Math.round(((fitScore + 15) / 30) * 100);
   fitPct = Math.max(0, Math.min(100, fitPct));
 
   // Discipline axis (patience + follow-through)
-  const disciplineScore = disciplined - flexible; // ~ -12 .. +12
-  let disciplinePct = Math.round(((disciplineScore + 12) / 24) * 100);
+  const disciplineScore = disciplined - flexible; // ~ -15 .. +15
+  let disciplinePct = Math.round(((disciplineScore + 15) / 30) * 100);
   disciplinePct = Math.max(0, Math.min(100, disciplinePct));
 
   let disciplineLabel;
-  if (disciplinePct >= 70) disciplineLabel = "You’re built for long builds: steady focus, careful execution, and follow-through without needing chaos to stay engaged.";
-  else if (disciplinePct >= 40) disciplineLabel = "You can do furniture work, but consistency may depend on structure, deadlines, and clear milestones.";
-  else disciplineLabel = "Furniture work may feel mentally irritating because it demands patience, surface discipline, and slow progress without immediate payoff.";
+  if (disciplinePct >= 70)
+    disciplineLabel = "You’re built for long builds, subjective refinement, and steady follow-through without needing constant momentum.";
+  else if (disciplinePct >= 40)
+    disciplineLabel = "You can do custom furniture work, but structure, clarity, and boundaries will matter a lot.";
+  else
+    disciplineLabel = "Custom furniture may feel mentally draining due to slow payoff, rework, and subjective expectations.";
 
   let band, title, description, color;
 
@@ -156,8 +189,8 @@ function interpretResults() {
     band = "strong";
     title = `Strong Fit: Custom Furniture (${fitPct}% alignment)`;
     description = `
-You’re showing strong alignment with custom furniture — patience for long builds, tolerance for precision, and comfort with finish-level standards.<br><br>
-<strong>Blunt truth:</strong> custom furniture is slow, picky, and full of “invisible work” before it looks impressive. Your answers suggest that won’t break you.<br><br>
+You’re showing strong alignment with custom furniture — technically and psychologically.<br><br>
+<strong>Blunt truth:</strong> this work is slow, subjective, and picky. The reward comes late, not daily. Your answers suggest you can live with that reality.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(60, 160, 120)";
@@ -165,8 +198,8 @@ ${disciplineLabel}
     band = "middle";
     title = `Mixed Fit: Custom Furniture (${fitPct}% alignment)`;
     description = `
-You’ve got some traits that work in custom furniture, but not enough consistency to assume you’ll enjoy the day-to-day without friction.<br><br>
-<strong>Translation:</strong> you might do well with the right structure (clear designs, deadlines, a shop workflow) — or you might prefer a carpentry lane with faster payoff and fewer finish demands.<br><br>
+You have some traits that fit custom furniture, but friction is likely unless conditions are right.<br><br>
+<strong>Translation:</strong> the wrong client or unclear scope will exhaust you faster than the woodworking itself.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(120, 140, 220)";
@@ -174,13 +207,12 @@ ${disciplineLabel}
     band = "low";
     title = `Low Fit: Custom Furniture (${fitPct}% alignment)`;
     description = `
-Based on your answers, custom furniture will probably feel like constant friction: slow progress, surface discipline, precision demands, and frequent rework.<br><br>
-<strong>This isn’t a personal knock.</strong> It usually means your strengths fit better in paths where speed, field problem-solving, or structural outcomes matter more than finish-level refinement.
+Custom furniture will likely feel like constant friction — slow progress, subjective critique, frequent redo, and delayed payoff.<br><br>
+<strong>This isn’t a failure.</strong> It usually means your strengths fit better in faster-paced or less taste-driven trades.
     `.trim();
     color = "rgb(170, 80, 80)";
   }
 
-  // Show/hide buttons based on fit (same class names your framework uses)
   if (band === "strong") {
     $('.good-fit').show();
     $('.no-fit').hide();
@@ -192,7 +224,6 @@ Based on your answers, custom furniture will probably feel like constant frictio
     $('.no-fit').show();
   }
 
-  // Reset
   Object.keys(tags).forEach(k => tags[k] = 0);
 
   return { title, description, color };

@@ -1,5 +1,3 @@
-// cabinet-making-quiz.js
-
 const obj = {
   0: {
     question: "When a project needs a repeatable process (label parts, keep stacks organized, follow a sequence), you usually:",
@@ -55,7 +53,7 @@ const obj = {
     question: "Which environment sounds more natural to you?",
     options: [
       ["Shop workflow: controlled, measured, repeatable precision.", ["CabinetAligned", "Disciplined"]],
-      ["Mostly shop work, with some variety and occasional installs.", ["CabinetAligned", "Flexible"]],
+      ["Mostly shop work, with some variety and installs.", ["CabinetAligned", "Flexible"]],
       ["Jobsite pace: changing conditions, faster execution.", ["CabinetMisaligned", "Flexible"]],
       ["Anything but detail-heavy shop work.", ["CabinetMisaligned", "Flexible"]]
     ]
@@ -72,7 +70,7 @@ const obj = {
   },
 
   7: {
-    question: "If a cabinet run needs leveling/shimming because walls/floors are out of whack, you usually:",
+    question: "If a cabinet run needs leveling or shimming because walls/floors are out of whack, you usually:",
     options: [
       ["Treat it like normal install reality and work the problem.", ["CabinetAligned", "Disciplined"]],
       ["I can do it, but it stresses me out.", ["CabinetAligned", "Flexible"]],
@@ -111,12 +109,44 @@ const obj = {
     ]
   },
 
+  // ---- HUMAN FRICTION LAYER ----
+
   11: {
+    question: "Cabinet work often involves supervisors, designers, or clients reviewing small details. How does that land with you?",
+    options: [
+      ["Fine — shared standards help keep quality high.", ["CabinetAligned", "Disciplined"]],
+      ["I can handle it if feedback is reasonable.", ["CabinetAligned", "Flexible"]],
+      ["It gets irritating when people micromanage details.", ["CabinetMisaligned", "Flexible"]],
+      ["I strongly dislike others critiquing fine details.", ["CabinetMisaligned", "Flexible"]]
+    ]
+  },
+
+  12: {
+    question: "If you're asked to redo a cabinet detail that technically works but 'doesn’t look right,' you:",
+    options: [
+      ["Redo it — visual precision matters in this trade.", ["CabinetAligned", "Disciplined"]],
+      ["Redo it, but it annoys me.", ["CabinetAligned", "Flexible"]],
+      ["Push back unless the issue is obvious.", ["CabinetMisaligned", "Flexible"]],
+      ["Get frustrated and disengage.", ["CabinetMisaligned", "Flexible"]]
+    ]
+  },
+
+  13: {
+    question: "Cabinet shops can be quiet, focused, and repetitive for long stretches. Your reaction:",
+    options: [
+      ["That environment helps me stay dialed in.", ["CabinetAligned", "Disciplined"]],
+      ["I’m okay with it most days.", ["CabinetAligned", "Flexible"]],
+      ["I need more interaction or variety to stay sane.", ["CabinetMisaligned", "Flexible"]],
+      ["I feel boxed in fast in quiet, repetitive settings.", ["CabinetMisaligned", "Flexible"]]
+    ]
+  },
+
+  14: {
     question: "Be honest: how strong is your pull toward cabinet making specifically?",
     options: [
-      ["Strong — I’m drawn to systems + precision + clean outcomes.", ["CabinetAligned", "Disciplined"]],
+      ["Strong — systems, precision, and clean outcomes appeal to me.", ["CabinetAligned", "Disciplined"]],
       ["Moderate — I’m curious, but not fully sure.", ["CabinetAligned", "Flexible"]],
-      ["Low — I’m more interested in other carpentry lanes.", ["CabinetMisaligned", "Flexible"]],
+      ["Low — I’m more drawn to other carpentry paths.", ["CabinetMisaligned", "Flexible"]],
       ["Very low — this probably isn’t my environment.", ["CabinetMisaligned", "Flexible"]]
     ]
   }
@@ -135,20 +165,21 @@ function interpretResults() {
   const disciplined = tags.Disciplined || 0;
   const flexible = tags.Flexible || 0;
 
-  // Alignment axis (cabinet fit)
-  const fitScore = aligned - misaligned; // ~ -12 .. +12
-  let fitPct = Math.round(((fitScore + 12) / 24) * 100);
+  const fitScore = aligned - misaligned;
+  let fitPct = Math.round(((fitScore + 15) / 30) * 100);
   fitPct = Math.max(0, Math.min(100, fitPct));
 
-  // Discipline axis (process + consistency)
-  const disciplineScore = disciplined - flexible; // ~ -12 .. +12
-  let disciplinePct = Math.round(((disciplineScore + 12) / 24) * 100);
+  const disciplineScore = disciplined - flexible;
+  let disciplinePct = Math.round(((disciplineScore + 15) / 30) * 100);
   disciplinePct = Math.max(0, Math.min(100, disciplinePct));
 
   let disciplineLabel;
-  if (disciplinePct >= 70) disciplineLabel = "You’re built for structured workflows: checklists, repeatability, and quality that doesn’t drift.";
-  else if (disciplinePct >= 40) disciplineLabel = "You can run a cabinet workflow, but consistency may depend on environment, pace, and expectations.";
-  else disciplineLabel = "Cabinet work may feel mentally irritating because it demands structure, labeling, and small-error prevention all day.";
+  if (disciplinePct >= 70)
+    disciplineLabel = "You’re built for structured workflows, critique tolerance, and consistency under repetition.";
+  else if (disciplinePct >= 40)
+    disciplineLabel = "You can survive cabinet workflows, but environment and expectations will matter a lot.";
+  else
+    disciplineLabel = "Cabinet making may feel mentally draining due to precision demands and critique frequency.";
 
   let band, title, description, color;
 
@@ -156,8 +187,8 @@ function interpretResults() {
     band = "strong";
     title = `Strong Fit: Cabinet Making (${fitPct}% alignment)`;
     description = `
-You’re showing strong alignment with cabinet making specifically — systems thinking, tolerance discipline, and comfort with repetition + adjustment.<br><br>
-<strong>Blunt truth:</strong> cabinet making isn’t “relaxing shop vibes.” It’s precision under repetition, and small mistakes multiply. Your answers suggest that won’t break you.<br><br>
+You show strong alignment with cabinet making — technically and psychologically.<br><br>
+<strong>Blunt truth:</strong> this trade rewards people who tolerate repetition, critique, and slow perfection. Your answers suggest that friction won’t break you.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(60, 160, 120)";
@@ -165,8 +196,8 @@ ${disciplineLabel}
     band = "middle";
     title = `Mixed Fit: Cabinet Making (${fitPct}% alignment)`;
     description = `
-You’ve got some traits that work in cabinet making, but not enough consistency to assume you’ll enjoy the day-to-day without friction.<br><br>
-<strong>Translation:</strong> you might do well in the right shop (good systems, good pacing) — or you might prefer a different carpentry lane with less repetition and adjustment.<br><br>
+You have some traits that work here, but cabinet making may feel situational rather than natural.<br><br>
+<strong>Translation:</strong> the right shop could make this tolerable — the wrong one will grind you down.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(120, 140, 220)";
@@ -174,13 +205,12 @@ ${disciplineLabel}
     band = "low";
     title = `Low Fit: Cabinet Making (${fitPct}% alignment)`;
     description = `
-Based on your answers, cabinet making will probably feel like constant friction: repetition, labeling, precision across many parts, and endless small adjustments.<br><br>
-<strong>This isn’t a personal knock.</strong> It usually means your strengths fit better in carpentry paths where pace, field problem-solving, or rougher tolerances matter more than repeatable systems.
+Cabinet making will likely feel like constant friction — detail critique, repetition, and precision pressure without much release.<br><br>
+<strong>This isn’t a failure.</strong> It usually means your strengths belong in carpentry paths with faster pace, field problem-solving, or looser tolerances.
     `.trim();
     color = "rgb(170, 80, 80)";
   }
 
-  // Show/hide buttons based on fit (same class names your framework uses)
   if (band === "strong") {
     $('.good-fit').show();
     $('.no-fit').hide();
@@ -192,7 +222,6 @@ Based on your answers, cabinet making will probably feel like constant friction:
     $('.no-fit').show();
   }
 
-  // Reset
   Object.keys(tags).forEach(k => tags[k] = 0);
 
   return { title, description, color };

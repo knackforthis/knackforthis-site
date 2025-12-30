@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Gas Fitting: What It Really Requires in the Real World | KnackForThis</title>
+<meta name="description" content="Not sure if gas fitting fits you? This short diagnostic evaluates your tolerance for safety-critical work, testing discipline, pressure, and responsibility to estimate whether gas fitting aligns with how you actually operate on the job." />
+<meta name="keywords" content="gas fitting, gasfitter, gas fitter, natural gas piping, propane piping, fuel gas, gas line installation, gas leak testing, gas pressure test, combustion appliances, gas fitting reality, is gas fitting right for me, KnackForThis" />
+<link rel="canonical" href="https://knackforthis.com/trades/plumbing/gas-fitting-article/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="KnackForThis" />
+<meta property="og:title" content="Gas Fitting: What It Really Requires" />
+<meta property="og:description" content="Gas fitting is code + testing + zero-leak discipline. Read the reality, then take the diagnostic to test fit." />
+<meta property="og:url" content="https://knackforthis.com/trades/plumbing/gas-fitting-article/" />
+<meta property="og:image" content="https://knackforthis.com/preview.png" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gas Fitting Reality Guide | KnackForThis" />
+<meta name="twitter:description" content="What gas fitting really demands — then a diagnostic to test whether you fit it." />
+<meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg1:#08131a;
+  --bg2:#04080c;
+
+  --panel:#0e1b22;
+  --panel2:#0a141a;
+
+  --text:#e9f3f8;
+  --muted:rgba(233,243,248,.82);
+
+  --water:#7fe7ff;
+  --water2:rgba(127,231,255,.14);
+
+  --steel:#c8d0d8;
+  --steel2:rgba(200,208,216,.16);
+
+  --haz:#ffb86b;
+  --haz2:rgba(255,184,107,.14);
+
+  --border:rgba(200,208,216,.16);
+  --shadow:0 0 26px rgba(127,231,255,.08);
+
+  --radius:16px;
+  --max:980px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(127,231,255,.14) 0%, transparent 50%),
+    radial-gradient(circle at 78% 26%, rgba(200,208,216,.12) 0%, transparent 55%),
+    radial-gradient(circle at 58% 10%, rgba(255,184,107,.10) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 70%);
+  overflow-x:hidden;
+  line-height:1.85;
+}
+
+/* top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.85rem 1rem;
+  background:rgba(5,10,14,.88);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.brand .mark{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg, var(--water), var(--steel));
+  box-shadow:0 0 18px rgba(127,231,255,.22);
+}
+.brand .name{
+  font-weight:900;
+  color:var(--steel);
+  letter-spacing:.02em;
+}
+.mini-nav{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.mini-nav a{
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  color:rgba(233,243,248,.88);
+  padding:.42rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.14);
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.mini-nav a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(127,231,255,.35);
+  box-shadow:0 0 14px rgba(127,231,255,.12);
+}
+
+/* header */
+header{ padding:2.6rem 1rem 1.2rem; }
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.55rem 1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.18);
+  background:linear-gradient(to bottom, rgba(14,27,34,.78), rgba(8,16,22,.68));
+  box-shadow:var(--shadow), inset 0 0 22px rgba(200,208,216,.06);
+  position:relative;
+  overflow:hidden;
+}
+.header-inner::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(127,231,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 24%, rgba(200,208,216,.10), transparent 64%),
+    radial-gradient(circle at 50% 70%, rgba(255,184,107,.10), transparent 62%);
+  animation:pulse 12s infinite alternate;
+  pointer-events:none;
+}
+@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.18);} }
+
+.kicker{
+  position:relative;
+  display:inline-block;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  color:rgba(200,208,216,.92);
+  background:rgba(200,208,216,.08);
+  border:1px solid rgba(200,208,216,.14);
+  padding:.35rem .62rem;
+  border-radius:999px;
+}
+
+h1{
+  position:relative;
+  margin:.7rem 0 .55rem;
+  font-family:'Passero One', cursive;
+  color:var(--steel);
+  font-size:clamp(2.1rem, 4.6vw, 2.95rem);
+  text-shadow:0 0 20px rgba(0,0,0,.70);
+}
+.lede{
+  position:relative;
+  margin:0;
+  max-width:900px;
+  color:rgba(233,243,248,.92);
+  font-size:1.12rem;
+}
+
+/* content */
+main{
+  max-width:var(--max);
+  margin:1.2rem auto 0;
+  padding:0 1.2rem 2.5rem;
+}
+
+.section{
+  margin-top:1.6rem;
+  padding:1.25rem 1.1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(200,208,216,.14);
+  background:linear-gradient(180deg, rgba(10,20,26,.55), rgba(0,0,0,.20));
+  box-shadow:inset 0 0 18px rgba(200,208,216,.05);
+}
+
+h2{
+  margin:.1rem 0 .6rem;
+  color:var(--water);
+  border-left:4px solid rgba(127,231,255,.65);
+  padding-left:.65rem;
+  letter-spacing:.01em;
+}
+
+p{margin:.6rem 0;}
+a{color:var(--water); font-weight:700; text-decoration:none; transition:.25s ease;}
+a:hover{color:#fff; text-shadow:0 0 12px rgba(127,231,255,.26);}
+
+.highlight{
+  margin-top:1rem;
+  padding:1rem 1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(127,231,255,.18);
+  background:linear-gradient(to right, var(--water2), rgba(200,208,216,.06), rgba(0,0,0,0));
+  box-shadow:inset 0 0 18px rgba(127,231,255,.08);
+}
+
+/* smaller image placeholders */
+.figure-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:.85rem;
+  margin-top:1rem;
+}
+.img-ph{
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(127,231,255,.18);
+  box-shadow:0 0 18px rgba(127,231,255,.06);
+  padding:0;
+  background:none;
+}
+
+/* bullets */
+.list{
+  margin:.7rem 0 0;
+  padding:0;
+  list-style:none;
+  text-align:left;
+}
+.list li{
+  margin:.55rem 0;
+  padding-left:1.15rem;
+  position:relative;
+  color:rgba(233,243,248,.90);
+}
+.list li::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:99px;
+  background:linear-gradient(135deg, var(--water), var(--steel));
+  box-shadow:0 0 10px rgba(127,231,255,.18);
+  position:absolute;
+  left:0; top:.55rem;
+  opacity:.95;
+}
+
+/* FAQ */
+.faq{ margin-top:1rem; text-align:left; }
+.faq details{
+  border:1px solid rgba(200,208,216,.14);
+  background:rgba(0,0,0,.16);
+  border-radius:14px;
+  padding:.85rem .9rem;
+  margin:.75rem 0;
+}
+.faq summary{
+  cursor:pointer;
+  font-weight:900;
+  color:rgba(233,243,248,.95);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"＋";
+  float:right;
+  color:rgba(127,231,255,.85);
+  font-weight:900;
+}
+.faq details[open] summary::after{content:"—";}
+.faq .answer{
+  margin-top:.6rem;
+  color:rgba(233,243,248,.86);
+}
+
+/* footer */
+footer{
+  background:rgba(0,0,0,.86);
+  color:rgba(233,243,248,.86);
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:0.92rem;
+  margin-top:2.2rem;
+  border-top:1px solid rgba(127,231,255,.12);
+}
+.meta{
+  position:relative;
+  margin:0 0 .55rem;
+  display:inline-block;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(200,208,216,.88);
+  width: 100%;
+  text-align: center;
+  padding:.32rem .6rem;
+  border-radius:999px;
+  backdrop-filter:blur(6px);
+}
+.meta time{
+  font-weight:900;
+  color:var(--silver);
+}
+
+@media (max-width: 920px){
+  .figure-row{grid-template-columns:1fr; }
+  .mini-nav{display:none;}
+  .section{padding:1.05rem 1rem;}
+}
+a{text-decoration:none; color: aqua;}</style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="https://knackforthis.com/">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">KnackForThis.com</span>
+    </a>
+
+    <nav class="mini-nav" aria-label="Quick navigation">
+      <a href="https://knackforthis.com/">Home</a>
+      <a href="https://knackforthis.com/trades/">Trades</a>
+      <a href="https://knackforthis.com/trades/plumbing/">Plumbing</a>
+    </nav>
+  </div>
+
+  <header><p class="meta" style="text-align: center;">
+  Published:
+  <time datetime="2025-12-29">December 29, 2025</time>
+  · Updated:
+  <time datetime="2025-12-29">December 29, 2025</time>
+</p>
+
+    <div class="header-inner">
+      <span class="kicker">Trades • Plumbing • Gas Fitting</span>
+      <h1>Gas Fitting: What It Really Requires</h1>
+      <p class="lede">
+        Gas fitting is “plumbing with a zero-mistake aura.”
+        You’re installing and servicing fuel-gas systems that must be correctly sized, correctly routed, correctly supported, and correctly tested —
+        because leaks aren’t “inconvenient,” they’re dangerous. This lane rewards calm, detail-focused people who treat safety and verification as the work.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What Gas Fitting Actually Is</h2>
+      <p>
+        Gas fitting is work on fuel-gas piping systems that supply appliances and equipment — commonly natural gas or propane.
+        The scope varies by region and licensing rules, but the day-to-day often includes new gas line installs, appliance connections,
+        pressure testing, leak checks, shutoff/valve work, regulator considerations, venting/combustion-air coordination (in some roles),
+        and service calls related to leaks or poor appliance performance.
+      </p>
+      <p>
+        People imagine “run a gas line, hook up the stove.” Reality: it’s <strong>code + sizing + testing</strong>.
+        You’re responsible for a system that must deliver adequate volume/pressure and must not leak — under real-world conditions and over time.
+        The job is less about brute force and more about discipline and verification.
+      </p>
+
+      <div class="figure-row" aria-label="Image placeholders">
+        <img class="img-ph" src="imgs/gas-fitting-manifold.jpg" alt="Gas manifold and shutoffs: labeled valves and organized gas piping"/>
+        <img class="img-ph" src="imgs/gas-pressure-test.jpg" alt="Gas pressure test setup: gauge and test rig for verifying tightness"/>
+        <img class="img-ph" src="imgs/gas-appliance-connection.jpg" alt="Appliance gas connection: shutoff valve, connector, and safe routing"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Spend Time Doing</h2>
+      <p>
+        Gas fitting involves planning runs, selecting materials, assembling pipe/fittings, supporting it correctly, and then proving it’s safe.
+        In service work, you’ll spend a lot of time diagnosing leaks, isolating sections, and verifying every change you make.
+      </p>
+
+      <ul class="list">
+        <li><strong>Planning routes:</strong> shortest safe runs, clearances, protection from damage, access to shutoffs.</li>
+        <li><strong>Sizing decisions:</strong> making sure the system can deliver the required gas flow without starving appliances.</li>
+        <li><strong>Assembly + support:</strong> correct fittings, alignment, hangers, and protection where needed.</li>
+        <li><strong>Shutoff strategy:</strong> accessible valves, correct orientation, logical isolation points.</li>
+        <li><strong>Pressure testing:</strong> test setup, hold time, confirming integrity before activation.</li>
+        <li><strong>Leak checks + verification:</strong> checking connections, re-checking after changes, confirming safe operation.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Gas fitting is “trust, but verify” as a lifestyle. Your confidence must come from tests, not vibes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where the Pressure Comes From</h2>
+      <p>
+        The pressure is consequences. With water, a mistake makes a mess. With gas, a mistake can be catastrophic.
+        That creates a very specific mental environment: you need to move carefully, follow standards, and never skip verification steps.
+      </p>
+      <p>
+        There’s also pressure from coordination. Gas often intersects with appliance installation, HVAC work, venting requirements,
+        inspections, and customer expectations. You may need to explain delays caused by testing/inspection gates — because safety takes time.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What Traits Actually Matter</h2>
+      <p>
+        Gas fitting rewards people who are calm, methodical, and allergic to “good enough.”
+        You don’t need to be anxious — you need to be responsible.
+      </p>
+
+      <ul class="list">
+        <li><strong>Detail obsession (healthy version):</strong> you notice small things and correct them before they become big things.</li>
+        <li><strong>Code/standard respect:</strong> you can follow requirements without arguing with reality.</li>
+        <li><strong>Testing discipline:</strong> you don’t rush verification because you “feel” it’s fine.</li>
+        <li><strong>Spatial planning:</strong> you can route lines safely with protection and access in mind.</li>
+        <li><strong>Customer communication:</strong> you can explain safety steps without sounding uncertain.</li>
+        <li><strong>Composure under pressure:</strong> leak calls are stressful; you remain clear-headed.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          The gas fitter’s superpower is calm precision + proof. If you can’t prove it, you don’t ship it.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Who Should Probably Avoid It</h2>
+      <p>
+        This lane is not a good match for “wing it” personalities. That’s not an insult — it’s a safety reality.
+      </p>
+
+      <ul class="list">
+        <li><strong>You hate rules:</strong> gas work is standards-driven for a reason.</li>
+        <li><strong>You rush under stress:</strong> speed is not the primary virtue here.</li>
+        <li><strong>You skip testing steps:</strong> if you’re the “it’s probably fine” type, do something else.</li>
+        <li><strong>You want messy improvisation:</strong> gas work rewards planning more than improvising.</li>
+        <li><strong>You can’t handle high-consequence responsibility:</strong> gas fitting carries mental weight.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          If you like plumbing but want broader problem solving without the same consequence profile, compare with
+          <a href="https://knackforthis.com/trades/plumbing/service-and-repair-article/">service & repair plumbing</a>.
+          If you like plan-driven installs and coordination, compare with
+          <a href="https://knackforthis.com/trades/plumbing/commercial-plumbing-article/">commercial plumbing</a>.
+          If you like pressurized systems and alignment discipline, compare with
+          <a href="https://knackforthis.com/trades/plumbing/pipefitting-article/">pipefitting</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The Core Loop: Size → Install → Test → Verify</h2>
+      <p>
+        Gas fitting has a simple loop — and most failures happen when people shortcut the loop.
+      </p>
+
+      <ul class="list">
+        <li><strong>Size correctly:</strong> ensure adequate supply to all appliances at expected demand.</li>
+        <li><strong>Install correctly:</strong> route safely, support properly, keep access and protection in mind.</li>
+        <li><strong>Test thoroughly:</strong> pressure test and hold requirements (per local rules) before activation.</li>
+        <li><strong>Verify at the end:</strong> leak-check after changes and confirm safe operation.</li>
+      </ul>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          A gas fitter’s reputation is built on never having a “close call.” That’s discipline, not luck.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Next Step: Get a Signal, Then Compare</h2>
+      <p>
+        If gas fitting sounds appealing, decide based on whether you like high-accountability precision and standards-based work.
+        This lane rewards people who find confidence in verification — not in bravado.
+      </p>
+
+      <div class="highlight">
+        <p style="margin:0;">
+          Run the <a href="https://knackforthis.com/trades/plumbing/gas-fitting-quiz/">Gas Fitting Fit Diagnostic</a> first.
+          Then compare paths from the <a href="https://knackforthis.com/trades/plumbing/">Plumbing Hub</a> or step back to the
+          <a href="https://knackforthis.com/trades/">Trades Hub</a>.
+          If you want the full map, start at the <a href="https://knackforthis.com/">homepage</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+
+      <div class="faq" aria-label="Frequently Asked Questions">
+        <details class="faq-item">
+          <summary>Is gas fitting mostly new installs or service?</summary>
+          <div class="answer">
+            It can be either. Some roles are install-heavy (new appliance lines, remodels, new construction). Others are service-heavy (leaks, performance issues, modifications). Your day-to-day depends on the company and local licensing structure.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to be good at math?</summary>
+          <div class="answer">
+            You need to be comfortable with basic measurement and sizing concepts (capacity, lengths, demand). You don’t need advanced math, but you do need to follow sizing logic instead of guessing.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What’s the hardest part for most beginners?</summary>
+          <div class="answer">
+            The mental load: treating every step as high-consequence and still moving calmly. Beginners also struggle with routing for protection/access and building a consistent testing/verification habit.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the gas fitting diagnostic actually measure?</summary>
+          <div class="answer">
+            It’s not a skills test. It estimates alignment between your tolerances (detail focus, rule/standard respect, testing discipline, calm under pressure, responsibility tolerance) and the day-to-day reality of gas fitting work.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>If I’m “mixed fit,” does that mean I should avoid gas fitting?</summary>
+          <div class="answer">
+            Not automatically. Mixed fit often means you can do it, but you may prefer install work over leak-response work, or you may need a structured environment with strong procedures. It’s a routing signal, not a verdict.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://knackforthis.com/">Home</a> •
+      <a href="https://knackforthis.com/trades/">Trades</a> •
+      <a href="https://knackforthis.com/trades/plumbing/">Plumbing</a> •
+      <a href="https://knackforthis.com/contact/">Contact</a> •
+      <a href="https://knackforthis.com/privacy/">Privacy</a> •
+      <a href="https://knackforthis.com/terms/">Terms</a>
+    </p>
+    <p style="margin:.6rem 0 0;">
+      KnackForThis is educational. Diagnostics are for self-assessment only and are not career advice.<br />
+      © 2025 KnackForThis. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://knackforthis.com/trades/plumbing/gas-fitting-article/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knackforthis.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://knackforthis.com/trades/" },
+        { "@type": "ListItem", "position": 3, "name": "Plumbing", "item": "https://knackforthis.com/trades/plumbing/" },
+        { "@type": "ListItem", "position": 4, "name": "Gas Fitting", "item": "https://knackforthis.com/trades/plumbing/gas-fitting-article/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://knackforthis.com/trades/plumbing/gas-fitting-article/#webpage",
+      "url": "https://knackforthis.com/trades/plumbing/gas-fitting-article/",
+      "name": "Gas Fitting: What It Really Requires",
+      "description": "Gas fitting is safety-first precision work — installing, sizing, testing, and verifying fuel-gas systems that must not leak. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "isPartOf": { "@id": "https://knackforthis.com/#website" },
+      "about": { "@id": "https://knackforthis.com/trades/plumbing/#topic" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://knackforthis.com/trades/plumbing/gas-fitting-article/#article",
+      "headline": "Gas Fitting: What It Really Requires",
+      "description": "Gas fitting is safety-first precision work — installing, sizing, testing, and verifying fuel-gas systems that must not leak. Here’s what the day-to-day actually demands, what drains people, and where to test your fit.",
+      "image": "https://knackforthis.com/preview.png",
+  "datePublished": "2025-12-29",
+  "dateModified": "2025-12-29",      "mainEntityOfPage": { "@id": "https://knackforthis.com/trades/plumbing/gas-fitting-article/#webpage" },
+      "author": { "@id": "https://knackforthis.com/#org" },
+      "publisher": { "@id": "https://knackforthis.com/#org" },
+      "inLanguage": "en",
+      "about": [
+        "gas fitting",
+        "fuel gas piping",
+        "natural gas",
+        "propane",
+        "gas pressure testing",
+        "leak detection",
+        "skilled trades"
+      ],
+      "keywords": [
+        "gas fitting",
+        "gasfitter",
+        "gas fitter",
+        "natural gas piping",
+        "propane piping",
+        "fuel gas",
+        "gas line installation",
+        "gas leak testing",
+        "gas pressure test",
+        "combustion appliances",
+        "gas fitting reality",
+        "is gas fitting right for me",
+        "KnackForThis"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://knackforthis.com/#org",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://knackforthis.com/favicon.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knackforthis.com/#website",
+      "name": "KnackForThis",
+      "url": "https://knackforthis.com/"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knackforthis.com/trades/plumbing/#topic",
+      "name": "Plumbing"
+    }
+  ]
+}
+  </script>
+</body>
+</html>

@@ -6,10 +6,9 @@
 
 
 
-  <title>Trades — Skill Diagnostics | KnackForThis</title>
-
-  <meta name="description" content="Explore trade skill diagnostics on KnackForThis. Start with a trade hub and take short quizzes designed to test real-world fit." />
-  <meta name="author" content="KnackForThis" />
+<title>Trades — Reality Checks & Fit Quizzes | KnackForThis</title>
+<meta name="description" content="Not sure which trade fits you? Start here. Compare trade paths in plain language, then take short trade-fit quizzes built around real working conditions — pace, pressure, precision, and environment." />
+<meta name="author" content="KnackForThis" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0e1117" />
 
@@ -41,7 +40,7 @@
   <link rel="apple-touch-icon" href="/favicon.png">
 
   <!-- HUB STYLES (move this into /assets/hub-styles.css and link it on hub pages) -->
-  <link rel="stylesheet" href="https://knackforthis.com/assets/hub-styles.css">
+  <link rel="stylesheet" href="../assets/hub-styles.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -95,7 +94,7 @@
       <a href="https://knackforthis.com/">KnackForThis.com</a>
       <span class="pill" >Trades</span>
     </div>
-
+<!--
     <nav class="nav-right" aria-label="Primary navigation">
       <a href="/trades/">Trades</a>
       <a href="/tech/">Tech</a>
@@ -104,10 +103,12 @@
       <a href="/health/">Health</a>
       <a href="/logistics/">Logistics</a>
     </nav>
+  -->
   </div>
 
   <header>
-    <div class="hero-wrap">
+
+    <div class="hero-wrap" style="background: transparent; box-shadow: none; border: none">
       <h1 style="color: white;">Trades</h1>
       <p class="hero-sub">
         Start with a trade hub. Each hub explains the reality of the work, then links to diagnostics that test fit —
@@ -116,6 +117,7 @@
 
       <div style="margin-top: 1rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
         <a class="btn btn-primary" href="/trades/carpentry/">Start: Carpentry</a>
+        <a class="btn btn-ghost" href="/trades/trades-article/">Read the Trades Reality Guide</a>
         <a class="btn btn-ghost" href="/">Back to Home</a>
       </div>
     </div>
@@ -125,7 +127,6 @@
     <section class="section" aria-labelledby="trade-hubs">
       <h2 class="section-title" id="trade-hubs">Trade Hubs</h2>
 
-      <div class="grid">
         <!-- LIVE -->
         <article class="card">
           <h3>Carpentry</h3>
@@ -141,31 +142,66 @@
           <a class="btn btn-primary" href="/trades/carpentry/">Open Carpentry Hub</a>
         </article>
 
-        <!-- PLACEHOLDERS (keep or delete) -->
-        <article class="card" style="opacity:0.85;">
-          <h3>Plumbing</h3>
+<article class="card">
+  <h3>Plumbing</h3>
+  <div class="meta">
+    <span class="tag primary">Hub</span>
+    <span class="tag">Diagnostics</span>
+    <span class="tag">Specializations</span>
+  </div>
+  <p>
+    Learn what plumbing actually demands day-to-day, then take diagnostics for physical tolerance,
+    problem-solving under pressure, sanitation realities, and residential, service, and commercial paths.
+  </p>
+  <a class="btn btn-primary" href="/trades/plumbing/">Open Plumbing Hub</a>
+</article>
+
+
+<article class="card">
+  <h3>Electrical</h3>
+  <div class="meta">
+    <span class="tag primary">Hub</span>
+    <span class="tag">Diagnostics</span>
+    <span class="tag">Specializations</span>
+  </div>
+  <p>
+    Learn what electrical work actually demands day-to-day, then take diagnostics for troubleshooting style,
+    safety mindset, precision tolerance, code discipline, and residential, commercial, or industrial paths.
+  </p>
+  <a class="btn btn-primary" href="/trades/electrical/">Open Electrical Hub</a>
+</article>
+
+
+
+<article class="card">
+  <h3>Welding</h3>
+  <div class="meta">
+    <span class="tag primary">Hub</span>
+    <span class="tag">Diagnostics</span>
+    <span class="tag">Specializations</span>
+  </div>
+  <p>
+    Learn what welding actually demands day-to-day, then take diagnostics covering heat tolerance,
+    posture strain, precision standards, safety discipline, and paths like fabrication, structural,
+    pipe, and repair welding.
+  </p>
+  <a class="btn btn-primary" href="/trades/welding/">Open Welding Hub</a>
+</article>
+
+        <article class="card">
+          <h3>Masonry</h3>
           <div class="meta">
-            <span class="tag">Coming soon</span>
+            <span class="tag primary">Hub</span>
             <span class="tag">Diagnostics</span>
+            <span class="tag">Specializations</span>
           </div>
           <p>
-            Diagnostics for base plumbing fit + specializations (residential, service, commercial, new construction).
+            Learn what masonry actually demands day-to-day, then take diagnostics for base fit and for paths like
+            bricklaying, stone masonry, concrete finishing, hardscape &amp; pavers, and restoration work.
           </p>
-          <a class="btn btn-ghost" href="#" aria-disabled="true" onclick="return false;">Coming Soon</a>
+          <a class="btn btn-primary" href="/trades/masonry/">Open Masonry Hub</a>
         </article>
 
-        <article class="card" style="opacity:0.85;">
-          <h3>Electrical</h3>
-          <div class="meta">
-            <span class="tag">Coming soon</span>
-            <span class="tag">Diagnostics</span>
-          </div>
-          <p>
-            Fit checks for troubleshooting style, safety mindset, precision tolerance, and workflow discipline.
-          </p>
-          <a class="btn btn-ghost" href="#" aria-disabled="true" onclick="return false;">Coming Soon</a>
-        </article>
-      </div>
     </section>
 <!-- ✅ About / “Diagnostic Mirror” section for the Trades hub
      Drop this inside <main> (after the grid section, before the footer is fine). -->

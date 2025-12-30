@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Electrical — Is This a Fit? | KnackForThis</title>
+<meta name="description" content="A plain-language electrical reality check. See what electrical work really requires, then take diagnostics for overall fit and paths like residential, commercial, industrial, low-voltage systems, renewables, and troubleshooting/maintenance." />
+<meta name="author" content="KnackForThis" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0e12" />
+
+  <link rel="canonical" href="https://knackforthis.com/trades/electrical/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="KnackForThis" />
+  <meta property="og:title" content="Electrical — Is This a Fit?" />
+  <meta property="og:description" content="An electrical reality check + diagnostics for different lanes of electrical work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://knackforthis.com/trades/electrical/" />
+  <meta property="og:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Electrical — Is This a Fit?" />
+  <meta name="twitter:description" content="An electrical reality check + diagnostics for different lanes of electrical work." />
+  <meta name="twitter:image" content="https://knackforthis.com/preview.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"CollectionPage",
+        "@id":"https://knackforthis.com/trades/electrical/#collection",
+        "name":"Electrical — Is This a Fit?",
+        "url":"https://knackforthis.com/trades/electrical/",
+        "description":"An electrical hub that explains the trade and routes users to diagnostic quizzes for overall fit and specialization fit.",
+        "inLanguage":"en",
+        "hasPart":[
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/electrical/diagnostic-quiz/#quiz",
+            "name":"Electrical Diagnostic",
+            "url":"https://knackforthis.com/trades/electrical/diagnostic-quiz/",
+            "isAccessibleForFree": true
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/electrical/residential-electrical-quiz/#quiz",
+            "name":"Residential Electrical Diagnostic",
+            "url":"https://knackforthis.com/trades/electrical/residential-electrical-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/electrical/commercial-electrical-quiz/#quiz",
+            "name":"Commercial Electrical Diagnostic",
+            "url":"https://knackforthis.com/trades/electrical/commercial-electrical-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/electrical/industrial-electrical-quiz/#quiz",
+            "name":"Industrial Electrical Diagnostic",
+            "url":"https://knackforthis.com/trades/electrical/industrial-electrical-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/electrical/low-voltage-systems-quiz/#quiz",
+            "name":"Low-Voltage Systems Diagnostic",
+            "url":"https://knackforthis.com/trades/electrical/low-voltage-systems-quiz/"
+          },
+          {
+            "@type":"Quiz",
+            "@id":"https://knackforthis.com/trades/electrical/troubleshooting-and-maintenance-quiz/#quiz",
+            "name":"Troubleshooting & Maintenance Diagnostic",
+            "url":"https://knackforthis.com/trades/electrical/troubleshooting-and-maintenance-quiz/"
+          }
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://knackforthis.com/trades/electrical/#breadcrumbs",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://knackforthis.com/"},
+          {"@type":"ListItem","position":2,"name":"Trades","item":"https://knackforthis.com/trades/"},
+          {"@type":"ListItem","position":3,"name":"Electrical","item":"https://knackforthis.com/trades/electrical/"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#07090c;
+      --panel:rgba(18,22,28,.62);
+      --panel2:rgba(14,18,24,.62);
+      --text:#e9eef6;
+      --muted:rgba(233,238,246,.82);
+
+      /* silver/steel accents */
+      --steel:#b9c3cf;
+      --steel2:rgba(185,195,207,.18);
+      --chrome:#e6edf7;
+      --chrome2:rgba(230,237,247,.10);
+
+      --aqua: rgba(92, 232, 255, 0.92);
+      --aqua2: rgba(92, 232, 255, 0.14);
+      --aquaLine: rgba(92, 232, 255, 0.30);
+
+      --iron:#9aa6b3;
+
+      --radius:18px;
+      --shadow:0 18px 56px rgba(0,0,0,.52);
+      --shadowSoft:0 0 22px rgba(185,195,207,.08);
+      --max:1100px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      text-align:center;
+      font-size:clamp(15px,3.8vw,17px);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* topbar (solid) */
+    .top{
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      padding:.75rem 1rem;
+      background:#06070a;
+      border-bottom:1px solid rgba(185,195,207,.20);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+      gap:1rem;
+    }
+    .brand{
+      color:#fff;
+      font-weight:900;
+      text-decoration:none;
+      letter-spacing:.02em;
+      opacity:.96;
+    }
+    .crumb{
+      display:flex;
+      gap:.65rem;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .crumb a{
+      color: rgba(233,238,246,.88);
+      font-weight:900;
+      text-decoration:none;
+      padding:.35rem .55rem;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .crumb a:hover{
+      border-color: rgba(92,232,255,.18);
+      background: rgba(92,232,255,.05);
+    }
+
+    header{
+      margin-top:78px;
+      padding:1.2rem;
+      padding-top:3.25rem;
+      margin-bottom: 6%;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(185,195,207,.14), transparent 62%),
+        linear-gradient(to bottom, rgba(14,18,24,.78), rgba(10,12,16,.62));
+      border:1px solid rgba(185,195,207,.22);
+      border-radius:var(--radius);
+      padding:1.35rem 1.2rem;
+      box-shadow: var(--shadow), var(--shadowSoft);
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .wrap::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, transparent, rgba(92,232,255,.65), rgba(185,195,207,.30), transparent);
+      opacity:.95;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.82rem;
+      color: rgba(233,238,246,.86);
+      font-family: var(--mono);
+      background: rgba(92,232,255,.05);
+      border:1px solid rgba(92,232,255,.16);
+      padding:.35rem .6rem;
+      border-radius:999px;
+    }
+    .kicker .chip{
+      display:inline-block;
+      padding:.12rem .40rem;
+      border-radius:999px;
+      border:1px solid rgba(233,238,246,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(233,238,246,.88);
+      letter-spacing:.05em;
+    }
+
+    h1{
+      margin:.85rem 0 .4rem;
+      font-weight:900;
+      font-size:clamp(2.0rem,6.5vw,2.9rem);
+      color: var(--chrome);
+      text-shadow:0 0 16px rgba(0,0,0,.9);
+      line-height:1.14;
+    }
+
+    .sub{
+      max-width:920px;
+      margin:0;
+      color:rgba(233,238,246,.90);
+      font-size: 1.05rem;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1rem;
+      margin-top: 1.05rem;
+      align-items: start;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-direction: column;
+      gap: .65rem;
+      align-items: stretch;
+    }
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:12px;
+      padding:.85rem .95rem;
+      border:1px solid rgba(185,195,207,.46);
+      background: linear-gradient(to bottom, rgba(230,237,247,.92), rgba(170,182,197,.88));
+      color:#0b0e12;
+      box-shadow: 0 10px 28px rgba(0,0,0,.38);
+      white-space: nowrap;
+      transition: transform .10s ease, filter .14s ease, box-shadow .14s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: saturate(1.03); }
+
+    .btn-secondary{
+      background: rgba(0,0,0,.22);
+      color: rgba(233,238,246,.92);
+      border-color: rgba(92,232,255,.22);
+      box-shadow: inset 0 0 0 1px rgba(92,232,255,.08);
+    }
+    .btn-secondary:hover{ box-shadow: 0 0 0 3px rgba(92,232,255,.14); }
+
+    .btn .arrow{
+      font-family: var(--mono);
+      opacity:.85;
+    }
+
+    main{ padding:0 1rem 2.6rem; }
+
+    .section{
+      max-width:var(--max);
+      margin:1.15rem auto;
+      text-align:left;
+    }
+
+    .section h2{
+      margin: .9rem 0 .35rem;
+      color: var(--chrome);
+      font-size: clamp(1.3rem, 5vw, 1.9rem);
+      position: relative;
+      padding-left: .85rem;
+    }
+    .section h2::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.2em;
+      width:4px;
+      height:1.0em;
+      border-radius:999px;
+      background: linear-gradient(to bottom, transparent, rgba(92,232,255,.75), transparent);
+    }
+
+    .section p{
+      max-width: 980px;
+      margin: .35rem 0 1rem;
+      color: var(--muted);
+    }
+
+    .panel{
+      border-radius: var(--radius);
+      border: 1px solid rgba(92,232,255,.14);
+      background:
+        radial-gradient(900px 260px at 14% 0%, rgba(92,232,255,.06), transparent 60%),
+        rgba(0,0,0,.16);
+      padding: 1rem 1rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.40);
+    }
+
+    .panel-grid{
+      display:grid;
+      gap: .85rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: .85rem;
+    }
+
+    .mini{
+      border-radius: 16px;
+      border: 1px solid rgba(185,195,207,.18);
+      background: rgba(0,0,0,.18);
+      padding: .9rem .9rem;
+    }
+    .mini h3{
+      margin: 0 0 .35rem;
+      color: rgba(92,232,255,.88);
+      font-size: 1.05rem;
+    }
+    .mini p{ margin: 0; color: rgba(233,238,246,.80); }
+
+    .card{
+      margin-top:2%;
+      position: relative;
+      border-radius: var(--radius);
+      border: 1px solid rgba(185,195,207,.22);
+      background:
+        radial-gradient(900px 260px at 16% 0%, rgba(92,232,255,.08), transparent 62%),
+        radial-gradient(900px 260px at 18% 0%, rgba(185,195,207,.14), transparent 62%),
+        rgba(0,0,0,.16);
+      background-color: black;
+      padding: 1.05rem 1.05rem;
+      box-shadow: 0 18px 56px rgba(0,0,0,.44);
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap: .6rem;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:2px;
+      background: linear-gradient(to right, rgba(92,232,255,.70), rgba(185,195,207,.24), transparent);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .badge{
+      position:absolute;
+      top: 12px;
+      right: 12px;
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      color: rgba(233,238,246,.72);
+      border: 1px solid rgba(92,232,255,.18);
+      background: rgba(0,0,0,.18);
+      padding: .22rem .48rem;
+      border-radius: 999px;
+    }
+
+    .card h3{
+      margin: 0;
+      color: var(--chrome);
+      font-size: 1.7rem;
+      padding-right: 5rem;
+      text-align: center;
+    }
+
+    .card p{
+      margin: 0;
+      color: rgba(233,238,246,.86);
+    }
+
+    .card .cta{
+      margin-top:auto;
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .link{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      border-radius: 12px;
+      padding: .78rem .92rem;
+      border: 1px solid rgba(92,232,255,.26);
+      background: rgba(92,232,255,.10);
+      color: rgba(233,238,246,.96);
+      transition: transform .10s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+      white-space: nowrap;
+    }
+    .link:hover{
+      transform: translateY(-1px);
+      background: rgba(92,232,255,.14);
+      border-color: rgba(92,232,255,.40);
+      box-shadow: 0 0 0 3px rgba(92,232,255,.12);
+    }
+
+    /* low-height article button under each quiz */
+    .link-article{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:10px;
+      padding:.45rem .75rem;
+      border:1px solid rgba(185,195,207,.26);
+      background: rgba(185,195,207,.10);
+      color: rgba(233,238,246,.92);
+      font-size:.92rem;
+      white-space: nowrap;
+      transition: transform .10s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+    }
+    .link-article:hover{
+      transform: translateY(-1px);
+      background: rgba(185,195,207,.14);
+      border-color: rgba(185,195,207,.40);
+      box-shadow: 0 0 0 3px rgba(185,195,207,.10);
+    }
+
+    footer{
+      margin-top:2rem;
+      background:rgba(10,12,16,.92);
+      padding:1rem;
+      border-top:1px solid rgba(185,195,207,.18);
+    }
+    footer a{
+      color: rgba(230,237,247,.92);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    /* video stays behind everything (don’t block it) */
+    .bg-img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
+      position: fixed;
+      left: 0;
+      top: 0;
+      opacity: 0.15;
+      pointer-events:none;
+    }
+
+    /* mobile */
+    @media (max-width: 740px){
+      .wrap{ text-align:left; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-actions{ flex-direction: column; }
+      .card{ min-height: unset; }
+      .card .cta{ justify-content:flex-start; }
+    }
+    
+   .nav-toggle{
+  display:none;
+  background: rgba(0,0,0,.22);
+  border:1px solid rgba(92,232,255,.22);
+  color: rgba(243,232,220,.92);
+  border-radius:12px;
+  padding:.45rem .65rem;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+@media (max-width: 740px){
+  .nav-toggle{ display:inline-flex; align-items:center; gap:.45rem; }
+
+  .crumb{
+    display:none;               /* hidden until toggled */
+    position:absolute;
+    top:100%;
+    right:.75rem;
+    left:.75rem;
+    margin-top:.6rem;
+    padding:.55rem;
+    border-radius:14px;
+    background:#0b0705;
+    border:1px solid rgba(199,154,107,.22);
+    box-shadow: 0 18px 56px rgba(0,0,0,.55);
+    flex-direction:column;
+    align-items:stretch;
+    gap:.35rem;
+  }
+
+  .top.nav-open .crumb{ display:flex; }
+
+  .crumb a{
+    text-align:left;
+    padding:.55rem .65rem;
+  }
+
+  header{ margin-top:66px; }
+}
+
+
+  a{text-decoration:none; color: aqua;}</style>
+</head>
+<body>
+
+<video
+  class="bg-img"
+  id="bgvid"
+  src="main-background.mp4"
+  muted
+  autoplay
+  loop
+  playsinline
+  aria-hidden="true"
+></video>
+
+
+  <script>
+    window.onload = () => {
+      const v = document.getElementById('bgvid');
+      const setRate = () => (v.playbackRate = 0.7);
+      setRate();
+      v.addEventListener('loadedmetadata', setRate);
+    };
+  </script>
+
+  <div class="bg"></div>
+  <div class="grid" aria-hidden="true"></div>
+
+<div class="top">
+  <a class="brand" href="https://knackforthis.com/">KnackForThis.com</a>
+
+  <button class="nav-toggle" aria-expanded="false" aria-controls="topnav">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+
+  <nav id="topnav" class="crumb" aria-label="Primary navigation">
+    <a href="https://knackforthis.com/">Home</a>
+    <a href="https://knackforthis.com/trades/">Trades</a>
+    <a href="https://knackforthis.com/trades/carpentry/">Carpentry</a>
+    <a href="https://knackforthis.com/trades/welding/">Welding</a>
+    <a href="https://knackforthis.com/trades/plumbing/">Plumbing</a>
+    <a href="https://knackforthis.com/trades/masonry/">Masonry</a>
+  </nav>
+</div>
+
+  <header>
+
+    <div class="wrap" style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
+      <span class="kicker"><span class="chip">trade hub</span> electrical</span>
+
+      <h1 style="text-align:center;">Electrical</h1>
+
+      <p class="sub" style="text-align:center;">
+        Electrical work ranges from clean residential installs to fast commercial jobsites to high-stakes industrial systems.
+        This hub gives a plain-language overview of the trade and routes you to diagnostic quizzes that help you determine
+        whether it’s a good fit for you — overall and by lane.
+      </p>
+
+      <div class="hero-grid" style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
+        <div class="hero-actions">
+          <a class="btn" href="/trades/electrical/diagnostic-quiz/">
+            Take the Electrical Quiz <span class="arrow">→</span>
+          </a>
+          <a class="btn btn-secondary" href="/trades/">
+            Back to Trades <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <p>
+        Each lane below represents a different environment and workflow.
+        Selecting one will take you to a diagnostic survey designed to evaluate fit for that path.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Residential Electrical</h3>
+          <p>
+            Homes and small buildings: service panels, circuits, devices, lighting, remodels, and new installs
+            with tight spaces and real people living around you.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/electrical/residential-electrical-quiz/">
+              Take the Residential Electrical Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/electrical/residential-electrical-article/">
+              What Residential Electrical Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Commercial Electrical</h3>
+          <p>
+            Offices, retail, schools: conduit runs, panels, lighting systems, and coordinated work on active jobsites
+            where schedule and standards matter.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/electrical/commercial-electrical-quiz/">
+              Take the Commercial Electrical Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/electrical/commercial-electrical-article/">
+              What Commercial Electrical Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Industrial Electrical</h3>
+          <p>
+            Plants and facilities: motors, control panels, sensors, shutdowns, and safety-critical troubleshooting
+            where mistakes can be expensive fast.
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/electrical/industrial-electrical-quiz/">
+              Take the Industrial Electrical Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/electrical/industrial-electrical-article/">
+              What Industrial Electrical Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Low-Voltage Systems</h3>
+          <p>
+            Data, security, AV, access control: cleaner installs, careful labeling, and system thinking
+            where organization is the difference between “works” and “nightmare.”
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/electrical/low-voltage-systems-quiz/">
+              Take the Low-Voltage Systems Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/electrical/low-voltage-systems-article/">
+              What Low-Voltage Work Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">specialty</span>
+          <h3>Troubleshooting &amp; Maintenance</h3>
+          <p>
+            Diagnostic-first work: tracking faults, testing safely, restoring service, and keeping systems running.
+            Less “new build,” more “figure it out.”
+          </p>
+          <div class="cta">
+            <a class="link" href="/trades/electrical/troubleshooting-and-maintenance-quiz/">
+              Take the Troubleshooting Quiz <span class="arrow">→</span>
+            </a>
+            <a class="link-article" href="/trades/electrical/troubleshooting-and-maintenance-article/">
+              What Troubleshooting Looks Like <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:black;border-radius:15px;">
+      <div class="panel">
+        <h2>About Electrical and Why These Diagnostics Help</h2>
+
+        <p>
+          Electrical isn’t one “thing.” Two people can both be electricians and have completely different days:
+          finished residential spaces vs loud commercial jobsites vs industrial plants with shutdown pressure.
+          The trade name stays the same. The workflow changes.
+        </p>
+
+        <p>
+          That’s why these diagnostics exist: not to test intelligence, but to test <strong>fit</strong>.
+          People rarely wash out because they “can’t learn it.” They wash out because they pick a lane that fights their temperament:
+          pace vs patience, repetition vs variety, clean installs vs chaos, customer-facing vs system-facing.
+        </p>
+
+        <p>
+          These quizzes are quick self-assessments that help you notice where you’re likely to thrive:
+          <strong>jobsite vs service</strong>, <strong>installation vs troubleshooting</strong>, <strong>clean vs harsh environments</strong>,
+          <strong>precision labeling vs speed</strong>, and <strong>high-stakes safety mindset</strong>.
+          They’re not career advice and they’re not guarantees — they’re a fast way to get a clearer signal before you commit time, money, or identity to the wrong lane.
+        </p>
+
+        <div class="panel-grid">
+          <div class="mini">
+            <h3>What you’ll get</h3>
+            <p>
+              A practical “alignment signal” about which electrical environments match how you operate — and which ones are likely to feel like friction.
+            </p>
+          </div>
+
+          <div class="mini">
+            <h3>What you won’t get</h3>
+            <p>
+              A promise, a prediction, or a label that defines you. Use results as a starting point, not a verdict.
+            </p>
+          </div>
+
+          <div class="mini">
+            <h3>Best next step</h3>
+            <p>
+              Take one quiz, read “What it looks like,” then compare two lanes that feel close.
+              After that, validate in real life: shadow, help, or do a safe starter project.
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight" style="margin-top:1rem;">
+          <p style="margin:0;">
+            If you’re interested in electrical, don’t overthink it. Start with a diagnostic and follow the lane that matches your preferences —
+            then test it in the real world.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner">
+    <p>
+      By using this site, you agree to our
+      <a href="https://knackforthis.com/terms/" target="_blank">Terms of Use</a>
+      and
+      <a href="https://knackforthis.com/privacy/" target="_blank">Privacy Policy</a>.
+    </p>
+    <button id="agree-btn">✓ I Agree</button>
+  </div>
+
+  <link rel="stylesheet" href="https://knackforthis.com/assets/consent-style.css">
+  <script src="https://knackforthis.com/assets/consent-script.js"></script>
+
+  <footer>
+    <div>
+      <a href="/about/">About</a> •
+      <a href="/mission/">Mission</a> •
+      <a href="/editorial-standards/">Editorial Standards</a> •
+      <a href="/privacy/">Privacy</a> •
+      <a href="/terms/">Terms</a> •
+      <a href="/contact/">Contact</a>
+    </div>
+    <p style="opacity:.9;margin:.6rem 0 0;">
+      © <span id="y"></span> KnackForThis
+    </p>
+  </footer>
+
+  <script>
+  const topBar = document.querySelector('.top');
+  const btn = document.querySelector('.nav-toggle');
+
+  btn?.addEventListener('click', () => {
+    const open = topBar.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Close menu when tapping a link (mobile sanity)
+  document.querySelectorAll('#topnav a').forEach(a => {
+    a.addEventListener('click', () => {
+      topBar.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Masonry hub -->
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/</loc>
+  </url>
+
+  <!-- Bricklaying -->
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/bricklaying-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/bricklaying-quiz/</loc>
+  </url>
+
+  <!-- Stone Masonry -->
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/stone-masonry-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/stone-masonry-quiz/</loc>
+  </url>
+
+  <!-- Concrete Finishing -->
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/concrete-finishing-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/concrete-finishing-quiz/</loc>
+  </url>
+
+  <!-- Restoration Masonry -->
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/restoration-masonry-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/restoration-masonry-quiz/</loc>
+  </url>
+
+  <!-- Hardscape & Pavers -->
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/hardscape-and-pavers-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/hardscape-and-pavers-quiz/</loc>
+  </url>
+
+  <!-- Refractory Masonry -->
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/refractory-masonry-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/masonry/refractory-masonry-quiz/</loc>
+  </url>
+
+</urlset>

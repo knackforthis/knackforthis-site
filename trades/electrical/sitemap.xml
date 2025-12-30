@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Electrical hub -->
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/</loc>
+  </url>
+
+  <!-- Residential Electrical -->
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/residential-electrical-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/residential-electrical-quiz/</loc>
+  </url>
+
+  <!-- Commercial Electrical -->
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/commercial-electrical-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/commercial-electrical-quiz/</loc>
+  </url>
+
+  <!-- Industrial Electrical -->
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/industrial-electrical-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/industrial-electrical-quiz/</loc>
+  </url>
+
+  <!-- Low Voltage Systems -->
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/low-voltage-systems-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/low-voltage-systems-quiz/</loc>
+  </url>
+
+  <!-- Renewable Energy -->
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/renewable-energy-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/renewable-energy-quiz/</loc>
+  </url>
+
+  <!-- Troubleshooting and Maintenance -->
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/troubleshooting-and-maintenance-article/</loc>
+  </url>
+  <url>
+    <loc>https://knackforthis.com/trades/electrical/troubleshooting-and-maintenance-quiz/</loc>
+  </url>
+
+</urlset>
