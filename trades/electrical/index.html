@@ -545,7 +545,70 @@
   }
 
   header{ margin-top:66px; }
+  .feature .badge{
+    display: none;
+  }
 }
+
+/* Featured Article card (hub-level spotlight) */
+.feature{
+  margin: 1.1rem 0 1.25rem;
+  position: relative;
+  border-radius: var(--radius);
+  border: 1px solid rgba(92,232,255,.18);
+  background:
+    radial-gradient(900px 260px at 18% 0%, rgba(92,232,255,.10), transparent 62%),
+    radial-gradient(900px 260px at 78% 0%, rgba(242,242,242,.10), transparent 64%),
+    rgba(0, 0, 0, 0.829);
+  padding: 1.05rem 1.05rem;
+  box-shadow: 0 18px 56px rgba(0,0,0,.44);
+  overflow:hidden;
+  text-align:left;
+}
+
+.feature::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height:2px;
+  background: linear-gradient(to right, rgba(92,232,255,.78), rgba(242,242,242,.18), transparent);
+  opacity:.95;
+  pointer-events:none;
+}
+
+.feature-title{
+  margin: .15rem 0 .35rem;
+  color:#ffffff;
+  font-size: clamp(1.35rem, 4.8vw, 1.9rem);
+  line-height: 1.2;
+  text-align:left;
+}
+
+.feature-desc{
+  margin: 0 0 .75rem;
+  color: rgba(242,242,242,.86);
+}
+
+.feature-cta{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.feature-meta{
+  margin: .85rem 0 0;
+  color: rgba(242,242,242,.70);
+  font-family: var(--mono);
+  font-size: .86rem;
+}
+
+.feature-meta a{
+  color: rgba(92,232,255,.92);
+  font-weight: 900;
+}
+
 
 
   a{text-decoration:none; color: aqua;}</style>
@@ -626,6 +689,31 @@
         Selecting one will take you to a diagnostic survey designed to evaluate fit for that path.
       </p>
 
+<!-- Featured Article (Hub-level) -->
+<div class="feature">
+  <span class="badge">new article</span>
+
+  <h3 class="feature-title">Troubleshooting: Why It Drains Some Electricians and Energizes Others</h3>
+
+  <p class="feature-desc">
+    Troubleshooting isn’t “fixing things.” It’s uncertainty, pressure, and methodical testing while someone wants an answer yesterday.
+    This reality-check explains why some electricians love it and others burn out — then routes you to a fit diagnostic.
+  </p>
+
+  <div class="feature-cta">
+    <a class="link" href="https://knackforthis.com/trades/electrical/why-troubleshooting-drains-electricians-article/">
+      Read the Article <span class="arrow">→</span>
+    </a>
+
+    <a class="link-article" href="https://knackforthis.com/trades/electrical/troubleshooting-and-maintenance-quiz/">
+      Take the Troubleshooting Diagnostic <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <p class="feature-meta">
+    Lives in: <a href="https://knackforthis.com/trades/electrical/">Electrical</a> • Best for: people who like puzzles, testing, and accountability.
+  </p>
+</div>
       <div class="cards">
         <div class="card">
           <span class="badge">specialty</span>
