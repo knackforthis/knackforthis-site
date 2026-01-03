@@ -1,5 +1,5 @@
 // plumbing-diagnostic.js
-// Main hub diagnostic for /trades/plumbing/diagnostic/
+// Main hub diagnostic for /trades/plumbing/diagnostic-quiz/
 // Routes users to plumbing specialty pages if fit is strong/mixed, otherwise back to main/hubs.
 
 const obj = {
