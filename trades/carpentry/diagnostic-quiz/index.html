@@ -32,8 +32,10 @@
   "@graph": [
     {
       "@type": "LearningResource",
+      "@id": "https://knackforthis.com/trades/carpentry/diagnostic/#learning-resource",
       "name": "Carpentry Fit Diagnostic",
-      "description": "A self-assessment diagnostic designed to evaluate alignment between a person's work preferences and the general demands of carpentry.",
+       "inLanguage": "en-US",
+"description": "a self-assessment diagnostic designed to evaluate alignment between a person's work preferences and the general demands of carpentry.",
       "about": [
         "carpentry",
         "skilled trades",
@@ -50,7 +52,130 @@
         "@type": "Organization",
         "name": "KnackForThis",
         "url": "https://knackforthis.com"
-      }
+      },
+      "hasPart": [
+  {
+    "@type": "Question",
+    "name": "Which describes your real-world exposure to carpentry-type tasks?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I’ve done hands-on building/repair work (even basic) and didn’t hate it." },
+      { "@type": "Answer", "text": "I’ve tried a few small projects, but I’m still unsure." },
+      { "@type": "Answer", "text": "I’ve mostly avoided this kind of work, but I’m curious." },
+      { "@type": "Answer", "text": "I avoid hands-on building work whenever I can." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How do you feel about measuring, marking, and re-checking before cutting?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I’m fine slowing down to get it right." },
+      { "@type": "Answer", "text": "I can do it, but it’s not my favorite." },
+      { "@type": "Answer", "text": "I get impatient with that level of detail." },
+      { "@type": "Answer", "text": "I strongly dislike precision tasks like that." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "You’re working around sawdust, noise, and safety gear most days. Your reaction is:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "That’s normal for the job — I can deal with it." },
+      { "@type": "Answer", "text": "I can tolerate it, but I’d prefer less of it." },
+      { "@type": "Answer", "text": "That sounds draining day after day." },
+      { "@type": "Answer", "text": "That’s a dealbreaker for me." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How do you feel about being on your feet, lifting, kneeling, and working with your hands for hours?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "That kind of physical work is manageable for me." },
+      { "@type": "Answer", "text": "I can do some of it, but I’d need the right conditions." },
+      { "@type": "Answer", "text": "I don’t handle physical strain well." },
+      { "@type": "Answer", "text": "I avoid physically demanding work." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "A board is slightly warped and nothing lines up perfectly. What feels most true?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I can work with imperfect materials and adjust." },
+      { "@type": "Answer", "text": "I can adjust sometimes, but it stresses me out." },
+      { "@type": "Answer", "text": "I get frustrated when things aren’t exact." },
+      { "@type": "Answer", "text": "I’d rather not deal with that kind of problem." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How do you respond when a mistake means undoing work (re-cutting, re-fitting, redoing)?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I’d rather fix it than leave it wrong." },
+      { "@type": "Answer", "text": "I can fix it, but I hate wasting time." },
+      { "@type": "Answer", "text": "Redoing work makes me lose motivation fast." },
+      { "@type": "Answer", "text": "I avoid work where redoing is common." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Carpentry often involves early start times and jobsite schedules. How does that land?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I can live with it if the work is worth it." },
+      { "@type": "Answer", "text": "I can adapt, but it would be a challenge." },
+      { "@type": "Answer", "text": "That schedule doesn’t match how I function." },
+      { "@type": "Answer", "text": "That schedule is basically a no." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How comfortable are you using power tools (or learning them through practice)?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Comfortable, or I’m willing to get comfortable." },
+      { "@type": "Answer", "text": "Willing, but I’m cautious and slow to start." },
+      { "@type": "Answer", "text": "I get nervous around tools like that." },
+      { "@type": "Answer", "text": "I’d rather avoid power tools." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Which work output feels most satisfying to you?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "A physical result I can see and touch." },
+      { "@type": "Answer", "text": "Either physical or digital — I don’t care much." },
+      { "@type": "Answer", "text": "Mostly digital/abstract outcomes." },
+      { "@type": "Answer", "text": "I don’t enjoy physical build work." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Carpentry can mean working in heat, cold, or awkward spaces depending on the job. Your reaction:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Not ideal, but I can handle it." },
+      { "@type": "Answer", "text": "I’d need the right environment to do well." },
+      { "@type": "Answer", "text": "That sounds miserable to me." },
+      { "@type": "Answer", "text": "I avoid environments like that." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How do you feel about learning by doing (trial, repetition, incremental improvement)?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "That’s how I learn best." },
+      { "@type": "Answer", "text": "I can learn that way, but I prefer guidance." },
+      { "@type": "Answer", "text": "I prefer learning by reading/watching, not doing." },
+      { "@type": "Answer", "text": "I don’t like learning physical skills." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "If you had to summarize your interest in carpentry honestly, which fits best?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I can realistically see myself doing this kind of work." },
+      { "@type": "Answer", "text": "I’m interested, but I need proof it fits me." },
+      { "@type": "Answer", "text": "I’m curious, but I suspect it’s not for me long-term." },
+      { "@type": "Answer", "text": "This probably isn’t the direction for me." }
+    ]
+  }
+]
+
     },
     {
       "@type": "BreadcrumbList",
@@ -148,7 +273,7 @@
     <div class="result-container">
       <div class="result"></div>
       
-<a class="summary-button good-fit" style="background-color: white; color: black;" href="https://payhip.com/b/T1xGV">Read the full Carpentry Job Reality Check (PDF)<br><i>Paid · Decision-level breakdown beyond this overview</i></a>
+<a class="summary-button good-fit" style="background-color: white; color: black;" rel="sponsored nofollow" href="https://payhip.com/b/T1xGV">Read the full Carpentry Job Reality Check (PDF)<br><i>Paid · Decision-level breakdown beyond this overview</i></a>
       <a class="summary-button no-fit" href="https://knackforthis.com/">Back to Main Page<br>See If You Fit Other Skill-Based Roles</a>
       <div class="good-fit" style="text-align: center;">See If You Fit These Types Of Carpentry:</div>
       <a class="summary-button good-fit" href="https://knackforthis.com/trades/carpentry/finish-carpentry/">Finish Carpetry</a>

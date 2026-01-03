@@ -31,8 +31,10 @@
   "@graph": [
     {
       "@type": "LearningResource",
+      "@id": "https://knackforthis.com/trades/masonry/diagnostic/#learning-resource",
       "name": "Masonry Fit Diagnostic",
-      "description": "A self-assessment diagnostic designed to evaluate alignment between a person's work preferences and the general demands of masonry.",
+       "inLanguage": "en-US",
+"description": "a self-assessment diagnostic designed to evaluate alignment between a person's work preferences and the general demands of masonry.",
       "about": [
         "masonry",
         "skilled trades",
@@ -49,7 +51,160 @@
         "@type": "Organization",
         "name": "KnackForThis",
         "url": "https://knackforthis.com"
-      }
+      },
+      "hasPart": [
+  {
+    "@type": "Question",
+    "name": "Which best describes your real-world exposure to masonry-type work (brick, block, stone, concrete, repair)?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I’ve done hands-on work like this and didn’t hate it." },
+      { "@type": "Answer", "text": "I’ve tried small projects, but I’m still unsure." },
+      { "@type": "Answer", "text": "I’ve mostly avoided it, but I’m curious." },
+      { "@type": "Answer", "text": "I avoid heavy, hands-on material work whenever possible." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How do you feel about slowing down to measure, level, and re-check layout before committing?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I’m fine slowing down to get it right." },
+      { "@type": "Answer", "text": "I can do it, but it’s not my favorite." },
+      { "@type": "Answer", "text": "I get impatient with that level of detail." },
+      { "@type": "Answer", "text": "I strongly dislike precision tasks like that." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Masonry involves dust, grit, slurry, noise, and PPE every day. Your reaction:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "That’s normal for the job — I can deal with it." },
+      { "@type": "Answer", "text": "I tolerate it, but I’d prefer less of it." },
+      { "@type": "Answer", "text": "That sounds draining day after day." },
+      { "@type": "Answer", "text": "That’s a dealbreaker for me." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How do you handle being on your feet, lifting, kneeling, and handling heavy material for hours?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "That kind of physical work is manageable for me." },
+      { "@type": "Answer", "text": "I can do some of it with the right conditions." },
+      { "@type": "Answer", "text": "I don’t handle physical strain well." },
+      { "@type": "Answer", "text": "I avoid physically demanding work." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Mortar and concrete don’t wait. How do you feel about timing windows controlling the work?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I can work within a window and stay controlled." },
+      { "@type": "Answer", "text": "I can do it, but timing pressure stresses me." },
+      { "@type": "Answer", "text": "Timing makes me rush and get sloppy." },
+      { "@type": "Answer", "text": "I hate work where timing controls the day." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "A course or surface is drifting slightly out of level. What feels most true?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Fix it now — small errors compound fast." },
+      { "@type": "Answer", "text": "I can fix it, but I hate losing time to rework." },
+      { "@type": "Answer", "text": "Redoing work kills my motivation." },
+      { "@type": "Answer", "text": "I avoid work where redoing is common." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Masonry involves repetitive cycles (spread, set, check, tool, repeat). Your response:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "I can repeat technique and keep quality steady." },
+      { "@type": "Answer", "text": "I can repeat it with some variety or milestones." },
+      { "@type": "Answer", "text": "Repetition drains me and quality slips." },
+      { "@type": "Answer", "text": "I avoid work that feels like production loops." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How comfortable are you using or learning saws, grinders, and cutters?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Comfortable, or willing to get comfortable." },
+      { "@type": "Answer", "text": "Willing, but cautious." },
+      { "@type": "Answer", "text": "I get nervous around tools like that." },
+      { "@type": "Answer", "text": "I’d rather avoid those tools." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Which kind of output feels most satisfying to you?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "A physical result that’s solid and permanent." },
+      { "@type": "Answer", "text": "Either physical or digital — doesn’t matter much." },
+      { "@type": "Answer", "text": "Mostly digital or abstract outcomes." },
+      { "@type": "Answer", "text": "I don’t enjoy physical build work." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Masonry often means outdoor work, uneven ground, awkward access. You:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Can handle it even if it’s not ideal." },
+      { "@type": "Answer", "text": "Need the right environment to do well." },
+      { "@type": "Answer", "text": "Find that kind of environment miserable." },
+      { "@type": "Answer", "text": "Avoid environments like that." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "How do you feel about learning primarily by doing — repetition, correction, incremental improvement?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "That’s how I learn best." },
+      { "@type": "Answer", "text": "I can learn that way with guidance." },
+      { "@type": "Answer", "text": "I prefer learning by reading or watching." },
+      { "@type": "Answer", "text": "I don’t enjoy learning physical skills." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Masonry crews can be blunt, direct, and correction-heavy. You:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Handle it fine — clarity matters more than tone." },
+      { "@type": "Answer", "text": "Can deal with it, but it wears on me." },
+      { "@type": "Answer", "text": "Get irritated by blunt supervision." },
+      { "@type": "Answer", "text": "Strongly dislike that communication style." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Progress can be slow and praise is rare — the expectation is ‘it should be right.’ That feels:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Fine — I take quiet pride in solid work." },
+      { "@type": "Answer", "text": "Okay, but I like some recognition." },
+      { "@type": "Answer", "text": "Demotivating without feedback." },
+      { "@type": "Answer", "text": "I need frequent validation to stay engaged." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "After weeks of physical fatigue, dust, and repetition, you usually:",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Adapt and build endurance." },
+      { "@type": "Answer", "text": "Manage it, but energy fluctuates." },
+      { "@type": "Answer", "text": "Start burning out mentally." },
+      { "@type": "Answer", "text": "Feel done long before the project ends." }
+    ]
+  },
+  {
+    "@type": "Question",
+    "name": "Be honest: can you realistically see yourself doing masonry-style work day after day?",
+    "suggestedAnswer": [
+      { "@type": "Answer", "text": "Yes — the realities don’t scare me." },
+      { "@type": "Answer", "text": "Possibly, with the right specialization." },
+      { "@type": "Answer", "text": "Probably not long-term." },
+      { "@type": "Answer", "text": "No — this isn’t my direction." }
+    ]
+  }
+]
+
     },
     {
       "@type": "BreadcrumbList",
@@ -148,7 +303,7 @@
     <div class="result-container">
       <div class="result"></div>
         <a class="summary-button no-fit" href="https://knackforthis.com/">Back to Main Page<br>See If You Fit Other Skill-Based Roles</a>
-        <a class="summary-button good-fit" style="background-color: white; color: black;" href="https://payhip.com/b/M1mzw">Read the full Masonry Job Reality Check (PDF)<br><i>Paid · Decision-level breakdown beyond this overview</i></a>
+        <a class="summary-button good-fit" style="background-color: white; color: black;" rel="sponsored nofollow" href="https://payhip.com/b/M1mzw">Read the full Masonry Job Reality Check (PDF)<br><i>Paid · Decision-level breakdown beyond this overview</i></a>
         <div class="good-fit" style="text-align: center;">See If You Fit These Types Of Masonry:</div>
         <a class="summary-button good-fit" href="https://knackforthis.com/trades/masonry/bricklaying-quiz/">Bricklaying</a>
         <a class="summary-button good-fit" href="https://knackforthis.com/trades/masonry/stone-masonry-quiz/">Stone Masonry</a>

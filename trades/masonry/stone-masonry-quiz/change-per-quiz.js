@@ -1,170 +1,170 @@
-// custom-furniture-quiz.js
-// Carpentry > Custom Furniture
+// stone-masonry-quiz.js
+// Masonry > Stone Masonry
 
 const obj = {
   0: {
-    question: "Custom furniture often involves long builds with lots of planning before anything looks finished. You usually:",
+    question: "Stone masonry is slow, deliberate work where placement matters more than speed. You usually:",
     options: [
-      ["Like it — I enjoy designing and building step-by-step toward a clean outcome.", ["FurnitureAligned", "Disciplined"]],
-      ["I can do it, but I need milestones to stay motivated.", ["FurnitureAligned", "Flexible"]],
-      ["I get impatient when progress isn’t visible quickly.", ["FurnitureMisaligned", "Flexible"]],
-      ["I lose interest fast if I can’t see fast payoff.", ["FurnitureMisaligned", "Flexible"]]
+      ["Prefer it — I’d rather place carefully than rush.", ["StoneAligned", "Disciplined"]],
+      ["I can do it, but I still want steady progress.", ["StoneAligned", "Flexible"]],
+      ["I get impatient when things move slowly.", ["StoneMisaligned", "Flexible"]],
+      ["Slow, careful work drains me fast.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   1: {
-    question: "When a piece must be square, flat, and consistent (no wobble, no twist), your reaction is:",
+    question: "Stone rarely comes perfectly square or uniform. When pieces vary, you usually:",
     options: [
-      ["That’s the point — I want it true, even if it takes longer.", ["FurnitureAligned", "Disciplined"]],
-      ["I can do it, but chasing perfection can frustrate me.", ["FurnitureAligned", "Flexible"]],
-      ["If it mostly works, I’m not stressing tiny issues.", ["FurnitureMisaligned", "Flexible"]],
-      ["That level of precision sounds annoying to me.", ["FurnitureMisaligned", "Flexible"]]
+      ["Enjoy fitting and shaping until it works.", ["StoneAligned", "Disciplined"]],
+      ["Can handle it, but it gets mentally tiring.", ["StoneAligned", "Flexible"]],
+      ["Get frustrated when things don’t fit easily.", ["StoneMisaligned", "Flexible"]],
+      ["Prefer materials that are uniform and predictable.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   2: {
-    question: "How do you feel about measuring, marking, and re-checking before committing to cuts?",
+    question: "How do you feel about lifting, moving, and setting heavy stone repeatedly?",
     options: [
-      ["Normal — I prefer certainty before I cut.", ["FurnitureAligned", "Disciplined"]],
-      ["I can do it, but I don’t love it.", ["FurnitureAligned", "Flexible"]],
-      ["I tend to rush and fix problems later.", ["FurnitureMisaligned", "Flexible"]],
-      ["I hate checking that much — it slows me down too much.", ["FurnitureMisaligned", "Flexible"]]
+      ["I can handle it steadily with good technique.", ["StoneAligned", "Disciplined"]],
+      ["I can do it, but pacing and recovery matter.", ["StoneAligned", "Flexible"]],
+      ["Heavy, awkward material wears me down fast.", ["StoneMisaligned", "Flexible"]],
+      ["That level of physical strain is a dealbreaker.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   3: {
-    question: "Custom furniture has a lot of surface work (sanding, edge treatment, cleanup, finish prep). You:",
+    question: "Stone masonry rewards visual judgment (line, balance, proportion) more than measurements alone. You:",
     options: [
-      ["Accept it — the surface is the product.", ["FurnitureAligned", "Disciplined"]],
-      ["I’ll do it, but it’s not my favorite part.", ["FurnitureAligned", "Flexible"]],
-      ["I get bored fast doing sanding/finish prep.", ["FurnitureMisaligned", "Flexible"]],
-      ["I strongly dislike surface/detail prep.", ["FurnitureMisaligned", "Flexible"]]
+      ["Trust my eye and refine until it looks right.", ["StoneAligned", "Disciplined"]],
+      ["Can do it, but I like reference lines and checks.", ["StoneAligned", "Flexible"]],
+      ["Feel unsure when decisions aren’t exact.", ["StoneMisaligned", "Flexible"]],
+      ["Prefer work with strict measurements, not visual judgment.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   4: {
-    question: "When joinery or fit is slightly off, you usually:",
+    question: "When a stone doesn’t sit cleanly on the first try, you usually:",
     options: [
-      ["Fix it properly — bad fit will haunt the whole piece.", ["FurnitureAligned", "Disciplined"]],
-      ["Patch it if needed, but I try not to lose time.", ["FurnitureAligned", "Flexible"]],
-      ["Ignore it if it won’t fail structurally.", ["FurnitureMisaligned", "Flexible"]],
-      ["Get frustrated and lose momentum.", ["FurnitureMisaligned", "Flexible"]]
+      ["Pull it, adjust, and reset until it’s right.", ["StoneAligned", "Disciplined"]],
+      ["Fix it, but I hate losing time to resets.", ["StoneAligned", "Flexible"]],
+      ["Try to make it work as-is.", ["StoneMisaligned", "Flexible"]],
+      ["Get frustrated and lose momentum.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   5: {
-    question: "How do you feel about making one-off decisions (design choices, proportions, custom details)?",
+    question: "How do you feel about cutting, shaping, and dressing stone (saws, grinders, chisels)?",
     options: [
-      ["I like it — creative problem-solving with constraints fits me.", ["FurnitureAligned", "Disciplined"]],
-      ["I can do it, but I prefer templates or references.", ["FurnitureAligned", "Flexible"]],
-      ["Too many choices drain me quickly.", ["FurnitureMisaligned", "Flexible"]],
-      ["I prefer work with fixed instructions.", ["FurnitureMisaligned", "Flexible"]]
+      ["I like shaping material to fit the build.", ["StoneAligned", "Disciplined"]],
+      ["I can do it, but I prefer minimal cutting.", ["StoneAligned", "Flexible"]],
+      ["Cutting and fitting frustrates me.", ["StoneMisaligned", "Flexible"]],
+      ["I avoid work that requires constant shaping.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   6: {
-    question: "Custom furniture includes fixing mistakes (re-cutting, re-milling, re-sanding). You:",
+    question: "Stone masonry often hides mistakes later rather than immediately. That reality makes you:",
     options: [
-      ["Expect it — rework is part of quality.", ["FurnitureAligned", "Disciplined"]],
-      ["I can redo things, but it annoys me.", ["FurnitureAligned", "Flexible"]],
-      ["Redoing kills my motivation.", ["FurnitureMisaligned", "Flexible"]],
-      ["I avoid work where redo is common.", ["FurnitureMisaligned", "Flexible"]]
+      ["More careful — I want it right before moving on.", ["StoneAligned", "Disciplined"]],
+      ["Careful, but I still feel time pressure.", ["StoneAligned", "Flexible"]],
+      ["Anxious — delayed consequences stress me out.", ["StoneMisaligned", "Flexible"]],
+      ["Indifferent — I’d rather keep moving.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   7: {
-    question: "How do you handle slow, repetitive precision work (identical parts, careful assembly)?",
+    question: "How do you handle repetitive but exact placement (set → check → adjust → repeat)?",
     options: [
-      ["Fine — repetition is how quality happens.", ["FurnitureAligned", "Disciplined"]],
-      ["I can do it, but I need variety.", ["FurnitureAligned", "Flexible"]],
-      ["Repetition drains me quickly.", ["FurnitureMisaligned", "Flexible"]],
-      ["I avoid picky, repetitive work.", ["FurnitureMisaligned", "Flexible"]]
+      ["Fine — repetition is how consistency happens.", ["StoneAligned", "Disciplined"]],
+      ["I can do it, but I need mental breaks.", ["StoneAligned", "Flexible"]],
+      ["Repetition drains my focus.", ["StoneMisaligned", "Flexible"]],
+      ["I avoid repetitive precision work.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   8: {
-    question: "When someone critiques a piece visually (symmetry, proportion, alignment), you usually:",
+    question: "Stone work is often outdoors in heat, cold, dust, and awkward terrain. You:",
     options: [
-      ["Prefer it — I want it intentional.", ["FurnitureAligned", "Disciplined"]],
-      ["I can take feedback, but it stings.", ["FurnitureAligned", "Flexible"]],
-      ["It feels nitpicky if it functions.", ["FurnitureMisaligned", "Flexible"]],
-      ["I hate that kind of critique.", ["FurnitureMisaligned", "Flexible"]]
+      ["Can work through it without losing focus.", ["StoneAligned", "Disciplined"]],
+      ["Can manage it, but conditions affect my energy.", ["StoneAligned", "Flexible"]],
+      ["Get irritated when conditions aren’t comfortable.", ["StoneMisaligned", "Flexible"]],
+      ["Prefer controlled indoor environments.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   9: {
-    question: "Custom furniture means managing wood behavior (movement, grain, tear-out). You:",
+    question: "When someone critiques stone placement for look or balance, you usually:",
     options: [
-      ["Like it — material behavior is part of the craft.", ["FurnitureAligned", "Disciplined"]],
-      ["I can handle it, but it feels unpredictable.", ["FurnitureAligned", "Flexible"]],
-      ["I get annoyed when materials fight back.", ["FurnitureMisaligned", "Flexible"]],
-      ["I avoid work where materials misbehave.", ["FurnitureMisaligned", "Flexible"]]
+      ["Appreciate it — the wall should read clean.", ["StoneAligned", "Disciplined"]],
+      ["I can take it, but it wears on me.", ["StoneAligned", "Flexible"]],
+      ["Feel it’s subjective and annoying.", ["StoneMisaligned", "Flexible"]],
+      ["Hate aesthetic critique.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   10: {
-    question: "Which environment sounds more natural?",
+    question: "Stone masonry often means slow visible progress. That feels:",
     options: [
-      ["Shop work with clean builds and finish standards.", ["FurnitureAligned", "Disciplined"]],
-      ["Mostly shop work with some variety.", ["FurnitureAligned", "Flexible"]],
-      ["Jobsite work with faster payoff.", ["FurnitureMisaligned", "Flexible"]],
-      ["Anything but detail-heavy shop work.", ["FurnitureMisaligned", "Flexible"]]
+      ["Fine — I’m okay seeing it build gradually.", ["StoneAligned", "Disciplined"]],
+      ["Okay if I know the end goal.", ["StoneAligned", "Flexible"]],
+      ["Demotivating without faster payoff.", ["StoneMisaligned", "Flexible"]],
+      ["Unbearable — I need quick results.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   // ---- PEOPLE / ATTRITION LAYER ----
 
   11: {
-    question: "Clients often change their mind mid-build (details, proportions, finish). You:",
+    question: "Clients or designers may care deeply about how stone ‘feels’ visually. You:",
     options: [
-      ["Adapt calmly and re-scope the work.", ["FurnitureAligned", "Disciplined"]],
-      ["Can handle it, but it drains me.", ["FurnitureAligned", "Flexible"]],
-      ["Get irritated when decisions shift.", ["FurnitureMisaligned", "Flexible"]],
-      ["Strongly dislike revision-driven work.", ["FurnitureMisaligned", "Flexible"]]
+      ["Adapt and refine without taking it personally.", ["StoneAligned", "Disciplined"]],
+      ["Can handle it, but it drains me.", ["StoneAligned", "Flexible"]],
+      ["Get irritated by subjective preferences.", ["StoneMisaligned", "Flexible"]],
+      ["Strongly dislike aesthetic-driven feedback.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   12: {
-    question: "When a piece is ‘almost right’ but not perfect, you usually:",
+    question: "Stone masonry often involves working quietly and solo for long stretches. You:",
     options: [
-      ["Fix it — close isn’t good enough.", ["FurnitureAligned", "Disciplined"]],
-      ["Fix it if time allows.", ["FurnitureAligned", "Flexible"]],
-      ["Accept it and move on.", ["FurnitureMisaligned", "Flexible"]],
-      ["Get stuck obsessing or shut down.", ["FurnitureMisaligned", "Flexible"]]
+      ["Like the focus and independence.", ["StoneAligned", "Disciplined"]],
+      ["Can manage it, but isolation builds.", ["StoneAligned", "Flexible"]],
+      ["Feel drained without social energy.", ["StoneMisaligned", "Flexible"]],
+      ["Strongly dislike solitary work.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   13: {
-    question: "After weeks of detail-heavy, solo-focused work, you tend to:",
+    question: "After weeks of slow, physical, detail-focused work, you tend to:",
     options: [
-      ["Stay steady — this pace fits me.", ["FurnitureAligned", "Disciplined"]],
-      ["Manage it, but mental fatigue builds.", ["FurnitureAligned", "Flexible"]],
-      ["Feel drained and irritable.", ["FurnitureMisaligned", "Flexible"]],
-      ["Lose motivation completely.", ["FurnitureMisaligned", "Flexible"]]
+      ["Stay steady — this pace suits me.", ["StoneAligned", "Disciplined"]],
+      ["Manage it, but fatigue accumulates.", ["StoneAligned", "Flexible"]],
+      ["Feel mentally and physically worn down.", ["StoneMisaligned", "Flexible"]],
+      ["Burn out quickly.", ["StoneMisaligned", "Flexible"]]
     ]
   },
 
   14: {
-    question: "Be honest: does custom furniture appeal to you long-term?",
+    question: "Be honest: does stone masonry appeal to you long-term?",
     options: [
-      ["Yes — patience, detail, and craft fit me.", ["FurnitureAligned", "Disciplined"]],
-      ["Somewhat — I’m interested but cautious.", ["FurnitureAligned", "Flexible"]],
-      ["Not really — I prefer faster payoff work.", ["FurnitureMisaligned", "Flexible"]],
-      ["No — this isn’t my environment.", ["FurnitureMisaligned", "Flexible"]]
+      ["Yes — craft, patience, and permanence matter to me.", ["StoneAligned", "Disciplined"]],
+      ["Somewhat — I’m interested but cautious.", ["StoneAligned", "Flexible"]],
+      ["Not really — I prefer faster or cleaner work.", ["StoneMisaligned", "Flexible"]],
+      ["No — this isn’t my environment.", ["StoneMisaligned", "Flexible"]]
     ]
   }
 };
 
 const tags = {
-  FurnitureAligned: 0,
-  FurnitureMisaligned: 0,
+  StoneAligned: 0,
+  StoneMisaligned: 0,
   Disciplined: 0,
   Flexible: 0
 };
 
 function interpretResults() {
-  const aligned = tags.FurnitureAligned || 0;
-  const misaligned = tags.FurnitureMisaligned || 0;
+  const aligned = tags.StoneAligned || 0;
+  const misaligned = tags.StoneMisaligned || 0;
   const disciplined = tags.Disciplined || 0;
   const flexible = tags.Flexible || 0;
 
@@ -173,7 +173,7 @@ function interpretResults() {
   let fitPct = Math.round(((fitScore + 15) / 30) * 100);
   fitPct = Math.max(0, Math.min(100, fitPct));
 
-  // Discipline axis (patience + finish tolerance + people pressure)
+  // Discipline axis (patience + physical + aesthetic tolerance)
   const disciplineScore = disciplined - flexible;
   let disciplinePct = Math.round(((disciplineScore + 15) / 30) * 100);
   disciplinePct = Math.max(0, Math.min(100, disciplinePct));
@@ -181,40 +181,40 @@ function interpretResults() {
   let disciplineLabel;
   if (disciplinePct >= 70)
     disciplineLabel =
-      "You’re built for long builds, revision cycles, and finish-level standards without losing focus or motivation.";
+      "You’re built for slow, physical craft work that demands patience, visual judgment, and consistency without rushing.";
   else if (disciplinePct >= 40)
     disciplineLabel =
-      "You can do custom furniture work, but consistency may depend on structure, deadlines, and managing revision fatigue.";
+      "You can do stone masonry, but consistency may depend on pacing, project type, and managing fatigue.";
   else
     disciplineLabel =
-      "Custom furniture may feel draining due to slow progress, subjective standards, and prolonged detail focus.";
+      "Stone masonry may feel draining due to slow progress, heavy material handling, and constant visual decision-making.";
 
   let band, title, description, color;
 
   if (fitPct >= 70) {
     band = "strong";
-    title = `Strong Fit: Custom Furniture (${fitPct}% alignment)`;
+    title = `Strong Fit: Stone Masonry (${fitPct}% alignment)`;
     description = `
-You’re showing strong alignment with custom furniture — patience, precision tolerance, and comfort with invisible labor and revision cycles.<br><br>
-<strong>Blunt truth:</strong> this lane rewards people who value finish quality and quiet craft more than speed or volume. Your answers suggest that won’t break you.<br><br>
+You’re showing strong alignment with stone masonry — patience, physical tolerance, and comfort with visual, craft-driven decisions.<br><br>
+<strong>Blunt truth:</strong> stone masonry rewards people who value permanence and precision over speed. Your answers suggest that environment won’t grind you down.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(60, 160, 120)";
   } else if (fitPct >= 40) {
     band = "middle";
-    title = `Mixed Fit: Custom Furniture (${fitPct}% alignment)`;
+    title = `Mixed Fit: Stone Masonry (${fitPct}% alignment)`;
     description = `
-You have some traits that work in custom furniture, but friction may appear around revision creep, slow payoff, or sustained detail focus.<br><br>
-<strong>Translation:</strong> you might do well with the right shop structure — or prefer carpentry paths with faster cycles and clearer endpoints.<br><br>
+You have some traits that work in stone masonry, but friction may show up around pace, physical strain, or subjective standards.<br><br>
+<strong>Translation:</strong> you might do well in certain stone niches — or prefer masonry lanes with clearer production rhythm.<br><br>
 ${disciplineLabel}
     `.trim();
     color = "rgb(120, 140, 220)";
   } else {
     band = "low";
-    title = `Low Fit: Custom Furniture (${fitPct}% alignment)`;
+    title = `Low Fit: Stone Masonry (${fitPct}% alignment)`;
     description = `
-Based on your answers, custom furniture will likely feel like constant friction: slow progress, subjective standards, revision loops, and finish discipline that never fully turns off.<br><br>
-<strong>This isn’t a personal knock.</strong> It usually means your strengths fit better in faster-moving carpentry or trade environments.
+Based on your answers, stone masonry will likely feel like constant friction: slow builds, heavy material, visual subjectivity, and delayed payoff.<br><br>
+<strong>This isn’t a personal knock.</strong> It usually means your strengths fit better in masonry or trades with faster cycles and clearer standards.
     `.trim();
     color = "rgb(170, 80, 80)";
   }
