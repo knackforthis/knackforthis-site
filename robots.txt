@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://knackforthis.com/sitemap-index.xml
+Sitemap: https://knackforthis.com/sitemap_index.xml
